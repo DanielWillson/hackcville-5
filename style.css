@@ -112,8 +112,24 @@ dfn {
 }
 
 h1 {
-	font-size: 2em;
+	font-size: 3em;
 	margin: 0.67em 0;
+}
+
+h2 {
+	font-size: 2em;
+}
+
+h3 {
+	font-size: 1.333em 
+}
+
+h4 {
+	font-size: 1em;
+}
+
+h5 {
+	font-size: .8333em;
 }
 
 mark {
@@ -266,9 +282,9 @@ input,
 select,
 optgroup,
 textarea {
-	color: #404040;
-	font-family: sans-serif;
-	font-size: 16px;
+	color: #0a2128;
+	font-family: 'Proxima Nova', Helvetica, sans-serif;
+	font-size: 18px;
 	font-size: 1rem;
 	line-height: 1.5;
 }
@@ -280,6 +296,8 @@ h4,
 h5,
 h6 {
 	clear: both;
+	margin-top: 0;
+	line-height: 1.125em;
 }
 
 p {
@@ -893,3 +911,195 @@ object {
 .gallery-caption {
 	display: block;
 }
+
+
+
+/* Daniel's stuff */
+
+/*
+Dark Blue: #0a2128;
+HC Blue: #3486c7;
+Pioneer Blue: #53b0ca;
+
+*/
+
+.style-guide {
+
+}
+
+.white-bg {
+	background-color: white;
+	padding: 36px 0;
+}
+
+.blue-bg {
+	background-color: #53b0ca;
+	padding: 36px 0;
+}
+
+.container {
+	max-width: 1100px;
+	width: 95%;
+	margin: 0 auto;
+	padding: 0 18px;
+}
+
+/* HEADINGS */
+
+.blue-bg h1 {
+	color: white;;
+	text-shadow: 1px 1px 0px #0a2128;
+}
+
+/* END HEADINGS */
+/* BUTTONS */
+
+.button {
+	padding: 12px 40px 18px 40px;
+	margin: .5em 2em .5em 0;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 20px;
+	position: relative;
+}
+
+.button:after {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	content: '';
+	top: -6px;
+	left: -6px;
+	border: 2px solid #0a2128;
+}
+
+.button:hover {
+	top: -3px;
+	left: -3px;
+	cursor: pointer;
+}
+
+.button:hover:after {
+	top: 0px;
+	left: 0px;
+}
+
+.white-bg .button {
+	background-color: #3486c7;
+	color: white;
+}
+
+.blue-bg .button {
+	background-color: white;
+	color: #0a2128;
+}
+
+/* IMAGE PULLQUOTES */
+
+.image-pullquote {
+	position: relative;
+	display: inline-block;
+	font-size: 111.111%;
+	width: 50%;
+}
+
+.image-pullquote h1, 
+.image-pullquote h2, 
+.image-pullquote h3, 
+.image-pullquote h4,
+.image-pullquote h5, 
+.image-pullquote h6 {
+	margin-bottom: .25em;
+}
+
+.left.image-pullquote {
+	margin-right: 10%;
+}
+
+.right.image-pullquote {
+	margin-left: 10%;
+}
+
+.image-pullquote img {
+	filter: grayscale(30%);
+	transition: .2s;
+}
+
+.image-pullquote img:hover {
+	filter: grayscale(0%);
+}
+
+.image-pullquote figcaption {
+	line-height: 1.3em;
+	padding: 18px 24px 24px 18px;
+	position: relative;
+	top: -54px;
+}
+
+.white-bg .image-pullquote figcaption {
+	background-color: #3486c7;
+	color: white;
+}
+
+.blue-bg .image-pullquote figcaption {
+	background-color: white;
+	color: #0a2128;
+}
+
+.image-pullquote.left figcaption {
+	left: -10px;
+}
+
+.image-pullquote.right figcaption {
+	right: -18px;
+}
+
+figcaption:after {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	content: '';
+	top: -9px;
+	left: -9px;
+	border: 2px solid #0a2128;
+}
+
+@media screen and (max-width: 768px) {
+	.image-pullquote {
+		width: 100%;
+		margin: 0;
+		font-size: 18px;
+	}
+
+	.right.image-pullquote {
+		margin-left: 0;
+	}
+
+	.left.image-pullquote {
+		margin-right: 0;
+	}
+
+	.image-pullquote.right figcaption {
+		right: 0;
+		left: -10px;
+	}
+}
+
+/* sample code */
+
+.text-example {
+	display: inline-block;
+	width: 40%;
+	vertical-align: top;
+	padding-top: 54px;
+}
+
+@media screen and (max-width: 768px) {
+	.text-example {
+		width: 100%;
+		padding-top: 0px;
+	}
+}
+
+/* end of sample code */
+
