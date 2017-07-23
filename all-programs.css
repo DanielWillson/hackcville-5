@@ -1,0 +1,26 @@
+.all-programs-hero{
+	background-image: url("http://1qjqp144udvjh172yr0eqox1.wpengine.netdna-cdn.com/wp-content/uploads/2014/05/IMG_0220-e1483457052138.jpg") !important;
+	background-size: cover;
+	background-position: center;
+}
+.all-programs-hero-border{
+	border: solid 2px white;
+	width: 80%;
+	padding: 10px;
+	margin: 0 auto;
+}
+.all-programs-caption{
+	margin: 0 auto;
+	background-color: rgba(35, 93, 145, .8);
+	color: white;
+	padding: 15px;
+}
+.all-programs-hero-header{
+	text-align: center;
+}
+.bold{
+	font-weight: bold;
+}
+.programs-list-header{
+	
+}
