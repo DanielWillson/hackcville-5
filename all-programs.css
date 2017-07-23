@@ -28,16 +28,25 @@
 .programs-list{
 	padding-left: 25px;
 }
-.launch-caption-white{
-	color: white;
+.launch-section{
 	text-align: center;
 }
-.launch-caption-black{
-	text-align: center;
+.launch-caption-white{
+	color: white;
 }
 .launch-image{
 	background-image: url("http://1qjqp144udvjh172yr0eqox1.wpengine.netdna-cdn.com/wp-content/uploads/2014/05/IMG_0220-e1483457052138.jpg") !important;
 	background-size: cover;
 	background-position: center;
 	height: 250px;
+	margin-bottom: 40px;
+}
+.events-section-center{
+	text-align: center;
+}
+.blue{
+	color: #3486c7;
+}
+.upcoming-events{
+	padding-top: 40px;
 }
