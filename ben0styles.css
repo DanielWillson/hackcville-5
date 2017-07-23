@@ -1,0 +1,90 @@
+/*
+-----------------------------------
+CHANGES AT LIKE A FRAMEWORK LEVEL. Ben0 72317
+-----------------------------------
+*/
+
+figure{
+   margin:0;
+}
+
+.simple-border{
+   border: 2px solid #0a2128;
+}
+
+/*
+-----------------------------------
+SOME POSITIONING STUFF. Ben0 72317
+-----------------------------------
+*/
+
+.program-header{
+   /*Space is here for an expected header, just so ya know. Ben0 72317*/
+   height:500px;
+   position:relative;
+}
+
+.drop-top-hero{
+   margin-top:100px;
+}
+
+.short-butt{
+   padding:4px 40px 7px 40px;
+}
+
+.what-u-get-secs{
+   margin-top:20px;
+}
+
+.what-u-get-secs-pt2{
+   margin-top:40px;
+}
+
+/*
+-----------------------------------
+BACKGROUND IMAGE STYLES. Ben0 72317
+-----------------------------------
+*/
+
+.prog-img-bg{
+   height:100%;
+   background-image:url(http://1qjqp144udvjh172yr0eqox1.wpengine.netdna-cdn.com/wp-content/uploads/2014/05/IMG_0220-e1483457052138.jpg);
+   background-repeat:no-repeat;
+   background-size:cover;
+   background-position:center;
+}
+
+.what-u-learn-img-bg{
+   height:100%;
+   background-image:url(http://thewirecutter5.wpengine.netdna-cdn.com/wp-content/uploads/2017/04/superzoom-cameras-lowres-2388.jpg);
+   background-repeat:no-repeat;
+   background-size:cover;
+   background-position:center;
+}
+
+/*
+-----------------------------------
+SOME TEXT STYLING. Ben0 72317
+-----------------------------------
+*/
+
+.uppers{
+   text-transform: uppercase;
+}
+
+.ital{
+   font-style:italic;
+}
+
+.head-txt{
+   margin-bottom:10px;
+   color:white;
+}
+
+.closer{
+   margin-bottom:2px;
+}
+
+.header-center{
+   text-align:center;
+}
