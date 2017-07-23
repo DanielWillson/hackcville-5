@@ -46,11 +46,12 @@
 				</div>
 			</div>
 		</div>
-		<div class="image-pullquotes">
+		<div class="layout-options">
 			<div class="white-bg">
 				<div class="container">
-					<h1>This section is called image-pullquotes.</h1>
-					<p>Inside of .container you need to create more div called .flex. Then you can get started - it creates a flexbox container that can manage multiple columns. Flex starts right here:</p>
+					<h1>This section highlights various layout options.</h1>
+					<h2>The two big things introduced here are (1) the flexbox grid system we're using, and (2) what we're calling image pullquotes.</h2>
+					<p>When you want multi-column layouts you need to create one more div instead of .container. Give it a class of .flex. Then you can get started - it creates a flexbox container that can manage multiple columns. Flex starts right here:</p>
 					<div class="flex">
 						<figure class="image-pullquote left flex-1-of-2">
 					   		<img src="http://hackcville.com/summer/images/learn.jpg" />
@@ -61,7 +62,7 @@
 							<p>Each <strong>image + caption</strong> pair (contained within a figure element) has three classes:</p>
 							<ol>
 								<li><strong>.image-pullquote:</strong> This gives the image/caption its look.</li>
-								<li><strong>.left or .right:</strong> decides whether the caption is offset to the left or to the right. It defaults to left, but you should specify it.</li>
+								<li><strong>.left or .right:</strong> decides whether the caption is offset to the left or to the right. You must specify.</li>
 								<li><strong>.flex-1-of-2:</strong> This makes flexbox work. Use this for 2 column layouts, .flex-1-of-3 for 3 column layouts, etc, all the way up to 5. If you need columns that aren't all the same size you'll need to override these.</li>
 							</ol>
 						</div>
@@ -75,7 +76,7 @@
 						<figure class="image-pullquote right flex-1-of-2">
 					   		<img src="http://hackcville.com/summer/images/whiteboard.jpg" />
 						</figure>
-						<figure class="image-pullquote right flex-1-of-2">
+						<figure class="image-pullquote left flex-1-of-2">
 					   		<img src="http://hackcville.com/summer/images/whiteboard.jpg" />
 					    	<figcaption>
 					    		<h3>These layouts are flexible.</h3>
@@ -164,6 +165,7 @@
 							</div>
 							<div class="flex-1-of-2">
 								<h3>This is just .flex-1-of-2 because it's not holding any other columns. Remember - you can fill these with anything - more images, text, YouTube videos, etc.
+								<h4>There's also .flex-2-of-5, .flex-2-of-3, .flex-3-of-4, etc - pretty much any combo you can think of needing.</h4>
 							</div>
 
 

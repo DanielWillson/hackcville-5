@@ -953,16 +953,37 @@ Pioneer Blue: #53b0ca;
 }
 
 .flex-1-of-3 {
-	flex-basis: 27%;
+	flex-basis: 26.666%;
+}
+
+.flex-2-of-3 {
+	flex-basis: 63.333%;
 }
 
 .flex-1-of-4 {
 	flex-basis: 21.5%;
 }
 
+.flex-3-of-4 {
+	flex-basis: 68.5%;
+}
+
 .flex-1-of-5 {
 	flex-basis: 15%;
 }
+
+.flex-2-of-5 {
+	flex-basis: 36.25%;
+}
+
+.flex-3-of-5 {
+	flex-basis: 57.5%;
+}
+
+.flex-4-of-5 {
+	flex-basis: 78.75%;
+}
+
 
 @media screen and (max-width: 920px) {
 	
@@ -1163,7 +1184,6 @@ a:hover {
 	padding: 18px 24px 24px 18px;
 	position: relative;
 	top: -54px;
-	left: -10px;
 }
 
 .white-bg .image-pullquote figcaption {
