@@ -1063,7 +1063,8 @@ a,
 }
 
 a:hover {
-	border-bottom-width: 2px;
+	border-bottom-width: 3px;
+	cursor: pointer;
 }
 
 .blue-bg h1 a,
@@ -1220,6 +1221,10 @@ a:hover {
 /* end of sample code */
 /* BEGIN TABLE LIST */
 
+.table-list {
+	overflow: hidden;
+}
+
 .table-list .flex {
 	justify-content: space-between;
 	align-content: center;
@@ -1326,6 +1331,49 @@ a:hover {
 .table-list .white-bg .list-heading {
 	background-color: #3486c7;
 	color: white;
+}
+
+
+
+figure.image-pullquote.flex-1-of-2.list-heading {
+	margin-bottom: 0;
+	padding: 0;
+	margin-top: 27px;
+}
+
+figure.image-pullquote.flex-1-of-2.list-heading:last-of-type {
+	margin-bottom: 36px;
+}
+
+.blue-bg figure.image-pullquote.flex-1-of-2.list-heading {
+	background-color: #53b0ca;
+}
+
+.white-bg figure.image-pullquote.flex-1-of-2.list-heading {
+	background-color: white;
+}
+
+figure.image-pullquote.flex-1-of-2.list-heading:after {
+    width: 0;
+    left: 50%;
+    z-index: -1;
+    top: 0;
+}
+
+.blue-bg figure.image-pullquote.flex-1-of-2.list-heading:after {
+	border: 2px solid white;
+}
+
+.white-bg figure.image-pullquote.flex-1-of-2.list-heading:after {
+	border-color: #0a2128;
+}
+
+
+figure.image-pullquote.flex-1-of-2.list-heading figcaption {
+	width: 115%;
+    left: -9px;
+    top: -27px;
+    font-weight: bold;
 }
 
 
