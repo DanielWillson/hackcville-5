@@ -11,9 +11,9 @@
 }
 .all-programs-caption{
 	margin: 0 auto;
-	background-color: rgba(35, 93, 145, .8);
+	background-color: rgba(52, 134, 199, .8);
 	color: white;
-	padding: 15px;
+	padding: 20px;
 }
 .all-programs-hero-header{
 	text-align: center;
@@ -22,5 +22,9 @@
 	font-weight: bold;
 }
 .programs-list-header{
-	
+	text-align: center;
+	color: #3486c7;
+}
+.programs-list{
+	padding-left: 25px;
 }
