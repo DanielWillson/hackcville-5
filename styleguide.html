@@ -8,10 +8,10 @@
 	<div class="style-guide">
 		<div class="text-samples">
 			<div class="white-bg">
-				<div class="container section-border">
-					<h1>Style Guide (h1)</h1>
-					<h2>This is <a href="#">heading</a> 2.</h2>
-					<h3>This is heading 3.</h3>
+				<div class="container">
+					<h1>HackCville Style Guide + Framework</h1>
+					<h2>This is <a href="#">heading</a> 2, with a link.</h2>
+					<h3>These are just samples of how text is sized.</h3>
 					<h4>This is heading 4.</h4>
 					<h5>This is heading 5.</h5>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <a href="#">This is a link.</a> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -19,12 +19,13 @@
 			</div>
 			<div class="blue-bg">
 				<div class="container section-border">
-					<h1>This is heading 1.</h1>
-					<h2>This is <a href="#">heading</a> 2.</h2>
-					<h3>This is heading 3.</h3>
-					<h4>This is heading 4.</h4>
-					<h5>This is heading 5.</h5>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. <a href="#">This is a link.</a> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<h1>This is the same as above, just with a blue background.</h1>
+					<h2>Here is <a href="#">another</a> link.</h2>
+					<h3>Every section of the page starts with a div class that defines what kind of section it is. This one is called .text-samples.</h3>
+					<h4>Inside of text-samples is a div with either .white-bg or .blue-bg.</h4>
+					<h5>Inside that div is .container, which adds a max-width and margin: 0 auto.</h5>
+					<p>You can also add .section-border class to the .container div (class="container section-border") to add a black border like the one you see around this entire section. You can do that for any type of sections and the internal contents will adjust.</p>
+					<p>That's the basic setup for a given section. Follow this each and every time you make something.</p>
 				</div>
 			</div>
 		</div>
@@ -32,6 +33,7 @@
 			<div class="white-bg">
 				<div class="container">
 					<h1>Buttons on a white background</h1>
+					<p>All you need to do to make a button is create an a tag with the class .button. If you want a bigger or smaller button, put an h1/h2/h3/h4 <em>inside</em> of the a tag.</p>
 					<a class="button" href="#">Subscribe to Our Newsletter</a>
 					<a class="button" href="#">Apply to Wireframe</a>
 				</div>
@@ -46,54 +48,140 @@
 		</div>
 		<div class="image-pullquotes">
 			<div class="white-bg">
-				<div class="container section-border">
-					<h1>Image pullquotes on a white background</h1>
+				<div class="container">
+					<h1>This section is called image-pullquotes.</h1>
+					<p>Inside of .container you need to create more div called .flex. Then you can get started - it creates a flexbox container that can manage multiple columns. Flex starts right here:</p>
 					<div class="flex">
 						<figure class="image-pullquote left flex-1-of-2">
 					   		<img src="http://hackcville.com/summer/images/learn.jpg" />
-					    	<figcaption>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					    	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					    	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					    	consequat.</figcaption>
+					    	<figcaption>Each image + caption pair needs to be inside of a figure and figcaption element. Take a look at the code - it's easier.</figcaption>
 						</figure>
 						<div class="text-example flex-1-of-2">
-							<h3>This is some sample text</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							<h3>Here's how you make the images and captions work.</h3>
+							<p>Each <strong>image + caption</strong> pair (contained within a figure element) has three classes:</p>
+							<ol>
+								<li><strong>.image-pullquote:</strong> This gives the image/caption its look.</li>
+								<li><strong>.left or .right:</strong> decides whether the caption is offset to the left or to the right. It defaults to left, but you should specify it.</li>
+								<li><strong>.flex-1-of-2:</strong> This makes flexbox work. Use this for 2 column layouts, .flex-1-of-3 for 3 column layouts, etc, all the way up to 5. If you need columns that aren't all the same size you'll need to override these.</li>
+							</ol>
 						</div>
 						<div class="text-example flex-1-of-2">
-							<h3>This is some sample text</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							<h3>Here's how you make these text boxes work.</h3>
+							<p>Very simple: just give them the same .flex-1-of-2 class. That's it.</p>
+							<p>You can use flexbox's order property (Google it!) to rearrange the order of items on mobile.</p>
+							<p>You don't have to put a caption, either. Just leave out the figcaption, like this &rarr;</p>
+							<a href="" class="button">Here's a random button</a>
 						</div>
 						<figure class="image-pullquote right flex-1-of-2">
 					   		<img src="http://hackcville.com/summer/images/whiteboard.jpg" />
-					    	<figcaption><h3>This is an h3</h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					    	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					    	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					    	consequat.</figcaption>
 						</figure>
+						<figure class="image-pullquote right flex-1-of-2">
+					   		<img src="http://hackcville.com/summer/images/whiteboard.jpg" />
+					    	<figcaption>
+					    		<h3>These layouts are flexible.</h3>
+					    		This is just two figure elements side-by-side with .image-pullquote, .right, and flex-1-of-2.</figcaption>
+						</figure>
+						<figure class="image-pullquote right flex-1-of-2">
+					   		<img src="http://hackcville.com/summer/images/whiteboard.jpg" />
+					    	<figcaption>
+					    		<h3>And as you can see...</h3>
+					    		You can put headings inside of image-pullquotes too and they look and work just fine.</figcaption>
+						</figure>
+						<div class="layout-examples flex">
+							<div>
+								<h3>Hopefully this helps communicate how easy it is to make multi-column layouts with this framework. In fact, this div has no classes at all. Column layouts just work, so long as you're inside of a .flex div. </h3>
+							</div>
+							<div class="flex-1-of-2">
+								<p>This is a div with just one class: .flex-1-of-2
+								</p>
+							</div>
+							<div class="flex-1-of-2">
+								<p>This is a div with just one class: .flex-1-of-2
+								</p>
+							</div>
+							<div class="flex-1-of-3">
+								<p>This is a div with just one class: .flex-1-of-3
+								</p>
+							</div>
+							<div class="flex-1-of-3">
+								<p>Another .flex-1-of-3
+								</p>
+							</div>
+							<div class="flex-1-of-3">
+								<p>Another .flex-1-of-3
+								</p>
+							</div>
+							<div class="flex-1-of-4">
+								<p>.flex-1-of-4
+								</p>
+							</div>
+							<div class="flex-1-of-4">
+								<p>.flex-1-of-4
+								</p>
+							</div>
+							<div class="flex-1-of-4">
+								<p>.flex-1-of-4
+								</p>
+							</div>
+							<div class="flex-1-of-4">
+								<p>.flex-1-of-4
+								</p>
+							</div>
+							<div class="flex-1-of-5">
+								<p>Instead of text, you could just put images in these divs
+								</p>
+							</div>
+							<div class="flex-1-of-5">
+								<p>Which would make for some very easy logo or photo grids, for example
+								</p>
+							</div>
+							<div class="flex-1-of-5">
+								<p>By the way, this is a .flex-1-of-5
+								</p>
+							</div>
+							<div class="flex-1-of-5">
+								<p>.flex-1-of-5
+								</p>
+							</div>
+							<div class="flex-1-of-5">
+								<p>.flex-1-of-5
+								</p>
+							</div>
+
+							
+
+							<div class="flex-1-of-2 flex">
+								<h4>This div is both .flex-1-of-2 and .flex. So you can easily do columns inside of other columns.</h4>
+								<div class="flex-1-of-3">
+									<p>.flex-1-of-3</p>
+								</div>
+								<div class="flex-1-of-3">
+									<p>.flex-1-of-3</p>
+								</div>
+								<div class="flex-1-of-3">
+									<p>.flex-1-of-3</p>
+								</div>
+							</div>
+							<div class="flex-1-of-2">
+								<h3>This is just .flex-1-of-2 because it's not holding any other columns. Remember - you can fill these with anything - more images, text, YouTube videos, etc.
+							</div>
+
+
+						</span>
 					</div>
 				</div>
 			</div>
 			<div class="blue-bg">
-				<div class="container">
-					<h1>Image pullquotes on a blue background</h1>
+				<div class="container section-border">
+					<h1>Here are image pullquotes on a blue background</h1>
+					<h3>There's also .section-border added as class to the container div.</h3>
 					<div class="flex">
 						<figure class="image-pullquote left flex-1-of-2">
 					   		<img src="http://hackcville.com/summer/images/learn.jpg" />
-					    	<figcaption><h4>This is an h4</h4>With only one line of subtext</figcaption>
+					    	<figcaption><h4>Colors automatically adjust</h4>There's nothing more you need to do.</figcaption>
 						</figure>
 						<div class="text-example flex-1-of-2">
-							<h3>This is some sample text</h3>
+							<h3>Here's some more sample text.</h3>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -101,19 +189,6 @@
 							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 						</div>
-						<div class="text-example flex-1-of-2">
-							<h3>This is some sample text</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-							cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-							proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-						</div>
-						<figure class="image-pullquote right flex-1-of-2">
-					   		<img src="http://hackcville.com/summer/images/whiteboard.jpg" />
-					    	<figcaption>This is a really short one</figcaption>
-						</figure>
 					</div>
 				</div>
 			</div>
@@ -121,64 +196,47 @@
 		<div class="table-list">
 			<div class="white-bg">
 				<div class="container">
-					<h1>Table List on White Background</h1>
+					<h1>This is called a table list.</h1>
+					<h3>Remember that because there are multiple columns here you need to have a div with class .flex. It starts right here:</h3>
 					<div class="flex">
 						<div class="flex-1-of-2 list-heading">
-							<h3>Meeting Times</h3>
+							<h3>.list-heading & .flex-1-of-2</h3>
 						</div>
 						<div class="flex-1-of-2 list-info">
-							<p>Lorem ipsum dolor sit amet, <span class="important">consectetur adipisicing elit,</span> sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat.</p>
+							<p>This div is just .list-info and .flex-1-of-2. <span class="important">You can only use .flex-1-of-2 in this layout.</span> &larr; That text is an example of what happens when you wrap something with a span with the class .important. It just changes the color for emphasis.</p>
 						</div>
 						<div class="flex-1-of-2 list-heading">
-							<h3>Fees</h3>
+							<h3>Another heading</h3>
 						</div>
 						<div class="flex-1-of-2 list-info">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat.</p>
+							<p>Table lists are best used when the items lead toward some kind of call-to-action.</p>
+							<p>Table lists also support multiple paragraphs, like this.</p>
 						</div>
 						<figure class="image-pullquote flex-1-of-2 list-heading">
 					   		<img src="http://hackcville.com/summer/images/whiteboard.jpg" />
-					    	<figcaption>This is a really short one</figcaption>
+					    	<figcaption>Image pullquotes work here too!</figcaption>
 						</figure>
 						<div class="flex-1-of-2 list-info">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat.</p>
-						</div>
-						<figure class="image-pullquote flex-1-of-2 list-heading">
-					   		<img src="http://hackcville.com/summer/images/whiteboard.jpg" />
-					    	<figcaption>This is a really short one</figcaption>
-						</figure>
-						<div class="flex-1-of-2 list-info">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat.</p>
+							<h3>Image pullquotes work here too!</h3>
+							<p>Just (1) remove the .list-heading div, then (2) replace it with a figure element exactly like the section above. Keep all the same classes: .flex-1-of-2, .image-pullquote. </p>
+							<p>The only other thing you need to do is add .list-heading to the figure element, and it'll just work. Take a look at the code and it'll make more sense.</p>
+							<p>On another note - right after this paragraph the .flex div closes. Then there's a new div with the class .cta (think call-to-action). Inside the .cta you can put 1, 2, or 3 buttons. That .cta div is important - without it the lines won't work.</p>
 						</div>
 					</div>
 					<div class="cta">
-						<a class="button" href="#"><h2>Apply</h2></a>
-						<a class="button" href="#"><h2>Remind Me</h2></a>
+						<a class="button" href="#"><h2>Button</h2></a>
+						<a class="button" href="#"><h2>Another Button</h2></a>
 					</div>
 				</div>
 			</div>
 			<div class="blue-bg">
 				<div class="container">
 					<h1>Table List on Blue Background</h1>
+					<h3>Again, colors adjust automagically depending on your choice of .blue-bg or .white-bg.</h3>
 					<div class="flex">
 						<figure class="image-pullquote flex-1-of-2 list-heading">
 					   		<img src="http://hackcville.com/summer/images/whiteboard.jpg" />
-					    	<figcaption>This is a really short one</figcaption>
+					    	<figcaption>This is a really short caption</figcaption>
 						</figure>
 						<div class="flex-1-of-2 list-info">
 							<p>Lorem ipsum dolor sit amet, <span class="important">consectetur adipisicing elit,</span> sed do eiusmod
@@ -186,32 +244,16 @@
 							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 							consequat.</p>
 						</div>
-						<div class="flex-1-of-2 list-heading">
-							<h3>Fees</h3>
-						</div>
+						<figure class="image-pullquote flex-1-of-2 list-heading">
+					   		<img src="http://hackcville.com/summer/images/whiteboard.jpg" />
+						</figure>
 						<div class="flex-1-of-2 list-info">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat.</p>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat.</p>
-						</div>
-						<div class="flex-1-of-2 list-heading">
-							<h3>Eligibility</h3>
-						</div>
-						<div class="flex-1-of-2 list-info">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-							tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat.</p>
+							<h3>Image pullquotes with no figcaption work too!</h3>
+							
 						</div>
 					</div>
 					<div class="cta">
-						<a class="button" href="#"><h2>Apply</h2></a>
-						<a class="button" href="#"><h2>Remind Me</h2></a>
+						<a class="button" href="#"><h2>Just One Button</h2></a>
 					</div>
 				</div>
 			</div>
@@ -219,43 +261,44 @@
 		<div class="feature-icons">
 			<div class="white-bg">
 				<div class="container section-border">
-					<h1>Feature Icons on White Background</h1>
+					<h1>These are called Feature Icons.</h1>
+					<h3>Again, multiple columns means all the items need to be contained in a .flex div. Inside the .flex div is a div for each .feature-icon.</h3>
 					<div class="flex">
 						<div class="flex-1-of-3 feature-icon">
-							<h3>Some text is in here</h3>
+							<h3>These each have two classes:</h3>
 						</div>
 						<div class="flex-1-of-3 feature-icon">
-							<h3>Here is some longer and longer text in here</h3>
+							<h3>.flex-1-of-3, and</h3>
 						</div>
 						<div class="flex-1-of-3 feature-icon">
-							<h3>Here is some more</h3>
+							<h3>.feature-icon</h3>
 						</div>
 						<div class="flex-1-of-3 feature-icon">
-							<h3>Here is some longer and longer text in here</h3>
+							<h3>You can put as many feature icons as you want</h3>
 						</div>
 						<div class="flex-1-of-3 feature-icon">
-							<h3>Here is some more</h3>
+							<h3>And even change to .flex-1-of-4 or -5 and it'll just work</h3>
 						</div>
 					</div>
 				</div>
 			</div>
 			<div class="blue-bg">
-				<div class="container">
-					<h1>Feature Icons on Blue Background</h1>
+				<div class="container section-border">
+					<h1>Feature Icons with .flex-1-of-4 and a .section-border</h1>
 					<div class="flex">
-						<div class="flex-1-of-3 feature-icon">
-							<h3>Some text is in here</h3>
+						<div class="flex-1-of-4 feature-icon">
+							<h3>Here's some text</h3>
 						</div>
-						<div class="flex-1-of-3 feature-icon">
+						<div class="flex-1-of-4 feature-icon">
 							<h3>Here is some longer and longer text in here</h3>
 						</div>
-						<div class="flex-1-of-3 feature-icon">
+						<div class="flex-1-of-4 feature-icon">
 							<h3>Here is some more</h3>
 						</div>
-						<div class="flex-1-of-3 feature-icon">
+						<div class="flex-1-of-4 feature-icon">
 							<h3>Here is some longer and longer text in here</h3>
 						</div>
-						<div class="flex-1-of-3 feature-icon">
+						<div class="flex-1-of-4 feature-icon">
 							<h3>Here is some more</h3>
 						</div>
 					</div>
@@ -265,17 +308,18 @@
 		<div class="bolded-list">
 			<div class="white-bg">
 				<div class="container">
-					<h1>Bolded List</h1>
+					<h1>This is called a bolded list.</h1>
+					<h3>Because there is only one column of content, no .flex div is needed here. Instead, everything is contained within a .list div, starting right here:</h3>
 					<div class="list">
 						<div class="list-item">
 							<img src="http://i.imgur.com/BNUezOr.png" class="icon">
-							<h4>24/7 access to our fun and functional clubhouses on Elliewood Ave.</h4>
-							<p>Our two clubhouses are filled with hammocks, couches, whiteboards, and WiFi. Use our space to work on your projects, hold meetings, or just hang out.</p>
+							<h4>Each list item is contained in a div called .list-item.</h4>
+							<p>Within each .list-item is (1) an img with class .icon, (2) a h4 heading, and (3) a paragraph, which you're reading right now.</p>
 						</div>
 						<div class="list-item">
 							<img src="http://i.imgur.com/BNUezOr.png" class="icon">
-							<h4>24/7 access to our fun and functional clubhouses on Elliewood Ave.</h4>
-							<p>Our two clubhouses are filled with hammocks, couches, whiteboards, and WiFi. Use our space to work on your projects, hold meetings, or just hang out.</p>
+							<h4>Try to find an icon that's a transparent png.</h4>
+							<p>Icons will be automatically turned black here, regardless of their initial color. If you don't want an icon, just remove the img tag.</p>
 						</div>
 						<div class="list-item">
 							<img src="http://i.imgur.com/BNUezOr.png" class="icon">
@@ -286,13 +330,13 @@
 				</div>
 			</div>
 			<div class="blue-bg">
-				<div class="container">
-					<h1>Bolded List</h1>
+				<div class="container section-border">
+					<h1>Here's a bolded list with a .section-border.</h1>
 					<div class="list">
 						<div class="list-item">
 							<img src="http://i.imgur.com/BNUezOr.png" class="icon">
-							<h4>24/7 access to our fun and functional clubhouses on Elliewood Ave.</h4>
-							<p>Our two clubhouses are filled with hammocks, couches, whiteboards, and WiFi. Use our space to work on your projects, hold meetings, or just hang out.</p>
+							<h4>It's a lot of lines, but it does work.</h4>
+							<p>Here's some text.</p>
 						</div>
 						<div class="list-item">
 							<img src="http://i.imgur.com/BNUezOr.png" class="icon">

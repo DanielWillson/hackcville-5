@@ -394,7 +394,7 @@ hr {
 
 ul,
 ol {
-	margin: 0 0 1.5em 3em;
+	margin: 0 0 1em .5em;
 }
 
 ul {
@@ -941,6 +941,11 @@ Pioneer Blue: #53b0ca;
 .flex-1-of-3,
 .flex-1-of-4,
 .flex-1-of-5 {
+	/*margin-bottom: 1em;*/
+}
+
+.flex-1-of-1 {
+	flex-basis: 100%;
 }
 
 .flex-1-of-2 {
@@ -956,7 +961,7 @@ Pioneer Blue: #53b0ca;
 }
 
 .flex-1-of-5 {
-	flex-basis: 14%;
+	flex-basis: 15%;
 }
 
 @media screen and (max-width: 920px) {
@@ -975,13 +980,6 @@ Pioneer Blue: #53b0ca;
 	.flex-1-of-4,
 	.flex-1-of-5 {
 		flex-basis: initial;
-	}
-
-	.flex-1-of-2.image-pullquote.right,
-	.flex-1-of-3.image-pullquote.right,
-	.flex-1-of-4.image-pullquote.right,
-	.flex-1-of-5.image-pullquote.right {
-		order: 0;
 	}
 
 }
@@ -1026,6 +1024,10 @@ Pioneer Blue: #53b0ca;
 
 .section-border {
 	border: 2px solid #0a2128;
+}
+
+.blue-bg .section-border {
+	border-color: white;
 }
 
 @media screen and (max-width: 768px) {
@@ -1136,7 +1138,6 @@ a:hover {
 
 .image-pullquote {
 	position: relative;
-	font-size: 111.111%;
 }
 
 .image-pullquote h1, 
@@ -1162,6 +1163,7 @@ a:hover {
 	padding: 18px 24px 24px 18px;
 	position: relative;
 	top: -54px;
+	left: -10px;
 }
 
 .white-bg .image-pullquote figcaption {
@@ -1209,7 +1211,12 @@ a:hover {
 /* sample code */
 
 .text-example {
-	padding-top: 54px;
+	padding-top: 20px;
+	margin-bottom: 40px;
+}
+
+.layout-examples div {
+	text-align: center;
 }
 
 @media screen and (max-width: 768px) {
