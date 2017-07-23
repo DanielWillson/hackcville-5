@@ -1025,7 +1025,7 @@ Pioneer Blue: #53b0ca;
 }
 
 .section-border {
-	border: 2px solid black;
+	border: 2px solid #0a2128;
 }
 
 @media screen and (max-width: 768px) {
@@ -1499,4 +1499,93 @@ figure.image-pullquote.flex-1-of-2.list-heading figcaption {
 
 
 /* END FEATURE ICONS */
+/* BEGIN BOLDED LIST */
+
+.bolded-list .container > h1 {
+	text-align: center;
+}
+
+.bolded-list .list {
+	border-left: 2px solid #0a2128;
+	padding: 0 36px;
+	position: relative;
+	z-index: 0;
+}
+
+.bolded-list .blue-bg .list {
+	border-color: white;
+}
+
+.bolded-list .list-item {
+	position: relative;
+	padding: 0 10px;
+	margin-bottom: 1em;
+}
+
+.bolded-list .white-bg .list-item {
+	background-color: white;
+}
+
+.bolded-list .blue-bg .list-item {
+	background-color: #53b0ca;
+}
+
+.bolded-list .list-item::after {
+	content: '';
+	width: 100%;
+	height: 0;
+	position: absolute;
+	border-top: 2px solid #0a2128;
+	z-index: -1;
+    top: 20px;
+    left: -36px;
+}
+
+.bolded-list .blue-bg .list-item::after {
+	border-color: white;
+}
+
+.bolded-list .list-item img.icon {
+	max-width: 25px;
+	height: auto;
+	display: inline;
+	vertical-align: bottom;
+	filter: brightness(0);
+}
+
+.bolded-list .blue-bg .list-item img.icon {
+	filter: brightness(0) invert(1);
+}
+
+
+
+.bolded-list .list-item h4:first-of-type {
+	font-weight: bold;
+	display: inline;
+	vertical-align: bottom;
+	padding-left: 5px;
+}
+
+.bolded-list .blue-bg .list-item h4:first-of-type {
+	color: white;
+}
+
+.bolded-list .list-item p:first-of-type {
+	margin-top: .5em;
+}
+
+@media screen and (max-width: 768px) {
+	
+	.bolded-list .list {
+		padding: 0 18px;
+	}
+
+	.bolded-list .list-item::after {
+		left: -18px;
+	}
+
+}
+
+
+
 
