@@ -3,37 +3,37 @@
 	background-size: cover;
 	background-position: center;
 }
-.all-programs-hero-border{
-	border: solid 2px white;
-	width: 80%;
-	padding: 10px;
-	margin: 0 auto;
+
+.uppers{
+	margin-top: 50px;
 }
-.all-programs-caption{
-	margin: 0 auto;
-	background-color: rgba(52, 134, 199, .8);
+
+.closer{
+	width: 50%;
 	color: white;
-	padding: 20px;
 }
-.all-programs-hero-header{
-	text-align: center;
-}
-.bold{
-	font-weight: bold;
-}
+
 .programs-list-header{
+	margin-top: 40px; 
+	margin-bottom: 0; 
 	text-align: center;
 	color: #3486c7;
 }
+
+.description{
+	text-align: center;
+	margin-top: 5px;
+}
+
 .programs-list{
 	padding-left: 25px;
 }
+
 .launch-section{
 	text-align: center;
 }
-.launch-caption-white{
-	color: white;
-}
+
+
 .launch-image{
 	background-image: url("http://1qjqp144udvjh172yr0eqox1.wpengine.netdna-cdn.com/wp-content/uploads/2014/05/IMG_0220-e1483457052138.jpg") !important;
 	background-size: cover;
@@ -41,12 +41,132 @@
 	height: 250px;
 	margin-bottom: 40px;
 }
+
 .events-section-center{
 	text-align: center;
 }
+
 .blue{
 	color: #3486c7;
 }
+
 .upcoming-events{
-	padding-top: 40px;
+	padding-top: 10px;
 }
+
+.memberships h3{
+	text-align: center;
+}
+
+.programs-list .list-item p{
+	display: inline-block;
+	padding-left: .25em;
+	margin: 0;
+}
+
+.icon {
+	display: inline;
+}
+
+.bold{
+	font-weight: bold;
+}
+
+.list-item a{
+	margin-left: 35px;
+}
+
+.bolded-list .list-item p:first-of-type{
+	margin-top: .4em; 
+}
+
+.list-item {
+	margin-top: 30px;
+}
+
+figcaption p{
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+#quote{
+	padding-top: 75px;
+	color: white;
+	font-weight: normal;
+	font-style: italic;
+}
+
+figure{
+	margin-bottom: 0;
+}
+
+.image-pullquote {
+	height: 350px;
+}
+
+#ital {
+	font-style: italic;
+	font-weight: normal;
+}
+
+.application-process .applications h1,h3 {
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+.application-process .list-heading{
+	width: 50px;
+}
+
+.table-list .list-heading.flex-1-of-2{
+	flex-basis: 6%;
+	margin-left: 10%;
+}
+
+.table-list .list-info.flex-1-of-2{
+	flex-grow: 2;
+	margin-top: 20px;
+	margin-right: 5%;
+	border-bottom: none;
+}
+
+.application-process .applications .list-info h3 {
+	text-align: left;
+}
+
+.table-list .list-info.flex-1-of-2:last-of-type{
+	margin-bottom: 0;
+}
+
+.table-list .flex::after{
+	height: 80%;
+}
+
+.launch-section h1,h3 {
+	margin: 0;
+	padding: 0;
+}
+
+.launch-section h5{
+	margin-top: 10px;
+}
+
+.events-section h1,h3 {
+	margin: 0;
+	padding: 0;
+}
+
+.events-section-center h4{
+	font-size: 25px;
+}
+
+.events-section .button {
+
+}
+
+
+
+
+
+
