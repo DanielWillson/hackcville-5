@@ -11,6 +11,7 @@
 .closer{
 	width: 50%;
 	color: white;
+	line-height: 22px;
 }
 
 .programs-list-header{
@@ -164,6 +165,182 @@ figure{
 .events-section .button {
 
 }
+
+
+@media screen and (max-width: 770px) {
+	
+	.closer {
+		width: 100%;
+	}
+
+	.image-pullquote {
+		width: 50%;
+		height: auto;
+		margin: auto;
+	}
+
+	#quote{
+		width: 50%;
+		margin: auto;
+		padding: 0;
+		text-align: center;
+	}
+
+	.list-heading{
+		display: none;
+	}
+
+	.table-list .blue-bg .flex:after {
+		display: none;
+	}
+
+}
+
+
+@media screen and (max-width: 494px) {
+
+	.bolded-list .list-item::after {
+		display: none;
+	}
+
+	.bolded-list .list {
+		border-left: none;
+	}
+
+	.programs-list {
+		padding-left: 0;
+	}
+}
+
+@media screen and (max-width: 450px) {
+
+	#quote {
+		font-size: 15px;
+	}
+
+	figcaption p{
+		font-size: 15px;
+	}
+
+}
+
+
+@media screen and (max-width: 442px) {
+
+	.programs-list p,a {
+		font-size: 16px;
+	}
+
+}
+
+@media screen and (max-width: 400px) {
+
+	body {
+		width: 100%;
+	}
+
+	.application-process .applications .list-info h3 {
+		padding: 0 0 10px 5px;
+	}
+
+	.application-process .applications .list-info p {
+		font-weight: normal;
+		font-size: 18px;
+		padding-left: 5px;
+	}
+
+	.launch-section .white-bg .container {
+		width: 80%;
+	}
+
+	.events-section .white-bg .container {
+		width: 80%;
+	}
+
+	.programs-list-header {
+		font-size: 28px;
+		padding-bottom: 5px;
+	}
+	
+	.closer {
+		font-size: 15px;
+		line-height: 17px;
+	}
+
+	.container h1 {
+		font-size: 27px;
+	}
+
+	.container.section-border > h1 {
+		padding: 0 0 5px 0;
+	}
+
+	.container h3 {
+		font-size: 20px;
+	}
+
+	.container h5 {
+		display: none;
+	}
+
+	.launch-image-right {
+		display: none;
+	}
+
+	.launch-image-left {
+		height: 100px;
+	}
+
+	.launch-section .button{
+		padding: 9px 37px 12px 37px;
+		font-size: 15px;
+		margin: .5em 0 .5em 0;
+	}
+
+	.programs-list p,a {
+		font-size: 14px;
+	}
+
+	.events-section h4{
+		font-size: 20px;
+	}
+
+	.events-section h2{
+		font-size: 25px;
+	}
+
+	.events-section .flex p {
+		display: none;
+	}
+
+	.events-section .flex img {
+		width: 200px;
+		height: 100px;
+		padding-left: 15px;
+	}
+
+	.events-section .button{
+		padding: 9px 37px 12px 37px;
+		font-size: 15px;
+		margin: .5em 0 .5em 0;
+	}
+
+}
+
+@media screen and (max-width: 390px) {
+
+	body {
+		width: 100%%;
+	}
+
+}
+
+
+
+
+
+
+
 
 
 
