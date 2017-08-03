@@ -162,10 +162,27 @@ figure{
 	font-size: 25px;
 }
 
-.events-section .button {
-
+.memberships {
+	padding-bottom: 50px;
 }
 
+.blue-bg .extra-opportunities h1{
+	font-size: 40px;
+}
+
+.extra-opportunities h3 {
+	color: white;
+}
+
+.extra-opportunities img {
+	width: 90%;
+	height: 250px;
+}
+
+.extra-opp-image-right {
+	padding-top: 30px;
+	margin: 0;
+}
 
 @media screen and (max-width: 770px) {
 	
