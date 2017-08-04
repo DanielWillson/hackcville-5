@@ -88,3 +88,195 @@ SOME TEXT STYLING. Ben0 72317
 .header-center{
    text-align:center;
 }
+
+.image-pullquote.left figcaption {
+   text-align: center;
+   padding-bottom: 25px;
+}
+
+.image-pullquote figcaption {
+   top: -40px;
+}
+
+.image-pullquote p{
+   margin: 0 0 20px 0;
+   width: 100%;
+}
+
+.what-u-get-secs h3 {
+   padding-top: 30px;
+}
+
+.white-bg h1 {
+   color: #3486c7;
+}
+
+.meet-sponsors {
+   margin-top: 90px;
+   margin-bottom: 60px;
+}
+
+.sponsor-image {
+   width: 350px;
+   height: 230px;
+   border: solid 1px;
+}
+
+.apply-to h1{
+   text-align: center;
+   padding-top: 20px;
+   margin-bottom: 10px;
+}
+
+.apply-to h4 {
+   text-align: center;
+   font-size: 25px;
+   padding-top: 0;
+}
+
+.apply-to .applications .flex .list-info{
+   margin-top: 10px;
+}
+
+.eligibility-p p{
+   padding: 0;
+   margin: 0;
+}
+
+.cta .button {
+   margin: .5em 2em .5em 4em;
+}
+
+.stud-work {
+   text-align: center;
+}
+
+.sarah {
+   width: 90%;
+   margin: auto;
+}
+
+.image-pullquote.right figcaption {
+   width: 250px;
+   margin-right: 0;
+   right: -730px;
+}
+
+.image-pullquote.left figcaption {
+   width: 250px;
+   margin-right: 0;
+}
+
+.what-next h1{
+   text-align: center;
+   margin-top: 30px;
+}
+
+.blue-bg figure.image-pullquote.flex-1-of-2.list-heading:after{
+   border: 1px solid #0a2128;
+}
+
+.table-list .list-heading.stud-info.flex-1-of-2:after{
+   height: 0;
+}
+
+.what-next .table-list .flex:after{
+   height: 80%;
+}
+
+.places h1{
+   text-align: center;
+}
+
+.places .company-logo{
+   display: inline-block;
+   width: 20%;
+   margin-right: 4%;
+}
+
+#first {
+   padding-left: 6%;
+}
+
+#last {
+   padding-right: none;
+}
+
+.memberships {
+   padding-bottom: 50px;
+}
+
+.extra-opportunities {
+   margin-bottom: 90px;
+}
+
+.blue-bg .extra-opportunities h1{
+   font-size: 40px;
+}
+
+.extra-opportunities h3 {
+   color: white;
+   text-align: center;
+}
+
+.extra-opportunities img {
+   width: 90%;
+   height: 250px;
+}
+
+.extra-opp-image-right {
+   padding-top: 30px;
+   margin: 0;
+}
+
+.memberships h3 {
+   text-align: center;
+}
+
+
+.testimonial figcaption p{
+   margin: 0;
+   padding: 0;
+   text-align: center;
+}
+
+.testimonial #quote{
+   padding-top: 75px;
+   color: white;
+   font-weight: normal;
+   font-style: italic;
+}
+
+.testimonial figure{
+   margin-bottom: 0;
+}
+
+.testimonial .right figcaption {
+   right: -55px;
+}
+
+.testimonial .image-pullquote {
+   height: 350px;
+}
+
+.testimonial #ital {
+   font-style: italic;
+   font-weight: normal;
+}
+
+.bold{
+   font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
