@@ -1346,6 +1346,7 @@ a:hover {
 	position: absolute;
 	border: 2px solid white;
 	left: 12.5%;	
+	top: 0;
 }
 
 .table-list .white-bg .flex:after {
