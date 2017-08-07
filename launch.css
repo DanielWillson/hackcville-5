@@ -42,7 +42,7 @@
   z-index:1;
 }
 
-.ship-container{
+.ship-container, .moon-container{
   display:inline-block;
   width:30%;
 }
@@ -135,4 +135,36 @@
 @-ms-keyframes move-twink-back {
     from {background-position:0 0;}
     to {background-position:-10000px 5000px;}
+}
+
+@media screen and (max-width: 1125px) {
+    .learnmore{
+        margin-right: 20px;
+    }
+}
+
+@media screen and (max-width: 1007px) {
+    .learnmore{
+        margin-right: 0px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .moon-container{
+        display: none;
+    }
+    .ship-container{
+        width: 100%;
+        text-align: center;
+    }
+    .ship{
+        width: 25%;
+    }
+    .text{
+        width: 100%;
+    }
+    .learnmore{
+        margin-right: 20px;
+    }
+    
 }
