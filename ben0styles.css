@@ -91,7 +91,7 @@ SOME TEXT STYLING. Ben0 72317
 
 .image-pullquote.left figcaption {
    text-align: center;
-   padding-bottom: 25px;
+   padding-bottom: 10px;
 }
 
 .image-pullquote figcaption {
@@ -163,8 +163,20 @@ SOME TEXT STYLING. Ben0 72317
 }
 
 .image-pullquote.left figcaption {
-   width: 250px;
+   width: 500px;
    margin-right: 0;
+}
+
+.image-pullquote.left.sarah figcaption {
+   width: 250px;
+}
+
+.image-pullquote.left.sarah figcaption {
+   padding-bottom: 25px;
+}
+
+.image-pullquote.left.lead figcaption {
+   width: 250px;
 }
 
 .what-next h1{
