@@ -1848,16 +1848,13 @@ BACKGROUND IMAGE STYLES. Ben0 72317
 -----------------------------------
 */
 
-.prog-img-bg{
-   height:100%;
+.program-hero-bg{
    background-repeat:no-repeat;
    background-size:cover;
    background-position:center;
 }
 
-.what-u-learn-img-bg{
-   height:100%;
-   background-image:url(http://thewirecutter5.wpengine.netdna-cdn.com/wp-content/uploads/2017/04/superzoom-cameras-lowres-2388.jpg);
+.what-youll-learn-bg {
    background-repeat:no-repeat;
    background-size:cover;
    background-position:center;
