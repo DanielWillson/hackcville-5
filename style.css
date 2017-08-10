@@ -528,10 +528,6 @@ a {
 	color: royalblue;
 }
 
-a:visited {
-	color: purple;
-}
-
 a:hover,
 a:focus,
 a:active {
@@ -1203,7 +1199,8 @@ a:hover {
 /* END LINKS */
 /* BEGIN BUTTONS */
 
-.button {
+.button,
+.button:visited {
 	padding: 12px 40px 15px 40px;
 	margin: .5em 2em .5em 0;
 	text-decoration: none;
@@ -1867,6 +1864,20 @@ PROGRAM STAFF
 	font-style: italic;
 }
 
+/*
+-----------------------------------
+PROGRAM PARTNERS
+-----------------------------------
+*/
+
+
+.program-partners .flex {
+	align-items: center;
+}
+
+.program-partners .flex-2-of-3 {
+	margin-bottom: 2em;
+}
 
 /*
 -----------------------------------
@@ -1912,12 +1923,12 @@ SOME TEXT STYLING. Ben0 72317
    margin-top: 90px;
    margin-bottom: 60px;
 }
-
+/*
 .sponsor-image {
    width: 350px;
    height: 230px;
    border: solid 1px;
-}
+}*/
 
 .apply-to h1{
    text-align: center;

@@ -46,19 +46,21 @@ while ( have_posts() ) : the_post();
 	$extra_fee_info = get_field("extra_fee_info");
 	$extra_eligibility_info = get_field("extra_eligibility_info");
 	/* get program partners */
-	$partners = "";
+	$partners_list = "";
 	$partner_count = 0;
+	$partners = array();
 	$posts = get_field("program_partners");
 		if( $posts ):
 			foreach( $posts as $p ):
+				array_push($partners, $p->ID);
 				if ($partner_count < 1) {
-					$partners = get_the_title($p->ID);
+					$partners_list = get_the_title($p->ID);
 				}
 				else if ($partner_count == 1) {
-					$partners = $partners . " and " . get_the_title($p->ID);
+					$partners_list = $partners_list . " and " . get_the_title($p->ID);
 				}
 				else {
-					$partners = get_the_title($p->ID) . ", " . $partners;
+					$partners_list = get_the_title($p->ID) . ", " . $partners_list;
 				}
 				$partner_count++;
 			endforeach;
@@ -136,7 +138,7 @@ while ( have_posts() ) : the_post();
 				</div>
 				<h1 class="program-name"><?php echo $title; ?></h1>
 				<p class="subheading">An immersive, 10-week program hosted by HackCville</p>
-				<h4 class="sponsor">Sponsored by <?php echo $partners; ?></h4>
+				<h4 class="sponsor">Sponsored by <?php echo $partners_list; ?></h4>
 				<a class="button short-button" target="_blank" href="<?php echo $app_link; ?>">Apply</a>
 			</div>
 		</div>
@@ -260,23 +262,25 @@ while ( have_posts() ) : the_post();
 				</div>
 			</div>
 		</div>
-			<div class="container meet-sponsors">
-			  <h1 class="header-center">Meet Our Sponsor</h1>
-			  <div class="flex">
-				<div class="flex-1-of-3">
-				  <img src="" class="sponsor-image">
-				</div>
-				<div class="flex-2-of-3">
-				  <p class="sponsor-info">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-				  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-				  quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-				  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-				  cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-				  proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-				</div>
-			  </div>
+		<div class="program-partners">
+			<div class="white-bg container meet-sponsors">
+			  	<h1 class="header-center">Meet <?php echo $title; ?>'s Sponsor<?php 
+			  		if ($partner_count > 1) { echo "s"; }
+			  	?></h1>
+			  	<div class="flex">
+			  		<?php 
+			  		foreach ($partners as $partner) {
+			  			?>
+			  			<div class="flex-1-of-3">
+						 	<img src="<?php echo get_field('logo', $partner); ?>" class="sponsor-image">
+						</div>
+						<div class="flex-2-of-3">
+						 	<p class="sponsor-info"><?php echo get_field('description', $partner); ?></p>
+						 	<a class="button" href="<?php echo get_field('website', $partner); ?>" target="_blank">Learn More &rarr;</a>
+						</div>
+			  		<?php } ?>
+			  	</div>
 			</div>
-		 </div>
 		</div>
 		<div class="apply-to">
 		  <div class="table-list"> 
