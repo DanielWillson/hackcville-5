@@ -23,7 +23,7 @@ get_header(); ?>
 				$trip_title = get_the_title();
 				echo "<h1>" . $trip_title . "</h1><br>";
 
-				$authors=get_users();
+				$authors = get_users();
 
 				echo "<h2>The Trip Team:</h2>";
 				foreach ($authors as $author) {
