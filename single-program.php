@@ -43,10 +43,22 @@ while ( have_posts() ) : the_post();
 	$extra_fee_info = get_field("extra_fee_info");
 	$extra_eligibility_info = get_field("extra_eligibility_info");
 	/* get program partners */
+	$partners = "";
+	$partner_count = 0;
 	$posts = get_field("program_partners");
 		if( $posts ):
 			foreach( $posts as $p ):
+			    if ($partner_count < 1) {
+			    	$partners = get_the_title($p->ID);
+			    }
+			    else if ($partner_count == 1) {
+			    	$partners = $partners . " and " . get_the_title($p->ID);
+			    }
+			    else {
+			    	$partners = get_the_title($p->ID) . ", " . $partners;
+			    }
 			    //echo get_the_title( $p->ID );
+			    $partner_count++;
 			endforeach;
 		endif;
 
@@ -104,12 +116,12 @@ while ( have_posts() ) : the_post();
 		<div class="blue-bg prog-img-bg" style="background-image:url(<?php echo get_field('program_hero_image') ?>);">
 			<div class="container">
 				<div class="description">
-					<h3>Explore Digital Photography in</h3>
+					<h3>Explore <?php echo $program_topic; ?> in</h3>
 				</div>
-				<h1 class="program-name">Exposure</h1>
+				<h1 class="program-name"><?php echo $title; ?></h1>
 				<p class="subheading">An immersive, 10-week program hosted by HackCville</p>
-				<h4 class="sponsor">Sponsored by Willow Tree</h4>
-				<a class="button short-button" href="#">Apply</a>
+				<h4 class="sponsor">Sponsored by <?php echo $partners; ?></h4>
+				<a class="button short-button" target="_blank" href="<?php echo $app_link; ?>">Apply</a>
 			</div>
 		 </div>
 		</div>
