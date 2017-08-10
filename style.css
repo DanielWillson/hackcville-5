@@ -1783,7 +1783,6 @@ PROGRAM HERO
 
 .program-hero .description {
 	max-width: 250px;
-	
 }
 
 .program-hero .description h3 {
@@ -1801,6 +1800,24 @@ PROGRAM HERO
 .program-hero .sponsor {
 	font-style: italic;
 	font-weight: bold;
+}
+
+/*
+-----------------------------------
+PROGRAM DETAILS
+-----------------------------------
+*/
+
+.program-details {
+	padding-top: 3em;
+}
+
+.program-details .flex-1-of-2 {
+	margin-bottom: 1em;
+}
+
+.program-details .author {
+	font-style: italic;
 }
 
 

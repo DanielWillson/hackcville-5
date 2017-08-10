@@ -25,6 +25,9 @@ while ( have_posts() ) : the_post();
 	$app_close_date = get_field("application_close_date");
 	$app_status = get_field("application_status");
 	$app_link = get_field("application_link");
+	$heading1 = get_field("heading_1");
+	$heading2 = get_field("heading_2");
+	$heading3 = get_field("heading_3");
 	$description1 = get_field("description_1");
 	$description2 = get_field("description_2");
 	$description3 = get_field("description_3");
@@ -57,7 +60,6 @@ while ( have_posts() ) : the_post();
 			    else {
 			    	$partners = get_the_title($p->ID) . ", " . $partners;
 			    }
-			    //echo get_the_title( $p->ID );
 			    $partner_count++;
 			endforeach;
 		endif;
@@ -73,38 +75,71 @@ while ( have_posts() ) : the_post();
 					$user_program_title = get_the_title($program);
 					if (!strcmp($title, $user_program_title)) {
 						//echo "<h3>" . $author->data->display_name . "</h3>";
-					}
-					else {
-						// This user isn't involved in planning this program
-					}
+					} else { /* unrelated user */ }
 				}
 			}
 		}
 
 	/* get testimonial */
+	$testimonial_count = 0;
+	$testimonials = array();
+	$used_t_ids = array();
+
 	$the_query = new WP_Query(array('post_type' => 'testimonial'));
 	if ( $the_query->have_posts() ) {
-		while ( $the_query->have_posts() ) {
-			$the_query->the_post();
+		while ( $the_query->have_posts() ) { $the_query->the_post();
 
-			$name = get_the_title();
+			$name = get_the_title(); // name of testimonial giver
+			$id = get_the_ID(); // ID of current testimonial
 
 			$t_programs = get_field("related_program");
 			if ($t_programs) {
 				foreach($t_programs as $t_program) {
 					$user_t_program = get_the_title($t_program);
 					if (!strcmp($title, $user_t_program)) {
-						// echo "<h3>" . $name . "</h3>";
-					}
-					else {
-						// This user's testimonial isn't related
-					}
+						$t_content = get_field("testimonial");
+						$t = "\"" . $t_content . "\"<br><span class=\"author\">- " . $name . ", " . $title . " Program Graduate</span>";
+						$testimonials[$testimonial_count] = $t;
+						array_push($used_t_ids, $id);
+
+						$testimonial_count++;
+					} else { /*unrelated testimonial */ }
 				}
 			}
-
-			
 		}
 		wp_reset_postdata();
+	}
+	if ($testimonial_count < 5) {
+
+		$the_query2 = new WP_Query(array('post_type' => 'testimonial', 'orderby' => 'rand'));
+		if ( $the_query2->have_posts() ) {
+			while ( $the_query2->have_posts() ) { $the_query2->the_post();
+				$id = get_the_ID(); // ID of current testimonial
+				if (!in_array($id, $used_t_ids)) {
+					
+					$name = get_the_title(); // name of testimonial giver
+					$t_categories = get_field("testimonial_category");
+					
+					if ($t_categories) {
+						foreach($t_categories as $t_category) {
+							if (!strcmp($t_category, "General")) {
+								$t_content = get_field("testimonial", $id);
+								$t = "\"" . $t_content . "\"<br><span class=\"author\">- " . $name . ", HackCville Member</span>";
+									$testimonials[$testimonial_count] = $t;
+									$testimonial_count++;
+								array_push($used_t_ids, $id);
+							}
+							else { /*unrelated testimonial */ }
+						}
+					}
+				}
+				
+			}
+			wp_reset_postdata();
+		}
+	}
+	foreach ($testimonials as $testimonial) {
+		echo $testimonial . "<br>";
 	}
 	
 	
@@ -125,44 +160,51 @@ while ( have_posts() ) : the_post();
 			</div>
 		 </div>
 		</div>
-		<div class="what-u-get">
-		 <div class="white-bg">
+		<div class="program-details">
+		 	<div class="white-bg">
 		       <div class="container">
-		          <div class="flex what-u-get-secs">
-		             <figure class="image-pullquote left flex-1-of-2">
-		                <img src="http://1qjqp144udvjh172yr0eqox1.wpengine.netdna-cdn.com/wp-content/uploads/2016/08/IMG_3215-e1471814168201.jpg" />
-		                <figcaption>"I loved all of the inspiration our Program Lead gave to us. She made me fall in love with photography in a whole new way. I gained skills in editing software, creativity, and DSLRs. I just really enjoyed everything about the program and the opportunity it provided."
-		                <br>
-		                <i>-Danielle Levin, Program Graduate</i>
-		                 </figcaption>
-		             </figure>
-		             <div class="flex-1-of-2 develop">
-		                <h3>Develop skills and apply them through hands on experience</h3>
-		                <p>Exposure is a 10-week program  for students interested in learning storytelling through digital photography. Students will learn photography using Nikon and Canon DSLRs and photo editing using Adobe Lightroom and Photoshop. Prohects in portraiture, landscape, journalistic photography and more will provide students with hands-on experience.</p>
-		             </div>
-		          </div>
-		          <div class="flex what-u-get-secs">
+		       		<?php if ($heading1) { ?>
+		          	<div class="flex">
+		             	<figure class="image-pullquote left flex-1-of-2">
+			                <img src="<?php echo $image1; ?>" />
+			                <figcaption>
+			                	<?php echo $testimonials[0]; ?>
+			                </figcaption>
+		             	</figure>
+						<div class="flex-1-of-2 develop">
+						    <h3><?php echo $heading1 ?></h3>
+						    <p><?php echo $description1 ?></p>
+						</div>
+		          	</div>
+		          	<?php } 
+		          	if ($heading2) { ?>
+		          	<div class="flex">
 		                <div class="flex-1-of-2">
-		                   <h3>Publish real projects on your own portfolio website</h3>
-		                   <p>Graduates of Exposure will have extensive knowledge and skill in digital photography and will have completed three short-term projects and one semester-long project that will be published to each student's personal photography portfolio website.</p>
+		                   	<h3><?php echo $heading2 ?></h3>
+						   	<p><?php echo $description2 ?></p>
 		                </div>
-		                <div class="flex-1-of-2">
-		                   <img  class="simple-border" src="http://1qjqp144udvjh172yr0eqox1.wpengine.netdna-cdn.com/wp-content/uploads/2017/01/pexels-photo2.jpg" />
-		                </div>
-		          </div>
-		           <div class="flex what-u-get-secs what-u-get-secs-pt2">
-		             <figure class="image-pullquote left flex-1-of-2">
-		                <img src="http://1qjqp144udvjh172yr0eqox1.wpengine.netdna-cdn.com/wp-content/uploads/2014/09/12194999_1231703353512795_5437443080829008042_o.jpg" />
-		                <figcaption>"I love the endless amount of resources and guidance HackCville offers. From having members/staff take 5 minutes to sit down and talk to me, to endless workshops throughout the semester, to the random email/text messages - everyone genuinely cares about one another."
-		                <br>
-		                <i>-Nina Satasiya, Program Graduate</i>
-		                 </figcaption>
-		             </figure>
-		             <div class="flex-1-of-2">
-		                <h3>Develop skills and apply them through hands on experience</h3>
-		                <p>Exposure is a 10-week program  for students interested in learning storytelling through digital photography. Students will learn photography using Nikon and Canon DSLRs and photo editing using Adobe Lightroom and Photoshop. Prohects in portraiture, landscape, journalistic photography and more will provide students with hands-on experience.</p>
-		             </div>
-		          </div>
+		                <figure class="image-pullquote right flex-1-of-2">
+		                   	<img src="<?php echo $image2; ?>" />
+		                   	<figcaption>
+			                	<?php echo $testimonials[1]; ?>
+			                </figcaption>
+		                </figure>
+		          	</div>
+		          	<?php }
+		          	if ($heading3) { ?>
+		           	<div class="flex">
+		             	<figure class="image-pullquote left flex-1-of-2">
+			                <img src="<?php echo $image3; ?>" />
+			                <figcaption>
+			                	<?php echo $testimonials[2]; ?>
+			                </figcaption>
+		             	</figure>
+						<div class="flex-1-of-2 develop">
+						    <h3><?php echo $heading3 ?></h3>
+						    <p><?php echo $description3 ?></p>
+						</div>
+		          	</div>
+		          	<?php } ?>
 		       </div>
 		 </div>
 		</div>
