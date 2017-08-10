@@ -83,6 +83,11 @@ function hackcville_5_0_setup() {
 endif;
 add_action( 'after_setup_theme', 'hackcville_5_0_setup' );
 
+// enable lite mode before launch, export all custom fields to PHP and move to mu-plugins
+include_once('advanced-custom-fields/acf.php');
+// move to mu-plugins before launch
+include_once('edit-author-slug/edit-author-slug.php');
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
@@ -154,4 +159,53 @@ require get_template_directory() . '/inc/customizer.php';
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
+}
+
+// removes admin color scheme options
+remove_action( 'admin_color_scheme_picker', 'admin_color_scheme_picker' );
+
+// if ( ! function_exists( 'cor_remove_personal_options' ) ) {
+//     /**
+//     * Removes the leftover 'Visual Editor', 'Keyboard Shortcuts' and 'Toolbar' options.
+//     */
+//     function cor_remove_personal_options( $subject ) {
+//         $subject = preg_replace( '#<h2>Personal Options</h2>.+?/table>#s', '', $subject, 1 );
+//         return $subject;
+//     }
+
+//     function cor_profile_subject_start() {
+//         ob_start( 'cor_remove_personal_options' );
+//     }
+
+//     function cor_profile_subject_end() {
+//         ob_end_flush();
+//     }
+// }
+// add_action( 'admin_head', 'cor_profile_subject_start' );
+// add_action( 'admin_footer', 'cor_profile_subject_end' );
+
+add_filter('user_profile_update_errors', 'wpse_236014_check_fields', 10, 3);
+function wpse_236014_check_fields($errors, $update, $user) {
+
+  // Use the $_POST variable to check required fields
+
+  if( empty($_POST['first_name']) )
+    // add an error message to the WP_Errors object 
+    $errors->add( 'first_name_required',__('First name is required, please add one before saving.') );
+
+  if( empty($_POST['last_name']) )
+    // add an error message to the WP_Errors object 
+    $errors->add( 'last_name_required',__('Last name is required, please add one before saving.') );
+
+  // Add as many checks as you have required fields here
+
+  if( empty( $errors->errors ) ){
+
+    // Save your custom fields here if no errors are found
+    // Just skip this if you don't need to do extra work.
+    // Fields will save if no errors are found
+
+  }
+
+
 }

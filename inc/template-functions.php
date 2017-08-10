@@ -11,6 +11,9 @@
  * @param array $classes Classes for the body element.
  * @return array
  */
+
+
+
 function hackcville_5_0_body_classes( $classes ) {
 	// Adds a class of hfeed to non-singular pages.
 	if ( ! is_singular() ) {
@@ -30,3 +33,4 @@ function hackcville_5_0_pingback_header() {
 	}
 }
 add_action( 'wp_head', 'hackcville_5_0_pingback_header' );
+

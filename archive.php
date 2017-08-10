@@ -13,7 +13,44 @@ get_header(); ?>
 		<main id="main" class="site-main">
 
 		<?php
-		if ( have_posts() ) : ?>
+
+
+
+
+		if ( have_posts() ) : 
+
+
+
+			if (is_author()) {
+
+				echo "This is an author page.<br>";
+				$user_id = get_the_author_meta('ID');
+				echo get_field('title', 'user_'.$user_id);
+
+				$post_objects = get_field('trip_team', 'user_'.$user_id);
+				if($post_objects) {
+					echo '<ul>';
+
+					foreach($post_objects as $post) {
+						setup_postdata($post);
+						echo '<li>' . the_title() . '</li>';
+					}
+
+					echo '</ul>';
+					wp_reset_postdata();
+				}
+			}
+
+
+			
+
+			
+
+
+
+			?>
+
+
 
 			<header class="page-header">
 				<?php
