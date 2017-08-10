@@ -1774,6 +1774,10 @@ figure{
 	z-index: 1;
 }
 
+
+
+
+
 /* Background image support */
 
 /*
@@ -1933,6 +1937,43 @@ WHAT NEXT
 	width: auto;
 }
 
+.what-next.table-list .flex:after {
+	height: 94%;
+}
+
+.what-next.table-list .list-heading.flex-1-of-2:last-of-type:after {
+	height: 0;
+}
+
+/*
+-----------------------------------
+PLACES YOULL GO
+-----------------------------------
+*/
+
+.places-youll-go .flex {
+	align-items: center;
+}
+
+/*
+-----------------------------------
+TESTIMONIAL
+-----------------------------------
+*/
+
+.testimonial .flex-3-of-4 {
+	margin-top: 2em;
+}
+
+/*
+-----------------------------------
+LAST APPLY
+-----------------------------------
+*/
+
+.last-apply {
+/*	text-align: center;*/
+}
 
 /*
 -----------------------------------
@@ -2027,7 +2068,7 @@ SOME TEXT STYLING. Ben0 72317
 */
 .what-next h1{
    text-align: center;
-   margin-top: 30px;
+   /*margin-top: 30px;*/
 }
 
 .blue-bg figure.image-pullquote.flex-1-of-2.list-heading:after{
@@ -2060,9 +2101,6 @@ SOME TEXT STYLING. Ben0 72317
    padding-right: none;
 }
 
-.memberships {
-   padding-bottom: 50px;
-}
 
 .extra-opportunities {
    margin-bottom: 90px;

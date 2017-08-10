@@ -101,7 +101,7 @@ while ( have_posts() ) : the_post();
 		}
 		wp_reset_postdata();
 	}
-	if ($testimonial_count < 5) {
+	if ($testimonial_count < 3) {
 
 		$the_query2 = new WP_Query(array('post_type' => 'testimonial', 'orderby' => 'rand'));
 		if ( $the_query2->have_posts() ) {
@@ -387,7 +387,6 @@ while ( have_posts() ) : the_post();
 				<h1>What's Next?</h1>
 				<div class="flex">
 					<?php
-
 					foreach($prog_only_t as $t) {
 						if (strcmp(get_field('narrative_outcome', $t), "")) {
 					?>
@@ -405,102 +404,156 @@ while ( have_posts() ) : the_post();
 			</div>
   		</div>
 	</div>
-	<div class="places">
-	<div class="white-bg">
-	  <div class="container">
-		<h1>Places You'll Go</h1>
-		<div id="first">
-		  <img src="images/sarah1.jpg" class="company-logo">
-		  <img src="images/sarah2.jpg" class="company-logo">
-		  <img src="images/sarah1.jpg" class="company-logo">
-		  <img src="images/sarah2.jpg" class="company-logo" id="last">
+	<div class="places-youll-go">
+		<div class="white-bg">
+	  		<div class="container">
+				<h1>Places You'll Go</h1>
+				<div class="flex">
+					<?php
+					$stu_cos = array();
+					$j = 0;
+					foreach($prog_only_t as $t) {
+						$partners_worked_with = get_field("partners_student_has_worked_with", $t);
+						if ($partners_worked_with) {
+							foreach ($partners_worked_with as $p) {
+								?>
+								<div class="flex-1-of-3">
+									<img src="<?php echo get_field('logo', $p); ?>">
+								</div>
+							<?php }
+						} 
+					} ?>
+				</div>
+	  		</div>
 		</div>
-	  </div>
-	</div>
 	</div>
 	<div class="bolded-list membership-section">
-	<div class="blue-bg">
-	<div class="container memberships">
-	<h1>
-	  Perks of Membership
-	</h1>
-	<h3>
-	  After you complete your first HackCville program, you're granted HackCville membership. Here's what you get:
-	</h3>
-	<div class="list">
-	  <div class="list-item">
-		<h4>
-		  24/7 access to our fun and functional clubhouses on Elliewood Ave.
-		</h4>
-		<p>
-		  Our two clubhouses are filled with hammocks, couches, whiteboards, and WiFi. Use our space to work on your projects, hold meetings, or just hang out.
-		</p>
-	  </div>
-	  <div class="list-item">
-		<h4>
-		  Exclusive events and job opportunities.
-		</h4>
-		<p>
-		  Whether it's drinks with the co-founder of Reddit or HackCville-only internship, job, and freelancing opportunites, we give our members access to dozens of unique experiences every year.
-		</p>
-	  </div>
-	  <div class="list-item">
-		<h4>
-		  A community that feels like a family.
-		</h4>
-		<p>
-		  You'll join HackCville's 300-member community of the most talented and badass people in Charlottesville.
-		</p>
-	  </div>
-	  <div class="list-item">
-		<h4>
-		  Early access to HackCville programs, no application required.
-		</h4>
-		<p>
-		  Want to take another program? As a member, you can just sign up - no application required. We open up spots to members before the public.
-		</p>
-	  </div>
-	  <div class="list-item">
-		<h4>
-		  Priority application for our summer program, Launch.
-		</h4>
-		<p>
-		  Get paid to learn web design, software development, marketing or data science in our 12 week summer program. You'll get trained by HackCville's expert instructors and get a garanteed, paid internship at a local startup.
-		</p>
-	  </div>
+		<div class="blue-bg">
+			<div class="container">
+				<h1>Perks of Membership</h1>
+				<h3>After you complete your first HackCville program, you're granted HackCville membership. Here's what you get:</h3>
+				<div class="list">
+					<div class="list-item">
+						<h4>24/7 access to our fun and functional clubhouses on Elliewood Ave.</h4>
+						<p>Our two clubhouses are filled with hammocks, couches, whiteboards, and WiFi. Use our space to work on your projects, hold meetings, or just hang out.</p>
+					</div>
+					<div class="list-item">
+						<h4>Exclusive events and job opportunities.</h4>
+						<p>Whether it's drinks with the co-founder of Reddit or HackCville-only internship, job, and freelancing opportunites, we give our members access to dozens of unique experiences every year.</p>
+					</div>
+					<div class="list-item">
+						<h4>A community that feels like a family.</h4>
+						<p>You'll join HackCville's 300-member community of the most talented and badass people in Charlottesville.</p>
+					</div>
+					<div class="list-item">
+						<h4>Early access to HackCville programs, no application required.</h4>
+						<p>Want to take another program? As a member, you can just sign up - no application required. We open up spots to members before the public.</p>
+					</div>
+					<div class="list-item">
+						<h4>Priority application for our summer program, Launch.</h4>
+						<p>Get paid to learn web design, software development, marketing or data science in our 12 week summer program, <a href="<?php echo get_home_url(); ?>/launch">Launch</a>. You'll get trained by HackCville's expert instructors and get a guaranteed, paid internship at a local startup or tech company.</p>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
-	</div>
-	<div class="container section-border extra-opportunities">
-	<h1>Extra Opportunities Available in Every Program</h1>
-	<div class="flex">
-	  <div class="flex-1-of-2">
-		<h3>Mentorship</h3>
-		<p>Looking for some guidance on how to navigate what you want to do? Every year we pair up hundreds of UVA alumni from across the country with our students to provide guidance and support. Our team also meets with you several times one-on-one to ensure you're getting the most out of your program. It's advising that actually works.</p>
-		<img src="" class="extra-opp-image-left">
-	  </div>
-	  <div class="flex-1-of-2">
-		<h3>Startup Trips</h3>
-		<p>HackCville hosts immersive trips to cities across the country (New York City, San Francisco, Baltimore, and more) to tour companies, meet alumni, and give students networking opportunities with industry leaders. Trips are where you see how what you're learning is put into action in the real world.</p>
-		<img src="" class="extra-opp-image-right">
-	  </div>
-	</div>
-	</div>
+	<div class="extra-perks">
+		<div class="white-bg">
+			<div class="container  section-border">
+				<h1>Extra Perks With Every Program</h1>
+				<div class="flex">
+	  				<div class="flex-1-of-2">
+	  					<!-- <img src="" class="extra-opp-image-left"> -->
+						<h3>Mentorship</h3>
+						<p>Looking for some guidance on how to navigate what you want to do? Every year we pair up hundreds of UVA alumni from across the country with our students to provide guidance and support. Our team also meets with you several times one-on-one to ensure you're getting the most out of your program. It's advising that actually works.</p>
+  					</div>
+	  				<div class="flex-1-of-2">
+	  					<!-- <img src="" class="extra-opp-image-right"> -->
+						<h3>Startup Trips</h3>
+						<p>HackCville hosts immersive trips to cities across the country (New York City, San Francisco, Baltimore, and more) to tour companies, meet alumni, and give students networking opportunities with industry leaders. Trips are where you see how what you're learning is put into action in the real world.</p>
+						<a class="button" href="<?php echo get_home_url(); ?>/trips">Learn More &rarr;</a>
+	  				</div>
+				</div>
+			</div>
+		</div>
 	</div>
 	<div class="testimonial">
-	<div class="hc-blue-bg">
-	<div class="container">
-	  <div class="flex">
-		<figure class="image-pullquote right flex-1-of-3">
-		  <img src="images/katie.jpg" class="profile">
-		  <figcaption class="testimonial-name">
-			<p><span class="bold">Katie Mendenall</span></p>
-			<p>HackCville member</p>
-		  </figcaption>
-		</figure>
-		<p class="flex-2-of-3" id="quote">"I love that HackCville provides a support network for students. HackCville has helped me learn a lot, and it's also provided me with a lot of resume/internship guidance I know will be useful. It's a good feeling to be surrounded by people with similar goals."</p>
-	  </div>
+		<div class="hc-blue-bg">
+			<div class="container">
+	  			<div class="flex">
+	  				<?php 
+	  				$t_content = "";
+	  				$name = "";
+	  				$headshot_url = "";
+
+	  				$the_query3 = new WP_Query(array('post_type' => 'testimonial', 'orderby' => 'rand'));
+					if ( $the_query3->have_posts() ) {
+						while ( $the_query3->have_posts() ) { $the_query3->the_post();
+							$id = get_the_ID(); // ID of current testimonial
+			  				if (!in_array($id, $used_t_ids)) {
+			  					$name = get_the_title(); // name of testimonial giver
+			  					$headshot_url = get_field('headshot', $id);
+								$t_categories = get_field("testimonial_category", $id);
+								
+								if ($t_categories && $headshot_url && get_field("testimonial", $id)) {
+									foreach($t_categories as $t_category) {
+										if (!strcmp($t_category, "Community")) {
+											$t_content = get_field("testimonial", $id);
+											$t_content = "\"" . $t_content . "\"";
+										}
+									}
+								}
+			  				}
+			  			}
+			  		}
+	  				?>
+					<figure class="image-pullquote right flex-1-of-4">
+		  				<img src="<?php echo $headshot_url; ?>">
+		  				<figcaption class="testimonial-name">
+							<p><?php echo $name; ?></p>
+							<p>HackCville Member</p>
+		  				</figcaption>
+					</figure>
+					<div class="flex-3-of-4">
+						<h3><?php echo $t_content; ?></h3>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
-	</div>
+	<div class="last-apply">
+		<div class="blue-bg">
+			<div class="container">
+				<div class="flex">
+					<div class="flex-1-of-2">
+						<h1>Apply to <?php echo $title; ?></h1>
+						<?php if ($app_status) { ?>
+							<h3 class="apps-due-by">Applications due by <?php 
+								echo $date; ?>
+							</h3>
+							<a class="button" href="<?php echo $app_link; ?>">
+								Apply Now
+							</a>
+							<a class="button" href="#" target="_blank">
+								Remind me
+						  	</a>
+						<?php } else { ?>
+							<h3>Applications Open <?php echo $open_date; ?></h3>
+							<a class="button" href="#" target="_blank">
+								Remind me when apps open
+						  	</a>
+						<?php } ?>
+					</div>
+					<div class="flex-1-of-2">
+						<h1>See other HC programs</h1>
+						<h3>Learn everything from entrepreneurship to videography</h3>
+						<a class="button" href="<?php echo get_home_url(); ?>/programs" target="_blank">
+							See all programs
+					  	</a>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 
 
