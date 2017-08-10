@@ -138,13 +138,7 @@ while ( have_posts() ) : the_post();
 			wp_reset_postdata();
 		}
 	}
-	foreach ($testimonials as $testimonial) {
-		echo $testimonial . "<br>";
-	}
 	
-	
-
-
 	?>
 
 	<div class="program-hero">
@@ -220,47 +214,65 @@ while ( have_posts() ) : the_post();
 		 		</div>
 		 	</div>
 		</div>
-		<div class="program-leads">
-		 <div class="white-bg">
+		<div class="program-staff">
+			<div class="white-bg">
 			   <div class="container section-border">
-				  <h1 class="header-center">Program Leads</h1>
-				  <div class="flex">
-					<figure class="flex-2-of-3">
-					   <p>Sarah Dodge is the program lead for Exposure and a Senior Producer for The Pioneer. She's a 3rd Year studying Media Studies at UVA. Sarah ahs extensive photography experience, having booked nearly $10,000 in freelance photography contracts in the last year alone. She also shoots for UVA Athletics Media Relations. Sarah graduated HackCville's Storyborad program in Fall 2015. You can see samples of her work here, and you can reach her at sarah@hackcville.com.</p>
-					</figure>
-					<div class=" image-pullquote left flex-1-of-3">
-					   <img src="http://1qjqp144udvjh172yr0eqox1.wpengine.netdna-cdn.com/wp-content/uploads/2014/09/12194999_1231703353512795_5437443080829008042_o.jpg" />
-					   <figcaption>
-						  <h3>Sarah Dodge</h3>
-						  <p><i>Program Lead</i></p>
-					   </figcaption>
+					<h1 class="header-center">Program Leads</h1>
+					<div class="flex">
+					<?php
+					$lr_check = 1;
+					$ids = array();
+
+					foreach ($authors as $author) {
+						$user_id = $author->data->ID;
+						$author_name = $author->data->display_name;
+
+						$programs = get_field('program_teams', 'user_'.$user_id);
+						if ($programs) {
+							foreach($programs as $program) {
+								$user_program_title = get_the_title($program);
+								if (!strcmp($title, $user_program_title)) {
+									if (!strcmp(get_field('leadership_type', 'user_'.$user_id), "program_lead")) {
+										$ids[$user_id] = 1;
+
+									}
+									if (!strcmp(get_field('leadership_type', 'user_'.$user_id), "coordinator")) {
+										$ids[$user_id] = 2;
+									}
+								}
+							}
+						}
+					}
+					asort($ids);
+					foreach($ids as $key => $value) {			
+						$author_name = get_the_author_meta('first_name', $key) . " " . get_the_author_meta('last_name', $key);	
+						if ($lr_check % 2 == 1) { ?>
+							<div class="flex-2-of-3">
+								<?php echo get_the_author_meta('description', $key); ?>
+							</div>
+							<figure class="image-pullquote right flex-1-of-3"> 
+								<img src="<?php echo get_field("headshot", 'user_'.$key); ?>" />
+								<figcaption>
+									<h3><?php echo $author_name; ?></h3>
+									<p class="subheading"><?php echo get_field("title", 'user_'.$key); ?></p>
+								</figcaption>
+							</figure>
+						<?php } else { ?>
+							<figure class="image-pullquote left flex-1-of-3"> 
+								<img src="<?php echo get_field("headshot", 'user_'.$key); ?>" />
+								<figcaption>
+									<h3><?php echo $author_name; ?></h3>
+									<p class="subheading"><?php echo get_field("title", 'user_'.$key); ?></p>
+								</figcaption>
+							</figure>
+							<div class="flex-2-of-3">
+								<?php echo get_the_author_meta('description', $key); ?>
+							</div>
+						<?php } $lr_check++; } ?>
 					</div>
-				 </div>
-				 <div class="flex">
-					<div class=" image-pullquote left flex-1-of-3">
-					   <img src="http://1qjqp144udvjh172yr0eqox1.wpengine.netdna-cdn.com/wp-content/uploads/2014/09/12194999_1231703353512795_5437443080829008042_o.jpg" />
-					   <figcaption>
-						 <h3>Kaleigh Watson</h3>
-						 <p><i>Assistant Instructor</i></p>
-					   </figcaption>
-					</div>
-				   <figure class="flex-2-of-3">
-					  <p>Kaleigh Watson is one of the Assistant Instructors for Exposure and a contributor for The Pioneer. She's a 4th Year studying Media Studies at UVA. She participated in Exposure in Spring 2017 and since graduating </p>
-				   </figure>
 				</div>
-				<div class="flex">
-				  <figure class="flex-2-of-3">
-					 <p>Maya Korb is one of the Assistant Instructors for Exposure. She's a 3rd year studying Chemistry and has ben keen on photography since she was 10 years old. In Spring 2017 she joined Hackcville and graduated from the Exposure program.</p>
-				  </figure>
-				  <div class=" image-pullquote left flex-1-of-3">
-					 <img src="http://1qjqp144udvjh172yr0eqox1.wpengine.netdna-cdn.com/wp-content/uploads/2014/09/12194999_1231703353512795_5437443080829008042_o.jpg" />
-					 <figcaption>
-					   <h3>Sarah Dodge</h3>
-					   <p><i>Program Lead</i></p>
-					 </figcaption>
-				  </div>
-			   </div>
-			   </div>
+			</div>
+		</div>
 			<div class="container meet-sponsors">
 			  <h1 class="header-center">Meet Our Sponsor</h1>
 			  <div class="flex">

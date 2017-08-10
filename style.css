@@ -1765,6 +1765,8 @@ figure{
    padding:4px 40px 7px 40px;
 }
 
+/* Background image support */
+
 /*
 -----------------------------------
 PROGRAM HERO
@@ -1775,6 +1777,12 @@ PROGRAM HERO
 	height:500px;
 	position:relative;
 	color: white;
+}
+
+.program-hero .program-hero-bg{
+   background-repeat:no-repeat;
+   background-size:cover;
+   background-position:center;
 }
 
 .program-hero .container {
@@ -1820,45 +1828,29 @@ PROGRAM DETAILS
 	font-style: italic;
 }
 
-
-
-
-
 /*
 -----------------------------------
-SOME POSITIONING STUFF. Ben0 72317
+WHAT YOU'LL LEARN
 -----------------------------------
 */
-
-
-
-
-
-.what-u-get-secs{
-   margin-top:20px;
-}
-
-.what-u-get-secs-pt2{
-   margin-top:40px;
-}
-
-/*
------------------------------------
-BACKGROUND IMAGE STYLES. Ben0 72317
------------------------------------
-*/
-
-.program-hero-bg{
-   background-repeat:no-repeat;
-   background-size:cover;
-   background-position:center;
-}
 
 .what-youll-learn-bg {
    background-repeat:no-repeat;
    background-size:cover;
    background-position:center;
 }
+
+
+/*
+-----------------------------------
+PROGRAM STAFF
+-----------------------------------
+*/
+
+.program-staff .subheading {
+	font-style: italic;
+}
+
 
 /*
 -----------------------------------
