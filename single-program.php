@@ -64,28 +64,14 @@ while ( have_posts() ) : the_post();
 			endforeach;
 		endif;
 
-	/* get the program team */
-	$authors = get_users();
-		foreach ($authors as $author) {
-			$user_id = $author->data->ID;
-			$programs = get_field('program_teams', 'user_'.$user_id);
-
-			if ($programs) {
-				foreach($programs as $program) {
-					$user_program_title = get_the_title($program);
-					if (!strcmp($title, $user_program_title)) {
-						//echo "<h3>" . $author->data->display_name . "</h3>";
-					} else { /* unrelated user */ }
-				}
-			}
-		}
+	$authors = get_users(); /* get the program team */
 
 	/* get testimonial */
 	$testimonial_count = 0;
 	$testimonials = array();
 	$used_t_ids = array();
 
-	$the_query = new WP_Query(array('post_type' => 'testimonial'));
+	$the_query = new WP_Query(array('post_type' => 'testimonial', 'orderby' => 'rand'));
 	if ( $the_query->have_posts() ) {
 		while ( $the_query->have_posts() ) { $the_query->the_post();
 
@@ -142,6 +128,7 @@ while ( have_posts() ) : the_post();
 	?>
 
 	<div class="program-hero">
+		<div class="filter"></div>
 		<div class="blue-bg program-hero-bg" style="background-image:url(<?php echo get_field('program_hero_image') ?>);">
 			<div class="container">
 				<div class="description">
@@ -152,8 +139,8 @@ while ( have_posts() ) : the_post();
 				<h4 class="sponsor">Sponsored by <?php echo $partners; ?></h4>
 				<a class="button short-button" target="_blank" href="<?php echo $app_link; ?>">Apply</a>
 			</div>
-		 </div>
 		</div>
+	</div>
 		<div class="program-details">
 			<div class="white-bg">
 			   <div class="container">
@@ -201,6 +188,7 @@ while ( have_posts() ) : the_post();
 		 </div>
 		</div>
 		<div class="feature-icons what-youll-learn">
+			<div class="filter"></div>
 			<div class="blue-bg what-youll-learn-bg" style="background-image: url('<?php echo $skills_photo; ?>');">
 			   	<div class="container">
 					<h1 class="header-center">What You'll Learn</h1>
@@ -234,7 +222,6 @@ while ( have_posts() ) : the_post();
 								if (!strcmp($title, $user_program_title)) {
 									if (!strcmp(get_field('leadership_type', 'user_'.$user_id), "program_lead")) {
 										$ids[$user_id] = 1;
-
 									}
 									if (!strcmp(get_field('leadership_type', 'user_'.$user_id), "coordinator")) {
 										$ids[$user_id] = 2;
@@ -505,9 +492,6 @@ while ( have_posts() ) : the_post();
 endwhile; // End of the loop.
 ?>
 
-		<!-- </main><!-- #main -->
-	</div><!-- #primary --> 
 
 <?php
-get_sidebar();
 get_footer();

@@ -1095,6 +1095,8 @@ Pioneer Blue: #53b0ca;
 	width: 95%;
 	margin: 0 auto;
 	padding: 0 18px;
+	z-index: 2;
+	position: relative;
 }
 
 .container.section-border {
@@ -1765,6 +1767,16 @@ figure{
    padding:4px 40px 7px 40px;
 }
 
+.filter {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.6);
+	z-index: 1;
+}
+
 /* Background image support */
 
 /*
@@ -1774,7 +1786,6 @@ PROGRAM HERO
 */
 
 .program-hero {
-	height:500px;
 	position:relative;
 	color: white;
 }
@@ -1786,7 +1797,8 @@ PROGRAM HERO
 }
 
 .program-hero .container {
-	margin-top:100px;
+	padding-top: 100px;
+	padding-bottom: 100px;
 }
 
 .program-hero .description {
@@ -1833,6 +1845,10 @@ PROGRAM DETAILS
 WHAT YOU'LL LEARN
 -----------------------------------
 */
+
+.what-youll-learn {
+	position: relative;
+}
 
 .what-youll-learn-bg {
    background-repeat:no-repeat;
