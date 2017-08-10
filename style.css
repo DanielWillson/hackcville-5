@@ -1116,7 +1116,7 @@ Pioneer Blue: #53b0ca;
 }
 
 .hc-blue-bg .container.section-border > h1 {
-	background-color: #53b0ca;
+	background-color: #3486c7;
 }
 
 .section-border {
@@ -1144,6 +1144,10 @@ Pioneer Blue: #53b0ca;
 }
 
 /* BEGIN HEADINGS */
+
+.white-bg h1 {
+	color: #3486c7;
+}
 
 .blue-bg h1 {
 	color: white;;
@@ -1223,7 +1227,7 @@ a:hover {
 }
 
 .hc-blue-bg .button:after {
-	border: 2px solid #53b0ca;
+	border: 2px solid #0a2128;
 }
 
 .button:hover {
