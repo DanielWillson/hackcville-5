@@ -131,8 +131,8 @@ while ( have_posts() ) : the_post();
 	?>
 
 	<div class="program-hero">
-		<div class="filter"></div>
-		<div class="blue-bg program-hero-bg" style="background-image:url(<?php echo get_field('program_hero_image') ?>);">
+		<div class="blue-bg image-bg" style="background-image:url(<?php echo get_field('program_hero_image') ?>);">
+			<div class="filter"></div>
 			<div class="container">
 				<div class="description">
 					<h3>Explore <?php echo $program_topic; ?> in</h3>
@@ -140,7 +140,13 @@ while ( have_posts() ) : the_post();
 				<h1 class="program-name"><?php echo $title; ?></h1>
 				<p class="subheading">An immersive, 10-week program hosted by HackCville</p>
 				<h4 class="sponsor">Sponsored by <?php echo $partners_list; ?></h4>
-				<a class="button short-button" target="_blank" href="<?php echo $app_link; ?>">Apply</a>
+				<?php 
+				if ($app_status) { ?>
+					<a class="button short-button" target="_blank" href="<?php echo $app_link; ?>">Apply</a>
+					<?php	
+				} else { ?>
+					<a class="button short-button not-active" target="_blank" href="">Applications Open Soon</a>
+					<?php } ?>
 			</div>
 		</div>
 	</div>
@@ -190,9 +196,9 @@ while ( have_posts() ) : the_post();
 		   </div>
 	 </div>
 	</div>
-	<div class="feature-icons what-youll-learn">
-		<div class="filter"></div>
-		<div class="blue-bg what-youll-learn-bg" style="background-image: url('<?php echo $skills_photo; ?>');">
+	<div class="what-youll-learn feature-icons ">
+		<div class="image-bg" style="background-image: url('<?php echo $skills_photo; ?>');">
+		   	<div class="filter"></div>
 		   	<div class="container">
 				<h1 class="header-center">What You'll Learn</h1>
 				<div class="flex">
@@ -424,8 +430,8 @@ while ( have_posts() ) : the_post();
 	  		</div>
 		</div>
 	</div>
-	<div class="bolded-list membership-section">
-		<div class="blue-bg">
+	<div class="membership-section bolded-list">
+		<div class="hc-blue-bg">
 			<div class="container">
 				<h1>Perks of Membership</h1>
 				<h3>After you complete your first HackCville program, you're granted HackCville membership. Here's what you get:</h3>
