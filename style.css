@@ -547,10 +547,10 @@ a:active {
 ## Menus
 --------------------------------------------------------------*/
 .main-navigation {
-	clear: both;
+	/*clear: both;
 	display: block;
 	float: left;
-	width: 100%;
+	width: 100%;*/
 }
 
 .main-navigation ul {
@@ -561,18 +561,18 @@ a:active {
 }
 
 .main-navigation li {
-	float: left;
+	display: inline;
 	position: relative;
+	margin-left: 2em;
 }
 
 .main-navigation a {
-	display: block;
 	text-decoration: none;
 }
 
 .main-navigation ul ul {
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: left;
+/*	float: left;*/
 	position: absolute;
 	top: 100%;
 	left: -999em;
@@ -593,7 +593,12 @@ a:active {
 }
 
 .main-navigation li:hover > a,
-.main-navigation li.focus > a {
+.main-navigation li.focus > a,
+.main-navigation .current_page_item > a,
+.main-navigation .current-menu-item > a,
+.main-navigation .current_page_ancestor > a,
+.main-navigation .current-menu-ancestor > a {
+	border-bottom: 2px solid white;
 }
 
 .main-navigation ul ul :hover > a,
@@ -614,19 +619,22 @@ a:active {
 	left: 100%;
 }
 
-.main-navigation .current_page_item > a,
-.main-navigation .current-menu-item > a,
-.main-navigation .current_page_ancestor > a,
-.main-navigation .current-menu-ancestor > a {
-}
-
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
+	position: absolute;
+	right: 0;
+	text-align: right;
+	padding-right: 0;
+	padding-left: 0;
 }
 
-@media screen and (min-width: 37.5em) {
+.main-navigation.toggled ul {
+	right: -1px;
+}
+
+@media screen and (min-width: 850px) {
 	.menu-toggle {
 		display: none;
 	}
@@ -1967,13 +1975,87 @@ TESTIMONIAL
 
 /*
 -----------------------------------
-LAST APPLY
+HEADER + NAV
 -----------------------------------
 */
 
-.last-apply {
-/*	text-align: center;*/
+header.site-header {
+	background-color: #1F435D;
+	color: white;
+	padding: 0;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+	position: relative;
+	z-index: 5;
 }
+
+header.site-header .container.flex {
+	flex-flow: nowrap;
+	align-items: center;
+}
+
+header.site-header a {
+	border-bottom: none;
+	color: white;
+}
+
+header.site-header .logo {
+	width: 60px;
+	height: auto;
+	margin-top: 9px;
+	transition: .1s;
+}
+
+@media screen and (max-width: 1150px) {
+	.main-navigation li {
+		margin-left: 1.5em;
+		font-size: 18px;
+	}
+
+	header.site-header .logo {
+		width: 50px;
+	}
+}
+
+@media screen and (max-width: 850px) {
+	.main-navigation {
+		position: relative;
+		z-index: 3;
+	}
+
+	.menu-toggle {
+		background: none;
+		border: none;
+		position: relative;
+	}
+
+	.menu-toggle img {
+		height: 25px;
+		width: auto;
+	}
+
+	.main-navigation ul {
+		border: 1px solid white;
+		-webkit-box-shadow: 0px 0px 8px -1px rgba(0,0,0,0.75);
+		-moz-box-shadow: 0px 0px 8px -1px rgba(0,0,0,0.75);
+		box-shadow: 0px 0px 8px -1px rgba(0,0,0,0.75);
+	}
+
+	.main-navigation li {
+		display: block;
+		min-width: 200px;
+		font-size: 20px;
+		background-color: #53b0ca;
+		border-bottom: 1px solid white;
+		margin-left: 0;
+		padding: 10px 15px;
+
+	}
+
+	.main-navigation li:last-child {
+		border-bottom: none;
+	}
+}
+
 
 /*
 -----------------------------------
