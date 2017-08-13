@@ -1520,7 +1520,10 @@ a:hover {
 	top: 0;
 }
 
-.table-list .blue-bg .flex:after,
+.table-list .blue-bg .flex:after {
+	/*border: 1px solid white;	*/
+}
+
 .table-list .white-bg .flex:after {
 	border: 1px solid #0a2128;	
 }
@@ -1635,7 +1638,7 @@ figure.image-pullquote.flex-1-of-2.list-heading:after {
 }
 
 .blue-bg figure.image-pullquote.flex-1-of-2.list-heading:after {
-	border: 1px solid #0a2128;
+	border: 2px solid white;
 }
 
 .white-bg figure.image-pullquote.flex-1-of-2.list-heading:after {
@@ -1659,7 +1662,7 @@ figure.image-pullquote.flex-1-of-2.list-heading figcaption {
 	width: 100%;
 	height: 0;
 	position: absolute;
-	border: 1px solid black;
+	border: 2px solid white;
 	left: 12.5%;
 	z-index: 1;
 }
@@ -2066,12 +2069,212 @@ TESTIMONIAL
 	margin-top: 2em;
 }
 
+/*
+-----------------------------------
+TESTIMONIAL
+-----------------------------------
+*/
+/*
+.home-hero-1 .image-bg {
+	background-position: center right;
+}*/
+/*
+.home-hero-1 .filter {
+	background-color: rgba(0,0,0,0.8);
+}*/
 
+header.site-header {
+	-webkit-box-shadow: 0px 0px 5px 0px rgba(10,33,40,0.5);
+	-moz-box-shadow: 0px 0px 5px 0px rgba(10,33,40,0.5);
+	box-shadow: 0px 0px 5px 0px rgba(10,33,40,0.5);
+	position: fixed;
+	width: 100%;
+	z-index: 10000;
+	/*visibility: hidden;*/
+}
 
+.split-overlay .button {
+	background-color: #1f435d;
+	color: white;
+	z-index: 6;
+}
 
+.split-overlay .button:after {
+	border-color: #53b0ca;
+}
 
+.split-overlay {
+	margin: 30px 0;
+	padding: 30px;
+	padding-right: 40px;
+	background-color: white;
 
+	-webkit-box-shadow: 0px 0px 5px 0px rgba(10,33,40,0.5);
+	-moz-box-shadow: 0px 0px 5px 0px rgba(10,33,40,0.5);
+	box-shadow: 0px 0px 5px 0px rgba(10,33,40,0.5);
 
+	position: relative;
+	left: -20px;
+}
+
+.home-hero-1 .split-overlay {
+	margin-top: 100px;
+}
+
+.split-overlay.right {
+	left: initial;
+	right: -30px;
+	z-index: 5;
+	padding-left: 40px;
+}
+
+.split-overlay:after {
+	content: '';
+	border: 2px solid #0a2128;
+	position: absolute;
+	top: -20px;
+	left: -20px;
+	width: 100%;
+	height: 100%;
+}
+
+.split-overlay.right:after {
+	left: initial;
+	right: -20px;
+}
+
+.split-overlay h1 {
+	color: #0a2128;
+	text-shadow: none;
+}
+
+.split-pic {
+	flex-basis: 50%;
+	-webkit-box-shadow: 0px 0px 5px 0px rgba(10,33,40,0.5);
+	-moz-box-shadow: 0px 0px 5px 0px rgba(10,33,40,0.5);
+	box-shadow: 0px 0px 5px 0px rgba(10,33,40,0.5);
+}
+
+.our-community h3 {
+	font-weight: normal;
+}
+
+.our-community .split-text {
+	padding-top: 72px;
+}
+
+.split-text {
+	flex-basis: 50%;
+}
+
+.home-hero-1 .split-text {
+	-webkit-box-shadow: 0px 0px 5px 0px rgba(10,33,40,0.5);
+	-moz-box-shadow: 0px 0px 5px 0px rgba(10,33,40,0.5);
+	box-shadow: 0px 0px 5px 0px rgba(10,33,40,0.5);
+}
+
+.stats h1 {
+	margin-bottom: 0em;
+}
+
+.home-hero-1 h5 {
+	font-style: italic;
+	font-weight: normal;
+}
+
+.home-hero-1 h2 {
+	margin-bottom: .25em;
+}
+
+.home-hero-1 h3 {
+	font-weight: normal;
+	line-height: 1.3em;
+}
+
+.stats {
+	text-align: center;
+}
+
+.involvement-options h1 {
+	margin-bottom: .25em;
+}
+
+.involvement-options h3 {
+	margin-bottom: 2em;
+	text-align: center;
+}
+
+.involvement-options .button {
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+.involvement-options img {
+	min-width: 75px;
+	width: auto;
+	max-height: 75px;
+}
+
+.involvement-options p {
+	line-height: 1.3em;
+}
+
+.choose-your-path .button {
+	background-color: #53b0ca;
+}
+
+figure {
+	margin-top: 0;
+}
+
+.choose-your-path .flex-1-of-2 {
+	margin: 2em 0;
+} 
+
+figcaption p:first-of-type {
+	margin-top: 0;
+}
+
+figcaption .byline {
+	font-style: italic;
+}
+
+.partners-home h1 {
+	margin-bottom: .25em;
+}
+
+.partners-home .container {
+	text-align: center;
+}
+
+.partners-home .flex.holder {
+	margin-top: 4em;
+}
+
+.partners-home h3 {
+	margin-bottom: .25em;
+	text-align: left;
+}
+
+.byline {
+	font-style: italic;
+	line-height: 1.3em;
+	margin-bottom: 3em;
+	margin-top: 0;
+	text-align: left;
+}
+
+.for-companies .flex {
+	/*align-items: top;*/
+}
+
+.for-companies p:first-of-type {
+	margin-top: 0;
+}
+
+.testimonials-home h3 {
+	font-weight: normal;
+}
 
 
 

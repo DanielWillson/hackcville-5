@@ -14,10 +14,215 @@
 
 get_header(); ?>
 
+<!-- <div class="blue-divider"></div> -->
+<div class="home-hero-1 flex">
+	<div class="flex-2-of-3 image-bg split-pic" style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/peiching.jpg');">
+	</div>
+	<div class="blue-bg flex-1-of-3 split-text">
+		<div class="split-overlay">
+			<h2>"HackCville is a place like no other. I'm surrounded by a passionate, entrepreneurial community and I'm learning practical skills to help me bring my ideas to life."</h2>
+			<h5>- Rachel Malinowski, HackCville Member</h5>
+			<h3>HackCville trains students like you in high-demand skills, accelerates your ideas, and connects you to jobs, opportunities, and a community you’ll love.</h3>
+			<a class="button shorter-button" href="">
+				Get to Know Us &darr;
+			</a>
+			<a class="button shorter-button" href="">
+				Fall Programs &rarr;
+			</a>
+		</div>
+	</div>
+</div>
+<div class="involvement-options">
+	<div class="hc-blue-bg">
+		<div class="container">
+			<h1>Welcome to HackCville.</h1>
+			<h3>Here's how you can get involved.</h3>
+			<div class="flex">
+				<div class="flex-1-of-4">
+					<figure>
+						<img src="<?php echo get_template_directory_uri(); ?>/images/collaboration.png">
+					</figure>
+					<h2>Public Events</h2>
+					<p>Get an introduction to everything from artifical intelligence to video production to entrepreneurship. Our events are free and open to all.</p>
+					<a class="button shorter-button">
+						Get Details &rarr;
+					</a>
+				</div>
+				<div class="flex-1-of-4">
+					<figure>
+						<img src="<?php echo get_template_directory_uri(); ?>/images/whiteboard.png">
+					</figure>
+					<h2>Semester Programs</h2>
+					<p>Learn the basics of data science, marketing, social entrepreneurship, and more. Join our tight-knit community and complete real-world, hands-on projects.</p>
+					<a class="button shorter-button">
+						Get Details &rarr;
+					</a>
+				</div>
+				<div class="flex-1-of-4">
+					<figure>
+						<img src="<?php echo get_template_directory_uri(); ?>/images/buildings.png">
+					</figure>
+					<h2>Summer Internships</h2>
+					<p>Learn digital skills (like coding or marketing), get a guaranteed internship, and get paid $1000 to partcipate in our unique and popular summer program.</p>
+					<a class="button shorter-button">
+						Get Details &rarr;
+					</a>
+				</div>
+				<div class="flex-1-of-4">
+					<figure>
+						<img src="<?php echo get_template_directory_uri(); ?>/images/airplane.png">
+					</figure>
+					<h2>Startup Trips</h2>
+					<p>Tour dynamic startup offices and meet with hiring, young alumni in places like San Francisco, New York, Richmond, and more. Walk away with a job.</p>
+					<a class="button shorter-button">
+						Get Details &rarr;
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="partners-home">
+	<div class="white-bg">
+		<div class="container">
+			<h1>Our Sponsors + Hiring Partners</h1>
+			<p>This is just a fraction of the dozens of companies, organizations, and UVA departments we work with. <br><a href="">View all of our partners and sponsors &rarr;</a></p>
+			<div class="flex holder">
+				<div class='flex-1-of-2 flex'>
+					<figure class='flex-1-of-3'>
+						<img src="<?php echo get_template_directory_uri(); ?>/images/facebook-logo.jpg">
+					</figure>
+					<figure class='flex-1-of-3'>
+						<img src="<?php echo get_template_directory_uri(); ?>/images/facebook-logo.jpg">
+					</figure>
+					<figure class='flex-1-of-3'>
+						<img src="<?php echo get_template_directory_uri(); ?>/images/facebook-logo.jpg">
+					</figure>
+					<figure class='flex-1-of-3'>
+						<img src="<?php echo get_template_directory_uri(); ?>/images/facebook-logo.jpg">
+					</figure>
+					<figure class='flex-1-of-3'>
+						<img src="<?php echo get_template_directory_uri(); ?>/images/facebook-logo.jpg">
+					</figure>
+					<figure class='flex-1-of-3'>
+						<img src="<?php echo get_template_directory_uri(); ?>/images/facebook-logo.jpg">
+					</figure>
+					<figure class='flex-1-of-3'>
+						<img src="<?php echo get_template_directory_uri(); ?>/images/facebook-logo.jpg">
+					</figure>
+					<figure class='flex-1-of-3'>
+						<img src="<?php echo get_template_directory_uri(); ?>/images/facebook-logo.jpg">
+					</figure>
+					<figure class='flex-1-of-3'>
+						<img src="<?php echo get_template_directory_uri(); ?>/images/facebook-logo.jpg">
+					</figure>
+					<figure class='flex-1-of-3'>
+						<img src="<?php echo get_template_directory_uri(); ?>/images/facebook-logo.jpg">
+					</figure>
+					<figure class='flex-1-of-3'>
+						<img src="<?php echo get_template_directory_uri(); ?>/images/facebook-logo.jpg">
+					</figure>
+					<figure class='flex-1-of-3'>
+						<img src="<?php echo get_template_directory_uri(); ?>/images/facebook-logo.jpg">
+					</figure>
+				</div>
+				<div class="flex-1-of-2">
+					<h3>"HackCville is an incredible institution", a "unicorn", and "like nothing else at any university we work with."</h3>
+					<p class="byline">- Brendan Collins, College Recruiter at Google</p>
+					<h3>"I literally completely owe you guys for getting me my dream job."</h3>
+					<p class="byline">- Peter Simonsen, HackCville Alumnus, Data Analyst at Dataminr in NYC</p>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="our-community flex">
+	<div class="flex-1-of-2 split-pic image-bg" style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/launch2.jpg');">
+	</div>
+	<div class="blue-bg flex-1-of-2 split-text">
+		<div class="split-overlay">
+			<h1>Our Community</h1>
+			<h3>Talented, inspiring, empowering, and inclusive - ask any HackCville member and you’ll hear just how incredible our community is. We're 300+ strong.</h3>
+			<h3>We have two clubhouses on the UVA Corner that we call home. Our members get 24/7 access to these fun and functional spaces on Elliewood Avenue. Members of our community also get access to exclusive events, job opportunities, and more.</h3>
+			<h3>Anyone, regardless of year or major, can apply to join HackCville. Applications for our fall and summer programs open this August.</h3>
+			<a class="button">
+				How to Apply &rarr;
+			</a>
+		</div>
+	</div>
+</div>
+<div class="for-companies">
+	<div class="white-bg">
+		<div class="container">
+			<div class="flex">
+				<div class="flex-1-of-1">
+					<h1>Looking to hire a superstar?</h1>
+				</div>
+				<div class="flex-3-of-5">
+					<p>We vet and train top talent in software development, design, marketing, video production, and more. We have freelance, part-time, and full-time hires available for companies of any size.</p>
+					<a href="" class="button">Get details &rarr; </a>
+				</div>
+				<div class="flex-2-of-5">
+					<h3>"As we seek to build our creative economy, HackCville will play a crucial role in training and keeping talent here in Charlottesville."</h3>
+					<p class="byline">- Mike Signer, Mayor of Charlottesville</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="testimonials-home table-list">
+	<div class="blue-bg">
+		<div class="container">
+			<h1>Hear what our members have to say.</h1>
+			<div class="flex">
+				<figure class="image-pullquote flex-1-of-2 list-heading">
+					<img src="<?php echo get_template_directory_uri(); ?>/images/mike.jpg">
+				</figure>
+				<div class="flex-1-of-2 list-info">
+					<h3>"My favorite part about being involved with HackCville is the people. Everyone I meet is extremely bright, motivated, and talented. It’s refreshing and inspiring to be surrounded by such an incredible community."</h3>
+					<p class="byline">- Anna Kuno, Class of 2018, HackCville Member</p>
+				</div>
+				<figure class="image-pullquote flex-1-of-2 list-heading">
+					<img src="<?php echo get_template_directory_uri(); ?>/images/mike.jpg">
+				</figure>
+				<div class="flex-1-of-2 list-info">
+					<h3>"Everyone is truly enthusiastic about what they are learning or doing at HackCville, whether that be starting a project, having an exciting conversation with their mentor, or accomplishing a task on a team."</h3>
+					<p class="byline">- Ani Sridhar, Class of 2018, HackCville Member</p>
+				</div>
+				<figure class="image-pullquote flex-1-of-2 list-heading">
+					<img src="<?php echo get_template_directory_uri(); ?>/images/mike.jpg">
+				</figure>
+				<div class="flex-1-of-2 list-info">
+					<h3>"My favorite part about being involved with HackCville is the people. Everyone I meet is extremely bright, motivated, and talented. It’s refreshing and inspiring to be surrounded by such an incredible community."</h3>
+					<p class="byline">- Anna Kuno, Class of 2018, HackCville Member</p>
+				</div>
+				<figure class="image-pullquote flex-1-of-2 list-heading">
+					<img src="<?php echo get_template_directory_uri(); ?>/images/mike.jpg">
+				</figure>
+				<div class="flex-1-of-2 list-info">
+					<h3>"Everyone is truly enthusiastic about what they are learning or doing at HackCville, whether that be starting a project, having an exciting conversation with their mentor, or accomplishing a task on a team."</h3>
+					<p class="byline">- Ani Sridhar, Class of 2018, HackCville Member</p>
+				</div>
+			</div>
+			<div class="cta">
+				<a class="button">
+					Our Fall Programs &rarr;
+				</a>
+				<a class="button">
+					Our Summer Programs &rarr;
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
-
-		<?php
+ -->
+		<!-- <?php
 		if ( have_posts() ) :
 
 			if ( is_home() && ! is_front_page() ) : ?>
@@ -36,21 +241,21 @@ get_header(); ?>
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 				 */
-				get_template_part( 'template-parts/content', get_post_format() );
+				//get_template_part( 'template-parts/content', get_post_format() );
 
 			endwhile;
 
-			the_posts_navigation();
+			//the_posts_navigation();
 
 		else :
 
-			get_template_part( 'template-parts/content', 'none' );
+			//get_template_part( 'template-parts/content', 'none' );
 
-		endif; ?>
+		endif; ?> -->
 
-		</main><!-- #main -->
+	<!-- 	</main><!-- #main -->
 	</div><!-- #primary -->
-
+ 
 <?php
-get_sidebar();
+// get_sidebar();
 get_footer();

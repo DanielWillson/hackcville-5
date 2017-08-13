@@ -44,6 +44,8 @@ while ( have_posts() ) : the_post();
 	$extra_eligibility_info = get_field("extra_eligibility_info");
 	/* get program partners */
 	$partners_list = "";
+	$open_date = date_create($app_open_date);
+	$open_date_short = date_format($open_date,"m/d/Y"); 
 	$partner_count = 0;
 	$partners = array();
 	$posts = get_field("program_partners");
@@ -145,7 +147,7 @@ while ( have_posts() ) : the_post();
 					<a class="button short-button" target="_blank" href="<?php echo $app_link; ?>">Apply</a>
 					<?php	
 				} else { ?>
-					<a class="button short-button not-active" target="_blank" href="">Applications Open Soon</a>
+					<a class="button short-button not-active" target="_blank" href="">Applications Open <?php echo $open_date_short; ?></a>
 					<?php } ?>
 			</div>
 		</div>
@@ -294,24 +296,24 @@ while ( have_posts() ) : the_post();
 		  	<div class="container applications">
 				<h1>Applying to <?php echo $title; ?></h1>
 				<?php if ($app_status) { ?>
-					<h4 class="apps-due-by">Applications due by <?php 
+					<h3 class="apps-due-by">Applications due by <?php 
 						$date = date_create($app_close_date);
 						$date = date_format($date,"l, F d, Y") . " at 11:59pm"; 
 						echo $date; ?>
-					</h4>
+					</h3>
 				<?php } else { ?>
-					<h4 class="apps-due-by">Applications will open <?php 
-						$open_date = date_create($app_open_date);
+					<h3 class="apps-due-by">Applications will open <?php 
 						$open_date = date_format($open_date,"l, F d, Y"); 
 						echo $open_date; ?>
-					</h4>
+					</h3>
 				<?php } ?>
 				<div class="flex">
 					<div class="list-heading flex-1-of-2">
 						<h3>Meeting Times</h3>
 					</div>
 					<div class="list-info flex-1-of-2">
-						<p><?php echo $title; ?> meets <span class="important"><?php echo $meeting_times; ?>, September 3 - December 2.</span> All programs (including <?php echo $title; ?>) start with a 11am-5pm kickoff on Sunday, September 3. You must be able to attend each session. More than a few missed meeting times will result in being dropped from HackCville.</p>
+						<p><?php echo $title; ?> meets <span class="important"><?php echo $meeting_times; ?>, September 3 - December 2.</span> All programs (including <?php echo $title; ?>) start with a 11am-5pm kickoff on Sunday, September 3.</p>
+						<p>You must be able to attend each session. More than a few missed meeting times will result in being dropped from HackCville.</p>
 					</div>
 					<div class="list-heading flex-1-of-2">
 						<h3>Fees</h3>
@@ -345,14 +347,11 @@ while ( have_posts() ) : the_post();
 						<h2>Remind me</h2>
 				  	</a>
 					<?php
-				} else { 
-					$open_date = date_create($app_open_date);
-					$open_date = date_format($open_date,"m/d/Y"); ?>
-					
+				} else { ?>
 					<a class="button" href="#" target="_blank">
 						<h2>Remind me when apps open</h2>
 				  	</a>
-				  	<h3>Applications Open <?php echo $open_date; ?></h3>
+				  	<h3>Applications Open <?php echo $open_date_short; ?></h3>
 
 				<?php } ?>
 				</div>
@@ -414,13 +413,14 @@ while ( have_posts() ) : the_post();
 				<div class="flex">
 					<?php
 					$stu_cos = array();
-					$j = 0;
+					$j = 1;
 					foreach($prog_only_t as $t) {
 						$partners_worked_with = get_field("partners_student_has_worked_with", $t);
-						if ($partners_worked_with) {
+						if ($partners_worked_with && $j<5) {
 							foreach ($partners_worked_with as $p) {
+								$j++;
 								?>
-								<div class="flex-1-of-3">
+								<div class="flex-1-of-4">
 									<img src="<?php echo get_field('logo', $p); ?>">
 								</div>
 							<?php }
@@ -431,7 +431,7 @@ while ( have_posts() ) : the_post();
 		</div>
 	</div>
 	<div class="membership-section bolded-list">
-		<div class="hc-blue-bg">
+		<div class="blue-bg">
 			<div class="container">
 				<h1>Perks of Membership</h1>
 				<h3>After you complete your first HackCville program, you're granted HackCville membership. Here's what you get:</h3>
@@ -541,7 +541,7 @@ while ( have_posts() ) : the_post();
 								Remind me
 						  	</a>
 						<?php } else { ?>
-							<h3>Applications Open <?php echo $open_date; ?></h3>
+							<h3>Applications Open <?php echo $open_date_short; ?></h3>
 							<a class="button" href="#" target="_blank">
 								Remind me when apps open
 						  	</a>
