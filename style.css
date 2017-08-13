@@ -2267,9 +2267,53 @@ TESTIMONIALS HOME
     padding: 40px 0;
 }
 
+/*
+-----------------------------------
+FOOTER
+-----------------------------------
+*/
 
+footer .hc-blue-bg {
+	background-color: #1F435D;
+	-webkit-box-shadow: inset 0px 3px 5px 0px rgba(10,33,40,0.75);
+	-moz-box-shadow: inset 0px 3px 5px 0px rgba(10,33,40.75);
+	box-shadow: inset 0px 3px 5px 0px rgba(10,33,40,0.75);
+}
 
+footer .logo {
+	max-width: 40px;
+	height: auto;
+}
 
+footer figure {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+footer .flex-3-of-4 h2 {
+	display: inline-block;
+	vertical-align: middle;
+	margin-bottom: 6px;
+	margin-left: 10px;
+}
+
+footer .menu {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+footer .menu li {
+	margin-bottom: 7px;
+}
+
+footer .sub-footer {
+	background-color: #0a2128;
+	font-size: 16px;
+	text-align: center;
+	color: rgba(83, 176, 202, 0.58);
+	padding: 8px 0;
+}
 
 
 
