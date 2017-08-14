@@ -156,7 +156,7 @@ while ( have_posts() ) : the_post();
 		<div class="white-bg">
 		   <div class="container">
 				<?php if ($heading1) { ?>
-				<div class="flex">
+				<div class="flex first">
 					<figure class="image-pullquote left flex-1-of-2">
 						<img src="<?php echo $image1; ?>" />
 						<figcaption>
@@ -169,7 +169,7 @@ while ( have_posts() ) : the_post();
 					</div>
 				</div>
 				<?php } if ($heading2) { ?>
-				<div class="flex">
+				<div class="flex second">
 					<div class="flex-1-of-2">
 						<h3><?php echo $heading2 ?></h3>
 						<p><?php echo $description2 ?></p>
@@ -182,7 +182,7 @@ while ( have_posts() ) : the_post();
 					</figure>
 				</div>
 				<?php } if ($heading3) { ?>
-				<div class="flex">
+				<div class="flex third">
 					<figure class="image-pullquote left flex-1-of-2">
 						<img src="<?php echo $image3; ?>" />
 						<figcaption>
@@ -217,7 +217,6 @@ while ( have_posts() ) : the_post();
 		<div class="white-bg">
 		   <div class="container section-border">
 				<h1 class="header-center">Program Staff</h1>
-				<div class="flex">
 				<?php
 				$lr_check = 1;
 				$ids = array();
@@ -244,30 +243,36 @@ while ( have_posts() ) : the_post();
 				asort($ids);
 				foreach($ids as $key => $value) {			
 					$author_name = get_the_author_meta('first_name', $key) . " " . get_the_author_meta('last_name', $key);	
+					echo "<div class='flex'>";
 					if ($lr_check % 2 == 1) { ?>
-						<div class="flex-3-of-5">
+						<div class="flex">
+						<div class="flex-3-of-5 bottom">
 							<?php echo get_the_author_meta('description', $key); ?>
 						</div>
-						<figure class="image-pullquote right flex-2-of-5"> 
+						<figure class="image-pullquote right flex-2-of-5 top"> 
 							<img src="<?php echo get_field("headshot", 'user_'.$key); ?>" />
 							<figcaption>
 								<h3><?php echo $author_name; ?></h3>
 								<p class="subheading"><?php echo get_field("title", 'user_'.$key); ?></p>
 							</figcaption>
 						</figure>
+						</div>
 					<?php } else { ?>
-						<figure class="image-pullquote left flex-2-of-5"> 
+						<div class="flex">
+						<figure class="image-pullquote left flex-2-of-5 top"> 
 							<img src="<?php echo get_field("headshot", 'user_'.$key); ?>" />
 							<figcaption>
 								<h3><?php echo $author_name; ?></h3>
 								<p class="subheading"><?php echo get_field("title", 'user_'.$key); ?></p>
 							</figcaption>
 						</figure>
-						<div class="flex-3-of-5">
+						<div class="flex-3-of-5 bottom">
 							<?php echo get_the_author_meta('description', $key); ?>
 						</div>
-					<?php } $lr_check++; } ?>
-				</div>
+						</div>
+					<?php 
+					} $lr_check++; } ?>
+				</div>		
 			</div>
 		</div>
 	</div>
@@ -341,15 +346,15 @@ while ( have_posts() ) : the_post();
 				<?php if ($app_status) {
 					?>
 					<a class="button" href="<?php echo $app_link; ?>">
-						<h2>Apply Now</h2>
+						<h2>Apply Now &rarr;</h2>
 					</a>
 					<a class="button" href="#" target="_blank">
-						<h2>Remind me</h2>
+						<h2>Remind me &rarr;</h2>
 				  	</a>
 					<?php
 				} else { ?>
 					<a class="button" href="#" target="_blank">
-						<h2>Remind me when apps open</h2>
+						<h2>Remind me when apps open &rarr;</h2>
 				  	</a>
 				  	<h3>Applications Open <?php echo $open_date_short; ?></h3>
 
@@ -410,6 +415,7 @@ while ( have_posts() ) : the_post();
 		<div class="white-bg">
 	  		<div class="container">
 				<h1>Places You'll Go</h1>
+				<h3>Here are just a few places <?php echo $title; ?> graduates have ended up.</h3>
 				<div class="flex">
 					<?php
 					$stu_cos = array();

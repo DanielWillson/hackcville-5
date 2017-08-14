@@ -17,7 +17,7 @@
 		<div class="hc-blue-bg">
 			<div class="container">
 				<div class="flex">
-					<div class="flex-3-of-4">
+					<div class="flex-3-of-4 left">
 						<figure>
 							<img src="<?php echo get_template_directory_uri(); ?>/images/hackcville-logo.png" class="logo" >
 						</figure>
@@ -54,7 +54,7 @@
 							
 						</div>
 					</div>
-					<div class="flex-1-of-4">
+					<div class="flex-1-of-4 right">
 						<h2>Explore</h2>
 						<?php 
 						wp_nav_menu( array(

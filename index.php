@@ -86,7 +86,7 @@ get_header(); ?>
 	<div class="white-bg">
 		<div class="container">
 			<h1>Our Sponsors + Hiring Partners</h1>
-			<p>This is just a fraction of the dozens of companies, organizations, and UVA departments we work with. <br><a href="">View all of our partners and sponsors &rarr;</a></p>
+			<p>This is just a fraction of the dozens of companies, organizations, and UVA departments we work with. <br><a href="<?php echo esc_url( home_url( '/' ) ); ?>/partners">View all of our partners and sponsors &rarr;</a></p>
 			<div class="flex holder">
 				<div class='flex-1-of-2 flex'>
 					<?php 
@@ -119,14 +119,14 @@ get_header(); ?>
 						wp_reset_postdata();
 					} 
 					foreach ($presenting as $partner) { ?>
-						<div class='flex-1-of-3'>
+						<div class='flex-1-of-3 partner-logo'>
 							<img src="<?php echo get_field("logo", $partner); ?>">
 						</div>
 					<?php } 
 					if ($partner_count > 0) {
 						foreach ($programming_community as $partner) { 
 							if ($partner_count > 0) { ?>
-								<div class='flex-1-of-3'>
+								<div class='flex-1-of-3 partner-logo'>
 									<img src="<?php echo get_field("logo", $partner); ?>">
 								</div>
 					<?php } } } ?>

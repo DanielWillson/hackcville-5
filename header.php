@@ -53,5 +53,6 @@
 			</nav>
 		</div>
 	</header>
+	<div class="fixed-spacer"></div>
 
 	<div id="content" class="site-content">
