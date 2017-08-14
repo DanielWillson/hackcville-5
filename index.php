@@ -23,16 +23,16 @@ get_header(); ?>
 			<h2>"HackCville is a place like no other. I'm surrounded by a passionate, entrepreneurial community and I'm learning practical skills to help me bring my ideas to life."</h2>
 			<h5>- Rachel Malinowski, HackCville Member</h5>
 			<h3>HackCville trains students like you in high-demand skills, accelerates your ideas, and connects you to jobs, opportunities, and a community you’ll love.</h3>
-			<a class="button shorter-button" href="">
+			<a class="button shorter-button" href="#" onclick="getToKnowUs()">
 				Get to Know Us &darr;
 			</a>
-			<a class="button shorter-button" href="">
+			<a class="button shorter-button" href="<?php echo esc_url( home_url( '/' ) ); ?>/programs">
 				Fall Programs &rarr;
 			</a>
 		</div>
 	</div>
 </div>
-<div class="involvement-options">
+<div class="involvement-options" id="get-to-know-us">
 	<div class="hc-blue-bg">
 		<div class="container">
 			<h1>Welcome to HackCville.</h1>
@@ -89,49 +89,53 @@ get_header(); ?>
 			<p>This is just a fraction of the dozens of companies, organizations, and UVA departments we work with. <br><a href="">View all of our partners and sponsors &rarr;</a></p>
 			<div class="flex holder">
 				<div class='flex-1-of-2 flex'>
-					<figure class='flex-1-of-3'>
-						<img src="<?php echo get_template_directory_uri(); ?>/images/facebook-logo.jpg">
-					</figure>
-					<figure class='flex-1-of-3'>
-						<img src="<?php echo get_template_directory_uri(); ?>/images/facebook-logo.jpg">
-					</figure>
-					<figure class='flex-1-of-3'>
-						<img src="<?php echo get_template_directory_uri(); ?>/images/facebook-logo.jpg">
-					</figure>
-					<figure class='flex-1-of-3'>
-						<img src="<?php echo get_template_directory_uri(); ?>/images/facebook-logo.jpg">
-					</figure>
-					<figure class='flex-1-of-3'>
-						<img src="<?php echo get_template_directory_uri(); ?>/images/facebook-logo.jpg">
-					</figure>
-					<figure class='flex-1-of-3'>
-						<img src="<?php echo get_template_directory_uri(); ?>/images/facebook-logo.jpg">
-					</figure>
-					<figure class='flex-1-of-3'>
-						<img src="<?php echo get_template_directory_uri(); ?>/images/facebook-logo.jpg">
-					</figure>
-					<figure class='flex-1-of-3'>
-						<img src="<?php echo get_template_directory_uri(); ?>/images/facebook-logo.jpg">
-					</figure>
-					<figure class='flex-1-of-3'>
-						<img src="<?php echo get_template_directory_uri(); ?>/images/facebook-logo.jpg">
-					</figure>
-					<figure class='flex-1-of-3'>
-						<img src="<?php echo get_template_directory_uri(); ?>/images/facebook-logo.jpg">
-					</figure>
-					<figure class='flex-1-of-3'>
-						<img src="<?php echo get_template_directory_uri(); ?>/images/facebook-logo.jpg">
-					</figure>
-					<figure class='flex-1-of-3'>
-						<img src="<?php echo get_template_directory_uri(); ?>/images/facebook-logo.jpg">
-					</figure>
+					<?php 
+
+					$partner_count = 0;
+					$presenting = array();
+					$programming_community = array();
+					
+					$the_query2 = new WP_Query(array('post_type' => 'partner', 'orderby' => 'rand', 'posts_per_page'=> '20'));
+					if ( $the_query2->have_posts() ) {
+						while ( $the_query2->have_posts() ) { 
+							$the_query2->the_post();
+							
+							$id = get_the_ID();
+							$types = get_field("type");
+
+							if ($types && ($partner_count <= 12)) {
+								foreach ($types as $type) {
+									if (!strcmp("Presenting Partner", $type)) {
+										array_push($presenting, $id);
+										$partner_count++; 
+									}
+									else if (!strcmp("Programming Partner", $type) || !strcmp("Community Partner", $type)) {
+										array_push($programming_community, $id);
+										$partner_count++; 
+									}
+								}
+							}
+						}
+						wp_reset_postdata();
+					} 
+					foreach ($presenting as $partner) { ?>
+						<div class='flex-1-of-3'>
+							<img src="<?php echo get_field("logo", $partner); ?>">
+						</div>
+					<?php } 
+					if ($partner_count > 0) {
+						foreach ($programming_community as $partner) { 
+							if ($partner_count > 0) { ?>
+								<div class='flex-1-of-3'>
+									<img src="<?php echo get_field("logo", $partner); ?>">
+								</div>
+					<?php } } } ?>
 				</div>
 				<div class="flex-1-of-2">
 					<h3>"HackCville is an incredible institution", a "unicorn", and "like nothing else at any university we work with."</h3>
 					<p class="byline">- Brendan Collins, College Recruiter at Google</p>
 					<h3>"I literally completely owe you guys for getting me my dream job."</h3>
 					<p class="byline">- Peter Simonsen, HackCville Alumnus, Data Analyst at Dataminr in NYC</p>
-					
 				</div>
 			</div>
 		</div>
@@ -144,9 +148,9 @@ get_header(); ?>
 		<div class="split-overlay">
 			<h1>Our Community</h1>
 			<h3>Talented, inspiring, empowering, and inclusive - ask any HackCville member and you’ll hear just how incredible our community is. We're 300+ strong.</h3>
-			<h3>We have two clubhouses on the UVA Corner that we call home. Our members get 24/7 access to these fun and functional spaces on Elliewood Avenue. Members of our community also get access to exclusive events, job opportunities, and more.</h3>
-			<h3>Anyone, regardless of year or major, can apply to join HackCville. Applications for our fall and summer programs open this August.</h3>
-			<a class="button">
+			<h3>We have two clubhouses on the UVA Corner that we call home. Our members get 24/7 access to these fun and functional spaces on Elliewood Avenue. Members also get exclusive events, job opportunities, and more.</h3>
+			<h3>Anyone, regardless of year or major, can apply to join HackCville. We're mostly UVA students, but also some alumni and Cville community members, too. Applications for our fall and summer programs open this August.</h3>
+			<a class="button" href="<?php echo esc_url( home_url( '/' ) ); ?>/programs">
 				How to Apply &rarr;
 			</a>
 		</div>
@@ -161,7 +165,7 @@ get_header(); ?>
 				</div>
 				<div class="flex-3-of-5">
 					<p>We vet and train top talent in software development, design, marketing, video production, and more. We have freelance, part-time, and full-time hires available for companies of any size.</p>
-					<a href="" class="button">Get details &rarr; </a>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>/companies" class="button">Get details &rarr; </a>
 				</div>
 				<div class="flex-2-of-5">
 					<h3>"As we seek to build our creative economy, HackCville will play a crucial role in training and keeping talent here in Charlottesville."</h3>
@@ -176,40 +180,48 @@ get_header(); ?>
 		<div class="container">
 			<h1>Hear what our members have to say.</h1>
 			<div class="flex">
-				<figure class="image-pullquote flex-1-of-2 list-heading">
-					<img src="<?php echo get_template_directory_uri(); ?>/images/mike.jpg">
-				</figure>
-				<div class="flex-1-of-2 list-info">
-					<h3>"My favorite part about being involved with HackCville is the people. Everyone I meet is extremely bright, motivated, and talented. It’s refreshing and inspiring to be surrounded by such an incredible community."</h3>
-					<p class="byline">- Anna Kuno, Class of 2018, HackCville Member</p>
-				</div>
-				<figure class="image-pullquote flex-1-of-2 list-heading">
-					<img src="<?php echo get_template_directory_uri(); ?>/images/mike.jpg">
-				</figure>
-				<div class="flex-1-of-2 list-info">
-					<h3>"Everyone is truly enthusiastic about what they are learning or doing at HackCville, whether that be starting a project, having an exciting conversation with their mentor, or accomplishing a task on a team."</h3>
-					<p class="byline">- Ani Sridhar, Class of 2018, HackCville Member</p>
-				</div>
-				<figure class="image-pullquote flex-1-of-2 list-heading">
-					<img src="<?php echo get_template_directory_uri(); ?>/images/mike.jpg">
-				</figure>
-				<div class="flex-1-of-2 list-info">
-					<h3>"My favorite part about being involved with HackCville is the people. Everyone I meet is extremely bright, motivated, and talented. It’s refreshing and inspiring to be surrounded by such an incredible community."</h3>
-					<p class="byline">- Anna Kuno, Class of 2018, HackCville Member</p>
-				</div>
-				<figure class="image-pullquote flex-1-of-2 list-heading">
-					<img src="<?php echo get_template_directory_uri(); ?>/images/mike.jpg">
-				</figure>
-				<div class="flex-1-of-2 list-info">
-					<h3>"Everyone is truly enthusiastic about what they are learning or doing at HackCville, whether that be starting a project, having an exciting conversation with their mentor, or accomplishing a task on a team."</h3>
-					<p class="byline">- Ani Sridhar, Class of 2018, HackCville Member</p>
-				</div>
+				<?php
+				$the_query = new WP_Query(array('post_type' => 'testimonial', 'orderby' => 'rand', 'posts_per_page'=> '5'));
+				if ( $the_query->have_posts() ) {
+					while ( $the_query->have_posts() ) { $the_query->the_post();
+
+						$name = get_the_title(); // name of testimonial giver
+						$id = get_the_ID(); // ID of current testimonial
+
+						$t_categories = get_field("testimonial_category");
+						if ($t_categories) {
+							foreach($t_categories as $t_category) {
+								if (
+									strcmp($t_category, "Program") &&
+									strcmp($t_category, "Trip") &&
+									strcmp($t_category, "Launch") &&
+									strcmp($t_category, "Talent") ) {
+									
+									$t_content = get_field("testimonial", $id);
+									$t_headshot = get_field("headshot", $id);
+									?>
+
+									<figure class="image-pullquote flex-1-of-2 list-heading">
+										<img src="<?php echo $t_headshot; ?>">
+									</figure>
+									<div class="flex-1-of-2 list-info">
+										<h3>"<?php echo $t_content; ?>"</h3>
+										<p class="byline">- <?php echo $name; ?>, HackCville Member</p>
+									</div><?php 
+								
+								} else { /*unrelated testimonial */ }
+							}
+						}
+					}
+					wp_reset_postdata();
+				}
+				?>
 			</div>
 			<div class="cta">
-				<a class="button">
+				<a class="button" href="<?php echo esc_url( home_url( '/' ) ); ?>/programs">
 					Our Fall Programs &rarr;
 				</a>
-				<a class="button">
+				<a class="button" href="<?php echo esc_url( home_url( '/' ) ); ?>/launch">
 					Our Summer Programs &rarr;
 				</a>
 			</div>

@@ -16,6 +16,15 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		function getToKnowUs() {
+			
+		    var topOfDiv = $('#get-to-know-us').offset().top - 90;
+		    $('body').animate({scrollTop: topOfDiv}, 1000);
+		    return false;
+		}
+	</script>
 
 	<?php wp_head(); ?>
 </head>
