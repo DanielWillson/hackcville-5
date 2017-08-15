@@ -50,10 +50,20 @@ get_header(); ?>
 				</div>
 				<div class="flex-1-of-4">
 					<figure>
+						<img src="<?php echo get_template_directory_uri(); ?>/images/airplane.png">
+					</figure>
+					<h2>Startup Trips</h2>
+					<p>Tour dynamic startup offices and meet with hiring, young alumni in places like San Francisco, New York, Richmond, Washington DC, and more.</p>
+					<a class="button shorter-button">
+						Get Details &rarr;
+					</a>
+				</div>
+				<div class="flex-1-of-4">
+					<figure>
 						<img src="<?php echo get_template_directory_uri(); ?>/images/whiteboard.png">
 					</figure>
 					<h2>Semester Programs</h2>
-					<p>Learn the basics of data science, marketing, social entrepreneurship, and more. Join our tight-knit community and complete real-world, hands-on projects.</p>
+					<p>Learn the ins and outs of data science, marketing, social entrepreneurship, and more. Join our tight-knit community and complete real-world, hands-on projects.</p>
 					<a class="button shorter-button">
 						Get Details &rarr;
 					</a>
@@ -62,18 +72,8 @@ get_header(); ?>
 					<figure>
 						<img src="<?php echo get_template_directory_uri(); ?>/images/buildings.png">
 					</figure>
-					<h2>Summer Internships</h2>
-					<p>Learn digital skills (like coding or marketing), get a guaranteed internship, and get paid $1000 to partcipate in our unique and popular summer program.</p>
-					<a class="button shorter-button">
-						Get Details &rarr;
-					</a>
-				</div>
-				<div class="flex-1-of-4">
-					<figure>
-						<img src="<?php echo get_template_directory_uri(); ?>/images/airplane.png">
-					</figure>
-					<h2>Startup Trips</h2>
-					<p>Tour dynamic startup offices and meet with hiring, young alumni in places like San Francisco, New York, Richmond, and more. Walk away with a job.</p>
+					<h2>Internships + Jobs</h2>
+					<p>Get to paid to learn in an immersive bootcamp and get matched with a guaranteed internship this summer. Or, get help finding a full-time job from our hiring partners.</p>
 					<a class="button shorter-button">
 						Get Details &rarr;
 					</a>

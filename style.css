@@ -2174,7 +2174,7 @@ PROGRAM STAFF
 	.program-staff .bottom {
 		order: 2;
 	}
-	
+
 }
 
 /*
@@ -2246,6 +2246,22 @@ WHAT NEXT
 	height: 0;
 }
 
+@media screen and (max-width: 768px) {
+
+	.what-next .flex .list-info {
+		margin-top: 0;
+		padding-top: 0;
+	}
+
+	figure.image-pullquote.flex-1-of-2.list-heading figcaption {
+		max-width: 300px;
+	}
+
+	figure.image-pullquote.flex-1-of-2.list-heading:last-of-type {
+		margin-bottom: 0;
+	}
+}
+
 /*
 -----------------------------------
 PLACES YOULL GO
@@ -2254,6 +2270,14 @@ PLACES YOULL GO
 
 .places-youll-go .flex {
 	align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+
+	.places-youll-go .flex-1-of-4 {
+		flex-basis: 45%;
+	}
+
 }
 
 /*
@@ -2265,6 +2289,33 @@ TESTIMONIAL
 .testimonial .flex-3-of-4 {
 	margin-top: 2em;
 }
+
+@media screen and (max-width: 768px) {
+
+	.testimonial .flex-3-of-4 {
+		margin-top: 0;
+	}
+
+}
+
+/*
+-----------------------------------
+LAST APPLY
+-----------------------------------
+*/
+
+@media screen and (max-width: 768px) {
+
+	.last-apply .flex-1-of-2 {
+		margin-bottom: 2em;
+	}
+
+	.last-apply .flex-1-of-2 h1 {
+		margin-bottom: .25em;
+	}
+
+}
+
 
 /*
 -----------------------------------
