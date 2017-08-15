@@ -1751,7 +1751,7 @@ figure.image-pullquote.flex-1-of-2.list-heading figcaption {
 
 .table-list .cta:before {
 	content: '';
-	width: 100%;
+	width: 500%;
 	height: 0;
 	position: absolute;
 	border: 2px solid white;
@@ -2322,7 +2322,6 @@ LAST APPLY
 SPLIT PHOTO/TEXT
 -----------------------------------
 */
-
 .split-overlay .button {
 	background-color: #1f435d;
 	color: white;
@@ -2335,8 +2334,8 @@ SPLIT PHOTO/TEXT
 
 .split-overlay {
 	margin: 30px 0;
-	padding: 30px;
-	padding-right: 40px;
+	padding: 30px 40px;
+	/*padding-right: 40px;*/
 	background-color: white;
 
 	-webkit-box-shadow: 0px 0px 5px 0px rgba(10,33,40,0.5);
@@ -2344,7 +2343,7 @@ SPLIT PHOTO/TEXT
 	box-shadow: 0px 0px 5px 0px rgba(10,33,40,0.5);
 
 	position: relative;
-	left: -20px;
+	left: -35px;
 }
 
 
@@ -2358,7 +2357,7 @@ SPLIT PHOTO/TEXT
 
 .split-overlay:after {
 	content: '';
-	border: 2px solid #0a2128;
+	/*border: 2px solid #0a2128;*/
 	position: absolute;
 	top: -20px;
 	left: -20px;
@@ -2736,6 +2735,103 @@ footer .subscribe input.email {
 	}
 
 }
+
+/*
+-----------------------------------
+PROGRAMS ARCHIVE HERO
+-----------------------------------
+*/
+
+.program-archive-hero .intro {
+	max-width: 600px;
+	padding: 42px 0;
+	text-align: left;
+}
+
+
+
+/* FOR FRAMEWORK */
+
+.intro h1,
+.intro h2,
+.intro h3 {
+	margin-bottom: .25em;
+}
+
+.intro p {
+	margin-top: 0;
+}
+
+.intro {
+	text-align: center;
+}
+
+/*
+-----------------------------------
+PROGRAMS ARCHIVE LIST
+-----------------------------------
+*/
+
+.programs-list .intro {
+	text-align: left;
+}
+
+.programs-list .flex-1-of-2 {
+	flex-basis: 47.5%;
+}
+
+.programs-list .title {
+	font-weight: bold;
+	font-size: 26px;
+}
+
+.programs-list .topic {
+	font-size: 26px;
+	text-transform: lowercase;
+}
+
+.programs-list .list-item img.icon {
+	margin-bottom: 11px;
+}
+
+.programs-list .list-item {
+	padding-top: 4px;
+}
+
+/*
+-----------------------------------
+APPLICATION PROCESS - PROGRAMS
+-----------------------------------
+*/
+
+.application-process .table-list .list-heading.flex-1-of-2 {
+    flex-basis: 6%;
+    margin-left: 10%;
+}
+
+.application-process .table-list .list-info.flex-1-of-2 {
+    flex-grow: 2;
+    margin-top: 20px;
+    margin-right: 5%;
+    border-bottom: none;
+}
+
+.application-process .intro h3 {
+	font-style: italic;
+}
+
+/*
+-----------------------------------
+NEWSLETTER SUBSCRIBE 
+-----------------------------------
+*/
+
+.newsletter-subscribe .hc-blue-bg {
+	text-align: center;
+	background-color: #1F435D;
+}
+
+
 
 
 

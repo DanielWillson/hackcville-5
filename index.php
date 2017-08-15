@@ -82,6 +82,11 @@ get_header(); ?>
 		</div>
 	</div>
 </div>
+<?php
+	// Import Newsletter Subscribe
+	$template_url = get_template_directory() . '/template-parts/newsletter-subscribe.php';
+	include ($template_url);
+?>
 <div class="partners-home">
 	<div class="white-bg">
 		<div class="container">
