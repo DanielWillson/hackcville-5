@@ -126,6 +126,17 @@
 		    $('body').animate({scrollTop: topOfDiv}, 1000);
 		    return false;
 		}
+
+		
+		function showHide() {
+			var disp = document.getElementById('check').style.display;
+			if (disp == "block") {
+				document.getElementById('check').style.display='';
+			}
+			else {
+				document.getElementById('check').style.display='block';
+			}
+		}
 	</script>
 
 	<?php wp_head(); ?>
