@@ -1476,6 +1476,8 @@ input[type="submit"].submit:hover {
 .image-pullquote img {
 	filter: grayscale(35%);
 	transition: .2s;
+	width: 100%;
+    height: auto;
 }
 
 .image-bg .image-pullquote img {
@@ -2695,13 +2697,13 @@ footer .logo {
 footer figure {
 	display: inline-block;
 	vertical-align: middle;
+	margin-right: 10px;
 }
 
 footer .flex-3-of-4 h2 {
 	display: inline-block;
 	vertical-align: middle;
 	margin-bottom: 6px;
-	margin-left: 10px;
 }
 
 footer .menu {

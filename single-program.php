@@ -187,15 +187,15 @@ while ( have_posts() ) : the_post();
 						</figcaption>
 					</figure>
 					<div class="flex-1-of-2">
-						<h3><?php echo $heading1 ?></h3>
-						<p><?php echo $description1 ?></p>
+						<h3><?php echo $heading1; ?></h3>
+						<p><?php echo $description1; ?></p>
 					</div>
 				</div>
 				<?php } if ($heading2) { ?>
 				<div class="flex second">
 					<div class="flex-1-of-2">
-						<h3><?php echo $heading2 ?></h3>
-						<p><?php echo $description2 ?></p>
+						<h3><?php echo $heading2; ?></h3>
+						<p><?php echo $description2; ?></p>
 					</div>
 					<figure class="image-pullquote right flex-1-of-2">
 						<img src="<?php echo $image2; ?>" />
@@ -204,7 +204,7 @@ while ( have_posts() ) : the_post();
 						</figcaption>
 					</figure>
 				</div>
-				<?php } if ($heading3) { ?>
+				<?php }  ?>
 				<div class="flex third">
 					<figure class="image-pullquote left flex-1-of-2">
 						<img src="<?php echo $image3; ?>" />
@@ -213,11 +213,10 @@ while ( have_posts() ) : the_post();
 						</figcaption>
 					</figure>
 					<div class="flex-1-of-2 develop">
-						<h3><?php echo $heading3 ?></h3>
-						<p><?php echo $description3 ?></p>
+						<h3>Join our community</h3>
+						<p>Through collaborative projects, group dinners, hikes, pregames, and more you’ll become part of HackCville’s tight-knit community. We serve all UVA students (grad/undergrad) and Charlottesville community members 18+.</p>
 					</div>
 				</div>
-				<?php } ?>
 		   </div>
 	 </div>
 	</div>
@@ -376,10 +375,9 @@ while ( have_posts() ) : the_post();
 						<h3>Eligibility</h3>
 					</div>
 					<div class="list-info flex-1-of-2">
-						<p>Semester programs are high commitment, so if you're just looking to get a tast of HackCville or <?php echo $program_topic; ?>, check out our <a href="<?php echo get_home_url(); ?>/events">public events</a> to get your feet wet this semester.</p>
-						<p>In our application process we look for extremely committed, reliable students who are hungry for an intensive challenge. We want people who intend on becoming active, contributing members of the HackCville community</p>
+						<p>Semester programs are high commitment, so if you're just looking to get a taste of HackCville or <?php echo $program_topic; ?>, check out our <a href="<?php echo get_home_url(); ?>/events">public events</a> to get your feet wet this semester.</p>
+						<p>In our application process we look for extremely committed, reliable students who are hungry for an intensive challenge. We want people who intend on becoming active, contributing members of the HackCville community.</p>
 						<p><?php echo $extra_eligibility_info; ?> Any UVA student (grad or undergrad) or Charlottesville resident +18 may apply.</p>
-						<p>Applications are due by <?php echo $date; ?>. You may complete the written application through the link below.</p>
 					</div>
 				</div>
 				<div class="cta">
