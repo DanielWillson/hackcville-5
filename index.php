@@ -26,7 +26,7 @@ get_header(); ?>
 			<a class="button shorter-button" href="#" onclick="getToKnowUs()">
 				Get to Know Us &darr;
 			</a>
-			<a class="button shorter-button" href="<?php echo esc_url( home_url( '/' ) ); ?>/programs">
+			<a class="button shorter-button" href="<?php echo esc_url( home_url( '/' ) ); ?>programs">
 				Fall Programs &rarr;
 			</a>
 		</div>
@@ -44,8 +44,8 @@ get_header(); ?>
 					</figure>
 					<h2>Public Events</h2>
 					<p>Get an introduction to everything from artifical intelligence to video production to entrepreneurship. Our events are free and open to all.</p>
-					<a class="button shorter-button">
-						Get Details &rarr;
+					<a class="button shorter-button not-active">
+						Details Coming Soon
 					</a>
 				</div>
 				<div class="flex-1-of-4">
@@ -54,8 +54,8 @@ get_header(); ?>
 					</figure>
 					<h2>Startup Trips</h2>
 					<p>Tour dynamic startup offices and meet with hiring, young alumni in places like San Francisco, New York, Richmond, Washington DC, and more.</p>
-					<a class="button shorter-button">
-						Get Details &rarr;
+					<a class="button shorter-button not-active">
+						Details Coming Soon
 					</a>
 				</div>
 				<div class="flex-1-of-4">
@@ -74,8 +74,8 @@ get_header(); ?>
 					</figure>
 					<h2>Internships + Jobs</h2>
 					<p>Get to paid to learn in an immersive bootcamp and get matched with a guaranteed internship this summer. Or, get help finding a full-time job from our hiring partners.</p>
-					<a class="button shorter-button">
-						Get Details &rarr;
+					<a class="button shorter-button not-active">
+						Details Coming Soon
 					</a>
 				</div>
 			</div>
@@ -91,7 +91,9 @@ get_header(); ?>
 	<div class="white-bg">
 		<div class="container">
 			<h1>Our Sponsors + Hiring Partners</h1>
-			<p>This is just a fraction of the dozens of companies, organizations, and UVA departments we work with. <br><a href="<?php echo esc_url( home_url( '/' ) ); ?>/partners">View all of our partners and sponsors &rarr;</a></p>
+			<p>This is just a fraction of the dozens of companies, organizations, and UVA departments we work with. 
+			<!-- <br><a href="<?php echo esc_url( home_url( '/' ) ); ?>/partners">View all of our partners and sponsors &rarr;</a> -->
+			</p>
 			<div class="flex holder">
 				<div class='flex-1-of-2 flex'>
 					<?php 
@@ -99,6 +101,7 @@ get_header(); ?>
 					$partner_count = 0;
 					$presenting = array();
 					$programming_community = array();
+					$used_partners = array();
 					
 					$the_query2 = new WP_Query(array('post_type' => 'partner', 'orderby' => 'rand', 'posts_per_page'=> '20'));
 					if ( $the_query2->have_posts() ) {
@@ -108,15 +111,17 @@ get_header(); ?>
 							$id = get_the_ID();
 							$types = get_field("type");
 
-							if ($types && ($partner_count <= 12)) {
+							if ($types && ($partner_count < 12)) {
 								foreach ($types as $type) {
 									if (!strcmp("Presenting Partner", $type)) {
 										array_push($presenting, $id);
 										$partner_count++; 
+										break;
 									}
 									else if (!strcmp("Programming Partner", $type) || !strcmp("Community Partner", $type)) {
 										array_push($programming_community, $id);
 										$partner_count++; 
+										break;
 									}
 								}
 							}
@@ -127,14 +132,21 @@ get_header(); ?>
 						<div class='flex-1-of-3 partner-logo'>
 							<img src="<?php echo get_field("logo", $partner); ?>">
 						</div>
-					<?php } 
+					<?php 
+					array_push($used_partners, $partner);
+					} 
 					if ($partner_count > 0) {
 						foreach ($programming_community as $partner) { 
-							if ($partner_count > 0) { ?>
-								<div class='flex-1-of-3 partner-logo'>
-									<img src="<?php echo get_field("logo", $partner); ?>">
-								</div>
-					<?php } } } ?>
+							if ($partner_count > 0) { 
+								if (!in_array($partner, $used_partners)) { ?>
+									<div class='flex-1-of-3 partner-logo'>
+										<img src="<?php echo get_field("logo", $partner); ?>">
+									</div>
+									<?php $partner_count--;
+								} 
+							} 
+						} 
+					}?>
 				</div>
 				<div class="flex-1-of-2">
 					<h3>"HackCville is an incredible institution", a "unicorn", and "like nothing else at any university we work with."</h3>
@@ -155,7 +167,7 @@ get_header(); ?>
 			<h3>Talented, inspiring, empowering, and inclusive - ask any HackCville member and you’ll hear just how incredible our community is. We're 300+ strong.</h3>
 			<h3>We have two clubhouses on the UVA Corner that we call home. Our members get 24/7 access to these fun and functional spaces on Elliewood Avenue. Members also get exclusive events, job opportunities, and more.</h3>
 			<h3>Anyone, regardless of year or major, can apply to join HackCville. We're mostly UVA students, but also some alumni and Cville community members, too. Applications for our fall and summer programs open this August.</h3>
-			<a class="button" href="<?php echo esc_url( home_url( '/' ) ); ?>/programs">
+			<a class="button" href="<?php echo esc_url( home_url( '/' ) ); ?>programs">
 				How to Apply &rarr;
 			</a>
 		</div>
@@ -170,7 +182,8 @@ get_header(); ?>
 				</div>
 				<div class="flex-3-of-5">
 					<p>We vet and train top talent in software development, design, marketing, video production, and more. We have freelance, part-time, and full-time hires available for companies of any size.</p>
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>/companies" class="button">Get details &rarr; </a>
+					<a href="mailto:daniel@hackcville.com" class="button">Contact us &rarr; </a>
+					<!-- <a href="<?php echo esc_url( home_url( '/' ) ); ?>/companies" class="button">Get details &rarr; </a> -->
 				</div>
 				<div class="flex-2-of-5">
 					<h3>"As we seek to build our creative economy, HackCville will play a crucial role in training and keeping talent here in Charlottesville."</h3>
@@ -186,13 +199,16 @@ get_header(); ?>
 			<h1>Hear what our members have to say.</h1>
 			<div class="flex">
 				<?php
-				$the_query = new WP_Query(array('post_type' => 'testimonial', 'orderby' => 'rand', 'posts_per_page'=> '5'));
+				$used_people = array();
+				remove_all_filters('posts_orderby');
+
+				$the_query = new WP_Query(array('post_type' => 'testimonial', 'orderby' => 'rand', 'order' => 'ASC', 'posts_per_page'=> '-1'));
 				if ( $the_query->have_posts() ) {
 					while ( $the_query->have_posts() ) { $the_query->the_post();
 
 						$name = get_the_title(); // name of testimonial giver
 						$id = get_the_ID(); // ID of current testimonial
-
+						
 						$t_categories = get_field("testimonial_category");
 						if ($t_categories) {
 							foreach($t_categories as $t_category) {
@@ -200,7 +216,8 @@ get_header(); ?>
 									strcmp($t_category, "Program") &&
 									strcmp($t_category, "Trip") &&
 									strcmp($t_category, "Launch") &&
-									strcmp($t_category, "Talent") ) {
+									strcmp($t_category, "Talent") &&
+									!in_array($name, $used_people) ) {
 									
 									$t_content = get_field("testimonial", $id);
 									$t_headshot = get_field("headshot", $id);
@@ -213,8 +230,9 @@ get_header(); ?>
 										<h3>"<?php echo $t_content; ?>"</h3>
 										<p class="byline">- <?php echo $name; ?>, HackCville Member</p>
 									</div><?php 
-								
-								} else { /*unrelated testimonial */ }
+									array_push($used_people, $name);
+									break;
+								} 
 							}
 						}
 					}
@@ -226,9 +244,9 @@ get_header(); ?>
 				<a class="button" href="<?php echo esc_url( home_url( '/' ) ); ?>/programs">
 					Our Fall Programs &rarr;
 				</a>
-				<a class="button" href="<?php echo esc_url( home_url( '/' ) ); ?>/launch">
+				<!-- <a class="button" href="<?php echo esc_url( home_url( '/' ) ); ?>/launch">
 					Our Summer Programs &rarr;
-				</a>
+				</a> -->
 			</div>
 		</div>
 	</div>

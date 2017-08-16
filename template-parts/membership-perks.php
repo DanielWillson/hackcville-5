@@ -22,7 +22,7 @@
 				</div>
 				<div class="list-item">
 					<h4>Priority application for our summer program, Launch.</h4>
-					<p>Get paid to learn web design, software development, marketing or data science in our 12 week summer program, <a href="<?php echo get_home_url(); ?>/launch">Launch</a>. You'll get trained by HackCville's expert instructors and get a guaranteed, paid internship at a local startup or tech company.</p>
+					<p>Get paid to learn web design, software development, marketing or data science in our 12 week summer program, <!-- <a href="<?php echo get_home_url(); ?>launch"> -->Launch<!-- </a> -->. You'll get trained by HackCville's expert instructors and get a guaranteed, paid internship at a local startup or tech company.</p>
 				</div>
 			</div>
 		</div>
@@ -42,7 +42,7 @@
 	  					<!-- <img src="" class="extra-opp-image-right"> -->
 						<h3>Startup Trips</h3>
 						<p>HackCville hosts immersive trips to cities across the country (New York City, San Francisco, Baltimore, and more) to tour companies, meet alumni, and give students networking opportunities with industry leaders. Trips are where you see how what you're learning is put into action in the real world.</p>
-						<a class="button" href="<?php echo get_home_url(); ?>/trips">Learn More &rarr;</a>
+						<!-- <a class="button" href="<?php echo get_home_url(); ?>/trips">Learn More &rarr;</a> -->
 	  				</div>
 				</div>
 			</div>

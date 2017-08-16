@@ -154,7 +154,9 @@ include ($template_url);
 						<p>If you're not accepted, don't worry! Many of current members applied multiple times before they were accepted. Programs are just one way to be involved - many also particiapte in our trips, public events, and summer program, Launch.</p>
 					</div>
 				</div>
-				<div class="cta"></div>
+				<div class="cta">
+					<a class="not-active button">Email us questions at hello@hackcville.com</a>
+				</div>
 			</div>
 		</div>
 	</div>

@@ -1351,6 +1351,7 @@ a:hover {
 	position: relative;
 	border: none; /* not sure */
 	border-radius: 0;
+	border-bottom-width: 0 !important;
 }
 
 .not-active {
@@ -1384,6 +1385,7 @@ a:hover {
 input[type="submit"].submit {
 	padding: 7px 24px;
 	margin: 6px 1em;
+	margin-left: 0;
 	text-decoration: none;
 	text-transform: uppercase;
 	font-weight: bold;
@@ -2048,7 +2050,7 @@ PROGRAM HERO
 }
 
 .program-hero .description {
-	max-width: 250px;
+	max-width: 350px;
 }
 
 .program-hero .description h3 {
@@ -2272,6 +2274,10 @@ PLACES YOULL GO
 	align-items: center;
 }
 
+.places-youll-go .intro {
+	margin-bottom: 2em;
+}
+
 @media screen and (max-width: 768px) {
 
 	.places-youll-go .flex-1-of-4 {
@@ -2288,6 +2294,10 @@ TESTIMONIAL
 
 .testimonial .flex-3-of-4 {
 	margin-top: 2em;
+}
+
+.testimonial .flex-of-1-4 h4 {
+	line-height: 1.3em;
 }
 
 @media screen and (max-width: 768px) {
@@ -2720,6 +2730,7 @@ footer .subscribe {
 footer .subscribe input.email {
 	border-radius: 0;
 	text-align: center;
+	margin-right: 1em;
 }
 
 @media screen and (max-width: 768px) {
@@ -2766,6 +2777,10 @@ PROGRAMS ARCHIVE HERO
 	text-align: center;
 }
 
+.blue-bg .important {
+	color: white;
+}
+
 /*
 -----------------------------------
 PROGRAMS ARCHIVE LIST
@@ -2792,10 +2807,23 @@ PROGRAMS ARCHIVE LIST
 
 .programs-list .list-item img.icon {
 	margin-bottom: 11px;
+	margin-right: 2px;
 }
 
 .programs-list .list-item {
 	padding-top: 4px;
+}
+
+.programs-list .flex-1-of-2 .white-bg {
+		padding: 0;
+	}
+
+@media screen and (max-width: 850px) {
+	.programs-list .flex-1-of-2 {
+		flex-basis: initial;
+	}
+
+
 }
 
 /*
@@ -2818,6 +2846,19 @@ APPLICATION PROCESS - PROGRAMS
 
 .application-process .intro h3 {
 	font-style: italic;
+}
+
+@media screen and (max-width: 768px) {
+	
+	.application-process .table-list .list-heading.flex-1-of-2 {
+		margin-left: 0;
+	}
+
+	.application-process .table-list .list-info.flex-1-of-2 {
+		margin-top: 0;
+	}
+
+
 }
 
 /*

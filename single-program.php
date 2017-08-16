@@ -40,6 +40,16 @@ while ( have_posts() ) : the_post();
 
 	$skills_photo = get_field("skills_background_photo");
 	$meeting_times = get_field("meeting_times");
+	$meeting_list = array();
+	$multiple_times = 0;
+	if (strpos($meeting_times, "\n") !== false) {
+	    $multiple_times = 1;
+	    $meeting_list = explode("\n", $meeting_times);
+	}
+	else {
+		array_push($meeting_list, $meeting_times);
+	}
+
 	$extra_fee_info = get_field("extra_fee_info");
 	$extra_eligibility_info = get_field("extra_eligibility_info");
 	/* get program partners */
@@ -73,6 +83,9 @@ while ( have_posts() ) : the_post();
 	$used_t_ids = array();
 	$prog_only_t = array();
 	$i = 0;
+	$student_work_check = false;
+	$student_outcomes_check = false;
+	$student_partner_check = false; 
 
 	$the_query = new WP_Query(array('post_type' => 'testimonial', 'orderby' => 'rand'));
 	if ( $the_query->have_posts() ) {
@@ -86,7 +99,17 @@ while ( have_posts() ) : the_post();
 				foreach($t_programs as $t_program) {
 					$user_t_program = get_the_title($t_program);
 					if (!strcmp($title, $user_t_program)) {
-						if ($i<4) { $prog_only_t[$i] = $id; }
+						if ($i<4) { $prog_only_t[$i] = $id; $i++; }
+						
+						$has_student_work = get_field('student_work_image', $id);
+						if ($has_student_work) { $student_work_check = true; }
+
+						$has_outcome = get_field('narrative_outcome', $id);
+						if ($has_outcome) { $student_outcomes_check = true; }
+
+						$has_partner = get_field("partners_student_has_worked_with", $t);
+						if ($has_partner) { $student_partner_check = true; }
+
 						$t_content = get_field("testimonial");
 						$t = "\"" . $t_content . "\"<br><span class=\"author\">- " . $name . ", " . $title . " Program Graduate</span>";
 						$testimonials[$testimonial_count] = $t;
@@ -99,6 +122,7 @@ while ( have_posts() ) : the_post();
 		}
 		wp_reset_postdata();
 	}
+	shuffle($prog_only_t);
 	if ($testimonial_count < 3) {
 
 		$the_query2 = new WP_Query(array('post_type' => 'testimonial', 'orderby' => 'rand'));
@@ -140,7 +164,7 @@ while ( have_posts() ) : the_post();
 				</div>
 				<h1 class="program-name"><?php echo $title; ?></h1>
 				<p class="subheading">An immersive, 10-week program hosted by HackCville</p>
-				<h4 class="sponsor">Sponsored by <?php echo $partners_list; ?></h4>
+				<?php if($partner_count > 0) { ?><h4 class="sponsor">Sponsored by <?php echo $partners_list; ?></h4><?php } ?>
 				<?php 
 				if ($app_status) { ?>
 					<a class="button short-button" target="_blank" href="<?php echo $app_link; ?>">Apply</a>
@@ -275,6 +299,7 @@ while ( have_posts() ) : the_post();
 			</div>
 		</div>
 	</div>
+	<?php if($partner_count > 0) { ?>
 	<div class="program-partners">
 		<div class="white-bg container meet-sponsors">
 		  	<h1 class="header-center">Meet <?php echo $title; ?>'s Sponsor<?php 
@@ -295,6 +320,7 @@ while ( have_posts() ) : the_post();
 		  	</div>
 		</div>
 	</div>
+	<?php } ?>
 	<div class="apply-to table-list">
 		<div class="blue-bg">
 		  	<div class="container applications">
@@ -316,7 +342,22 @@ while ( have_posts() ) : the_post();
 						<h3>Meeting Times</h3>
 					</div>
 					<div class="list-info flex-1-of-2">
-						<p><?php echo $title; ?> meets <span class="important"><?php echo $meeting_times; ?>, September 3 - December 2.</span> All programs (including <?php echo $title; ?>) start with a 11am-5pm kickoff on Sunday, September 3.</p>
+						<?php 
+						if ($multiple_times) { ?>
+
+							<p><?php echo $title; ?> has multiple sections:
+								<ul>
+									<?php foreach ($meeting_list as $mt) { ?>
+										<li><?php echo $mt; ?></li>
+									<?php } ?>
+								</ul>
+							All sections start September 3 and run through December 2. You can indicate on your application with section(s) you are available for. There is no difference in curriculum between sections.</p>
+						<?php } else { ?>
+
+							<p><?php echo $title; ?> meets <span class="important"><?php echo $meeting_times; ?>, September 3 - December 2.</span></p>
+
+						<?php } ?>
+						<p><span class="important">All sections of all programs (including <?php echo $title; ?>) start with a 11am-5pm kickoff on Sunday, September 3.</span></p>
 						<p>You must be able to attend each session. More than a few missed meeting times will result in being dropped from HackCville.</p>
 					</div>
 					<div class="list-heading flex-1-of-2">
@@ -347,12 +388,12 @@ while ( have_posts() ) : the_post();
 					<a class="button" href="<?php echo $app_link; ?>">
 						<h2>Apply Now &rarr;</h2>
 					</a>
-					<a class="button" href="#" target="_blank">
+					<a class="button" href="http://hackcville.us5.list-manage.com/subscribe/post?u=dae9a7242f836507908a2f2d6&id=97161904f1" target="_blank">
 						<h2>Remind me &rarr;</h2>
 				  	</a>
 					<?php
 				} else { ?>
-					<a class="button" href="#" target="_blank">
+					<a class="button" href="http://hackcville.us5.list-manage.com/subscribe/post?u=dae9a7242f836507908a2f2d6&id=97161904f1" target="_blank">
 						<h2>Remind me when apps open &rarr;</h2>
 				  	</a>
 				  	<h3>Applications Open <?php echo $open_date_short; ?></h3>
@@ -367,6 +408,7 @@ while ( have_posts() ) : the_post();
 		$template_url = get_template_directory() . '/template-parts/newsletter-subscribe.php';
 		include ($template_url);
 	?>
+	<?php if ($student_work_check) { ?>
 	<div class="student-work">
 	   	<div class="white-bg">
 			<div class="container">
@@ -392,6 +434,8 @@ while ( have_posts() ) : the_post();
 		 	</div>
 	   	</div>
 	</div>
+	<?php } ?>
+	<?php if ($student_outcomes_check) { ?>
 	<div class="what-next table-list">
 	  	<div class="blue-bg">
 		  	<div class="container">
@@ -415,15 +459,19 @@ while ( have_posts() ) : the_post();
 			</div>
   		</div>
 	</div>
+	<?php } ?>
+	<?php if ($student_partner_check) { ?>
 	<div class="places-youll-go">
 		<div class="white-bg">
 	  		<div class="container">
-				<h1>Places You'll Go</h1>
-				<h3>Here are just a few places <?php echo $title; ?> graduates have ended up.</h3>
+				<div class="intro">
+					<h1>Places You'll Go</h1>
+					<h3>Here are just a few places <?php echo $title; ?> graduates have ended up.</h3>
+				</div>
 				<div class="flex">
 					<?php
-					$stu_cos = array();
 					$j = 1;
+
 					foreach($prog_only_t as $t) {
 						$partners_worked_with = get_field("partners_student_has_worked_with", $t);
 						if ($partners_worked_with && $j<5) {
@@ -440,6 +488,7 @@ while ( have_posts() ) : the_post();
 	  		</div>
 		</div>
 	</div>
+	<?php } ?>
 	<?php
 		// Import Membership Perks
 		$template_url = get_template_directory() . '/template-parts/membership-perks.php';
@@ -463,12 +512,12 @@ while ( have_posts() ) : the_post();
 							<a class="button" href="<?php echo $app_link; ?>">
 								Apply Now
 							</a>
-							<a class="button" href="#" target="_blank">
+							<a class="button" href="http://hackcville.us5.list-manage.com/subscribe/post?u=dae9a7242f836507908a2f2d6&id=97161904f1" target="_blank">
 								Remind me
 						  	</a>
 						<?php } else { ?>
 							<h3>Applications Open <?php echo $open_date_short; ?></h3>
-							<a class="button" href="#" target="_blank">
+							<a class="button" href="http://hackcville.us5.list-manage.com/subscribe/post?u=dae9a7242f836507908a2f2d6&id=97161904f1" target="_blank">
 								Remind me when apps open
 						  	</a>
 						<?php } ?>

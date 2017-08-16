@@ -26,7 +26,7 @@
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">HackCville</a> is a platform for experiential education and career development. We train students in high-demand skills, accelerate their ideas, and connect them to jobs, opportunities, and a tight-knit community.
 						</p>
 						<p>
-							In turn, we provide talent to Charlottesville’s growing tech and startup scene. Our home is our clubhouses near the <a href="http://virginia.edu" target="_blank">University of Virginia</a>, but our broader network of 1,200+ spans the globe. <a href="<?php echo esc_url( home_url( '/' ) ); ?>/about">More about us &rarr;</a>
+							In turn, we provide talent to Charlottesville’s growing tech and startup scene. Our home is our clubhouses near the <a href="http://virginia.edu" target="_blank">University of Virginia</a>, but our broader network of 1,200+ spans the globe. <!--<a href="<?php echo esc_url( home_url( '/' ) ); ?>about">More about us &rarr;</a>-->
 						</p>
 						<div class="subscribe">
 							<h3>Get exclusive news about upcoming programs and community events.</h3>
