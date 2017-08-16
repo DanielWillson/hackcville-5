@@ -73,7 +73,7 @@ get_header(); ?>
 						<img src="<?php echo get_template_directory_uri(); ?>/images/buildings.png">
 					</figure>
 					<h2>Internships + Jobs</h2>
-					<p>Get to paid to learn in an immersive bootcamp and get matched with a guaranteed internship this summer. Or, get help finding a full-time job from our hiring partners.</p>
+					<p>Get paid to learn in an immersive bootcamp and get matched with a guaranteed internship this summer. Or, get help finding a full-time job from our hiring partners.</p>
 					<a class="button shorter-button not-active">
 						Details Coming Soon
 					</a>
