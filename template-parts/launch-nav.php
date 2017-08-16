@@ -23,10 +23,3 @@
 	</div>
 </div>
 <div class="fixed-spacer-sub"></div>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
