@@ -77,7 +77,7 @@ $track_IDs = array();
                     		<?php
 							if ( have_posts() ) : 
 								while ( have_posts() ) : the_post(); ?>
-									<li><a href="<?php echo get_the_permalink(); ?>"><?php echo get_the_title(); ?> Track</a></li>
+									<li><a href="<?php echo get_the_permalink(); ?>?type=<?php echo $af; ?>"><?php echo get_the_title(); ?> Track</a></li>
 									<?php 
 									array_push($track_IDs, get_the_ID());
 								endwhile;

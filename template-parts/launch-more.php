@@ -56,7 +56,7 @@
 					if ( $launch_tracks ) {
 						echo "<h3>Launch Tracks</h3>";
 						foreach ($launch_tracks as $id) { ?>
-							<a class="button" href="<?php echo get_the_permalink($id); ?>"><?php echo get_the_title($id); ?> Track</a>
+							<a class="button" href="<?php echo get_the_permalink($id); ?>?type=<?php echo $af; ?>"><?php echo get_the_title($id); ?> Track</a>
 						<?php }
 					} else {?>
 						<h3>I'm a 4th year.</h3>

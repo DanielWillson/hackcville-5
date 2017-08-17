@@ -3001,6 +3001,24 @@ LAUNCH PICKER / HERO
 	margin: .5em 2em;
 }
 
+@media screen and (max-width: 768px) {
+	.launch-picker .container {
+		padding: 18px;
+	}
+	.launch-picker .container h1 {
+		font-size: 32px;
+	}
+	.launch-picker .intro,
+	.launch-picker .flex-1-of-2 {
+		text-align: left;
+	}
+
+	.launch-picker .button,
+	.launch-picker .button:visited {
+		margin: .5em 0em;
+	}
+}
+
 /*
 -----------------------------------
 LAUNCH CATEGORY HERO
@@ -3017,6 +3035,14 @@ LAUNCH CATEGORY HERO
 	padding: 75px 0;
 }
 
+@media screen and (max-width: 768px) {
+
+	.launch-category-hero .container .intro {
+		padding: 0;
+	}
+
+}
+
 /*
 -----------------------------------
 LAUNCH DETAILS
@@ -3031,6 +3057,27 @@ LAUNCH DETAILS
 	margin-bottom: 2em;
 }
 
+@media screen and (max-width: 768px) {
+
+	.launch-details .flex {
+		margin-top: 0;
+	}
+
+	.launch-details .flex-1-of-2,
+	.launch-details .flex-2-of-3 {
+		margin-bottom: .25em;
+	}
+
+	.launch-details .second figure {
+		order: 3;
+	}
+
+	.launch-details .second div.flex-1-of-2 {
+		order: 1;
+	}
+
+}
+
 
 /*
 -----------------------------------
@@ -3042,9 +3089,20 @@ LAUNCH PARTNERS
 	align-items: center;
 }
 
+.partners-launch .flex-1-of-5 {
+    flex-basis: 17%;
+    padding: 10px;
+    text-align: center;
+}
+
+@media screen and (max-width: 920px) {
+	.partners-launch figure.flex-1-of-5 {
+    flex-basis: 27%;
+}
+
 /*
 -----------------------------------
-LAUNCH PARTNERS
+LAUNCH MORE
 -----------------------------------
 */
 
@@ -3091,6 +3149,13 @@ LAUNCH PARTNERS
 .launch-more .launch-class:hover:after {
     top: 0px;
     left: 0px;
+}
+
+@media screen and (max-width: 768px) {
+
+	.partners-launch figure.flex-1-of-5 {
+		flex-basis: 45%;
+	}
 }
 
 /*
@@ -3146,6 +3211,15 @@ LAUNCH BOOTCAMP PAYMENT OPTIONS
 	text-align: center;
 }
 
+@media screen and (max-width: 768px) {
+
+	.launch-fellowship-payment-options .flex-1-of-2 {
+		padding: 18px;
+		margin-bottom: 36px;
+	}
+
+}
+
 /*
 -----------------------------------
 LAUNCH SINGLE TRACK HERO
@@ -3164,7 +3238,23 @@ LAUNCH SINGLE PARTNERS
 -----------------------------------
 */
 
-.launch-partners .flex {
+.launch-partners .intro {
+	margin-bottom: 1em;
+}
+
+.launch-partners .align {
 	align-items: center;
+}
+
+.launch-partners .flex-1-of-4 {
+	flex-basis: 21%;
+    padding: 15px;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+	.launch-partners .flex-1-of-4 {
+		flex-basis: 27%;
+	}
 }
 

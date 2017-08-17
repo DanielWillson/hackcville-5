@@ -112,6 +112,24 @@ endwhile;	}?>
 $template_url = get_template_directory() . '/template-parts/single-testimonial.php';
 include ($template_url);
 ?>
+<div class="launch-teaser">
+	<div class="white-bg">
+		<div class="container section-border">
+			<h1>Get paid to learn in Launch, our summer program.</h1>	
+			<div class="flex">
+				<figure class="flex-1-of-2">
+					<img src="<?php echo get_template_directory_uri(); ?>/images/keaton.jpg" >
+				</figure>
+				<div class="flex-1-of-2">
+					<p>Become a software engineer, web designer, marketer, or data scientist and experience an immersive summer internship at a top Charlottesville startup or tech company. Best of all, we'll pay you $1000 to do it, all in 12 weeks this summer.</p>
+					<a class="button shorter-button" href="<?php echo esc_url( home_url( '/' ) ); ?>launch">
+						Get Details &rarr;
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 <div class="application-process">
 	<div class="table-list">
 		<div class="blue-bg">

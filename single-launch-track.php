@@ -72,7 +72,9 @@ if ($partners_2017) {foreach ($partners_2017 as $p) {
 	<div class="image-bg" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/mike.jpg);">
 		<div class="filter"></div>
 		<div class="container">
-			<div class="intro">
+			<div class="intro" style="padding: 75px 0;
+	text-align: left;
+	max-width: 600px;">
 			
 				<h2><?php echo $title; ?> Track</h2>
 				<p><?php echo $description; ?></p>
@@ -107,13 +109,13 @@ if ($partners_2017) {foreach ($partners_2017 as $p) {
 <div class="partners-2016 launch-partners">
 	<div class='white-bg'>
 		<div class='container'>
-			<div class="intro">
+			<div class="intro" style="margin-bottom: 1em;">
 				<h1>Our Hiring Partners</h1>
 				<h3>Here are the companies that offered internships to our Launch Academy <?php echo strtolower($title); ?> students in Summer 2017.</h3>
 			</div>
-			<div class="flex"><?php
+			<div class="flex align" style="align-items: center;"><?php
 				foreach ($p16 as $p) { ?>
-					<figure class="flex-1-of-4">
+					<figure class="flex-1-of-4"  style="flex-basis: 21%; padding: 15px; text-align: center;">
 						<img src="<?php echo get_field('logo', $p); ?>">
 					</figure>
 				<?php }?>

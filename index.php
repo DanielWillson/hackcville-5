@@ -64,7 +64,7 @@ get_header(); ?>
 					</figure>
 					<h2>Semester Programs</h2>
 					<p>Learn the ins and outs of data science, marketing, social entrepreneurship, and more. Join our tight-knit community and complete real-world, hands-on projects.</p>
-					<a class="button shorter-button">
+					<a class="button shorter-button" href="<?php echo esc_url( home_url( '/' ) ); ?>programs">
 						Get Details &rarr;
 					</a>
 				</div>
@@ -74,8 +74,8 @@ get_header(); ?>
 					</figure>
 					<h2>Internships + Jobs</h2>
 					<p>Get paid to learn in an immersive bootcamp and get matched with a guaranteed internship this summer. Or, get help finding a full-time job from our hiring partners.</p>
-					<a class="button shorter-button not-active">
-						Details Coming Soon
+					<a class="button shorter-button" href="<?php echo esc_url( home_url( '/' ) ); ?>launch">
+						Get Details &rarr;
 					</a>
 				</div>
 			</div>
