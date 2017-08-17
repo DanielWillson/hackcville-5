@@ -1558,7 +1558,7 @@ input[type="submit"].submit:hover {
 	border: 1px solid rgba(255, 255, 255, 0.29);
 }
 
-}
+
 
 .image-pullquote img:hover {
 	filter: grayscale(0%);
@@ -3098,6 +3098,7 @@ LAUNCH PARTNERS
 @media screen and (max-width: 920px) {
 	.partners-launch figure.flex-1-of-5 {
     flex-basis: 27%;
+}
 }
 
 /*
