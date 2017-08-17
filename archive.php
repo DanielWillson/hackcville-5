@@ -7,7 +7,17 @@
  * @package HackCville_5.0
  */
 
-get_header(); ?>
+get_header(); 
+
+if(is_tax( "launch_track_type" )) {
+	// Import category-launch.php
+	$template_url = get_template_directory() . '/category-launch.php';
+	include ($template_url);
+} else {
+
+?>
+
+
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
@@ -60,6 +70,9 @@ get_header(); ?>
 			</header><!-- .page-header -->
 
 			<?php
+
+			
+
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
 
@@ -83,6 +96,5 @@ get_header(); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php
-get_sidebar();
+<?php }
 get_footer();

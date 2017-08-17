@@ -1,6 +1,7 @@
 <?php
 /**
- * The template for displaying Launch Track archives
+ * Page Template: Launch Academy Home 
+ *The template for displaying Launch Track archives
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -14,7 +15,7 @@ $template_url = get_template_directory() . '/template-parts/launch-nav.php';
 include ($template_url);
 ?>
 <div class="launch-picker">
-	<div class="blue-bg image-bg" style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/peiching.jpg');">
+	<div class="blue-bg image-bg" style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/keaton.jpg');">
 		<div class="filter"></div>
 		<div class="container">
 			<div class="intro">

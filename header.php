@@ -127,6 +127,12 @@
 		    return false;
 		}
 
+		function launchDetails() {
+		    var topOfDiv = $('#launch-details').offset().top - 150;
+		    $('body').animate({scrollTop: topOfDiv}, 1000);
+		    return false;
+		}
+
 		
 		function showHide() {
 			var disp = document.getElementById('check').style.display;

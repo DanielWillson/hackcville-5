@@ -1,4 +1,9 @@
-<?php if(!$used_t_ids) { $used_t_ids = array(); }?>
+<?php if(!$used_t_ids) { $used_t_ids = array(); }
+
+if (!$t_category_import) {
+	$t_category_import = "General";
+}
+?>
 <div class="testimonial">
 	<div class="hc-blue-bg">
 		<div class="container">
@@ -18,12 +23,7 @@
 						'relation'		=> 'OR',
 						array(
 							'key'		=> 'testimonial_category',
-							'value'		=> 'Community',
-							'compare'	=> 'LIKE'
-						),
-						array(
-							'key'		=> 'testimonial_category',
-							'value'		=> 'General',
+							'value'		=> $t_category_import,
 							'compare'	=> 'LIKE'
 						)
 					)

@@ -46,6 +46,8 @@ function hackcville_5_0_setup() {
 	register_nav_menus( array(
 		'menu-1' => esc_html__( 'Primary', 'hackcville-5-0' ),
 		'launch-menu' => esc_html__( 'Launch Menu', 'hackcville-5-0' ),
+		'launch-academy-menu' => esc_html__( 'Launch Academy Menu', 'hackcville-5-0' ),
+		'launch-fellowship-menu' => esc_html__( 'Launch Fellowship Menu', 'hackcville-5-0' ),
 	) );
 
 	/*
@@ -1111,4 +1113,6 @@ if(function_exists("register_field_group"))
 		'menu_order' => 0,
 	));
 }
+
+
 
