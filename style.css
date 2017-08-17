@@ -487,7 +487,7 @@ input[type="color"],
 textarea {
 	color: #666;
 	border: 1px solid #ccc;
-	border-radius: 3px;
+	/*border-radius: 3px;*/
 	padding: 3px;
 }
 
@@ -1472,11 +1472,16 @@ input[type="submit"].submit {
 	background-color: white;
 	text-transform: uppercase;
 	border: 2px solid #53b0ca;
+	transition:0.5s;
 }
 
 input[type="submit"].submit:hover {
-	text-decoration: underline;
+	/*text-decoration: underline;*/
 	cursor: pointer;
+	color:white;
+	background-color: #53b0ca;
+	border: 2px solid white;
+	transition:0.5s;
 }
 
 .submit-holder {
