@@ -13,6 +13,26 @@
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
+
+	<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+
+	<meta name="google-site-verification" content="BjzgNFml5yTce9k05ryJQjYJC2X65G6MgI2Gbu2M1uM" />
 	<script>
 	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -29,7 +49,6 @@
 			$thumbnail_img = $thumbnail[0];
 			$thumbnail_img_width = $thumbnail[1];
 			$thumbnail_img_height = $thumbnail[2];
-
 
 			$excerpt = apply_filters('the_excerpt', get_post_field('post_excerpt', $post_id));
 			$notAllowed = array("<p>", "<p> ", "</p>", " </p>", "<br>");
@@ -51,9 +70,14 @@
 				$thumbnail_img_height = 1633;	
 			}
 
-			if (is_front_page()) {
+			if (is_front_page() || is_home()) {
 				$title = "HackCville";
 				$permalink = "http://www.hackcville.com";
+				$excerpt = "HackCville trains students in high-demand skills, accelerates their ideas, and connects them to jobs, opportunities, and a tight-knit community.";
+				$thumbnail_img = get_template_directory_uri(); 
+				$thumbnail_img .= '/images/peiching.jpg';
+				$thumbnail_img_width = 2449;
+				$thumbnail_img_height = 1633;	
 			}
 
 			if (is_author()) {
@@ -81,7 +105,7 @@
 				$title = get_cat_name($category_id);
 				$permalink = get_category_link( $category_id );
 				$type = "article";
-				$excerpt = "HackCville is a platform for experiential education and career development.";
+				$excerpt = "HackCville trains students in high-demand skills, accelerates their ideas, and connects them to jobs, opportunities, and a tight-knit community.";
 
 				$thumbnail_img = get_bloginfo( 'template_url' ); 
 				$thumbnail_img .= '/images/standard-thumbnail.jpg';
@@ -90,7 +114,7 @@
 			}
 
 			if (!strcmp("", $excerpt)) {
-				$excerpt = "HackCville is a platform for experiential education and career development.";
+				$excerpt = "HackCville trains students in high-demand skills, accelerates their ideas, and connects them to jobs, opportunities, and a tight-knit community.";
 			}
 
 			if (!strcmp($thumbnail_img, "")) {
@@ -100,19 +124,12 @@
 				$thumbnail_img_height = 1633;	
 			}
 
+			if (!strcmp("", $type)) {
+				$type = "website";
+			}
 
 		?>
 
-		<!-- <meta property="fb:pages" content="743689375647531" /> -->
-		<meta property="og:title" content="<?php echo $title; ?>" />
-		<meta property="og:url" content="<?php echo $permalink; ?>" />
-		<meta property="og:type" content="<?php echo $type; ?>" />
-		<meta property="og:description" content="<?php echo $excerpt; ?>"/>
-		<meta property="og:image" content="<?php echo $thumbnail_img; ?>" />
-		<meta property="og:image:width" content = "<?php echo $thumbnail_img_width; ?>" />
-		<meta property="og:image:height" content = "<?php echo $thumbnail_img_height; ?>" />
-<!-- 		<meta property="fb:app_id" content="1657839534433449" />
-		<meta property="fb:admins" content="1432338858" /> -->
 
 
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -150,6 +167,26 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '267664083731985',
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+    FB.AppEvents.logPageView();   
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'hackcville-5-0' ); ?></a>
 

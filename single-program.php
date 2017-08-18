@@ -268,32 +268,34 @@ while ( have_posts() ) : the_post();
 					echo "<div class='flex'>";
 					if ($lr_check % 2 == 1) { ?>
 						<div class="flex">
-						<div class="flex-3-of-5 bottom">
-							<?php echo get_the_author_meta('description', $key); ?>
-						</div>
-						<figure class="image-pullquote right flex-2-of-5 top"> 
-							<img src="<?php echo get_field("headshot", 'user_'.$key); ?>" />
-							<figcaption>
-								<h3><?php echo $author_name; ?></h3>
-								<p class="subheading"><?php echo get_field("title", 'user_'.$key); ?></p>
-							</figcaption>
-						</figure>
+							<div class="flex-3-of-5 bottom">
+								<?php echo get_the_author_meta('description', $key); ?>
+							</div>
+							<figure class="image-pullquote right flex-2-of-5 top"> 
+								<img src="<?php echo get_field("headshot", 'user_'.$key); ?>" />
+								<figcaption>
+									<h3><?php echo $author_name; ?></h3>
+									<p class="subheading"><?php echo get_field("title", 'user_'.$key); ?></p>
+								</figcaption>
+							</figure>
 						</div>
 					<?php } else { ?>
 						<div class="flex">
-						<figure class="image-pullquote left flex-2-of-5 top"> 
-							<img src="<?php echo get_field("headshot", 'user_'.$key); ?>" />
-							<figcaption>
-								<h3><?php echo $author_name; ?></h3>
-								<p class="subheading"><?php echo get_field("title", 'user_'.$key); ?></p>
-							</figcaption>
-						</figure>
-						<div class="flex-3-of-5 bottom">
-							<?php echo get_the_author_meta('description', $key); ?>
-						</div>
+							<figure class="image-pullquote left flex-2-of-5 top"> 
+								<img src="<?php echo get_field("headshot", 'user_'.$key); ?>" />
+								<figcaption>
+									<h3><?php echo $author_name; ?></h3>
+									<p class="subheading"><?php echo get_field("title", 'user_'.$key); ?></p>
+								</figcaption>
+							</figure>
+							<div class="flex-3-of-5 bottom">
+								<?php echo get_the_author_meta('description', $key); ?>
+							</div>
 						</div>
 					<?php 
 					} $lr_check++; } ?>
+</div>
+</div>
 				</div>		
 			</div>
 		</div>
@@ -377,13 +379,13 @@ while ( have_posts() ) : the_post();
 					<div class="list-info flex-1-of-2">
 						<p>Semester programs are high commitment, so if you're just looking to get a taste of HackCville or <?php echo $program_topic; ?>, check out our <a href="<?php echo get_home_url(); ?>/events">public events</a> to get your feet wet this semester.</p>
 						<p>In our application process we look for extremely committed, reliable students who are hungry for an intensive challenge. We want people who intend on becoming active, contributing members of the HackCville community.</p>
-						<p><?php echo $extra_eligibility_info; ?> Any UVA student (grad or undergrad) or Charlottesville resident +18 may apply.</p>
+						<p><span class="important"><?php echo $extra_eligibility_info; ?></span> Any UVA student (grad or undergrad) or Charlottesville resident +18 may apply.</p>
 					</div>
 				</div>
 				<div class="cta">
 				<?php if ($app_status) {
 					?>
-					<a class="button" href="<?php echo $app_link; ?>">
+					<a class="button" href="<?php echo $app_link; ?>" target="_blank">
 						<h2>Apply Now &rarr;</h2>
 					</a>
 					<a class="button" href="http://hackcville.us5.list-manage.com/subscribe/post?u=dae9a7242f836507908a2f2d6&id=97161904f1" target="_blank">
@@ -507,7 +509,7 @@ while ( have_posts() ) : the_post();
 							<h3 class="apps-due-by">Applications due by <?php 
 								echo $date; ?>
 							</h3>
-							<a class="button" href="<?php echo $app_link; ?>">
+							<a class="button" href="<?php echo $app_link; ?>" target="_blank">
 								Apply Now
 							</a>
 							<a class="button" href="http://hackcville.us5.list-manage.com/subscribe/post?u=dae9a7242f836507908a2f2d6&id=97161904f1" target="_blank">

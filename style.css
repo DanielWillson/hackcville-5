@@ -2272,7 +2272,11 @@ PROGRAM PARTNERS
 */
 
 .program-partners .flex {
-	align-items: center;
+	/*align-items: center;*/
+}
+
+.program-partners p.sponsor-info {
+	margin-top: 0;
 }
 
 .program-partners .flex-2-of-3 {

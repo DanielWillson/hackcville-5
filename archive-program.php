@@ -63,7 +63,7 @@ endwhile;	}?>
 				}
 				?>
 				<h2>Our Fall Programs</h2>
-				<p>Program applications <?php echo $date; ?>, and are accessible via the links below. You may apply to up to two programs, but will only be accepted into one. We encourage you to read more about our process below.</p>
+				<p>Program applications <?php echo $date; ?>, and are accessible via the links below. You may apply to up to two programs, but will only be accepted into one. We have a unified program application that you can access via any of the program pages. We encourage you to read more about our process below.</p>
 				<p>If you're accepted, $40 dues are expected within the first week of the program. This can be reduced or waived for those with financial need.</p>
 			</div>
 			<div class="flex">
@@ -143,8 +143,8 @@ include ($template_url);
 						<h3>1</h3>
 					</div>
 					<div class="flex-1-of-2 list-info">
-						<h3><span class="important">Fill out an application, accessible via the links above<span></h3>
-						<p>Each program has its own application which you can access via the individual program pages above. The application will ask basic questions (i.e. year, major, etc.), as well as longer questions to understand why you would like to join the HackCville community. You may apply to no more than two programs. Should you be accepted to both, you must choose one.</p>
+						<h3><span class="important">Fill out our unified application, accessible via the links above<span></h3>
+						<p>Each program uses the same application - you can access it via any of the individual program pages above. The application will ask basic questions (i.e. year, major, etc.), as well as longer questions to understand why you would like to join the HackCville community. You may apply to no more than two programs. Should you be accepted to both, you must choose one.</p>
 						<p>All applications for fall programs are due by <?php echo $closing_date; ?>.
 					</div>
 					<div class="flex-1-of-2 list-heading">
