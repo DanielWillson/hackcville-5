@@ -1472,7 +1472,7 @@ input[type="submit"].submit {
 	background-color: white;
 	text-transform: uppercase;
 	border: 2px solid #53b0ca;
-	transition:0.5s;
+	transition:0.2s;
 }
 
 input[type="submit"].submit:hover {
@@ -1481,7 +1481,7 @@ input[type="submit"].submit:hover {
 	color:white;
 	background-color: #53b0ca;
 	border: 2px solid white;
-	transition:0.5s;
+	transition:0.2s;
 }
 
 .submit-holder {
