@@ -11,7 +11,7 @@
 // Import Launch Fellowship Nav
 get_header(); 
 
-$template_url = get_template_directory() . '/template-parts/launch-Fellowship-nav.php';
+$template_url = get_template_directory() . '/template-parts/launch-fellowship-nav.php';
 include ($template_url);
 
 $af = 1;

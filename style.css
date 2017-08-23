@@ -3273,3 +3273,226 @@ LAUNCH SINGLE PARTNERS
 	}
 }
 
+/*
+-----------------------------------
+SHARE THIS PAGE 
+-----------------------------------
+*/
+
+/* begin share this page */
+
+.social-share {
+  width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.social-share img {
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+
+#share-this-page {
+  padding: 18px 0;
+  width: 100%;
+}
+
+#share-this-page h4 {
+	margin-bottom: 10px;
+}
+
+#share-this-page ul {
+  display: inline-block;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0;
+  color: #bbb;
+  line-height: 1;
+}
+
+#share-this-page li {
+  background-color: #c5c5c5;
+  display: inline-block;
+  padding: 10px;
+  padding-bottom: 8px;
+  margin-left: 0;
+  line-height: 1em;
+  margin-bottom: 5px;
+}
+
+#share-this-page li.fb {
+  background-color: #3B5998;
+  border: 1px solid #ECECEC;
+}
+
+#share-this-page li.t {
+  background-color: #00aced;
+  border: 1px solid #ECECEC;
+}
+
+#share-this-page li.in {
+  background-color: #007bb6;
+  border: 1px solid #ECECEC;
+}
+
+#share-this-page li.gp {
+  background-color: #d34836;
+  border: 1px solid #ECECEC;
+}
+
+#share-this-page li.pin {
+  background-color: #C92228;
+  border: 1px solid #ECECEC;
+}
+
+#share-this-page li.tum {
+  background-color: #00225F;
+  border: 1px solid #ECECEC;
+}
+
+#share-this-page li.em {
+  background-color:#009344;;
+  border: 1px solid #ECECEC;
+}
+
+#share-this-page li.fb:hover {
+  border: 1px solid #3B5998;
+}
+
+#share-this-page li.t:hover {
+  border: 1px solid #00aced;
+}
+
+#share-this-page li.in:hover {
+  border: 1px solid #007bb6;
+}
+
+#share-this-page li.gp:hover {
+  border: 1px solid #d34836;
+}
+
+#share-this-page li.pin:hover {
+  border: 1px solid #C92228;
+}
+
+#share-this-page li.tum:hover {
+  border: 1px solid #00225F;
+}
+
+#share-this-page li.em:hover {
+  border: 1px solid #009344;
+}
+
+#share-this-page ul.sharethis {
+  margin-bottom: -15px;
+  margin-right: 15px;
+}
+
+/*
+-----------------------------------
+ARTICLE 
+-----------------------------------
+*/
+
+
+
+.single-article article {
+	width: 70%;
+	overflow: hidden;
+	line-height: 31px;
+}
+
+.single-article .iframe {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0;
+}
+
+.single-article .iframe iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.single-article .sidebar {
+	width: 22.5%;
+}
+
+.single-article h1 {
+	margin-bottom: 8px;
+}
+
+.single-article .excerpt,
+.single-article .excerpt p {
+	margin-top: 0;
+	color: #737373;
+	font-size: 22px;
+	line-height: 1.3em;
+	margin-bottom: 12px;
+}
+
+.single-article .entry-meta {
+	margin-bottom: 15px;
+	font-style: italic;
+}
+
+.single-article .entry-content p {
+	margin-top: 0;
+}
+
+.single-article .entry-content>p:first-child:first-letter {
+	float: left; 
+	font-size: 3em; 
+	line-height: 40px; 
+	padding-top: 10px; 
+	padding-right: 7px; 
+	font-weight: bold;
+}
+
+.single-article .wp-caption-text {
+	margin-top: 8px;
+	color: #737373;
+	text-align: left;
+}
+
+.single-article blockquote {
+	font-size: 22px;
+    font-weight: bold;
+}
+
+.single-article .sidebar p {
+	font-size: 16px;
+}
+
+.single-article .recent-stories {
+	margin-bottom: 40px;
+}
+
+.single-article .recent-story {
+	margin-bottom: 20px;
+}
+
+.single-article .sidebar .heading {
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 20px;
+	width: 100%;
+	text-align: center;
+}
+
+.single-article .image-link,
+.single-article .image-link {
+	border-bottom: none;
+} 
+
+.single-article div p:first-of-type {
+	margin: 0;
+}
+
+.single-article .sidebar #mc_embed_signup {
+	margin-top: 10px;
+}

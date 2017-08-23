@@ -136,6 +136,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+	<script src="<?php echo get_template_directory_uri()?>/js/share-this-page.js"></script>
 	<script type="text/javascript">
 		function getToKnowUs() {
 			
@@ -160,6 +161,14 @@
 				document.getElementById('check').style.display='block';
 			}
 		}
+
+		$(document).ready(function(){
+			
+		    /* Makes iframes responsive */
+		    $("iframe").wrap("<div class='iframe'/>");
+
+
+		});
 	</script>
 
 	<?php wp_head(); ?>
