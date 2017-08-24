@@ -10,10 +10,23 @@
 get_header(); 
 
 // Get Pioneer header
-$currentID = -1;
-?>
+$template_url = get_template_directory() . '/template-parts/pioneer-nav.php';
+include ($template_url);
 
-<div class="single-article">
+
+$currentID = -1;
+?><!-- 
+add category hero back when ready
+ -->
+
+<script type="text/javascript">
+	
+
+
+</script>
+
+
+<div class="single-article" id="pioneer-check">
 	<div class="white-bg">
 		<div class="container">
 			<div class="flex">
@@ -29,12 +42,14 @@ $currentID = -1;
 						<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 						<div class="excerpt"><?php echo apply_filters('the_excerpt', get_post_field('post_excerpt', $post_id)); ?></div>
 						<div class="entry-meta">
-							<time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><?php the_date(); ?></time> - 
-							<span class="author"><?php 
-								coauthors_posts_links( $between = ", ", $betweenLast = " and ", $before = "", $after = null, $echo = true )
+							<span class="author">by <?php 
+								coauthors( $between = ", ", $betweenLast = " and ", $before = "", $after = null, $echo = true )
+								//coauthors_posts_links( $between = ", ", $betweenLast = " and ", $before = "", $after = null, $echo = true )
 										?>
-							</div>
-						</span>	
+							 - </span>
+							<time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><?php the_date(); ?></time>
+						</div>
+						
 					</header>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<img src="<?php echo $image; ?>">
@@ -74,7 +89,7 @@ $currentID = -1;
 							<h4>Recent Stories</h4>
 						</a>
 						<?php 
-						$the_query2 = new WP_Query(array('post_type' => 'post', 'posts_per_page'=> '5'));
+						$the_query2 = new WP_Query(array('post_type' => 'post', 'posts_per_page'=> '6'));
 						if ( $the_query2->have_posts() ) {
 							while ( $the_query2->have_posts() ) { 
 								$the_query2->the_post(); 

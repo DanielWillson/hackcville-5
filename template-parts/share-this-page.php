@@ -1,5 +1,5 @@
 <div id="share-this-page">
-	<h4>If you enjoyed this post, please share:</h4>
+	<h3>If you enjoyed this post, please share:</h3>
 	<!-- Thanks for making this, Charlie. Cheers. -->
 	<ul>
 		<?php $smi_url = get_bloginfo( 'template_url' ); $smi_url .= '/images/smi'; ?>

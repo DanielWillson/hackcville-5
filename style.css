@@ -722,7 +722,7 @@ SUB NAV - FRAMEWORK
 	padding-top: 4px;
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 920px) {
 	#check {
 		display: none;
 	}
@@ -754,7 +754,7 @@ SUB NAV - FRAMEWORK
 	}
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 920px) {
 	.main-navigation,
 	#sub-navigation {
 		position: relative;
@@ -798,7 +798,7 @@ SUB NAV - FRAMEWORK
 	}
 }
 
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 920px) {
 	.menu-toggle {
 		display: none;
 	}
@@ -3298,7 +3298,7 @@ SHARE THIS PAGE
   width: 100%;
 }
 
-#share-this-page h4 {
+#share-this-page h3 {
 	margin-bottom: 10px;
 }
 
@@ -3391,6 +3391,133 @@ SHARE THIS PAGE
 
 /*
 -----------------------------------
+PIONEER NAV
+-----------------------------------
+*/
+
+#pioneer-fixed {
+	position: relative;
+	z-index: 20000;
+}
+
+.pioneer-nav .flex {
+	align-items: center;
+}
+
+.fixed-spacer-sub.pioneer-spacer {
+	height: 0;
+}
+
+.pioneer-nav .pioneer-branding {
+	padding-top: 5px;
+}
+
+.pioneer-nav .pioneer-branding a {
+	border-bottom: 0;
+}
+
+.pioneer-nav .logo {
+	width: 150px;
+	height: auto;
+}
+
+.pioneer-nav.sub-nav #sub-navigation a {
+	color: #1F435D;
+	font-weight: bold;
+}
+
+.pioneer-nav.sub-nav #sub-navigation {
+	padding-top: 0;
+	padding-bottom: 30px;
+}
+
+.pioneer-nav.sub-nav button img {
+	margin-top: 26px;
+	filter: brightness(0) invert(0);
+}
+
+.pioneer-home .container {
+	margin: 5px auto;
+}
+
+.pioneer-home .pioneer-branding .logo {
+	width: 320px;
+	height: auto;
+}
+
+.pioneer-home .pioneer-branding {
+	text-align: center;
+	width: 100%;
+}
+
+.pioneer-home .line-date {
+	width: 100%;
+	border-bottom: 2px solid #1F435D;
+	font-size: 16px;
+}
+
+.pioneer-home .line-date .icon {
+	width: 16px;
+    height: auto;
+    filter: brightness(0);
+    margin-left: 5px;
+}
+
+.pioneer-home .social a {
+	border-bottom: none;
+}
+
+.pioneer-home.sub-nav li {
+	margin-left: 0;
+	margin: 0 1.5em;
+}
+
+.pioneer-home.sub-nav #sub-navigation {
+	text-align: center;
+}
+
+.pioneer-home #sub-navigation ul {
+	width: 100%;
+    text-align: center;
+	margin-top: 5px;
+    margin-right: 0;
+}
+
+.pioneer-home.sub-nav #sub-navigation a {
+	font-size: 22px;
+}
+
+@media screen and (max-width: 920px) {
+	.pioneer-nav.sub-nav #sub-navigation a {
+		color: white;
+	}
+
+	.pioneer-home .line-date {
+		display: none;
+	}
+
+	.pioneer-home .pioneer-branding .logo {
+		width: 150px;
+		height: auto;
+	}
+
+	.pioneer-home .pioneer-branding {
+		width: auto;
+	}
+
+	.pioneer-home.sub-nav li {
+		margin: 0;
+	}
+
+	.pioneer-home #sub-navigation ul {
+	    width: auto;
+	    text-align: right;
+	}
+
+}
+
+/*
+-----------------------------------
 ARTICLE 
 -----------------------------------
 */
@@ -3398,7 +3525,7 @@ ARTICLE
 
 
 .single-article article {
-	width: 70%;
+	flex-basis: 70%;
 	overflow: hidden;
 	line-height: 31px;
 }
@@ -3419,7 +3546,7 @@ ARTICLE
 }
 
 .single-article .sidebar {
-	width: 22.5%;
+	flex-basis: 22.5%;
 }
 
 .single-article h1 {
@@ -3440,10 +3567,6 @@ ARTICLE
 	font-style: italic;
 }
 
-.single-article .entry-content p {
-	margin-top: 0;
-}
-
 .single-article .entry-content>p:first-child:first-letter {
 	float: left; 
 	font-size: 3em; 
@@ -3455,6 +3578,7 @@ ARTICLE
 
 .single-article .wp-caption-text {
 	margin-top: 8px;
+	font-size: 16px;
 	color: #737373;
 	text-align: left;
 }
@@ -3476,16 +3600,21 @@ ARTICLE
 	margin-bottom: 20px;
 }
 
+.single-article .recent-story:nth-of-type(6) {
+	display: none;
+}
+
 .single-article .sidebar .heading {
 	padding-left: 10px;
 	padding-right: 10px;
 	margin-bottom: 20px;
+	background-color: #53b0ca;
 	width: 100%;
 	text-align: center;
 }
 
-.single-article .image-link,
-.single-article .image-link {
+#pioneer-check .image-link,
+#pioneer-check .image-link {
 	border-bottom: none;
 } 
 
@@ -3496,3 +3625,27 @@ ARTICLE
 .single-article .sidebar #mc_embed_signup {
 	margin-top: 10px;
 }
+
+@media screen and (max-width: 920px) {
+	.single-article .sidebar {
+		display: none;
+	}
+
+	.single-article article {
+		flex-basis: 100%;
+	}
+}
+
+/*
+-----------------------------------
+ARTICLE LIST 
+-----------------------------------
+*/
+
+.pioneer .story {
+	margin-bottom: 40px;
+}
+
+.pioneer 
+
+
