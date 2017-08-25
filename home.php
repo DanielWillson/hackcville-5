@@ -10,7 +10,9 @@
 get_header(); 
 
 
-$template_url = get_template_directory() . '/template-parts/pioneer-home-nav.php';
+// $template_url = get_template_directory() . '/template-parts/pioneer-home-nav.php';
+// include ($template_url);
+$template_url = get_template_directory() . '/template-parts/pioneer-nav.php';
 include ($template_url);
 
 ?>

@@ -3404,7 +3404,8 @@ PIONEER NAV
 	align-items: center;
 }
 
-.fixed-spacer-sub.pioneer-spacer {
+.fixed-spacer-sub.pioneer-spacer,
+.fixed-spacer-sub.pioneer-home-spacer {
 	height: 0;
 }
 
@@ -3443,6 +3444,10 @@ PIONEER NAV
 .pioneer-home .pioneer-branding .logo {
 	width: 320px;
 	height: auto;
+}
+
+#pioneer-fixed.pioneer-home {
+	z-index: 30000;
 }
 
 .pioneer-home .pioneer-branding {

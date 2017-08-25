@@ -1,4 +1,5 @@
-<div class="pioneer-nav sub-nav" id="pioneer-fixed">
+<div class="pioneer-nav sub-nav standard" id="pioneer-fixed">
+	<span id="pioneer-nav-check"></span>
 	<div class="white-bg">
 		<div class="container flex">
 			<div class="pioneer-branding">

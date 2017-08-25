@@ -162,7 +162,7 @@
 			}
 		}
 
-		
+
 		$(window).load(function() {
 		    var viewportWidth = $(window).width();
 		    if (viewportWidth < 920) {
@@ -174,21 +174,9 @@
 		});
 
 		$(document).ready(function(){
-			
 
 		    /* Makes iframes responsive */
 		    $("iframe").wrap("<div class='iframe'/>");
-
-			$(window).on("load, resize", function() {
-			    var viewportWidth = $(window).width();
-			    if (viewportWidth < 920) {
-			        $("#pioneer-home-container").addClass("flex");
-			    }
-			    else if (viewportWidth >= 920) {
-			    	$("#pioneer-home-container").removeClass("flex");
-			    }
-			});
-
 
 		    if (document.getElementById("pioneer-check")) {
 
@@ -199,25 +187,19 @@
 					    var currentScroll = $(window).scrollTop();
 					    if (currentScroll >= fixmeTop) {
 
-					        $('.pioneer-nav').css({
+					        $('#pioneer-fixed').css({
 					            position: 'fixed',
 					            top: '0'
 					        });
 					        $('.fixed-spacer-sub.pioneer-spacer').css({
 					        	height: '100px'
 					        });	
-					        $('.fixed-spacer-sub.pioneer-home-spacer').css({
-					        	height: '100px'
-					        });	
 
 					    } else {
-					        $('.pioneer-nav').css({
+					        $('#pioneer-fixed').css({
 					            position: 'relative'
 					        });
 					        $('.fixed-spacer-sub.pioneer-spacer').css({
-					        	height: '0'
-					        });
-					        $('.fixed-spacer-sub.pioneer-home-spacer').css({
 					        	height: '0'
 					        });
 
@@ -226,6 +208,75 @@
 				});
 
 			}
+		    
+
+			// $(window).on("load, resize", function() {
+			//     var viewportWidth = $(window).width();
+			//     if (viewportWidth < 920) {
+			//         $("#pioneer-home-container").addClass("flex");
+			//     }
+			//     else if (viewportWidth >= 920) {
+			//     	$("#pioneer-home-container").removeClass("flex");
+			//     }
+			// });
+
+			// if (document.getElementById("pioneer-nav-check")) {
+			// 	$(".pioneer-nav.standard").hide();
+			// }
+
+		 //    if (document.getElementById("pioneer-check")) {
+
+			// 	$(window).load(function () {
+			// 		var fixmeTop = $('.pioneer-nav').offset().top;
+			// 		var viewportWidth = $(window).width();
+
+					
+					
+			// 		$(window).scroll(function() {
+			// 		    var currentScroll = $(window).scrollTop();
+			// 		    if (currentScroll >= fixmeTop) {
+
+			// 		        $('.pioneer-nav').css({
+			// 		            position: 'fixed',
+			// 		            top: '0'
+			// 		        });
+			// 		        $('.fixed-spacer-sub.pioneer-spacer').css({
+			// 		        	height: '100px'
+			// 		        });	
+			// 		        if (viewportWidth >= 920) {
+			// 			        $('.fixed-spacer-sub.pioneer-home-spacer').css({
+			// 			        	height: '100px'
+			// 			        });	
+			// 			        $(".pioneer-nav.standard").show();
+			// 			        $(".pioneer-home.sub-nav").fadeOut(500);
+			// 			    }
+			// 			    else {
+			// 			    	$('.fixed-spacer-sub.pioneer-home-spacer').css({
+			// 			        	height: '100px'
+			// 			        });
+			// 			    }
+
+			// 		    } else {
+			// 		        $('.pioneer-nav').css({
+			// 		            position: 'relative'
+			// 		        });
+			// 		        $('.fixed-spacer-sub.pioneer-spacer').css({
+			// 		        	height: '0'
+			// 		        });
+			// 		        $('.fixed-spacer-sub.pioneer-home-spacer').css({
+			// 		        	height: '0'
+			// 		        });
+			// 		        if (viewportWidth >= 920) {
+			// 		        	$(".pioneer-nav.standard").hide();
+			// 			        $(".pioneer-home.sub-nav").fadeIn(500);
+			// 		        }
+			// 			    else {}
+
+			// 		    }
+			// 		});
+			// 	});
+
+			// }
 
 		});
 	</script>
