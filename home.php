@@ -124,4 +124,6 @@ include ($template_url);
 	
 
 <?php 
-get_footer();
+// Get Pioneer footer
+$template_url = get_template_directory() . '/footer.php';
+include ($template_url);
