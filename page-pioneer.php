@@ -15,6 +15,7 @@
 get_header(); 
 $template_url = get_template_directory() . '/template-parts/pioneer-nav.php';
 include ($template_url);
+$pioneer = 1;
 ?>
 	<div class="page" id="pioneer-check">
 		<div class="white-bg">

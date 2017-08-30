@@ -83,6 +83,9 @@ function hackcville_5_0_setup() {
 		'flex-width'  => true,
 		'flex-height' => true,
 	) );
+
+	// wp_enqueue_style( 'theme-styles', get_stylesheet_directory_uri() . '/style.css', array(), filemtime( get_stylesheet_directory() . '/style.css' ) );
+
 }
 endif;
 add_action( 'after_setup_theme', 'hackcville_5_0_setup' );

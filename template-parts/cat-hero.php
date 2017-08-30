@@ -71,7 +71,7 @@
 				<?php 
 				$args = array(
 					'post_type' => 'post',
-					'posts_per_page' => 5,
+					'posts_per_page' => 4,
 					'category_name' => $current_category );
 				$loop = new WP_Query( $args );
 				while ( $loop->have_posts() ) : $loop->the_post(); ?>

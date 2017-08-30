@@ -40,10 +40,26 @@
 	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
 	  ga('create', 'UA-55802362-1', 'auto');
-	  ga('send', 'pageview');
+
+
+  	ga('send', 'pageview');
+
+ //  	
 
 	</script>
 	<?php
+
+ 
+  		if(is_singular( 'post' ) || is_post_type_archive('post')) {?>
+  			<script>
+  			ga('create', 'UA-44987650-1', 'auto', 'Pioneer');
+			ga('Pioneer.send', 'pageview');
+			</script><?php
+		}
+	
+
+
+
 	$post_id = get_the_ID();
 			$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'single-post-thumbnail' );
 			$thumbnail_img = $thumbnail[0];
@@ -135,7 +151,7 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
 	<script src="<?php echo get_template_directory_uri()?>/js/share-this-page.js"></script>
 	<script type="text/javascript">
 		function getToKnowUs() {
@@ -208,7 +224,7 @@
 				});
 
 			}
-		    
+
 
 			// $(window).on("load, resize", function() {
 			//     var viewportWidth = $(window).width();

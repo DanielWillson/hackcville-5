@@ -15,6 +15,7 @@ include ($template_url);
 
 
 $currentID = -1;
+$pioneer = 1;
 ?><!-- 
 add category hero back when ready
  -->
@@ -156,4 +157,6 @@ add category hero back when ready
 </div>
 
 <?php
-get_footer();
+// Get Pioneer footer
+$template_url = get_template_directory() . '/footer.php';
+include ($template_url);

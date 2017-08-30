@@ -60,9 +60,10 @@ endwhile;	}?>
 				} else {
 				    // future
 				    $date = "will open " . date_format($open_date,"l, F d, Y"); 
+				    // $date = "will open January 2018";
 				}
 				?>
-				<h2>Our Fall Programs</h2>
+				<h2>Our Spring Programs</h2>
 				<p>Program applications <?php echo $date; ?>, and are accessible via the links below. You may apply to up to two programs, but will only be accepted into one. We have a unified program application that you can access via any of the program pages. We encourage you to read more about our process below.</p>
 				<p>If you're accepted, $40 dues are expected within the first week of the program. This can be reduced or waived for those with financial need.</p>
 			</div>
@@ -145,7 +146,7 @@ include ($template_url);
 					<div class="flex-1-of-2 list-info">
 						<h3><span class="important">Fill out our unified application, accessible via the links above<span></h3>
 						<p>Each program uses the same application - you can access it via any of the individual program pages above. The application will ask basic questions (i.e. year, major, etc.), as well as longer questions to understand why you would like to join the HackCville community. You may apply to no more than two programs. Should you be accepted to both, you must choose one.</p>
-						<p>All applications for fall programs are due by <?php echo $closing_date; ?>.
+						<p>All applications for Spring programs are due by <?php echo $closing_date; ?>.
 					</div>
 					<div class="flex-1-of-2 list-heading">
 						<h3>2</h3>
@@ -160,7 +161,7 @@ include ($template_url);
 					</div>
 					<div class="flex-1-of-2 list-info">
 						<h3><span class="important">Called back for an interview<span></h3>
-						<p>After our team scores applications, top applicants are invited back to interview with two HackCville team members. You will be notified by Wednesday, August 30 either way.</p> 
+						<p>After our team scores applications, top applicants are invited back to interview with two HackCville team members. You will be notified by the Wednesday after the submission deadline either way.</p> 
 						<p>These interviews are brief and informal, and typically last no longer than 10 minutes. These two members will score the interview and compare them to the application scores in order to make a final decision.</p>
 					</div>
 					<div class="flex-1-of-2 list-heading">
@@ -168,7 +169,7 @@ include ($template_url);
 					</div>
 					<div class="flex-1-of-2 list-info">
 						<h3><span class="important">Final decisions<span></h3>
-						<p>If you are accepted, congratulations! HackCville will notify you by the end of the day on Saturday, September 2. All accepted students will be expected to participate in our Program Kickoff, 11am-5pm, Sunday, September 3. $40 dues are also expected by Sunday, September 10 - these can be waived for any student with financial need.</p>
+						<p>If you are accepted, congratulations! HackCville will notify you by the end of the submission week. All accepted students will be expected to participate in our Program Kickoff, 11am-5pm, Sunday, February 4. $40 dues are also expected by the end of the first week - these can be waived for any student with financial need.</p>
 						<p>If you're not accepted, don't worry! Many of current members applied multiple times before they were accepted. Programs are just one way to be involved - many also particiapte in our trips, public events, and summer program, Launch.</p>
 					</div>
 				</div>

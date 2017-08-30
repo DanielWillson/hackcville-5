@@ -56,6 +56,7 @@ while ( have_posts() ) : the_post();
 	$partners_list = "";
 	$open_date = date_create($app_open_date);
 	$open_date_short = date_format($open_date,"m/d/Y"); 
+	// $open_date_short = "January 2018";
 	$partner_count = 0;
 	$partners = array();
 	$posts = get_field("program_partners");
@@ -352,13 +353,13 @@ while ( have_posts() ) : the_post();
 										<li><?php echo $mt; ?></li>
 									<?php } ?>
 								</ul>
-							All sections start September 3 and run through December 2. You can indicate on your application with section(s) you are available for. There is no difference in curriculum between sections.</p>
+							All sections start February 4 and run through the end of April. You can indicate on your application with section(s) you are available for. There is no difference in curriculum between sections.</p>
 						<?php } else { ?>
 
-							<p><?php echo $title; ?> meets <span class="important"><?php echo $meeting_times; ?>, September 3 - December 2.</span></p>
+							<p><?php echo $title; ?> meets <span class="important"><?php echo $meeting_times . ". " $title; ?>meets February 4 through the end of April.</span></p>
 
 						<?php } ?>
-						<p><span class="important">All sections of all programs (including <?php echo $title; ?>) start with a 11am-5pm kickoff on Sunday, September 3.</span></p>
+						<p><span class="important">All sections of all programs (including <?php echo $title; ?>) start with a 11am-5pm kickoff on Sunday, February 4.</span></p>
 						<p>You must be able to attend each session. More than a few missed meeting times will result in being dropped from HackCville.</p>
 					</div>
 					<div class="list-heading flex-1-of-2">

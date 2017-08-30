@@ -14,7 +14,7 @@ get_header();
 // include ($template_url);
 $template_url = get_template_directory() . '/template-parts/pioneer-nav.php';
 include ($template_url);
-
+$pioneer = 1;
 ?>
 
 <div class="pioneer-home page pioneer" id="pioneer-check">
@@ -48,14 +48,14 @@ include ($template_url);
 					</div>
 					<div class="flex-1-of-2">
 						<a href="<?php the_permalink(); ?>">
-							<h2><?php the_title() ?></h2>
+							<h3><?php the_title() ?></h3>
 						</a>
 						<div class="excerpt">
 							<?php echo apply_filters('the_excerpt', get_post_field('post_excerpt', $post_id)); ?>
 						</div>
-						<a href="<?php the_permalink(); ?>" class="">
+						<!-- <a href="<?php the_permalink(); ?>" class="">
 							Read more &rarr;
-						</a>
+						</a> -->
 					</div>
 				</div>
 
@@ -65,7 +65,10 @@ include ($template_url);
 				wp_reset_postdata();
 
 			endwhile;
-			the_posts_navigation();
+			?>
+
+			<?php
+			//the_posts_navigation();
 
 			?>
 
