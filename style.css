@@ -1940,6 +1940,10 @@ figure.image-pullquote.flex-1-of-2.list-heading figcaption {
 	justify-content: space-around;
 }
 
+.what-youll-learn .flex{
+	justify-content: space-evenly !important;
+}
+
 .feature-icons .feature-icon {
 	min-height: 200px;
 	padding: 18px 18px 24px 18px;
