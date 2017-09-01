@@ -122,7 +122,7 @@ $af = 1;
 				.rg-container {
 					margin: 0;
 					padding: 1em 0em;
-					overflow: scroll;
+					overflow: hidden;
 				}
 				.rg-header {
 					margin-bottom: 1em;
@@ -212,10 +212,16 @@ $af = 1;
 				}
 
 				/* media queries */
+				@media screen and (max-width: 1150px) {
+				.rg-container {
+					overflow:scroll;
+				}
+				}
 				@media screen and (max-width: 600px) {
 				.rg-container {
 					max-width: 600px;
 					margin: 0 auto;
+					overflow:hidden;
 				}
 				table.rg-table {
 					display: block;
