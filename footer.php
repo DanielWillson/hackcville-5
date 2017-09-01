@@ -18,16 +18,31 @@
 			<div class="container">
 				<div class="flex">
 					<div class="flex-3-of-4 left">
-						<figure>
-							<img src="<?php echo get_template_directory_uri(); ?>/images/hackcville-logo.png" class="logo" >
-						</figure>
-						<h2>About HackCville</h2>
-						<p>
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">HackCville</a> is a platform for experiential education and career development. We train students in high-demand skills, accelerate their ideas, and connect them to jobs, opportunities, and a tight-knit community.
-						</p>
-						<p>
-							In turn, we provide talent to Charlottesville’s growing tech and startup scene. Our home is our clubhouses near the <a href="http://virginia.edu" target="_blank">University of Virginia</a>, but our broader network of 1,200+ spans the globe. <!--<a href="<?php echo esc_url( home_url( '/' ) ); ?>about">More about us &rarr;</a>-->
-						</p>
+						<?php if (!$pioneer) { ?>
+							<figure>
+								<img src="<?php echo get_template_directory_uri(); ?>/images/hackcville-logo.png" class="logo" >
+							</figure>
+						<?php } ?>
+						<?php if ($pioneer) { ?>
+							<h2>About The Pioneer + HackCville</h2>
+							<p>
+								The Pioneer is the publication of <a href="http://hackcville.com" alt="HackCville">HackCville</a>. All of our producers are either current students or graduates of HackCville’s <a href="http://hackcville.com/programs" target="_blank" alt="HackCville Programs">media education programs</a>.
+							</p>
+							<p>
+								Our producers develop skills in modern media production through publishing stories about creative, civic, and entrepreneurial innovators in the University of Virginia and greater Charlottesville community. <a href="https://hackcville.com/about-the-pioneer/">Learn more &rarr;</a>
+							</p>
+							<p>
+								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">HackCville</a> is a platform for experiential education and career development. We train students in high-demand skills, accelerate their ideas, and connect them to jobs, opportunities, and a tight-knit community.
+							</p>
+						<?php } else { ?>
+							<h2>About HackCville</h2>
+							<p>
+								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">HackCville</a> is a platform for experiential education and career development. We train students in high-demand skills, accelerate their ideas, and connect them to jobs, opportunities, and a tight-knit community.
+							</p>
+							<p>
+								In turn, we provide talent to Charlottesville’s growing tech and startup scene. Our home is our clubhouses near the <a href="http://virginia.edu" target="_blank">University of Virginia</a>, but our broader network of 1,200+ spans the globe. <!--<a href="<?php echo esc_url( home_url( '/' ) ); ?>about">More about us &rarr;</a>-->
+							</p>
+						<?php } ?>
 						<div class="subscribe">
 							<h3>Get exclusive news about upcoming programs and community events.</h3>
 							

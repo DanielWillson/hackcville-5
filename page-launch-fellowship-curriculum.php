@@ -11,7 +11,7 @@
 // Import Launch Fellowship Nav
 get_header(); 
 
-$template_url = get_template_directory() . '/template-parts/launch-Fellowship-nav.php';
+$template_url = get_template_directory() . '/template-parts/launch-fellowship-nav.php';
 include ($template_url);
 
 $af = 1;
@@ -25,7 +25,7 @@ $launch_track_query = new WP_Query(array('post_type' => 'launch-track'));
 		<div class="container">
 			<div class="flex">
 				<div class="flex-1-of-3">
-					<h1>Launuch Curriculum</h1>
+					<h1>Launch Curriculum</h1>
 					<h3>Click on one of the tracks to learn more about what's covered during Launch Fellowship.</h3>
 				</div>
 				<div class="flex-2-of-3 flex">

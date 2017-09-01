@@ -40,10 +40,26 @@
 	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
 	  ga('create', 'UA-55802362-1', 'auto');
-	  ga('send', 'pageview');
+
+
+  	ga('send', 'pageview');
+
+ //  	
 
 	</script>
 	<?php
+
+ 
+  		if(is_singular( 'post' ) || is_post_type_archive('post')) {?>
+  			<script>
+  			ga('create', 'UA-44987650-1', 'auto', 'Pioneer');
+			ga('Pioneer.send', 'pageview');
+			</script><?php
+		}
+	
+
+
+
 	$post_id = get_the_ID();
 			$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'single-post-thumbnail' );
 			$thumbnail_img = $thumbnail[0];
@@ -135,7 +151,8 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+	<script src="<?php echo get_template_directory_uri()?>/js/share-this-page.js"></script>
 	<script type="text/javascript">
 		function getToKnowUs() {
 			
@@ -160,6 +177,124 @@
 				document.getElementById('check').style.display='block';
 			}
 		}
+
+
+		$(window).load(function() {
+		    var viewportWidth = $(window).width();
+		    if (viewportWidth < 920) {
+		        $("#pioneer-home-container").addClass("flex");
+		    }
+		    else if (viewportWidth >= 920) {
+		    	$("#pioneer-home-container").removeClass("flex");
+		    }
+		});
+
+		$(document).ready(function(){
+
+		    /* Makes iframes responsive */
+		    $("iframe").wrap("<div class='iframe'/>");
+
+		    if (document.getElementById("pioneer-check")) {
+
+				$(window).load(function () {
+					var fixmeTop = $('.pioneer-nav').offset().top;
+					
+					$(window).scroll(function() {
+					    var currentScroll = $(window).scrollTop();
+					    if (currentScroll >= fixmeTop) {
+
+					        $('#pioneer-fixed').css({
+					            position: 'fixed',
+					            top: '0'
+					        });
+					        $('.fixed-spacer-sub.pioneer-spacer').css({
+					        	height: '100px'
+					        });	
+
+					    } else {
+					        $('#pioneer-fixed').css({
+					            position: 'relative'
+					        });
+					        $('.fixed-spacer-sub.pioneer-spacer').css({
+					        	height: '0'
+					        });
+
+					    }
+					});
+				});
+
+			}
+
+
+			// $(window).on("load, resize", function() {
+			//     var viewportWidth = $(window).width();
+			//     if (viewportWidth < 920) {
+			//         $("#pioneer-home-container").addClass("flex");
+			//     }
+			//     else if (viewportWidth >= 920) {
+			//     	$("#pioneer-home-container").removeClass("flex");
+			//     }
+			// });
+
+			// if (document.getElementById("pioneer-nav-check")) {
+			// 	$(".pioneer-nav.standard").hide();
+			// }
+
+		 //    if (document.getElementById("pioneer-check")) {
+
+			// 	$(window).load(function () {
+			// 		var fixmeTop = $('.pioneer-nav').offset().top;
+			// 		var viewportWidth = $(window).width();
+
+					
+					
+			// 		$(window).scroll(function() {
+			// 		    var currentScroll = $(window).scrollTop();
+			// 		    if (currentScroll >= fixmeTop) {
+
+			// 		        $('.pioneer-nav').css({
+			// 		            position: 'fixed',
+			// 		            top: '0'
+			// 		        });
+			// 		        $('.fixed-spacer-sub.pioneer-spacer').css({
+			// 		        	height: '100px'
+			// 		        });	
+			// 		        if (viewportWidth >= 920) {
+			// 			        $('.fixed-spacer-sub.pioneer-home-spacer').css({
+			// 			        	height: '100px'
+			// 			        });	
+			// 			        $(".pioneer-nav.standard").show();
+			// 			        $(".pioneer-home.sub-nav").fadeOut(500);
+			// 			    }
+			// 			    else {
+			// 			    	$('.fixed-spacer-sub.pioneer-home-spacer').css({
+			// 			        	height: '100px'
+			// 			        });
+			// 			    }
+
+			// 		    } else {
+			// 		        $('.pioneer-nav').css({
+			// 		            position: 'relative'
+			// 		        });
+			// 		        $('.fixed-spacer-sub.pioneer-spacer').css({
+			// 		        	height: '0'
+			// 		        });
+			// 		        $('.fixed-spacer-sub.pioneer-home-spacer').css({
+			// 		        	height: '0'
+			// 		        });
+			// 		        if (viewportWidth >= 920) {
+			// 		        	$(".pioneer-nav.standard").hide();
+			// 			        $(".pioneer-home.sub-nav").fadeIn(500);
+			// 		        }
+			// 			    else {}
+
+			// 		    }
+			// 		});
+			// 	});
+
+			// }
+
+		});
 	</script>
 
 	<?php wp_head(); ?>

@@ -48,6 +48,7 @@ function hackcville_5_0_setup() {
 		'launch-menu' => esc_html__( 'Launch Menu', 'hackcville-5-0' ),
 		'launch-academy-menu' => esc_html__( 'Launch Academy Menu', 'hackcville-5-0' ),
 		'launch-fellowship-menu' => esc_html__( 'Launch Fellowship Menu', 'hackcville-5-0' ),
+		'pioneer-menu' => esc_html__( 'Pioneer Menu', 'hackcville-5-0' ),
 	) );
 
 	/*
@@ -82,6 +83,9 @@ function hackcville_5_0_setup() {
 		'flex-width'  => true,
 		'flex-height' => true,
 	) );
+
+	// wp_enqueue_style( 'theme-styles', get_stylesheet_directory_uri() . '/style.css', array(), filemtime( get_stylesheet_directory() . '/style.css' ) );
+
 }
 endif;
 add_action( 'after_setup_theme', 'hackcville_5_0_setup' );

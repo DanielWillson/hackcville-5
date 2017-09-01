@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all pages
+ * Template Name: Pioneer Page
  *
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages
@@ -12,8 +12,12 @@
  * @package HackCville_5.0
  */
 
-get_header(); ?>
-	<div class="page" >
+get_header(); 
+$template_url = get_template_directory() . '/template-parts/pioneer-nav.php';
+include ($template_url);
+$pioneer = 1;
+?>
+	<div class="page" id="pioneer-check">
 		<div class="white-bg">
 			<div class="container">
 
@@ -32,4 +36,6 @@ get_header(); ?>
 
 
 <?php
-get_footer();
+// Get Pioneer footer
+$template_url = get_template_directory() . '/footer.php';
+include ($template_url);
