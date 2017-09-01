@@ -489,6 +489,7 @@ textarea {
 	border: 1px solid #ccc;
 	/*border-radius: 3px;*/
 	padding: 3px;
+	padding-left: 10px;
 }
 
 select {
@@ -2819,7 +2820,7 @@ footer .subscribe {
 
 footer .subscribe input.email {
 	border-radius: 0;
-	text-align: center;
+	/*text-align: center;*/
 	margin-right: 1em;
 }
 
