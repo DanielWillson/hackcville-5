@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying archive pages
+ * Template Name: Pioneer Archive
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -9,48 +9,10 @@
 
 get_header(); 
 
-$pioneer = -1;
+$pioneer = 1;
 
+if ( have_posts() ) : 
 ?>
-
-		<?php
-
-
-
-
-		if ( have_posts() ) : 
-
-
-
-			if (is_author()) {
-
-				echo "This is an author page.<br>";
-				$user_id = get_the_author_meta('ID');
-				echo get_field('title', 'user_'.$user_id);
-
-				$post_objects = get_field('trip_team', 'user_'.$user_id);
-				if($post_objects) {
-					echo '<ul>';
-
-					foreach($post_objects as $post) {
-						setup_postdata($post);
-						echo '<li>' . the_title() . '</li>';
-					}
-
-					echo '</ul>';
-					wp_reset_postdata();
-				}
-			}
-
-
-			
-
-			
-
-
-
-			?>
-
 <div class="pioneer-archive">
 	<div class="white-bg">
 		<div class="container">
@@ -68,7 +30,17 @@ $pioneer = -1;
 			
 
 			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+			$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+
+
+			$args = array( 
+					'post_type' => 'post',
+					'posts_per_page' => 5,
+					'paged' => $paged );
+				$loop = new WP_Query( $args );
+				/* Requests the posts via The Loop */
+				while ( $loop->have_posts() ) : $loop->the_post(); 
+
 
 				/*
 				 * Include the Post-Format-specific template for the content.
@@ -76,8 +48,8 @@ $pioneer = -1;
 				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 				 */
 				get_template_part( 'template-parts/content', get_post_format() );
-
-			endwhile;
+				?>
+			
 
 			?>
 			<h3 class="previous-next"><?php posts_nav_link(' | ','&larr; Previous Page','Next Page &rarr;'); ?></h3>
@@ -94,8 +66,6 @@ $pioneer = -1;
 		</div>
 	</div>
 </div>
-
-
 
 <?php
 // Get footer

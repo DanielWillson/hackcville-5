@@ -73,6 +73,7 @@ $pioneer = 1;
 			?>
 
 			</div>
+			
 <?php 
 // Sets up $current_category and $current_category_headline for the category hero (cat-hero)
 // $current_category is the category passed to the hero
