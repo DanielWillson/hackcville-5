@@ -3273,6 +3273,49 @@ LAUNCH SINGLE PARTNERS
 	}
 }
 
+/* 
+------------------------------------
+TRIP PAGE (SHOULD BE SPLIT UP)
+-----------------------------------
+*/
+
+.single-trip-hero .intro {
+	padding: 100px 0;
+}
+
+.single-trip-hero .button {
+	margin-right: 0;
+}
+
+
+
+
+.single-trip-overview .flex-1-of-2 {
+	margin-bottom: 40px;
+}
+
+
+
+.trip-tracks .track-heading {
+	text-align: center;
+	padding-bottom: 10px;
+	padding-top: 20px;
+	border-bottom: 1px solid #0a2128;
+}
+
+.trip-tracks .track-heading .view-more {
+	font-style: italic;
+	text-decoration: underline;
+	font-size: 24px;
+}
+
+.trip-tracks .track-heading .view-more:hover {
+	cursor: pointer;
+}
+
+
+
+
 
 /* 
 ------------------------------------
