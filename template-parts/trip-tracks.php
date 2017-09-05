@@ -1,3 +1,4 @@
+
 <!-- Trip Tracks w/ Apply Button -->
 <div class="trip-tracks table-list">
 	<div class="blue-bg">
@@ -5,10 +6,12 @@
 			<h1>Trip Tracks</h1>
 			<div class="all-tracks-holder">
 				<?php // For each track id, show a track tab 
-					foreach ($trip_tracks as $track) { ?>
+					$track_num = 0;
+					foreach ($trip_tracks as $track) { 
+						$track_num++; ?>
 					<div class="track">
-						<div class="track-heading clickable">
-							<h2><?php echo get_the_title($track); ?> - <span class="view-more">View the companies &darr;</span></h2>
+						<div class="track-heading heading-<?php echo $track_num; ?> clickable" onclick="showHideTrack(<?php echo $track_num; ?>)">
+							<h2><?php echo get_the_title($track); ?></h2>
 							<?php 
 								$sponsors = array(); $sponsor_check = -1;
 
@@ -44,8 +47,9 @@
 										echo get_the_title($s);
 									}
 								} ?></h4><?php } ?>
+							<p class="view-more">Show/hide the companies &darr;</p>
 						</div>
-						<div class="flex track-contents">
+						<div class="flex track-contents track-<?php echo $track_num; ?>">
 							<?php 
 							$companies = get_field('track_visits', $track);
 							foreach($companies as $c) {
@@ -55,9 +59,16 @@
 								</figure>
 								<div class="list-info flex-1-of-2">
 									<h3><?php echo get_the_title($c_id); ?></h3>
-									<p><?php echo get_field("description", $c_id); ?></p>
+									<p><?php echo get_field("description", $c_id); ?> <a href="<?php echo get_field("website", $c_id); ?>" target="_blank">Learn more &rarr;</a></p>
 								</div>
 							<?php } ?>
+							<figure class="list-heading flex-1-of-2">
+								<img src="<?php echo $closing_event_photo; ?>">
+							</figure>
+							<div class="list-info flex-1-of-2">
+								<h3>Closing Event: <?php echo $closing_event_title; ?></h3>
+								<p><?php echo $closing_event_description; ?></p>
+							</div>
 						</div>
 					</div>
 				<?php }  ?>

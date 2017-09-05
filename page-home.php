@@ -44,8 +44,8 @@ get_header(); ?>
 					</figure>
 					<h2>Public Events</h2>
 					<p>Get an introduction to everything from artifical intelligence to video production to entrepreneurship. Our events are free and open to all.</p>
-					<a class="button shorter-button not-active">
-						Details Coming Soon
+					<a class="button shorter-button" target="_blank" href="https://www.facebook.com/pg/HackCville/events/">
+						Get Details &rarr;
 					</a>
 				</div>
 				<div class="flex-1-of-4">
@@ -54,8 +54,8 @@ get_header(); ?>
 					</figure>
 					<h2>Startup Trips</h2>
 					<p>Tour dynamic startup offices and meet with hiring, young alumni in places like San Francisco, New York, Richmond, Washington DC, and more.</p>
-					<a class="button shorter-button not-active">
-						Details Coming Soon
+					<a class="button shorter-button" href="<?php echo esc_url( home_url( '/' ) ); ?>trips">
+						Get Details &rarr;
 					</a>
 				</div>
 				<div class="flex-1-of-4">

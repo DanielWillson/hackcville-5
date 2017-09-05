@@ -21,8 +21,9 @@ get_header(); ?>
 					printf( esc_html__( 'Search Results for: %s', 'hackcville-5-0' ), '<span>' . get_search_query() . '</span>' );
 				?></h1>
 			</header><!-- .page-header -->
-
+			<?php get_search_form(); ?>
 			<?php
+			
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
 

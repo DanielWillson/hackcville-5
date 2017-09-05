@@ -70,16 +70,25 @@
 						</div>
 					</div>
 					<div class="flex-1-of-4 right">
-						<h2>Explore</h2>
+						<h2>Founding Partners</h2>
+							<div class="partner">
+								<img src="<?php echo get_template_directory_uri(); ?>/images/qf.png">
+							</div>
+							<div class="partner">
+								<img class="galant" src="<?php echo get_template_directory_uri(); ?>/images/galant.png">
+							</div>
+						<!-- <h2>Explore</h2> -->
 						<?php 
-						wp_nav_menu( array(
-							'theme_location' => 'menu-1',
-							'menu_id'        => 'primary-menu',
-						) );
+						//wp_nav_menu( array(
+							//'theme_location' => 'menu-1',
+							//'menu_id'        => 'primary-menu',
+						//) );
 						?>
+						
 						<div class="social-icons">
 
 						</div>
+
 					</div>
 				</div>
 			</div>

@@ -129,7 +129,9 @@ add_action( 'widgets_init', 'hackcville_5_0_widgets_init' );
  * Enqueue scripts and styles.
  */
 function hackcville_5_0_scripts() {
-	wp_enqueue_style( 'hackcville-5-0-style', get_stylesheet_uri() );
+	//wp_enqueue_style( 'hackcville-5-0-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'hackcville-5-0-style', get_stylesheet_directory_uri() . '/style.css', array(), filemtime( get_stylesheet_directory() . '/style.css' ) );
+
 
 	wp_enqueue_script( 'hackcville-5-0-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
@@ -1565,6 +1567,48 @@ if(function_exists("register_field_group"))
 		'menu_order' => 0,
 	));
 }
+
+if(function_exists("register_field_group"))
+{
+	register_field_group(array (
+		'id' => 'acf_trip-field-group',
+		'title' => 'Trip Field Group',
+		'fields' => array (
+			array (
+				'key' => 'field_59aee3293b4f2',
+				'label' => 'Start to End Times',
+				'name' => 'start_to_end_times',
+				'type' => 'text',
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'trip',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'acf_after_title',
+			'layout' => 'no_box',
+			'hide_on_screen' => array (
+				0 => 'the_content',
+			),
+		),
+		'menu_order' => 0,
+	));
+}
+
 
 
 

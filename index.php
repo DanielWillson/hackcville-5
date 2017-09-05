@@ -54,8 +54,8 @@ get_header(); ?>
 					</figure>
 					<h2>Startup Trips</h2>
 					<p>Tour dynamic startup offices and meet with hiring, young alumni in places like San Francisco, New York, Richmond, Washington DC, and more.</p>
-					<a class="button shorter-button not-active">
-						Details Coming Soon
+					<a class="button shorter-button" href="<?php echo esc_url( home_url( '/' ) ); ?>trips">
+						Get Details &rarr;
 					</a>
 				</div>
 				<div class="flex-1-of-4">

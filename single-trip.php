@@ -41,6 +41,8 @@ while ( have_posts() ) : the_post();
 	$trip_city_list = get_the_terms($ID, "trip_city"); 
 	$city = $trip_city_list[0]->name;
 
+	$times = get_field("start_to_end_times");
+
 	$trip_tracks = array();
 	$the_query = new WP_Query(array('post_type' => 'trip-track', 'numberposts'	=> -1));
 	if ( $the_query->have_posts() ) {
@@ -105,10 +107,10 @@ while ( have_posts() ) : the_post();
 		<div class="container">
 			<div class="intro">
 				<h1><?php echo $city . " Startup Trip"; ?></h1>
-				<h3><?php echo $print_date; ?></h3>
+				<h3><?php echo $print_date . ", " . $times; ?></h3>
 				<p><?php echo $next_date; ?></p>
 				<?php if ($time == 1) { ?>
-				<a href="<?php echo $application_link; ?>" class="button">
+				<a href="<?php echo $application_link; ?>" target="_blank" class="button">
 					Apply Now
 				</a>
 				<?php } else { ?>
@@ -148,7 +150,7 @@ while ( have_posts() ) : the_post();
 			<div class="flex">
 				<div class='flex flex-1-of-2'>
 					<div class="flex-1-of-1">
-						<h1>Our Partners</h1>
+						<h1>Our Presenting Partners</h1>
 					</div>
 					<?php 
 					$presenting = array();
@@ -189,7 +191,7 @@ while ( have_posts() ) : the_post();
 <?php
 	// Import Section
 	$template_url = get_template_directory() . '/template-parts/trip-tracks.php';
-	//include ($template_url);
+	include ($template_url);
 ?>
 
 

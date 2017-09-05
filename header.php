@@ -178,6 +178,28 @@
 			}
 		}
 
+		function showHideTrack(track_number) {
+			var c = ".track-contents.track-";
+			var c_full = c.concat(track_number);
+			console.log(c_full);
+			console.log($(c_full).is(':visible'));
+			if ($(c_full).is(':visible')) {
+				$(c_full).fadeOut();
+				console.log("fade out");
+			}
+			else {
+				$(c_full).css("display", "flex");
+			    $(c_full).hide();
+			    $(c_full).fadeIn();
+				console.log("fade in");
+				var d = '.heading-';
+				d = d.concat(track_number);
+				d = d.concat(".view-more");
+				console.log(d);
+				//d.value = ('Hide the companies &uarr;');
+			}
+		}
+
 
 		$(window).load(function() {
 		    var viewportWidth = $(window).width();
