@@ -1258,6 +1258,18 @@ if(function_exists("register_field_group"))
 				'first_day' => 0,
 			),
 			array (
+				'key' => 'field_59aee3293b4f2',
+				'label' => 'Start to End Times',
+				'name' => 'start_to_end_times',
+				'type' => 'text',
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+			array (
 				'key' => 'field_598b4c2fa8410',
 				'label' => 'Application Status',
 				'name' => 'application_status',

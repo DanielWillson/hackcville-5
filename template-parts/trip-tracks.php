@@ -73,6 +73,17 @@
 					</div>
 				<?php }  ?>
 			</div>
+			<div class="apply-section">
+				<?php if ($time == 1) { ?>
+					<a href="<?php echo $application_link; ?>" target="_blank" class="button">
+						Apply Here By <?php echo $print_date; ?>
+					</a>
+					<?php } else { ?>
+					<a href="http://hackcville.us5.list-manage.com/subscribe/post?u=dae9a7242f836507908a2f2d6&id=97161904f1" target="_blank" class="button">
+						Remind Me to Apply
+					</a>
+					<?php } ?>
+			</div>
 		</div>
 	</div>
 </div>

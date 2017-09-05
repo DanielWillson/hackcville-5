@@ -3313,9 +3313,24 @@ TRIP PAGE (SHOULD BE SPLIT UP)
 }
 
 
+.apply-section {
+	text-align: center;
+	margin-top: 40px;
+}
+
+.apply-section .button {
+	margin-right: 0;
+}
+
+
 
 
 .single-trip-overview .flex-1-of-2 {
+	margin-bottom: 40px;
+}
+
+
+.all-trips .flex-1-of-2 {
 	margin-bottom: 40px;
 }
 
@@ -3473,6 +3488,11 @@ COMPANIES + ALUMNI
 TRIP SPONSORS
 -----------------------------------
 */
+
+.trip-sponsors .flex-1-of-2 .flex-1-of-2 {
+	align-items: center;
+}
+
 
 @media screen and (max-width: 768px) {
 

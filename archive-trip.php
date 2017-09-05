@@ -9,33 +9,52 @@
 
 get_header(); 
 
-// $program_ids = array();
-// $skills_ids = array();
-// $eship_ids = array();
-// $wireframeID = -1;
 $trip_ids = array();
+$ti = array();
+$trip_tentative_ids = array();
+$tti = array();
 $next_trip_id = -1;
 $next_trip_date = 10000000000;
 
-if (has_post_thumbnail( $post->ID ) ): 
-	$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
-	$image = $image[0];
-endif; 
 
 
 if ( have_posts() ) {
 	while ( have_posts() ) : the_post(); 
-		if (get_field("trip_status")) {
-			array_push($trip_ids, get_the_ID());
+		$start_date = get_field("trip_start_date", $ID);
+		$date = DateTime::createFromFormat('mdY', $start_date);
+		$start_date = $date->format('l, F d Y');
+		if (strtotime($start_date)>=strtotime("today")) {
 
-			$trip_start_date = get_field("trip_start_date");
-			if ($trip_start_date < $next_trip_date) {
-				$next_trip_date = $trip_start_date;
-				$next_trip_id = get_the_ID();
+			if (get_field("trip_status")) {
+				array_push($trip_ids, get_the_ID());
+				$ti[get_the_ID()] = strtotime($start_date);
+
+				$trip_start_date = get_field("trip_start_date");
+				if ($trip_start_date < $next_trip_date) {
+					$next_trip_date = $trip_start_date;
+					$next_trip_id = get_the_ID();
+				}
+			}
+			else {
+				array_push($trip_tentative_ids, get_the_ID());
+				$tti[get_the_ID()] = strtotime($start_date);
 			}
 		}
+		
 	endwhile;	
-}?>
+}
+
+if (has_post_thumbnail( $next_trip_id ) ): 
+	$image = wp_get_attachment_image_src( get_post_thumbnail_id( $next_trip_id ), 'single-post-thumbnail' );
+	$image = $image[0];
+endif; 
+
+
+asort($tti);
+asort($ti);
+
+
+?>
 
 <!-- HERO SECTION --> 
 <header class="trip-hero">
@@ -171,7 +190,7 @@ if ($next_trip_id >= 0) {
 			<div class="flex">
 				<?php 
 
-				foreach ($trip_ids as $trip) { ?>
+				foreach($ti as $trip => $item) { ?>
 					<?php 
 
 					$start_date = get_field("trip_start_date", $trip);
@@ -190,8 +209,8 @@ if ($next_trip_id >= 0) {
 						$print_date = $start_date;
 					}
 
-					if (has_post_thumbnail( $trip->ID ) ): 
-						$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+					if (has_post_thumbnail( $trip ) ): 
+						$image = wp_get_attachment_image_src( get_post_thumbnail_id( $trip ), 'single-post-thumbnail' );
 						$image = $image[0];
 					endif; 
 
@@ -202,6 +221,28 @@ if ($next_trip_id >= 0) {
 							<h3><?php echo get_the_title($trip); ?></h3>
 							<p><?php echo $print_date; ?></p>
 							<a class="button" href="<?php echo get_the_permalink($trip); ?>">Get the Details &rarr;</a>
+						</div>
+					</div>
+				<?php }
+				foreach($tti as $trip2 => $item) { ?>
+					<?php 
+
+					$start_date = get_field("trip_start_date", $trip2);
+					$date = DateTime::createFromFormat('mdY', $start_date);
+					$print_date = $date->format('F Y');
+
+					if (has_post_thumbnail( $trip2 ) ): 
+						$image = wp_get_attachment_image_src( get_post_thumbnail_id( $trip2 ), 'single-post-thumbnail' );
+						$image2 = $image[0];
+					endif; 
+
+					?>
+					<div class="flex-1-of-2" style="background-image: url('<?php echo $image2; ?>')">
+						<div class="filter"></div>
+						<div class="info">
+							<h3><?php echo get_the_title($trip2); ?></h3>
+							<p><?php echo $print_date; ?></p>
+							<a class="button not-active">Details Announced Soon</a>
 						</div>
 					</div>
 				<?php }?>
