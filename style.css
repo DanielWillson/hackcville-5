@@ -3804,7 +3804,7 @@ PIONEER NAV
 
 /*
 -----------------------------------
-ARTICLE 
+PIONEER ARTICLE 
 -----------------------------------
 */
 
@@ -3924,13 +3924,130 @@ ARTICLE
 
 /*
 -----------------------------------
+PIONEER HOME HERO 
+-----------------------------------
+*/
+
+
+.pioneer-home .pioneer-intro {
+	position: relative;
+	border: 3px solid #53b0ca;
+	border-bottom: none;
+	text-align: center;
+	height: 40px;
+	margin-bottom: 10px;
+}
+
+.pioneer-home .pioneer-intro h2 {
+	position: absolute;
+    margin-bottom: 0;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    display: inline-block;
+    background-color: white;
+    top: -20px;
+    width: 250px;
+}
+
+.pioneer-home .top-stories {
+	width: 92%;
+	margin: 0 auto;
+}
+
+.pioneer-home .story {
+	flex-basis: 30%;
+	margin-bottom: 30px;
+}
+
+.pioneer-home .story .featured-image {
+	background-size: cover;
+	height: 180px;
+    margin-bottom: 20px;
+}
+
+.pioneer-home .story h3 {
+	margin-bottom: 10px;
+	line-height: 1.3em;
+}
+
+.pioneer-home .story h3 a {
+	color: #0a2128;
+	border-bottom: 1px solid #3486c7;
+}
+
+.pioneer-home .story h3 a:hover {
+    border-bottom-width: 3px;
+    cursor: pointer;
+}
+
+.pioneer-home .story .excerpt p {
+    margin-top: 0;
+    line-height: 1.3em;
+}
+
+.pioneer-home .hero-article-date-author {
+	font-weight: 300;
+    font-size: 75%;
+}
+
+@media screen and (max-width: 960px) {
+	.pioneer-home .story {
+		flex-basis: 47%;
+	}
+
+	.pioneer-home .story .featured-image {
+		height: 240px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+
+	.pioneer-home .story {
+		flex-basis: 100%;
+		margin-bottom: 20px;
+		display: -webkit-flex;
+		-webkit-justify-content: space-between;
+		display: flex;
+		justify-content: space-between;
+		flex-flow: row wrap;
+	}
+
+	.pioneer-home .story .featured-image {
+		height: 200px;
+	}
+
+	.pioneer-home .picture, 
+	.pioneer-home .content {
+		flex-basis: 47%;
+	}
+
+}
+
+@media screen and (max-width: 625px) {
+
+	.pioneer-home .picture {
+		flex-basis: 30%;
+	}
+
+	.pioneer-home .content { 
+		flex-basis: 65%;
+	}
+
+	.pioneer-home .story .featured-image {
+		height: 120px;
+	}
+
+}
+
+
+/*
+-----------------------------------
 ARTICLE LIST 
 -----------------------------------
 */
 
-.pioneer .story {
-	margin-bottom: 40px;
-}
 
 .pioneer-home .intro h2 {
 	margin-bottom: 40px;
