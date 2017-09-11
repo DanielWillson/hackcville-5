@@ -95,6 +95,26 @@ $pioneer = 1;
 			// Must use this include() function instead of Starkers so that the variable passing can work
 			include ($template_url);
 
+			?>
+
+		</div>
+	</div>
+</div>
+<div class="about-pioneer-teaser">
+	<div class="hc-blue-bg">
+		<div class="container">
+			<h3>You're reading <i>The Pioneer</i>, the publication of HackCville.</h3>
+			<a href="<?php echo get_home_url(); ?>/about-the-pioneer" class="button">
+				<h4>Learn more &rarr;</h4>
+			</a>
+		</div>
+	</div>
+</div>
+<div class="pioneer-category page pioneer" id="pioneer-check">
+	<div class="white-bg">
+		<div class="container">
+			<?php
+
 			// Resets the 2 category variables and imports again to create the technology section
 			$current_category_headline = 'Community Stories';
 			$current_category = 'Community';
