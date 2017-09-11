@@ -4,9 +4,13 @@
 		<h2><?php echo $current_category_headline; ?></h2>
 		<?php 
 		$catID = get_cat_ID( $current_category );
-		$catLink = get_category_link( $catID );
+		$catSlug = strtolower($current_category);
+		$catLink = get_home_url() . "/pioneer/category/" . $catSlug;
+		if (!$currentID) {
+			$currentID = -1;
+		}
 		?>
-		<h3><!-- <a href="<?php echo $catLink; ?>">More Like This &rarr;</a> --></h3>
+		<h3><a href="<?php echo $catLink; ?>">More Like This &rarr;</a></h3>
 	</div>
 	<!-- 
 	This block is separated into left and right sections. On desktop, this is self-explanatory when you look at the page. Behind the scenes, the left section requests the first 2 articles in the category. The right section requests the first 5 and the CSS hides the first 2 since they're already shown on the left.
@@ -20,12 +24,16 @@
 				<?php 
 				$args = array( 
 					'post_type' => 'post',
-					'posts_per_page' => 2,
+					'posts_per_page' => 3,
 					'category_name' => $current_category );
 				$loop = new WP_Query( $args );
 				/* Requests the posts via The Loop */
-				while ( $loop->have_posts() ) : $loop->the_post(); ?>
+				while ( $loop->have_posts() ) : $loop->the_post(); 
+					if ($currentID != $post->ID) {
+						?>
+					}
 					<!-- Gets the URL of the featured image -->
+
 					<?php if (has_post_thumbnail( $post->ID ) ): 
 						$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 						$image = $image[0]; ?>
@@ -60,7 +68,8 @@
 							</div>
 						</div>
 					</li>
-				<?php wp_reset_postdata();
+				<?php }
+				wp_reset_postdata();
 				endwhile; ?>
 			</ul>
 		</div>
@@ -71,10 +80,12 @@
 				<?php 
 				$args = array(
 					'post_type' => 'post',
-					'posts_per_page' => 4,
+					'posts_per_page' => 5,
 					'category_name' => $current_category );
 				$loop = new WP_Query( $args );
-				while ( $loop->have_posts() ) : $loop->the_post(); ?>
+				while ( $loop->have_posts() ) : $loop->the_post(); 
+					if ($currentID != $post->ID) {
+					?>
 					<?php if (has_post_thumbnail( $post->ID ) ): 
 						$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 						$image = $image[0]; ?>
@@ -105,7 +116,7 @@
 							</div>
 						</div>
 					</li>
-				<?php wp_reset_postdata();
+				<?php } wp_reset_postdata();
 				endwhile; ?>
 			</ul>
 		</div>

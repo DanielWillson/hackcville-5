@@ -1,96 +1,91 @@
 <?php
 /**
- * The template for displaying all single posts
+ * The template for displaying category pages
  *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
+ * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package HackCville_5.0
  */
 
 get_header(); 
-
-// Get Pioneer header
 $template_url = get_template_directory() . '/template-parts/pioneer-nav.php';
 include ($template_url);
 
+$pioneer = -1;
 
-$currentID = -1;
-$pioneer = 1;
-?><!-- 
-add category hero back when ready
- -->
+if ( have_posts() ) : 
+$page = 1;
+if ($paged == 0) {
+	$page = 1;
+}
+else {
+	$page = $paged;
+}
+	?>
 
-<script type="text/javascript">
-	
-
-
-</script>
-
-
-<div class="single-article" id="pioneer-check">
+<div class="pioneer-archive" id="pioneer-check">
 	<div class="white-bg">
 		<div class="container">
+			<header class="page-header">
+				<?php
+					$cat = single_cat_title("", false);
+					echo "<h2>" . $cat . " Stories</h2>";
+				?>
+			</header>
 			<div class="flex">
-				<?php while ( have_posts() ) : the_post(); 
-					$currentID = get_the_ID();
-
-					if (has_post_thumbnail( $post->ID ) ): 
-						$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
-						$image = $image[0];
-					endif; ?>
-				<header class="entry-header">
-						
-						<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-						<div class="excerpt"><?php echo apply_filters('the_excerpt', get_post_field('post_excerpt', $post_id)); ?></div>
-						<div class="entry-meta">
-							<span class="author">by <?php 
-								coauthors( $between = ", ", $betweenLast = " and ", $before = "", $after = null, $echo = true )
-								//coauthors_posts_links( $between = ", ", $betweenLast = " and ", $before = "", $after = null, $echo = true )
+				<div class="left-list">
+					<div class="flex-4-of-5 flex">
+					<?php
+					/* Start the Loop */
+					
+					while ( have_posts() ) : the_post(); 
+						if (has_post_thumbnail( $post->ID ) ) {
+							$f_i = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+							$f_i = $f_i[0]; 
+						} ?>
+						<div class="story flex">
+							<div class="image flex-1-of-4" style="background-image: url('<?php echo $f_i; ?>')">
+							</div>
+							<div class="content flex-3-of-4">
+								<h3>
+									<a href="<?php the_permalink(); ?>">
+										<?php the_title() ?>		
+									</a>
+								</h3>
+								<div class="excerpt">
+									<?php echo apply_filters('the_excerpt', get_post_field('post_excerpt', $post_id)); ?>
+								</div>
+								<div class="hero-article-date-author">
+									<span class="date"><?php echo get_the_time('m-d-Y', $post_id->ID); ?></span> - by <span class="author"><?php 
+										coauthors( $between = ", ", $betweenLast = " and ", $before = "", $after = null, $echo = true )
 										?>
-							 - </span>
-							<time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><?php the_date(); ?></time>
+									</span>
+								</div>
+							</div>
 						</div>
 						
-					</header>
-				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<img src="<?php echo $image; ?>">
-					<div class="entry-content">
-						<?php
-							the_content( sprintf(
-								wp_kses(
-									/* translators: %s: Name of current post. Only visible to screen readers */
-									__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'hackcville-5-0' ),
-									array(
-										'span' => array(
-											'class' => array(),
-										),
-									)
-								),
-								get_the_title()
-							) );
 
-							wp_link_pages( array(
-								'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'hackcville-5-0' ),
-								'after'  => '</div>',
-							) );
+						<?php
+						// wp_reset_postdata();
+						endwhile;
+
 						?>
+						<div class="pagination-links">
+							<div class="flex">
+								<?php posts_nav_link(' | ','&larr; Previous Page','Next Page &rarr;'); ?>
+							</div>
+						</div>
+
+						<?php endif; ?>
 					</div>
-
-					<footer class="entry-footer">
-						<?php
-							// Import Social Buttons
-							$template_url = get_template_directory() . '/template-parts/share-this-page.php';
-							include ($template_url);
-						?>
-					</footer>
-				</article>
+				</div>
 				<div class="sidebar">
 					<div class="recent-stories">
 						<a href="" class="heading button not-active">
 							<h4>Recent Stories</h4>
 						</a>
 						<?php 
-						$the_query2 = new WP_Query(array('post_type' => 'post', 'posts_per_page'=> '6'));
+						$the_query2 = new WP_Query(array('post_type' => 'post', 'posts_per_page'=> '3'));
 						if ( $the_query2->have_posts() ) {
 							while ( $the_query2->have_posts() ) { 
 								$the_query2->the_post(); 
@@ -110,6 +105,7 @@ add category hero back when ready
 										</a>
 									</div>
 								<?php }
+							wp_reset_postdata();
 							}
 						}
 						?>
@@ -146,41 +142,15 @@ add category hero back when ready
 					</div>
 				</div>
 			</div>
-			<?php
-				$categories = get_the_category();
-				$disallowed_categories = array("Feature", "Sponsored", "Photo Essays", "Videos", "Articles", "Uncategorized");
-				$catNames = array();
 
-				foreach ($categories as $cat) {
-				    $catNames[] = $cat->name;
-				}
-
-				$goodCategories = array_diff($catNames, $disallowed_categories);
-
-				$current_category = "";
-				$current_category_headline = "";
-
-				if ( ! empty( $goodCategories ) ) {
-				    $current_category = array_rand($goodCategories);   
-				    $current_category = $goodCategories[$current_category];
-					$current_category_headline = 'Related Stories';
-				}
-				else {
-					$current_category_headline = 'Recent Stories';
-				}
-
-				$template_url = get_template_directory();
-				$template_url .= '/template-parts/cat-hero.php';
-
-				include ($template_url); ?>
-				<?php
-
-			endwhile; ?>
+			</div>
 		</div>
 	</div>
 </div>
 
+
+
 <?php
-// Get Pioneer footer
+// Get footer
 $template_url = get_template_directory() . '/footer.php';
 include ($template_url);

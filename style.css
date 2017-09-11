@@ -3808,7 +3808,9 @@ PIONEER ARTICLE
 -----------------------------------
 */
 
-
+.single-article article > img {
+	width: 100%;
+}
 
 .single-article article {
 	flex-basis: 70%;
@@ -3831,8 +3833,9 @@ PIONEER ARTICLE
     height: 100%;
 }
 
-.single-article .sidebar {
+.sidebar {
 	flex-basis: 22.5%;
+	margin-bottom: 40px;
 }
 
 .single-article h1 {
@@ -3874,23 +3877,27 @@ PIONEER ARTICLE
     font-weight: bold;
 }
 
-.single-article .sidebar p {
+.sidebar p {
 	font-size: 16px;
 }
 
-.single-article .recent-stories {
+.sidebar div p:first-of-type {
+	margin-top: 0;
+}
+
+.sidebar .recent-stories {
 	margin-bottom: 40px;
 }
 
-.single-article .recent-story {
+.sidebar .recent-story {
 	margin-bottom: 20px;
 }
 
-.single-article .recent-story:nth-of-type(6) {
+.sidebar .recent-story:nth-of-type(6) {
 	display: none;
 }
 
-.single-article .sidebar .heading {
+.sidebar .heading {
 	padding-left: 10px;
 	padding-right: 10px;
 	margin-bottom: 20px;
@@ -3908,12 +3915,12 @@ PIONEER ARTICLE
 	margin: 0;
 }
 
-.single-article .sidebar #mc_embed_signup {
+.sidebar #mc_embed_signup {
 	margin-top: 10px;
 }
 
 @media screen and (max-width: 920px) {
-	.single-article .sidebar {
+	.sidebar {
 		display: none;
 	}
 
@@ -3987,7 +3994,7 @@ PIONEER HOME HERO
     line-height: 1.3em;
 }
 
-.pioneer-home .hero-article-date-author {
+.hero-article-date-author {
 	font-weight: 300;
     font-size: 75%;
 }
@@ -4078,6 +4085,50 @@ PIONEER ARCHIVE
 	margin-top: 40px;
 }
 
+.pioneer-archive .story .image {
+	background-size: cover;
+	height: 150px;
+}
+
+.pioneer-archive .left-list {
+	flex-basis: 70%;
+}
+
+.pioneer-archive .story {
+	margin-bottom: 40px;
+	width: 100%;
+}
+
+.pioneer-archive .story h3 {
+	line-height: 1.3em;
+}
+
+.pioneer-archive .pagination-links {
+	height: 50px;
+	font-weight: bold;
+	width: 100%;
+}
+
+@media screen and (max-width: 920px) {
+	.pioneer-archive .left-list {
+		flex-basis: initial;
+	}
+
+	.pioneer-archive .story .image {
+		height: 250px;
+		width: 400px;
+		margin-bottom: 20px;
+	}
+
+	.pioneer-archive .story h3,
+	.pioneer-archive .story .excerpt p {
+		margin-bottom: 5px;
+	}
+
+	.pioneer-archive .story .content {
+		flex-basis: 100%;
+	}
+}
 
 /*
 -----------------------------------
@@ -4166,6 +4217,14 @@ PIONEER CAT HERO
   font-size: 18px; /* to reset after font-size: 0 */
 }
 
+.cat-hero-left .cat-hero-item:nth-child(3) {
+	display: none;
+}
+
+.cat-hero-right .cat-hero-item:nth-child(5) {
+	display: none;
+}
+
 .cat-hero-left .cat-hero-item {
   width: 50%; /* Since there are two articles side-by-side */
   display: inline-block;
@@ -4229,10 +4288,6 @@ PIONEER CAT HERO
 
 @media screen and (max-width: 1060px) {
 	/* BEGIN CAT HERO */
-
-  .cat-hero-header {
-    text-align: center;
-  }
 
   .cat-hero-header h3 {
     display: block;
