@@ -44,19 +44,53 @@
 
   	ga('send', 'pageview');
 
- //  	
 
 	</script>
+
 	<?php
 
- 
-  		if(is_singular( 'post' ) || is_post_type_archive('post')) {?>
+ 		echo is_tax('category');
+  		if(is_singular( 'post' ) || is_post_type_archive('post') || is_category() || is_home()) {?>
   			<script>
   			ga('create', 'UA-44987650-1', 'auto', 'Pioneer');
 			ga('Pioneer.send', 'pageview');
 			</script><?php
 		}
-	
+	// <!-- Parsely JSON -->
+		if (is_single()) { 
+			$id = get_the_ID(); 
+			$co = coauthors("\", \"", "\", \"", "\"", "\"", false);
+
+			$categories = get_the_category();
+			$disallowed_categories = array("Photo Essays", "Videos", "Articles");
+			$catNames = array();
+
+			foreach ($categories as $cat) {
+			    $catNames[] = $cat->name;
+			}
+
+			$goodCategories = array_diff($catNames, $disallowed_categories);
+
+			$outputString = "\"";
+
+			foreach ($goodCategories as $category) {
+				$outputString = $outputString . $category . "\", \"";
+			}
+			$outputString = substr($outputString, 0, -3);
+
+			?>
+			<script type="application/ld+json"> 
+			{
+			"@context": "http://www.thepioneer.co",
+			"@type": "NewsArticle",
+			"headline": "<?php echo get_the_title($id); ?>",
+			"url": "<?php the_permalink($id); ?>",
+			"dateCreated": "<?php echo get_post_time('c', null, null, null); ?>",
+			"articleSection": [<?php echo $outputString; ?>],
+			"creator": [<?php echo $co; ?>]
+			}
+			</script>
+		<?php } 
 
 
 

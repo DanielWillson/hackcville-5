@@ -64,7 +64,7 @@ asort($ti);
 			<div class="intro">
 				<h1>HackCville's Startup Trips</h1>
 				<p>HackCville hosts immersive trips to cities across the country to connect our talented students with high-growth and innovative companies. Students meet industry leaders and get connected with internship and job opportunities.</p>
-				<p>Over the past 5 years, we have take hundreds of our top students to New York City, Boston, San Francisco, Richmond, Washington DC, and right here in Charlottesville. Read on for details on our trips and how you can go on the next one.</p>
+				<p>Over the past 5 years, we have taken hundreds of our top students to New York City, Boston, San Francisco, Richmond, Washington DC, and right here in Charlottesville. Read on for details on our trips and how you can go on the next one.</p>
 			</div>
 		</div>
 	</div>
@@ -81,14 +81,13 @@ $close_date = $date->format('l, F d');
 
 if(strtotime($open_date)<=strtotime("today")){
     //past or today
-    // $next_date = "Applications close " . date_format($close_date,"l, F d, Y") . " at 11:59pm"; 
     $next_date = "Applications close " . $close_date . " at 11:59pm"; 
 } else {
     // future
     $next_date = "Applications Open " . $open_date; 
 }
 
-if ($next_trip_id >= 0) {
+// if ($next_trip_id >= 0) {
 ?>
 <div class="next-trip">
 	<div class="hc-blue-bg">
@@ -99,12 +98,12 @@ if ($next_trip_id >= 0) {
 					<img src="<?php echo $image; ?>">
 				</div>
 				<div class="flex-1-of-2">
-					<h2>Charlottesville, VA</h2>
-					<h3>Friday, September 22, 2017</h3>
+					<h2><?php echo get_the_title($next_trip_id); ?></h2>
+					<h3><?php get_field("trip_start_date", $next_trip_id); ?></h3>
 
 					<h4><?php echo $next_date; ?></h4>
 					<a class="button" href="<?php echo get_the_permalink($next_trip_id); ?>">
-						<h4>Get the Details &rarr; </h4>
+						<h4>Get Details &rarr;</h4>
 					</a>
 				</div>
 			</div>
@@ -112,7 +111,7 @@ if ($next_trip_id >= 0) {
 		</div>
 	</div>
 </div>
-<?php } ?>
+<?php //} ?>
 <div class="trip-testimonial">
 	<div class="blue-bg">
 		<div class="container">
@@ -220,7 +219,7 @@ if ($next_trip_id >= 0) {
 						<div class="info">
 							<h3><?php echo get_the_title($trip); ?></h3>
 							<p><?php echo $print_date; ?></p>
-							<a class="button" href="<?php echo get_the_permalink($trip); ?>">Get the Details &rarr;</a>
+							<a class="button" href="<?php echo get_the_permalink($trip); ?>">Get Details &rarr;</a>
 						</div>
 					</div>
 				<?php }

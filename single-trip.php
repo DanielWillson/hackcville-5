@@ -107,7 +107,7 @@ while ( have_posts() ) : the_post();
 		<div class="container">
 			<div class="intro">
 				<h1><?php echo $city . " Startup Trip"; ?></h1>
-				<h3><?php echo $print_date . ", " . $times; ?></h3>
+				<h3><?php echo $print_date . " " . $times; ?></h3>
 				<p><?php echo $next_date; ?></p>
 				<?php if ($time == 1) { ?>
 				<a href="<?php echo $application_link; ?>" target="_blank" class="button">
@@ -144,7 +144,7 @@ while ( have_posts() ) : the_post();
 			<div class="apply-section">
 				<?php if ($time == 1) { ?>
 					<a href="<?php echo $application_link; ?>" target="_blank" class="button">
-						Apply Here By <?php echo $print_date; ?>
+						Apply Here By <?php echo $close_date . " at 11:59pm"; ?>
 					</a>
 					<?php } else { ?>
 					<a href="http://hackcville.us5.list-manage.com/subscribe/post?u=dae9a7242f836507908a2f2d6&id=97161904f1" target="_blank" class="button">
@@ -200,9 +200,12 @@ while ( have_posts() ) : the_post();
 	</div>
 </div>
 <?php
-	// Import Section
-	$template_url = get_template_directory() . '/template-parts/trip-tracks.php';
-	include ($template_url);
+	if (sizeof($trip_tracks) > 0) {
+		// Import Section
+		$template_url = get_template_directory() . '/template-parts/trip-tracks.php';
+		include ($template_url);
+	}
+	
 ?>
 
 

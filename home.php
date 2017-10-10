@@ -29,7 +29,7 @@ $pioneer = 1;
 			
 				$args = array( 
 					'post_type' => 'post',
-					'posts_per_page' => 6 );
+					'posts_per_page' => 3 );
 				$loop = new WP_Query( $args );
 				/* Requests the posts via The Loop */
 				while ( $loop->have_posts() ) : $loop->the_post(); 
