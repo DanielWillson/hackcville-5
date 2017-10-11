@@ -117,8 +117,8 @@ if(strtotime($open_date)<=strtotime("today")){
 		<div class="container">
 			<div class="flex">
 				<div class="flex-1-of-2">
-					<h3>"Please extend my sincerest thanks to everyone who helped organize the trip. I literally completely owe you guys for getting me my dream job."</h3>
-					<p>- Peter Simonsen, HackCville Alumnus, Data Analyst at Dataminr in NYC</p>
+					<h3>"HackCville's startup trip showed me career paths I hadn't even considered at UVa, and it's where I found a job I absolutely love."</h3>
+					<p>- Peter Simonsen, UVa 2015</p>
 				</div>
 				<figure class="flex-1-of-2">
 					<img src="<?php echo get_template_directory_uri(); ?>/images/nyc4.jpg">

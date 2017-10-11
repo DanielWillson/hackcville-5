@@ -2965,20 +2965,18 @@ NEWSLETTER SUBSCRIBE
 
 /*
 -----------------------------------
-SUB NAV - LAUNCH
+SUB NAV - 
 -----------------------------------
 */
 
-.launch-nav .launch-branding a,
-.launch-academy-nav .launch-branding a,
-.launch-fellowship-nav .launch-branding a {
+.sub-nav-branding a {
 	font-size: 26px;
 	border-bottom: none;
 	text-transform: uppercase;
 	font-weight: bold;
 }
 
-.launch-branding .subheading {
+.sub-nav .subheading {
 	font-size: 26px;
 	font-weight: bold;
 	color: white;
@@ -4408,3 +4406,153 @@ PIONEER CAT HERO
 }
 /* END CAT HERO */
 
+
+/*
+-----------------------------------
+COMPANY PAGE - HERO
+-----------------------------------
+*/
+
+.company-hero .intro,
+.company-process-hero .intro {
+	max-width: 650px;
+	text-align: left;
+	padding: 50px 0;
+}
+
+.company-hero .filter {
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+/*
+-----------------------------------
+COMPANY PAGE - HOW IT WORKS
+-----------------------------------
+*/
+
+.co-how-it-works .intro {
+	margin-bottom: 2em;
+}
+
+.co-how-it-works .flex-3-of-5,
+.co-how-it-works .flex-2-of-5 {
+	margin-bottom: 2em;
+}
+
+.co-how-it-works .cta {
+	text-align: center;
+}
+
+
+/*
+-----------------------------------
+COMPANY PAGE - TESTIMONIAL - UNUSED
+-----------------------------------
+*/
+
+.company-testimonial .flex {
+	/*align-items: center;*/
+}
+
+.company-testimonial h3,
+.company-testimonial h4 {
+	line-height: 1.3em;
+}
+
+.company-testimonial p {
+	font-style: italic;
+}
+
+/*
+-----------------------------------
+COMPANY PAGE - PAST PARTNERS
+-----------------------------------
+*/
+
+.past-partners .flex .flex {
+	align-items: center;
+}
+
+
+/*
+-----------------------------------
+COMPANY PAGE - CTA
+-----------------------------------
+*/
+
+.company-cta {
+	text-align: center;
+}
+
+/*
+-----------------------------------
+COMPANY PROCESS PAGE - NUMBERS
+-----------------------------------
+*/
+
+.company-numbers .flex-1-of-4 {
+	text-align: center;
+
+}
+
+.company-numbers .flex-3-of-4 {
+	margin-bottom: 2em;
+}
+
+.company-numbers .flex-1-of-4 h1,
+.company-numbers .flex-1-of-4 p {
+	margin: 0;
+}
+
+/*
+-----------------------------------
+COMPANY PROCESS PAGE - MATCHING
+-----------------------------------
+*/
+
+.matching h1 {
+	text-align: left;
+}
+
+.matching p:first-of-type {
+	margin-top: 0;
+}
+
+/*
+-----------------------------------
+COMPANY PROCESS PAGE - KEEP THEM
+-----------------------------------
+*/
+
+.keep-them h3 {
+	
+}
+
+.keep-them .flex .flex {
+	align-items: center;
+}
+
+.keep-them .flex .flex-1-of-3 {
+	margin-bottom: 20px;
+}
+
+/*
+-----------------------------------
+COMPANY STUDENTS PAGE - STUDENTS
+-----------------------------------
+*/
+
+.meet-the-students .flex-2-of-5,
+.meet-the-students .flex-3-of-5 {
+	margin-bottom: 2em;
+}
+
+.meet-the-students h3 {
+	margin-bottom: 5px;
+}
+
+.meet-the-students h4 {
+	font-weight: 300;
+	font-style: italic;
+}

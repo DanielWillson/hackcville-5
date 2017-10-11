@@ -1,7 +1,7 @@
 <div class="launch-fellowship-nav sub-nav">
 	<div class="blue-bg">
 		<div class="container flex">
-			<div class="launch-branding">
+			<div class="sub-nav-branding">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>launch" rel="home">
 					Launch:
 				</a><span class="subheading">Fellowship</span>
