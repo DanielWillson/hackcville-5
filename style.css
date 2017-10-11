@@ -116,6 +116,12 @@ h1 {
 	margin: 0.67em 0;
 }
 
+@media screen and (max-width: 768px) {
+	h1 {
+		font-size: 2.25em;
+	}
+}
+
 h2 {
 	font-size: 2em;
 }
@@ -4447,7 +4453,7 @@ COMPANY PAGE - HOW IT WORKS
 
 /*
 -----------------------------------
-COMPANY PAGE - TESTIMONIAL - UNUSED
+COMPANY PAGE - TESTIMONIAL
 -----------------------------------
 */
 
@@ -4474,6 +4480,17 @@ COMPANY PAGE - PAST PARTNERS
 	align-items: center;
 }
 
+@media screen and (max-width: 768px) {
+	.past-partners figure.flex-1-of-3 {
+		flex-basis: 26.666%;
+	}	
+
+	.past-partners .flex .flex {
+		margin-bottom: 40px;
+	}
+}
+
+
 
 /*
 -----------------------------------
@@ -4483,6 +4500,12 @@ COMPANY PAGE - CTA
 
 .company-cta {
 	text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+	.company-cta {
+		text-align: left;
+	}
 }
 
 /*
@@ -4497,12 +4520,23 @@ COMPANY PROCESS PAGE - NUMBERS
 }
 
 .company-numbers .flex-3-of-4 {
-	margin-bottom: 2em;
+	margin-bottom: 40px;
 }
 
 .company-numbers .flex-1-of-4 h1,
 .company-numbers .flex-1-of-4 p {
 	margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+	.company-numbers .flex-3-of-4 {
+		margin-bottom: 20px;
+	}
+
+	.company-numbers .flex-1-of-4 {
+		flex-basis: 100%;
+	}
+
 }
 
 /*
@@ -4525,10 +4559,6 @@ COMPANY PROCESS PAGE - KEEP THEM
 -----------------------------------
 */
 
-.keep-them h3 {
-	
-}
-
 .keep-them .flex .flex {
 	align-items: center;
 }
@@ -4536,6 +4566,17 @@ COMPANY PROCESS PAGE - KEEP THEM
 .keep-them .flex .flex-1-of-3 {
 	margin-bottom: 20px;
 }
+
+@media screen and (max-width: 768px) {
+
+	.keep-them .flex-1-of-3 {
+		flex-basis: 26.666%;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+
+}
+
 
 /*
 -----------------------------------

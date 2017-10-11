@@ -14,7 +14,6 @@
 
 get_header(); ?>
 
-<!-- <div class="blue-divider"></div> -->
 <div class="home-hero-1 flex">
 	<div class="flex-2-of-3 image-bg split-pic" style="background-image: url('<?php echo get_template_directory_uri(); ?>/images/peiching.jpg');">
 	</div>
@@ -27,7 +26,7 @@ get_header(); ?>
 				Get to Know Us &darr;
 			</a>
 			<a class="button shorter-button" href="<?php echo esc_url( home_url( '/' ) ); ?>programs">
-				Fall Programs &rarr;
+				Our Programs &rarr;
 			</a>
 		</div>
 	</div>
@@ -151,8 +150,8 @@ get_header(); ?>
 				<div class="flex-1-of-2">
 					<h3>"HackCville is an incredible institution", a "unicorn", and "like nothing else at any university we work with."</h3>
 					<p class="byline">- Brendan Collins, College Recruiter at Google</p>
-					<h3>"I literally completely owe you guys for getting me my dream job."</h3>
-					<p class="byline">- Peter Simonsen, HackCville Alumnus, Data Analyst at Dataminr in NYC</p>
+					<h3>"HackCville's startup trip showed me career paths I hadn't even considered at UVa, and it's where I found a job I absolutely love."</h3>
+					<p class="byline">- Peter Simonsen, HackCville Alumnus, UVa 2015</p>
 				</div>
 			</div>
 		</div>
@@ -166,9 +165,12 @@ get_header(); ?>
 			<h1>Our Community</h1>
 			<h3>Talented, inspiring, empowering, and inclusive - ask any HackCville member and you’ll hear just how incredible our community is. We're 300+ strong.</h3>
 			<h3>We have two clubhouses on the UVA Corner that we call home. Our members get 24/7 access to these fun and functional spaces on Elliewood Avenue. Members also get exclusive events, job opportunities, and more.</h3>
-			<h3>Anyone, regardless of year or major, can apply to join HackCville. We're mostly UVA students, but also some alumni and Cville community members, too. Applications for our fall and summer programs open this August.</h3>
+			<h3>Anyone, regardless of year or major, can apply to join HackCville. We're mostly UVA students, but also some alumni and Cville community members, too.</h3>
 			<a class="button" href="<?php echo esc_url( home_url( '/' ) ); ?>programs">
-				How to Apply &rarr;
+				Part-Time Programs &rarr;
+			</a>
+			<a class="button" href="<?php echo esc_url( home_url( '/' ) ); ?>launch">
+				Summer Programs &rarr;
 			</a>
 		</div>
 	</div>
@@ -183,7 +185,7 @@ get_header(); ?>
 				<div class="flex-3-of-5">
 					<p>We vet and train top talent in software development, design, marketing, video production, and more. We have freelance, part-time, and full-time hires available for companies of any size.</p>
 					<a href="mailto:daniel@hackcville.com" class="button">Contact us &rarr; </a>
-					<!-- <a href="<?php echo esc_url( home_url( '/' ) ); ?>/companies" class="button">Get details &rarr; </a> -->
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>/companies" class="button">Get details &rarr; </a>
 				</div>
 				<div class="flex-2-of-5">
 					<h3>"As we seek to build our creative economy, HackCville will play a crucial role in training and keeping talent here in Charlottesville."</h3>
@@ -242,55 +244,18 @@ get_header(); ?>
 			</div>
 			<div class="cta">
 				<a class="button" href="<?php echo esc_url( home_url( '/' ) ); ?>/programs">
-					Our Fall Programs &rarr;
+					Our Part-Time Programs &rarr;
 				</a>
-				<!-- <a class="button" href="<?php echo esc_url( home_url( '/' ) ); ?>/launch">
+				<a class="button" href="<?php echo esc_url( home_url( '/' ) ); ?>/launch">
 					Our Summer Programs &rarr;
-				</a> -->
+				</a>
 			</div>
 		</div>
 	</div>
 </div>
 
 
-<!-- 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
- -->
-		<!-- <?php
-		if ( have_posts() ) :
-
-			if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-
-			<?php
-			endif;
-
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
-
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				//get_template_part( 'template-parts/content', get_post_format() );
-
-			endwhile;
-
-			//the_posts_navigation();
-
-		else :
-
-			//get_template_part( 'template-parts/content', 'none' );
-
-		endif; ?> -->
-
-	<!-- 	</main><!-- #main -->
-	</div><!-- #primary -->
  
 <?php
-// get_sidebar();
+
 get_footer();

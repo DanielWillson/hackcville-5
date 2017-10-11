@@ -117,8 +117,14 @@ foreach ($track_IDs as $t) {
 					<h3>"[Our intern] is frickin KILLER. He is as good as you said he would be. This kid is whip smart and picking concepts up really, really quickly. There’s world-changing product just around the corner."</h3>
 					<p>- Oliver Beavers, Trivium Financial</p>
 					<br>
+					<br>
 					<h3>"I’ve found both of our interns to be both incredibly motivated and motivating. The pace of work is impressive."</h4>
 					<p>- Tara Faust, Maternity Neighborhood</p>
+					<br>
+					<br>
+					<h3>"Our three interns are AWESOME. The output for the short amount of time they’ve had is incredible. I love them."</h3>
+					<p>- Derek Mansfield, Local Food Entrepreneur</p>
+					<br>
 					<br>
 					<h3>"As we seek to build our creative economy, HackCville will play a crucial role in training and keeping talent here in Charlottesville."</h3>
 					<p>- Charlottesville Mayor Mike Signer</p>
