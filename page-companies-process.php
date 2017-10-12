@@ -56,7 +56,7 @@ include ($template_url);
 				</figure>
 				<div class="flex-1-of-2">
 					<h2>2. We train them to be super-interns.</h2>
-					<p>Our proprietary training system gets students work-ready fast. Students are immersed in an intensive 9-hour/day bootcamp for the first 6 weeks of the summer. A core part of our curriculum includes training in the communication and professionalism needed to succeed in the workplace.</p>
+					<p>Our proprietary training system gets students work-ready fast. Students are immersed in an intensive 9-hour/day bootcamp for the first 5 weeks of the summer. A core part of our curriculum includes training in the communication and professionalism needed to succeed in the workplace.</p>
 				</div>
 				<div class="flex-1-of-2">
 					<p>We teach students how to teach themselves new skills and have them practice with sample clients. Web designers learn design tools, JavaScript, and theme development. Developers learn the full stack with an emphasis on Node and React. </p>
@@ -88,7 +88,7 @@ include ($template_url);
 				</figure>
 				<div class="flex-1-of-2">
 					<p>We work closely with each company to find the best match based on each student's skillset and personal interests. We also host barbeques where company reps can get to know students in-person and gauge culture fit and send recommended matches to companies give feedback on.</p>
-					<p>Our goal is to find the best fit, and we work with companies and students until both are excited about their match. For the second six weeks of the summer, students then work as full-time project consultants at the company's offices or remotely from HackCville. (July 2 - August 10.)</p>
+					<p>Our goal is to find the best fit, and we work with companies and students until both are excited about their match. For the second six weeks of the summer, students then work as full-time project consultants at the company's offices or remotely from HackCville. (June 25 - August 10.)</p>
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>launch-past-students" class="button">
 						Meet Last Year's Students &rarr;
 					</a>
@@ -135,7 +135,7 @@ include ($template_url);
 						<img src="<?php echo get_template_directory_uri(); ?>/images/companies/maternity.jpg" >
 					</figure>
 					<figure class="flex-1-of-3">
-						<img src="<?php echo get_template_directory_uri(); ?>/images/companies/locus.png" >
+						<img src="<?php echo get_template_directory_uri(); ?>/images/companies/uphex.png" >
 					</figure>
 					<figure class="flex-1-of-3">
 						<img src="<?php echo get_template_directory_uri(); ?>/images/companies/roots.jpeg" >

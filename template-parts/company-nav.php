@@ -2,7 +2,7 @@
 	<div class="blue-bg">
 		<div class="container flex">
 			<div class="sub-nav-branding">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>launch" rel="home">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>companies" rel="home">
 					For Companies
 				</a>
 			</div>
