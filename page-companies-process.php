@@ -88,7 +88,7 @@ include ($template_url);
 				</figure>
 				<div class="flex-1-of-2">
 					<p>We work closely with each company to find the best match based on each student's skillset and personal interests. We also host barbeques where company reps can get to know students in-person and gauge culture fit and send recommended matches to companies give feedback on.</p>
-					<p>Our goal is to find the best fit, and we work with companies and students until both are excited about their match. For the second six weeks of the summer, students then work as full-time project consultants at the company's offices or remotely from HackCville. (June 25 - August 10.)</p>
+					<p>Our goal is to find the best fit, and we work with companies and students until both are excited about their match. For the remaining seven weeks of the summer, students then work as full-time interns or project consultants at the company's offices or remotely from HackCville. (June 25 - August 10.)</p>
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>launch-past-students" class="button">
 						Meet Last Year's Students &rarr;
 					</a>

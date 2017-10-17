@@ -4597,3 +4597,33 @@ COMPANY STUDENTS PAGE - STUDENTS
 	font-weight: 300;
 	font-style: italic;
 }
+
+/*
+-----------------------------------
+AUTHOR PAGE 
+-----------------------------------
+*/
+
+.author-hero .name {
+	margin-bottom: 10px;
+}
+
+.author-hero .title {
+	font-weight: normal;
+	font-style: italic;
+
+}
+
+.past-articles h2 {
+	margin-bottom: 40px;
+}
+
+.past-articles a {
+	border-bottom: none;
+}
+
+.past-articles .flex-1-of-2 {
+	margin-bottom: 20px;
+}
+
+

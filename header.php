@@ -133,7 +133,7 @@
 			if (is_author()) {
 				
 				$authorID = get_the_author_meta( 'ID' );
-				$headshot = types_render_usermeta_field( "headshot", array( "width" => 600, 'user_id'=>$authorID, 'url'=>'true' ) );
+				//$headshot = types_render_usermeta_field( "headshot", array( "width" => 600, 'user_id'=>$authorID, 'url'=>'true' ) );
 				if ($headshot == "") {
 					$avatar = get_bloginfo( 'template_url');
 					$avatar .= '/images/no-avatar.jpg';

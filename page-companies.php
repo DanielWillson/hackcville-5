@@ -18,13 +18,12 @@ include ($template_url);
 		<div class="container">
 			<div class="intro">
 				<h2>Partner with HackCville for vetted & trained top talent.</h2>
-				<h4>Launch Summer Internship Program</h4>
-				<p>This isn't your typical summer internship program. Our interns get advanced training in critical skills: code, design, marketing, data, and more. Then we match these super-interns with your company to tackle big projects this summer.</p>
-				<p>We provide much needed technical talent to nearly 50 of the top firms across Charlottesville at very affordable prices, and get highly valuable students to love and stay in Charlottesville. Read on for how your company can get involved.</p> 
+				<p>The Launch Summer Internship Program isn't your typical internship program. Our interns get advanced training in critical skills: code, design, marketing, data, and more. Then we match these super-interns with your company to tackle big projects this summer.</p>
+				<p>We provide technical and marketing talent to 50+ of the top startup and tech firms across Charlottesville at very affordable prices. Students get a once in a lifetime opportunity to learn invaluable skills and build experience. Read on for how your company can get involved.</p> 
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>launch-process" class="button">
 					Our Process &rarr;
 				</a>
-				<a href="" class="button">
+				<a href="https://hackcville.typeform.com/to/c45Hu0" class="button" target="_blank">
 					Request more info &rarr;
 				</a>
 			</div>
@@ -52,7 +51,7 @@ include ($template_url);
 					<img src="<?php echo get_template_directory_uri(); ?>/images/keaton.jpg">
 				</figure>
 				<div class="flex-3-of-5">
-					<h2>2) We train them to become super-interns in just 6 weeks.</h2>
+					<h2>2) We train them to become super-interns in just 5 weeks.</h2>
 					<p>Our proprietary training system gets students work-ready fast. We teach modern tools and techniques to 5 different tracks: software dev, web design, digital media, digital strategy, and data science. We round out them out by teaching the communication skills and professionalism needed to succeed in the workplace.</p>
 				</div>
 				<figure class="flex-2-of-5">
@@ -60,7 +59,7 @@ include ($template_url);
 				</figure>
 				<div class="flex-3-of-5">
 					<h2>3) We match students with companies to tackle big projects for the rest of the summer.</h2>
-					<p>Throughout the training process, we work closely with each company to find the best match based on each student's skillset, personal interests, and culture fit. For the remaining seven weeks of the summer, students then work as full-time project consultants at the company's offices. (June 25 - August 10.)</p>
+					<p>Throughout the training process, we work closely with each company to find the best match based on each student's skillset, personal interests, and culture fit. For the remaining seven weeks of the summer, students then work as full-time interns or project consultants at the company's offices. (June 25 - August 10.)</p>
 				</div>
 				<figure class="flex-2-of-5">
 					<img src="<?php echo get_template_directory_uri(); ?>/images/bg6.jpg">
@@ -71,7 +70,10 @@ include ($template_url);
 				</div>
 				<div class="flex-1-of-1 cta">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>launch-process" class="button">
-						<h3>Read more about our process &rarr;</h3>
+						<h3>Our Process &rarr;</h3>
+					</a>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>launch-past-students" class="button">
+						<h3>Meet the Students &rarr;</h3>
 					</a>
 				</div>
 			</div>
