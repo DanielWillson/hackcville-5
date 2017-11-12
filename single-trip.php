@@ -159,7 +159,7 @@ while ( have_posts() ) : the_post();
 	<div class="white-bg">
 		<div class="container">
 			<div class="flex">
-				<div class='flex flex-1-of-2'>
+				<div class='flex flex-1-of-2 trip-partners'>
 					<div class="flex-1-of-1">
 						<h1>Our Presenting Partners</h1>
 					</div>

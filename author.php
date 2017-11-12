@@ -24,31 +24,37 @@ if( empty($fname)){
     $full_name = "{$fname} {$lname}";
 }
 
-$teams = get_field('leadership_teams');
-$pioneer_check = in_array('pioneer', $teams);
-$pioneer = 1;
+$teams = get_field('leadership_teams', 'user_'.$user_id);
+$pioneer = -1;
+foreach ($teams as $t) {
+	if (!strcmp($t, 'pioneer')) { $pioneer = 1; }
+}
+
+if ($pioneer != -1) {
+	$template_url = get_template_directory() . '/template-parts/pioneer-nav.php';
+	include ($template_url);
+}
 
 $h = false;
-$headshot = get_field('headshot');
+$headshot = get_field('headshot', 'user_'.$user_id);
 if ($headshot) {
 	$h = $headshot;
 }
 
-
 $li = false;
-$linkedin = get_field('linkedin');
+$linkedin = get_field('linkedin', 'user_'.$user_id);
 if ($linkedin) {
 	$li = $linkedin;
 }
 
 $t = false;
-$twitter = get_field('twitter_profile');
+$twitter = get_field('twitter_profile', 'user_'.$user_id);
 if ($twitter) {
 	$t = $twitter;
 }
 ?>
 
-<div class="author-hero">
+<div class="author-hero" <?php if ($pioneer == 1) { echo "id='pioneer-check'"; }?>>
 	<div class="hc-blue-bg">
 		<div class="container">
 			<div class="flex">
@@ -81,26 +87,43 @@ if ($twitter) {
 				<h2><?php echo $fname; ?>'s Published Stories</h2>
 			</div>
 			<div class="flex">
-				<!-- The Loop -->
-
-			    <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); 
-			    	if (has_post_thumbnail( $post->ID ) ) {
+				
+				<?php 
+				$loop = new WP_Query( array( 'author' => $user_id, 'posts_per_page' => -1 ));
+				if ( $loop->have_posts() ) : while ( $loop->have_posts() ) : $loop->the_post(); 
+					
+				
+					if (has_post_thumbnail( $post->ID ) ) {
 						$f_i = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 						$f_i = $f_i[0]; 
 					} 
-					$template_url = get_template_directory() . '/template-parts/content.php';
-					include ($template_url);
-			    	//get_template_part( 'template-parts/content', get_post_format() ); ?>
 
-			    <?php endwhile; ?>
-			    <h3 class="previous-next"><?php posts_nav_link(' | ','&larr; Previous Page','Next Page &rarr;'); ?></h3>
+					?>
 
-			    <?php else: ?>
-			        <p><?php _e('No posts by this author.'); ?></p>
+					
+					<div class="f-i flex-1-of-2" style="background-image: url('<?php echo $f_i; ?>');">
+					</div>
+						
+					<div class="flex-1-of-2">
+						<a href="<?php the_permalink(); ?>">
+							<h3><?php the_title() ?></h3>
+						</a>
+						<div class="excerpt">
+							<?php echo apply_filters('the_excerpt', get_post_field('post_excerpt', $post_id)); ?>
+						</div>
+					</div>
 
+				<?php endwhile; 
+				?>
+				
+				<?php
+
+				else: ?>		     
+
+				     <p><?php _e('No posts by this author.'); ?></p><br />
+				
 			    <?php endif; ?>
-
-			<!-- End Loop -->
+			    
 			</div>
 		</div>
 	</div>

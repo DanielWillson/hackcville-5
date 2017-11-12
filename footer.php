@@ -18,12 +18,12 @@
 			<div class="container">
 				<div class="flex">
 					<div class="flex-3-of-4 left">
-						<?php if (!$pioneer) { ?>
+						<?php if ($pioneer != 1) { ?>
 							<figure>
 								<img src="<?php echo get_template_directory_uri(); ?>/images/hackcville-logo.png" class="logo" >
 							</figure>
 						<?php } ?>
-						<?php if ($pioneer) { ?>
+						<?php if ($pioneer == 1) { ?>
 							<h2>About The Pioneer + HackCville</h2>
 							<p>
 								The Pioneer is the publication of <a href="http://hackcville.com" alt="HackCville">HackCville</a>. All of our producers are either current students or graduates of HackCville’s <a href="http://hackcville.com/programs" target="_blank" alt="HackCville Programs">media education programs</a>.
@@ -77,6 +77,9 @@
 							<div class="partner">
 								<img class="galant" src="<?php echo get_template_directory_uri(); ?>/images/galant.png">
 							</div>
+							<div class="partner">
+								<img class="dsi" src="<?php echo get_template_directory_uri(); ?>/images/dsi-simple.png">
+							</div>
 						<!-- <h2>Explore</h2> -->
 						<?php 
 						//wp_nav_menu( array(
@@ -103,6 +106,7 @@
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
+<?php if ($pioneer == 1) { ?>
 	<!-- START Parse.ly Include: Standard -->
 	<div id="parsely-root" style="display: none">
 	  <span id="parsely-cfg" data-parsely-site="thepioneer.co"></span>
@@ -120,7 +124,8 @@
 	</script>
 	<!-- END Parse.ly Include: Standard -->
 
-<?php wp_footer(); ?>
+<?php }
+wp_footer(); ?>
 
 </body>
 </html>

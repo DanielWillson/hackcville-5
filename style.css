@@ -3497,6 +3497,10 @@ TRIP SPONSORS
 	align-items: center;
 }
 
+.trip-sponsors .trip-partners {
+	align-items: center;
+}
+
 
 @media screen and (max-width: 768px) {
 
@@ -4626,4 +4630,9 @@ AUTHOR PAGE
 	margin-bottom: 20px;
 }
 
+.past-articles .f-i {
+	background-size: cover;
+	height: 300px;
+	width: 100%;
+}
 

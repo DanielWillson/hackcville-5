@@ -136,7 +136,7 @@ if(strtotime($open_date)<=strtotime("today")){
 	<div class="white-bg">
 		<div class="container">
 			<div class="flex">
-				<div class='flex flex-1-of-2'>
+				<div class='flex flex-1-of-2 trip-partners'>
 					<div class="flex-1-of-1">
 						<h1>Our Partners</h1>
 					</div>

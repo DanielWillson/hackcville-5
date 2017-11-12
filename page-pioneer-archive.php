@@ -52,7 +52,7 @@ if ( have_posts() ) :
 								</div>
 								<div class="hero-article-date-author">
 									<span class="date"><?php echo get_the_time('m-d-Y', $post_id->ID); ?></span> - by <span class="author"><?php 
-										coauthors( $between = ", ", $betweenLast = " and ", $before = "", $after = null, $echo = true )
+										coauthors_posts_links( $between = ", ", $betweenLast = " and ", $before = "", $after = null, $echo = true )
 										?>
 									</span>
 								</div>

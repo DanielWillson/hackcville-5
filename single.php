@@ -44,7 +44,7 @@ add category hero back when ready
 						<div class="excerpt"><?php echo apply_filters('the_excerpt', get_post_field('post_excerpt', $post_id)); ?></div>
 						<div class="entry-meta">
 							<span class="author">by <?php 
-								coauthors( $between = ", ", $betweenLast = " and ", $before = "", $after = null, $echo = true );
+								//coauthors( $between = ", ", $betweenLast = " and ", $before = "", $after = null, $echo = true );
 								coauthors_posts_links( $between = ", ", $betweenLast = " and ", $before = "", $after = null, $echo = true );
 										?>
 							 - </span>

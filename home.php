@@ -58,7 +58,7 @@ $pioneer = 1;
 						</div>
 						<div class="hero-article-date-author">
 							<span class="date"><?php echo get_the_time('m-d-Y', $post_id->ID); ?></span> - by <span class="author"><?php 
-								coauthors( $between = ", ", $betweenLast = " and ", $before = "", $after = null, $echo = true )
+								coauthors_posts_links( $between = ", ", $betweenLast = " and ", $before = "", $after = null, $echo = true )
 								?>
 							</span>
 						</div>
@@ -101,7 +101,7 @@ $pioneer = 1;
 	</div>
 </div>
 <div class="about-pioneer-teaser">
-	<div class="hc-blue-bg">
+	<div class="hc-blue-bg" style="background-color: #1F435D;">
 		<div class="container">
 			<h3>You're reading <i>The Pioneer</i>, the publication of HackCville.</h3>
 			<a href="<?php echo get_home_url(); ?>/about-the-pioneer" class="button">

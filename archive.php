@@ -48,8 +48,8 @@ if ( is_tax('launch_track_type')) {
 							Apply Here
 						</a>
 					<?php } elseif ($af == 1) { ?>
-						<a class="button shorter-button not-active" href="<?php //echo esc_url( home_url( '/' ) ). "fellowshipapply"; ?>">
-							Applications Open Sep 1
+						<a class="button shorter-button" href="<?php echo esc_url( home_url( '/' ) ). "launch-fellowship-application-process"; ?>">
+							Apply Here
 						</a>
 					<?php } ?>
 				</div>

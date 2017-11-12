@@ -44,12 +44,12 @@ $track_IDs = array();
 					Learn more &darr;
 				</a>
 				<?php if ($af == 0) { ?>
-					<a class="button shorter-button not-active" href="<?php //echo esc_url( home_url( '/' ) ). "academyapply"; ?>">
-						Applications Open Sep 1
+					<a class="button shorter-button not-active" href="<?php echo esc_url( home_url( '/' ) ). "academyapply"; ?>">
+						Applications Open Now
 					</a>
 				<?php } elseif ($af == 1) { ?>
-					<a class="button shorter-button not-active" href="<?php //echo esc_url( home_url( '/' ) ). "fellowshipapply"; ?>">
-						Applications Open Sep 1
+					<a class="button shorter-button not-active" href="<?php echo esc_url( home_url( '/' ) ). "fellowshipapply"; ?>">
+						Applications Open Now
 					</a>
 				<?php } ?>
 			</div>
