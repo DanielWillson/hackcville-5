@@ -353,20 +353,20 @@ while ( have_posts() ) : the_post();
 										<li><?php echo $mt; ?></li>
 									<?php } ?>
 								</ul>
-							All sections start September 3 and run through December 2. You can indicate on your application with section(s) you are available for. There is no difference in curriculum between sections.</p>
+							All sections start February 4 and run through late April. You can indicate on your application with section(s) you are available for. There is no difference in curriculum between sections.</p>
 						<?php } else { ?>
 
-							<p><?php echo $title; ?> meets <span class="important"><?php echo $meeting_times; ?>, September 3 - December 2.</span></p>
+							<p><?php echo $title; ?> meets <span class="important"><?php echo $meeting_times; ?>, February 4 through late April.</span></p>
 
 						<?php } ?>
-						<p><span class="important">All sections of all programs (including <?php echo $title; ?>) start with a 11am-5pm kickoff on Sunday, September 3.</span></p>
+						<p><span class="important">All sections of all programs (including <?php echo $title; ?>) start with a 11am-5pm kickoff on Sunday, February 4.</span></p>
 						<p>You must be able to attend each session. More than a few missed meeting times will result in being dropped from HackCville.</p>
 					</div>
 					<div class="list-heading flex-1-of-2">
 						<h3>Fees</h3>
 					</div>
 					<div class="list-info flex-1-of-2">
-						<p><span class="important">$40</span> membership dues are due at the beginning of the program. These dues remain the same for every following semester you're involved in HackCville.</p>
+						<p><span class="important">$50</span> membership dues are due at the beginning of the program. These dues remain the same for every following semester you're involved in HackCville.</p>
 						<?php 
 						if ($extra_fee_info) {
 							echo "<p>" . $extra_fee_info . "</p>";

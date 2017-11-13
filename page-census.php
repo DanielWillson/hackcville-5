@@ -22,12 +22,12 @@ get_header();
 				<div class="flex-3-of-5">
 					<p>After your first semester at HackCville, there are a lot of different ways you can continue to stay involved:
 						<ol>
-							<li>Join (or continue) with HC Leadership</li>
+							<li>Leadership</li>
 							<li>Team Challenges (new!)</li>
-							<li>Take another program</li>
-							<li>Work on a personal project/startup</li>
-							<li>Work with a partner organization</li>
-							<li>Go abroad or go inactive</li>
+							<li>Program</li>
+							<li>Project/Startup</li>
+							<li>Partner Organization</li>
+							<li>Go Abroad or Go Inactive</li>
 						</ol>
 					These are all outlined in detail below! Once you're ready to pick and your questions are answered, you submit the <span style="font-weight: bold;">HackCville Census</span>, which enrolls you in the option you've selected. (This is kind of like our hopefully-less-shitty version of SIS.)</p>
 					<p>The Census needs to be completed by 11:59pm on Monday, November 27 (right after Thanksgiving). It is mandatory for all members, even if you're picking option 6 above.</p>
@@ -126,7 +126,7 @@ get_header();
 					<a href="https://hackcville.typeform.com/to/KLmOFH" target="_blank" class="button">
 						Fill out the Census &rarr;
 					</a>
-					<a href="mailto:daniel@hackcville.com" target="_blank" class="button">
+					<a href="mailto:kate@hackcville.com" target="_blank" class="button">
 						Questions? Email kate@hackcville.com &rarr;
 					</a>
 				</div>
@@ -145,7 +145,7 @@ get_header();
 			<a href="https://hackcville.typeform.com/to/KLmOFH" target="_blank" class="button">
 				Fill out the Census &rarr;
 			</a>
-			<a href="mailto:daniel@hackcville.com" target="_blank" class="button">
+			<a href="mailto:andy@hackcville.com" target="_blank" class="button">
 				Questions? Email andy@hackcville.com &rarr;
 			</a>
 			
@@ -161,7 +161,7 @@ get_header();
 			<a href="https://hackcville.typeform.com/to/KLmOFH" target="_blank" class="button">
 				Fill out the Census &rarr;
 			</a>
-			<a href="mailto:daniel@hackcville.com" target="_blank" class="button">
+			<a href="mailto:yash@hackcville.com" target="_blank" class="button">
 				Questions? Email yash@hackcville.com &rarr;
 			</a>
 			

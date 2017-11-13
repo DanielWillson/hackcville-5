@@ -14,7 +14,7 @@
 				</div>
 				<div class="list-item">
 					<h4>A community that feels like a family.</h4>
-					<p>You'll join HackCville's 300-member community of the most talented and badass people in Charlottesville.</p>
+					<p>You'll join HackCville's 400-member community of the most talented and badass people in Charlottesville.</p>
 				</div>
 				<div class="list-item">
 					<h4>Early access to HackCville programs, no application required.</h4>
