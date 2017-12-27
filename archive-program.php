@@ -65,7 +65,7 @@ endwhile;	}?>
 				?>
 				<h2>Our Spring Programs</h2>
 				<p>Program applications <?php echo $date; ?>, and are accessible via the links below. You may apply to up to two programs, but will only be accepted into one. We have a unified program application that you can access via any of the program pages. We encourage you to read more about our process below.</p>
-				<p>If you're accepted, $40 dues are expected within the first week of the program. This can be reduced or waived for those with financial need.</p>
+				<p>If you're accepted, $50 dues are expected within the first week of the program. This can be reduced or waived for those with financial need.</p>
 			</div>
 			<div class="flex">
 				<div class="flex-1-of-2">
