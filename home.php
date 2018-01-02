@@ -17,7 +17,7 @@ include ($template_url);
 $pioneer = 1;
 ?>
 
-<div class="pioneer-home page pioneer" id="pioneer-check">
+<div class="pioneer-home page pioneer top-stories-container" id="pioneer-check">
 	<div class="white-bg">
 		<div class="container">
 			<div class="pioneer-intro">
@@ -25,61 +25,49 @@ $pioneer = 1;
 			</div>
 			<div class="flex top-stories">
 				<?php
-
-			
 				$args = array( 
 					'post_type' => 'post',
 					'posts_per_page' => 3 );
 				$loop = new WP_Query( $args );
 				/* Requests the posts via The Loop */
 				while ( $loop->have_posts() ) : $loop->the_post(); 
-
-					
-				if (has_post_thumbnail( $post->ID ) ) {
-					$f_i = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
-					$f_i = $f_i[0]; 
-				} ?>
-
-				<div class="story flex-1-of-3">
-					<div class="picture">
-						<a class="image-link" href="<?php the_permalink(); ?>">
-							<div class="featured-image" style="background-image: url('<?php echo $f_i; ?>');">
-							</div>
-						</a>
-					</div>
-					<div class="content">
-						<h3>
-							<a href="<?php the_permalink(); ?>">
-								<?php the_title() ?>		
+					if (has_post_thumbnail( $post->ID ) ) {
+						$f_i = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+						$f_i = $f_i[0]; 
+					} ?>
+					<div class="story flex-1-of-3">
+						<div class="picture">
+							<a class="image-link" href="<?php the_permalink(); ?>">
+								<div class="featured-image" style="background-image: url('<?php echo $f_i; ?>');">
+								</div>
 							</a>
-						</h3>
-						<div class="excerpt">
-							<?php echo apply_filters('the_excerpt', get_post_field('post_excerpt', $post_id)); ?>
 						</div>
-						<div class="hero-article-date-author">
-							<span class="date"><?php echo get_the_time('m-d-Y', $post_id->ID); ?></span> - by <span class="author"><?php 
-								coauthors_posts_links( $between = ", ", $betweenLast = " and ", $before = "", $after = null, $echo = true )
-								?>
-							</span>
+						<div class="content">
+							<h3>
+								<a href="<?php the_permalink(); ?>">
+									<?php the_title() ?>		
+								</a>
+							</h3>
+							<div class="excerpt">
+								<?php echo apply_filters('the_excerpt', get_post_field('post_excerpt', $post_id)); ?>
+							</div>
+							<div class="hero-article-date-author">
+								<span class="date"><?php echo get_the_time('m-d-Y', $post_id->ID); ?></span> - by <span class="author"><?php 
+									coauthors_posts_links( $between = ", ", $betweenLast = " and ", $before = "", $after = null, $echo = true )
+									?>
+								</span>
+							</div>
 						</div>
 					</div>
-				</div>
-
-				<?php
-				
-				
-				wp_reset_postdata();
-
-			endwhile;
-			?>
-
-			<?php
-			//the_posts_navigation();
-
-			?>
-
+					<?php wp_reset_postdata();
+				endwhile; ?>
 			</div>
-		
+		</div>
+	</div>
+</div>
+<div class="first-category">
+	<div class="white-bg">
+		<div class="container">
 			<?php 
 			// Sets up $current_category and $current_category_headline for the category hero (cat-hero)
 			// $current_category is the category passed to the hero
@@ -90,13 +78,7 @@ $pioneer = 1;
 
 			$template_url = get_template_directory();
 			$template_url .= '/template-parts/cat-hero.php';
-
-			// Works like the Starkers Utilities function and includes the cat-hero in this doc.
-			// Must use this include() function instead of Starkers so that the variable passing can work
-			include ($template_url);
-
-			?>
-
+			include ($template_url); ?>
 		</div>
 	</div>
 </div>

@@ -3974,6 +3974,18 @@ PIONEER HOME HERO
 	margin: 0 auto;
 }
 
+.pioneer-home.top-stories-container .container {
+	max-width: 1188px;
+}
+
+.pioneer-home.top-stories-container .white-bg {
+	padding-bottom: 0;
+}
+
+.first-category .white-bg {
+	padding-top: 0;
+}
+
 .pioneer-home .story {
 	flex-basis: 30%;
 	margin-bottom: 30px;
