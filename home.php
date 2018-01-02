@@ -15,6 +15,7 @@ get_header();
 $template_url = get_template_directory() . '/template-parts/pioneer-nav.php';
 include ($template_url);
 $pioneer = 1;
+$displayed_articles = array();
 ?>
 
 <div class="pioneer-home page pioneer top-stories-container" id="pioneer-check">
@@ -33,6 +34,7 @@ $pioneer = 1;
 				$loop = new WP_Query( $args );
 				/* Requests the posts via The Loop */
 				while ( $loop->have_posts() ) : $loop->the_post(); 
+					array_push($displayed_articles, $post->ID);
 					if (has_post_thumbnail( $post->ID ) ) {
 						$f_i = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
 						$f_i = $f_i[0]; 

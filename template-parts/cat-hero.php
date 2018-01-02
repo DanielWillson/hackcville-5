@@ -22,53 +22,59 @@
 			<ul class="cat-hero-articles">
 				<!-- Variable for $current_category set in the PHP document that includes this file -->
 				<?php 
+				$i = 1;
 				$args = array( 
 					'post_type' => 'post',
-					'posts_per_page' => 3,
+					'posts_per_page' => 12,
 					'category_name' => $current_category );
 				$loop = new WP_Query( $args );
 				/* Requests the posts via The Loop */
 				while ( $loop->have_posts() ) : $loop->the_post(); 
-					if ($currentID != $post->ID) {
-						?>
-					}
-					<!-- Gets the URL of the featured image -->
+					if (!in_array($post->ID, $displayed_articles)) {
+						if ($i<5) {
+							
+							?>
 
-					<?php if (has_post_thumbnail( $post->ID ) ): 
-						$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
-						$image = $image[0]; ?>
-					<?php endif; ?>
-					<li class="cat-hero-item">
-						<div class="cat-hero-item-content">
-							<a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
-								<!-- sets featured image as background image of this div, allowing it resize easily -->
-								<div class="cat-hero-item-image" style="background-color: #000000; 
-						background: url('<?php echo $image ?>');
-						-webkit-background-size: cover;
-						-moz-background-size: cover;
-						-o-background-size: cover;
-						background-size: cover;
-						}">
+							<!-- Gets the URL of the featured image -->
+
+							<?php if (has_post_thumbnail( $post->ID ) ): 
+								$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+								$image = $image[0]; ?>
+							<?php endif; ?>
+							<li class="cat-hero-item">
+								<div class="cat-hero-item-content">
+									<a href="<?php the_permalink() ?>" title="<?php the_title(); ?>">
+										<!-- sets featured image as background image of this div, allowing it resize easily -->
+										<div class="cat-hero-item-image" style="background-color: #000000; 
+								background: url('<?php echo $image ?>');
+								-webkit-background-size: cover;
+								-moz-background-size: cover;
+								-o-background-size: cover;
+								background-size: cover;
+								}">
+										</div>
+									</a>
+									<div class="cat-hero-article-title">
+										<a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+									</div>
+									<div class="cat-hero-article-excerpt">
+										<!-- Gets the post exercpt -->
+										<?php echo apply_filters('the_excerpt', get_post_field('post_excerpt', $post_id)); ?>
+									</div>
+									<div class="cat-hero-article-divider">
+									</div>
+									<div class="cat-hero-article-date-author">
+										<span class="date"><?php echo get_the_time('m-d-Y', $post_id->ID); ?></span> - by <span class="author"><?php 
+											coauthors_posts_links( $between = ", ", $betweenLast = " and ", $before = "", $after = null, $echo = true )
+											?>
+										</span>
+									</div>
 								</div>
-							</a>
-							<div class="cat-hero-article-title">
-								<a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-							</div>
-							<div class="cat-hero-article-excerpt">
-								<!-- Gets the post exercpt -->
-								<?php echo apply_filters('the_excerpt', get_post_field('post_excerpt', $post_id)); ?>
-							</div>
-							<div class="cat-hero-article-divider">
-							</div>
-							<div class="cat-hero-article-date-author">
-								<span class="date"><?php echo get_the_time('m-d-Y', $post_id->ID); ?></span> - by <span class="author"><?php 
-									coauthors_posts_links( $between = ", ", $betweenLast = " and ", $before = "", $after = null, $echo = true )
-									?>
-								</span>
-							</div>
-						</div>
-					</li>
-				<?php }
+							</li>
+				<?php 		$i++;
+						}
+					}
+				
 				wp_reset_postdata();
 				endwhile; ?>
 			</ul>
@@ -78,45 +84,49 @@
 		<div class="cat-hero-right">
 			<ul class="cat-hero-articles">
 				<?php 
+				$i = 1;
 				$args = array(
 					'post_type' => 'post',
-					'posts_per_page' => 5,
+					'posts_per_page' => 12,
 					'category_name' => $current_category );
 				$loop = new WP_Query( $args );
 				while ( $loop->have_posts() ) : $loop->the_post(); 
 					if ($currentID != $post->ID) {
-					?>
-					<?php if (has_post_thumbnail( $post->ID ) ): 
-						$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
-						$image = $image[0]; ?>
-					<?php endif; ?>
-					<li class="cat-hero-item">
-						<!-- We still load the images so they can be used at smaller screen sizes -->
-						<a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><div class="cat-hero-item-image" style="background-color: #000000; 
-						background: url('<?php echo $image ?>');
-						-webkit-background-size: cover;
-						-moz-background-size: cover;
-						-o-background-size: cover;
-						background-size: cover;
-						}"></div></a>
-						<div class="cat-hero-item-content">
-							<div class="cat-hero-article-title">
-								<a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-							</div>
-							<div class="cat-hero-article-excerpt">
-								<?php echo apply_filters('the_excerpt', get_post_field('post_excerpt', $post_id)); ?>
-							</div>
-							<div class="cat-hero-article-divider">
-							</div>
-							<div class="cat-hero-article-date-author">
-								<span class="date"><?php echo get_the_time('m-d-Y', $post_id->ID); ?></span> - <span class="author"><?php 
-									coauthors_posts_links( $between = ", ", $betweenLast = " and ", $before = "", $after = null, $echo = true )
-									?>
-								</span>
-							</div>
-						</div>
-					</li>
-				<?php } wp_reset_postdata();
+						if (!in_array($post->ID, $displayed_articles)) {
+							if ($i<5) {
+								array_push($displayed_articles, $post->ID);
+							?>
+							<?php if (has_post_thumbnail( $post->ID ) ): 
+								$image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' );
+								$image = $image[0]; ?>
+							<?php endif; ?>
+							<li class="cat-hero-item">
+								<!-- We still load the images so they can be used at smaller screen sizes -->
+								<a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><div class="cat-hero-item-image" style="background-color: #000000; 
+								background: url('<?php echo $image ?>');
+								-webkit-background-size: cover;
+								-moz-background-size: cover;
+								-o-background-size: cover;
+								background-size: cover;
+								}"></div></a>
+								<div class="cat-hero-item-content">
+									<div class="cat-hero-article-title">
+										<a href="<?php the_permalink() ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
+									</div>
+									<div class="cat-hero-article-excerpt">
+										<?php echo apply_filters('the_excerpt', get_post_field('post_excerpt', $post_id)); ?>
+									</div>
+									<div class="cat-hero-article-divider">
+									</div>
+									<div class="cat-hero-article-date-author">
+										<span class="date"><?php echo get_the_time('m-d-Y', $post_id->ID); ?></span> - <span class="author"><?php 
+											coauthors_posts_links( $between = ", ", $betweenLast = " and ", $before = "", $after = null, $echo = true )
+											?>
+										</span>
+									</div>
+								</div>
+							</li>
+				<?php $i++; }}} wp_reset_postdata();
 				endwhile; ?>
 			</ul>
 		</div>

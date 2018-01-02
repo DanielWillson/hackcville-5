@@ -4244,7 +4244,7 @@ PIONEER CAT HERO
 	display: none;
 }
 
-.cat-hero-right .cat-hero-item:nth-child(5) {
+.cat-hero-right .cat-hero-item:nth-child(n+5) {
 	display: none;
 }
 
@@ -4260,6 +4260,10 @@ PIONEER CAT HERO
 
 .cat-hero-left li:nth-child(2) .cat-hero-item-content {
   padding-left: 18px;
+}
+
+.cat-hero-left li:nth-child(n+3) {
+	display: none;
 }
 
 .cat-hero-left .cat-hero-item-image {
