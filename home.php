@@ -25,9 +25,11 @@ $pioneer = 1;
 			</div>
 			<div class="flex top-stories">
 				<?php
+				$current_category = "Top Stories";
 				$args = array( 
 					'post_type' => 'post',
-					'posts_per_page' => 3 );
+					'posts_per_page' => 3,
+					'category_name' => $current_category );
 				$loop = new WP_Query( $args );
 				/* Requests the posts via The Loop */
 				while ( $loop->have_posts() ) : $loop->the_post(); 
