@@ -3686,7 +3686,7 @@ PIONEER NAV
 
 #pioneer-fixed {
 	position: relative;
-	z-index: 20000;
+	z-index: 9000;
 }
 
 .pioneer-nav .flex {
