@@ -14,8 +14,9 @@ $skills_ids = array();
 $eship_ids = array();
 $wireframeID = -1;
 
-if ( have_posts() ) {
-	while ( have_posts() ) : the_post(); 
+$the_query = new WP_Query(array('post_type' => 'program', 'posts_per_page' => 20));
+if ( $the_query->have_posts() ) {
+	while ( $the_query->have_posts() ) { $the_query->the_post();
 		if (get_field("active_program")) {
 			array_push($program_ids, get_the_ID());
 			
@@ -29,7 +30,8 @@ if ( have_posts() ) {
 				$wireframeID = get_the_ID();
 			}
 		}
-endwhile;	}?>
+	}	
+}?>
 
 <header class="program-archive-hero">
 	<div class="image-bg" style="background-image: url(<?php echo get_template_directory_uri(); ?>/images/mike.jpg);">
