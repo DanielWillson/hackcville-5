@@ -22,7 +22,9 @@ get_header(); ?>
 					printf( esc_html__( 'Search Results for: %s', 'hackcville-5-0' ), '<span>' . get_search_query() . '</span>' );
 				?></h1>
 			</header><!-- .page-header -->
-			<?php get_search_form(); ?>
+			<div class="search-form">
+				<?php get_search_form(); ?>
+			</div>
 			<?php
 			
 			/* Start the Loop */
@@ -36,11 +38,15 @@ get_header(); ?>
 				get_template_part( 'template-parts/content', 'search' );
 
 			endwhile;
-
+			echo "<hr>";
 			the_posts_navigation();
 
 		else :
-
+			?>
+			<!-- <div class="search-form">
+				<?php //get_search_form(); ?>
+			</div> -->
+			<?php
 			get_template_part( 'template-parts/content', 'none' );
 
 		endif; ?>
@@ -50,5 +56,4 @@ get_header(); ?>
 </div>
 
 <?php
-get_sidebar();
 get_footer();

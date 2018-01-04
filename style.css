@@ -1463,7 +1463,9 @@ a:hover {
 	border: 2px solid #53b0ca;
 }*/
 
-input[type="submit"].submit {
+input[type="submit"].submit,
+input[type="submit"]
+ {
 	padding: 7px 24px;
 	margin: 6px 1em;
 	margin-left: 0;
@@ -4651,4 +4653,43 @@ AUTHOR PAGE
 	height: 300px;
 	width: 100%;
 }
+
+/*
+-----------------------------------
+SEARCH PAGES 
+-----------------------------------
+*/
+
+.search-page .search-form {
+	margin-bottom: 36px;
+}
+
+.search-page .entry-title {
+	margin-bottom: 10px;
+}
+
+.search-page .entry-summary {
+	margin-top: 15px;
+	margin-bottom: 40px;
+}
+
+.search-page .posts-navigation {
+	font-size: 1.25em;
+	padding-bottom: 40px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.search-page .posts-navigation a {
+	border-bottom: none;
+}
+
+.search-page.lead input.search-field,
+.search-page.lead input[type="submit"] {
+	font-size: 2em;
+}
+
+
+
+
 
