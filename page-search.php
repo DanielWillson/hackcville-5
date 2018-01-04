@@ -7,7 +7,11 @@
  * @package HackCville_5.0
  */
 
-get_header(); ?>
+get_header(); 
+$template_url = get_template_directory() . '/template-parts/pioneer-nav.php';
+include ($template_url);
+$pioneer = 1;
+?>
 
 <div class="search-page lead">
 	<div class="white-bg">
