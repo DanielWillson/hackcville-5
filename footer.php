@@ -99,7 +99,7 @@
 		<div class="sub-footer">
 			<div class="container">
 				<span>
-					© 2017 HackCville. All rights reserved. -- HackCville is a 501(c)(3) non-profit. --  Website designed & built in-house.
+					© 2018 HackCville. All rights reserved. -- HackCville is a 501(c)(3) non-profit. --  Website designed & built in-house. -- <a href="<?php echo get_home_url(); ?>/wp-admin">Staff Login</a>
 				</span>
 			</div>
 		</div>

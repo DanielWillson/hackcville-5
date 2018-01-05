@@ -2831,6 +2831,10 @@ footer .subscribe input.email {
 	margin-right: 1em;
 }
 
+footer .sub-footer a:hover {
+	color: #3486c7;
+}
+
 @media screen and (max-width: 768px) {
 
 	footer .left {
