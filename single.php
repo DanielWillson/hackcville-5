@@ -127,7 +127,6 @@ $pioneer = 1;
 										<a class="image-link" href="<?php the_permalink(); ?>">
 											<div class="image" style="background-image: url('<?php echo $f_i; ?>');">
 											</div>
-											<!-- <img src="<?php echo $f_i; ?>"> -->
 										</a>
 
 										

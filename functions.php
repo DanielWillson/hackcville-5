@@ -1622,5 +1622,228 @@ if(function_exists("register_field_group"))
 	));
 }
 
+if(function_exists("register_field_group"))
+{
+	register_field_group(array (
+		'id' => 'acf_pioneer-posts-field-group',
+		'title' => 'Pioneer Posts Field Group',
+		'fields' => array (
+			array (
+				'key' => 'field_5a4f8a62d2744',
+				'label' => 'Call to Action 1',
+				'name' => 'cta_1',
+				'type' => 'true_false',
+				'message' => 'Select this to enable the first call-to-action.',
+				'default_value' => 0,
+			),
+			array (
+				'key' => 'field_5a4f8acfd2746',
+				'label' => 'Call to Action 1 Heading',
+				'name' => 'cta_h1',
+				'type' => 'text',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_5a4f8a62d2744',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+			array (
+				'key' => 'field_5a4f8b1bd2748',
+				'label' => 'Call to Action 1 Link',
+				'name' => 'cta_l1',
+				'type' => 'text',
+				'instructions' => 'Please include the http://',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_5a4f8a62d2744',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+			array (
+				'key' => 'field_5a4f905255225',
+				'label' => 'Call to Action 1 Link Text',
+				'name' => 'cta_lt1',
+				'type' => 'text',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_5a4f8a62d2744',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+			array (
+				'key' => 'field_5a4f8b7cd274a',
+				'label' => 'Call to Action 1 Image',
+				'name' => 'cta_i1',
+				'type' => 'image',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_5a4f8a62d2744',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'save_format' => 'url',
+				'preview_size' => 'medium',
+				'library' => 'all',
+			),
+			array (
+				'key' => 'field_5a4f8ac5d2745',
+				'label' => 'Call to Action 2',
+				'name' => 'cta_2',
+				'type' => 'true_false',
+				'message' => 'Select this to enable the second call-to-action.',
+				'default_value' => 0,
+			),
+			array (
+				'key' => 'field_5a4f8b01d2747',
+				'label' => 'Call to Action 2 Heading',
+				'name' => 'cta_h2',
+				'type' => 'text',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_5a4f8ac5d2745',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+			array (
+				'key' => 'field_5a4f8b5cd2749',
+				'label' => 'Call to Action 2 Link',
+				'name' => 'cta_l2',
+				'type' => 'text',
+				'instructions' => 'Please include the http://',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_5a4f8ac5d2745',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+			array (
+				'key' => 'field_5a4f906455226',
+				'label' => 'Call to Action 2 Link Text',
+				'name' => 'cta_lt2',
+				'type' => 'text',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_5a4f8ac5d2745',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'formatting' => 'html',
+				'maxlength' => '',
+			),
+			array (
+				'key' => 'field_5a4f8b9bd274b',
+				'label' => 'Call to Action 2 Image',
+				'name' => 'cta_i2',
+				'type' => 'image',
+				'conditional_logic' => array (
+					'status' => 1,
+					'rules' => array (
+						array (
+							'field' => 'field_5a4f8ac5d2745',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+					'allorany' => 'all',
+				),
+				'save_format' => 'url',
+				'preview_size' => 'medium',
+				'library' => 'all',
+			),
+		),
+		'location' => array (
+			array (
+				array (
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'post',
+					'order_no' => 0,
+					'group_no' => 0,
+				),
+			),
+		),
+		'options' => array (
+			'position' => 'normal',
+			'layout' => 'no_box',
+			'hide_on_screen' => array (
+			),
+		),
+		'menu_order' => 0,
+	));
+}
 
 
