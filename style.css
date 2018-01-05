@@ -4728,3 +4728,46 @@ CALL TO ACTIONS -- CTA
 	background-size: cover;
 	background-position: center center;
 }
+
+/*
+-----------------------------------
+ABOUT THE PIONEER 
+-----------------------------------
+*/
+
+.about-pioneer .staff .headshot {
+	width: 100%;
+	height: 150px;
+	background-size: cover;
+	background-position: center;
+	margin-bottom: 10px;
+}
+
+.about-pioneer .staff .name {
+	margin-bottom: 5px;
+}
+
+.about-pioneer .staff .title,
+.about-pioneer .staff .link {
+	font-size: 75%;
+	margin-top: 0;
+	margin-bottom: 5px;
+}
+
+@media screen and (max-width: 920px) {
+	.about-pioneer .staff .headshot {
+		height: 225px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.about-pioneer .staff.flex-1-of-5 {
+		flex-basis: 45%
+	}
+}
+
+@media screen and (max-width: 600px) {
+	.about-pioneer .staff .headshot {
+		height: 175px;
+	}
+}
