@@ -12,20 +12,9 @@ get_header();
 // Get Pioneer header
 $template_url = get_template_directory() . '/template-parts/pioneer-nav.php';
 include ($template_url);
-
-
 $currentID = -1;
 $pioneer = 1;
-?><!-- 
-add category hero back when ready
- -->
-
-<script type="text/javascript">
-	
-
-
-</script>
-
+?>
 
 <div class="single-article" id="pioneer-check">
 	<div class="white-bg">
@@ -77,11 +66,44 @@ add category hero back when ready
 					</div>
 
 					<footer class="entry-footer">
-						<?php
+						<div class="social-buttons-container">
+							<?php
 							// Import Social Buttons
 							$template_url = get_template_directory() . '/template-parts/share-this-page.php';
 							include ($template_url);
-						?>
+							?>
+						</div>
+						<?php if (get_field("cta_1") || (get_field("cta_2"))) { ?>
+							<div class="ctas">
+								<?php if (get_field("cta_1")) { ?>
+								<div class="cta flex">
+									<div class="flex-2-of-5 image" style="background-image: url('<?php echo get_field("cta_i1"); ?>');">
+									</div>
+									<div class="flex-3-of-5 link">
+										<h3>
+											<?php echo get_field("cta_h1"); ?>
+										</h3>
+										<h4><a href="<?php echo get_field("cta_l1"); ?>">
+											<?php echo get_field("cta_lt1"); ?> &rarr;
+										</a></h4>
+									</div>
+								</div>
+								<?php } if (get_field("cta_2")) { ?>
+								<div class="cta flex">
+									<div class="flex-2-of-5 image" style="background-image: url('<?php echo get_field("cta_i2"); ?>');">
+									</div>
+									<div class="flex-3-of-5 link">
+										<h3>
+											<?php echo get_field("cta_h2"); ?>
+										</h3>
+										<h4><a href="<?php echo get_field("cta_l2"); ?>">
+											<?php echo get_field("cta_lt2"); ?> &rarr;
+										</a></h4>
+									</div>
+								</div>
+								<?php } ?>
+							</div>
+						<?php } ?>
 					</footer>
 				</article>
 				<div class="sidebar">

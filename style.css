@@ -4689,7 +4689,30 @@ SEARCH PAGES
 	font-size: 2em;
 }
 
+/*
+-----------------------------------
+CALL TO ACTIONS -- CTA
+-----------------------------------
+*/
 
 
+.ctas {
+	margin-top: 30px;
+}
 
+.cta .link,
+.cta .image {
+	margin-bottom: 20px;
+}
 
+.cta .link h3 {
+	font-weight: normal;
+	line-height: 1.25em;
+}
+
+.cta .image {
+	height: 175px;
+	width: 100%;
+	background-size: cover;
+	background-position: center center;
+}
