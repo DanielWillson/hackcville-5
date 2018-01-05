@@ -3903,6 +3903,14 @@ PIONEER ARTICLE
 	margin-bottom: 20px;
 }
 
+.sidebar .recent-story .image {
+	height: 140px;
+	width: auto;
+	background-size: cover;
+	background-position: center center;
+	margin-bottom: 5px;
+}
+
 .sidebar .recent-story:nth-of-type(6) {
 	display: none;
 }

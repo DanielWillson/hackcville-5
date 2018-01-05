@@ -125,8 +125,13 @@ $pioneer = 1;
 
 									<div class="recent-story">
 										<a class="image-link" href="<?php the_permalink(); ?>">
-											<img src="<?php echo $f_i; ?>">
+											<div class="image" style="background-image: url('<?php echo $f_i; ?>');">
+											</div>
+											<!-- <img src="<?php echo $f_i; ?>"> -->
 										</a>
+
+										
+
 										<a href="<?php the_permalink(); ?>">
 											<?php the_title() ?>
 										</a>
