@@ -40,7 +40,14 @@ $pioneer = 1;
 									$author_name = $author->data->display_name;
 									?>
 									<div class="flex-1-of-5 staff">
-										<div class="headshot" style="background-image:  url('<?php echo get_field("headshot", 'user_'.$user_id); ?>');">
+										<div class="headshot" style="background-image:  url('<?php 
+												if (get_field('headshot', 'user_'.$user_id)) {
+													echo get_field("headshot", 'user_'.$user_id); 
+													}
+												else {
+													echo get_template_directory_uri() . "/images/headshot.jpg";
+												}
+											?>');">
 										</div>
 										<div class="info">
 											<h4 class="name"><?php echo $author_name; ?></h4>
