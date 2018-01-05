@@ -43,6 +43,9 @@
   	  ga('send', 'pageview');
 
 	</script>
+	<script src="https://cdn.jsdelivr.net/mediaelement/latest/mediaelement-and-player.min.js"></script>
+	<script src="https://www.youtube.com/iframe_api"></script>
+
 
 	<?php
 
@@ -247,9 +250,16 @@
 		    /* Makes iframes responsive */
 		    $("iframe").wrap("<div class='iframe'/>");
 
+
 		    if (document.getElementById("pioneer-check")) {
 
 				$(window).load(function () {
+					// Adds Parsely tracking to YouTube videos
+					var vidSource = $("iframe").attr('src');
+					vidSource = vidSource.concat("?enablejsapi=1");
+					$("iframe").attr('src', vidSource);
+					
+					
 					var fixmeTop = $('.pioneer-nav').offset().top;
 					
 					$(window).scroll(function() {
