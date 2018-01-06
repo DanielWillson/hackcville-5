@@ -903,17 +903,6 @@ if(function_exists("register_field_group"))
 				'label' => 'User Type',
 				'name' => 'user_type',
 				'type' => 'select',
-				'conditional_logic' => array (
-					'status' => 1,
-					'rules' => array (
-						array (
-							'field' => 'field_5988b04eba847',
-							'operator' => '==',
-							'value' => '1',
-						),
-					),
-					'allorany' => 'all',
-				),
 				'choices' => array (
 					'leadership' => 'Leadership',
 					'guest' => 'Guest',
@@ -927,22 +916,6 @@ if(function_exists("register_field_group"))
 				'label' => 'Leadership Team(s)',
 				'name' => 'leadership_teams',
 				'type' => 'select',
-				'conditional_logic' => array (
-					'status' => 1,
-					'rules' => array (
-						array (
-							'field' => 'field_5988b04eba847',
-							'operator' => '==',
-							'value' => '1',
-						),
-						array (
-							'field' => 'field_5988b09bba848',
-							'operator' => '==',
-							'value' => 'leadership',
-						),
-					),
-					'allorany' => 'all',
-				),
 				'choices' => array (
 					'board' => 'Board of Directors',
 					'director' => 'Directors',
