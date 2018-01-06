@@ -40,11 +40,41 @@ $headshot = get_field('headshot', 'user_'.$user_id);
 if ($headshot) {
 	$h = $headshot;
 }
+else {
+	// legacy support for headshots from old Pioneer site
+	$h = types_render_usermeta_field( "headshot", array( 'user_id'=>$user_id, 'output'=>'raw' ) );
+	if ($h == "") {
+		// if there is no headshot, use a generic one
+		$h = get_template_directory_uri() . "/images/headshot.jpg";
+	}
+}
+
+$ti = false;
+$title = get_field('title', 'user_'.$user_id); 
+if ($ti) {
+	$ti = $title;
+}
+else {
+	// legacy support for titles from old Pioneer site
+	$ti = types_render_usermeta_field( "title", array( 'user_id'=>$user_id ) );
+}
+
+$active = get_field('active', 'user_'.$user_id);
+if (!$active && ($ti != "")) {
+	$ti = 'Former ' . $ti;
+}
+
 
 $li = false;
 $linkedin = get_field('linkedin', 'user_'.$user_id);
 if ($linkedin) {
 	$li = $linkedin;
+}
+else {
+	$li = types_render_usermeta_field( "linkedin-url", array( 'output'=>'raw', 'user_id'=>$user_id ) );
+	if (strpos($li, 'http') !== true) {
+	    $li = "http://" . $li;
+	}
 }
 
 $t = false;
@@ -52,6 +82,11 @@ $twitter = get_field('twitter_profile', 'user_'.$user_id);
 if ($twitter) {
 	$t = $twitter;
 }
+else {
+	$t = types_render_usermeta_field( "twitter-handle", array( 'user_id'=>$user_id ) );
+	if ($t) { $t = "http://twitter.com/" . $t; }
+}
+
 ?>
 
 <div class="author-hero" <?php if ($pioneer == 1) { echo "id='pioneer-check'"; }?>>
@@ -63,7 +98,7 @@ if ($twitter) {
 				</figure>
 				<div class="flex-3-of-4">
 					<h1 class="name"><?php echo $full_name; ?></h1>
-					<h3 class='title'><?php echo get_field('title', 'user_'.$user_id); ?></h3>
+					<h3 class='title'><?php echo $ti; ?></h3>
 					<p><?php echo $curauth->user_description; ?></p>
 					<?php if ($li) { ?>
 						<a href="<?php echo $li; ?>" target="_blank" class="button">
@@ -83,14 +118,29 @@ if ($twitter) {
 <div class="past-articles">
 	<div class="white-bg">
 		<div class="container">
+			<?php if ( have_posts() ): the_post(); ?>
+
 			<div class="intro">
 				<h2><?php echo $fname; ?>'s Published Stories</h2>
 			</div>
 			<div class="flex">
-				
 				<?php 
-				$loop = new WP_Query( array( 'author' => $user_id, 'posts_per_page' => -1 ));
-				if ( $loop->have_posts() ) : while ( $loop->have_posts() ) : $loop->the_post(); 
+				$page = 1;
+				if ($paged == 0) {
+					$page = 1;
+				}
+				else {
+					$page = $paged;
+				}
+			
+				rewind_posts();
+      			//'author_name'
+
+				// $loop = new WP_Query( array( 'author' => $user_id, 'posts_per_page' => -1 ));
+				// if ( $loop->have_posts() ) : while ( $loop->have_posts() ) : $loop->the_post(); 
+
+				// 
+				while ( have_posts() ) : the_post(); 
 					
 				
 					if (has_post_thumbnail( $post->ID ) ) {
@@ -113,18 +163,18 @@ if ($twitter) {
 						</div>
 					</div>
 
-				<?php endwhile; 
-				?>
-				
-				<?php
-
-				else: ?>		     
-
-				     <p><?php _e('No posts by this author.'); ?></p><br />
-				
-			    <?php endif; ?>
-			    
+				<?php endwhile; ?>
 			</div>
+			<div class="next-previous">
+				<h3><?php posts_nav_link(' | ','&larr; Previous Page','Next Page &rarr;'); ?></h3>
+			</div>
+			<?php else: ?>		     
+
+			     
+			
+		    <?php endif; ?>
+			    
+			
 		</div>
 	</div>
 </div>

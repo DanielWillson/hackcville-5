@@ -4666,6 +4666,11 @@ AUTHOR PAGE
 	width: 100%;
 }
 
+.next-previous {
+    margin: 18px 0;
+    text-align: center;
+}
+
 /*
 -----------------------------------
 SEARCH PAGES 

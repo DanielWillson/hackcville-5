@@ -37,25 +37,28 @@ $pioneer = 1;
 							foreach($teams as $team) {
 								$team_title = get_the_title($team);
 								if (!strcmp($team, "pioneer")) {
-									$author_name = $author->data->display_name;
-									?>
-									<div class="flex-1-of-5 staff">
-										<div class="headshot" style="background-image:  url('<?php 
-												if (get_field('headshot', 'user_'.$user_id)) {
-													echo get_field("headshot", 'user_'.$user_id); 
+									$active = get_field('active', 'user_'.$user_id);
+									if ($active) {
+										$author_name = $author->data->display_name;
+										?>
+										<div class="flex-1-of-5 staff">
+											<div class="headshot" style="background-image:  url('<?php 
+													if (get_field('headshot', 'user_'.$user_id)) {
+														echo get_field("headshot", 'user_'.$user_id); 
+														}
+													else {
+														echo get_template_directory_uri() . "/images/headshot.jpg";
 													}
-												else {
-													echo get_template_directory_uri() . "/images/headshot.jpg";
-												}
-											?>');">
+												?>');">
+											</div>
+											<div class="info">
+												<h4 class="name"><?php echo $author_name; ?></h4>
+												<p class="title"><?php echo get_field("title", 'user_'.$user_id); ?></p>
+												<p class="link"><a href="<?php echo get_author_posts_url($user_id); ?>">View their stories &rarr;</a></p>
+											</div>
 										</div>
-										<div class="info">
-											<h4 class="name"><?php echo $author_name; ?></h4>
-											<p class="title"><?php echo get_field("title", 'user_'.$user_id); ?></p>
-											<p class="link"><a href="<?php echo get_author_posts_url($user_id); ?>">View their stories &rarr;</a></p>
-										</div>
-									</div>
-									<?php
+										<?php
+									}
 								}
 							}
 						}
