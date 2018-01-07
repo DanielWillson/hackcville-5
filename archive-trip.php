@@ -216,6 +216,7 @@ $next_trip_id = key($ti);
 	$template_url = get_template_directory() . '/template-parts/trips-companies-alumni.php';
 	include ($template_url);
 ?>
+<!-- ALL UPCOMING TRIPS -->
 <?php if ($next_trip_id >= 0) { ?>
 <div class="all-trips">
 	<div class="white-bg">
@@ -291,6 +292,40 @@ $next_trip_id = key($ti);
 	$template_url = get_template_directory() . '/template-parts/newsletter-subscribe.php';
 	include ($template_url);
 ?>
+
+<div class="all-trips">
+	<div class="white-bg">
+		<div class="container">
+			<h1>All Past Trips</h1>
+			<div class="flex">
+				<?php 
+				foreach($pti as $trip3 => $item) { ?>
+					<?php 
+
+					$start_date = get_field("trip_start_date", $trip3);
+					$date = DateTime::createFromFormat('mdY', $start_date);
+					$print_date = $date->format('F Y');
+
+					if (has_post_thumbnail( $trip3 ) ): 
+						$image = wp_get_attachment_image_src( get_post_thumbnail_id( $trip3 ), 'single-post-thumbnail' );
+						$image2 = $image[0];
+					endif; 
+
+					?>
+					<div class="flex-1-of-2" style="background-image: url('<?php echo $image2; ?>')">
+						<div class="filter"></div>
+						<div class="info">
+							<h3><?php echo get_the_title($trip3); ?></h3>
+							<p><?php echo $print_date; ?></p>
+							<a class="button" href="<?php echo get_the_permalink($trip3); ?>">View Details</a>
+						</div>
+					</div>
+				<?php }?>
+			</div>
+		</div>
+	</div>
+</div>
+
 <?php
 // Import single random testimonial
 $template_url = get_template_directory() . '/template-parts/single-testimonial.php';
