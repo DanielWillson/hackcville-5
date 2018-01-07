@@ -72,6 +72,8 @@ if ($linkedin) {
 }
 else {
 	$li = types_render_usermeta_field( "linkedin-url", array( 'output'=>'raw', 'user_id'=>$user_id ) );
+}
+if ($linkedin) {
 	if (strpos($li, 'http') !== true) {
 	    $li = "http://" . $li;
 	}
@@ -102,12 +104,12 @@ else {
 					<p><?php echo $curauth->user_description; ?></p>
 					<?php if ($li) { ?>
 						<a href="<?php echo $li; ?>" target="_blank" class="button">
-							LinkedIn
+							LinkedIn &rarr;
 						</a>
 					<?php } ?>
 					<?php if ($t) { ?>
 						<a href="<?php echo $t; ?>" target="_blank" class="button">
-							Twitter
+							Twitter &rarr;
 						</a>
 					<?php } ?>
 				</div>
@@ -115,11 +117,10 @@ else {
 		</div>
 	</div>
 </div>
+<?php if ( have_posts() ): the_post(); ?>
 <div class="past-articles">
 	<div class="white-bg">
 		<div class="container">
-			<?php if ( have_posts() ): the_post(); ?>
-
 			<div class="intro">
 				<h2><?php echo $fname; ?>'s Published Stories</h2>
 			</div>
@@ -134,12 +135,6 @@ else {
 				}
 			
 				rewind_posts();
-      			//'author_name'
-
-				// $loop = new WP_Query( array( 'author' => $user_id, 'posts_per_page' => -1 ));
-				// if ( $loop->have_posts() ) : while ( $loop->have_posts() ) : $loop->the_post(); 
-
-				// 
 				while ( have_posts() ) : the_post(); 
 					
 				
@@ -167,20 +162,12 @@ else {
 			</div>
 			<div class="next-previous">
 				<h3><?php posts_nav_link(' | ','&larr; Previous Page','Next Page &rarr;'); ?></h3>
-			</div>
-			<?php else: ?>		     
-
-			     
-			
-		    <?php endif; ?>
-			    
-			
+			</div>	
 		</div>
 	</div>
 </div>
-
-
-
+<?php else: ?>		  
+<?php endif; ?>
 
 <?php
 // Get correct footer

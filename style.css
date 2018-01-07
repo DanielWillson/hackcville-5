@@ -4759,6 +4759,10 @@ ABOUT THE PIONEER
 	margin-bottom: 5px;
 }
 
+.about-pioneer .staff .info {
+	margin-bottom: 20px;
+}
+
 @media screen and (max-width: 920px) {
 	.about-pioneer .staff .headshot {
 		height: 225px;

@@ -47,14 +47,22 @@ $pioneer = 1;
 														echo get_field("headshot", 'user_'.$user_id); 
 														}
 													else {
-														echo get_template_directory_uri() . "/images/headshot.jpg";
+														// legacy support for headshots from old Pioneer site
+														$h = types_render_usermeta_field( "headshot", array( 'user_id'=>$user_id, 'output'=>'raw' ) );
+														if ($h == "") {
+															// if there is no headshot, use a generic one
+															echo get_template_directory_uri() . "/images/headshot.jpg";
+														}
+														else {
+															echo $h;
+														}
 													}
 												?>');">
 											</div>
 											<div class="info">
 												<h4 class="name"><?php echo $author_name; ?></h4>
 												<p class="title"><?php echo get_field("title", 'user_'.$user_id); ?></p>
-												<p class="link"><a href="<?php echo get_author_posts_url($user_id); ?>">View their stories &rarr;</a></p>
+												<p class="link"><a href="<?php echo get_author_posts_url($user_id); ?>">View profile &rarr;</a></p>
 											</div>
 										</div>
 										<?php
