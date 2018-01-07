@@ -83,7 +83,10 @@ $next_trip_id = key($ti);
 			<div class="intro">
 				<h1>HackCville's Startup Trips</h1>
 				<p>HackCville hosts immersive trips to cities across the country to connect our talented students with high-growth and innovative companies. Students meet industry leaders and get connected with internship and job opportunities.</p>
-				<p>Over the past 6 years, we have taken hundreds of our top students to New York City, Boston, San Francisco, Richmond, Washington DC, and right here in Charlottesville. Read on for details on our trips and how you can go on the next one.</p>
+				<p>Over the past 6 years, we have taken hundreds of our top students to New York City, Boston, San Francisco, Richmond, Washington DC, and right here in Charlottesville.</p>
+				<a class="button shorter-button" href="#" onclick="getToKnowUs()">
+					How our trips work &darr;
+				</a>
 			</div>
 		</div>
 	</div>
@@ -163,11 +166,13 @@ $next_trip_id = key($ti);
 		</div>
 	</div>
 </div>
+<div id="get-to-know-us">
 <?php
 	// Import How Trips Work
 	$template_url = get_template_directory() . '/template-parts/how-trips-work.php';
 	include ($template_url);
 ?>
+</div>
 <div class="trip-sponsors">
 	<div class="white-bg">
 		<div class="container">

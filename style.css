@@ -3499,9 +3499,12 @@ COMPANIES + ALUMNI
 -----------------------------------
 */
 
-.companies-and-alumni p,
-.companies-and-alumni a {
-	text-align: center;
+.companies-and-alumni .flex {
+	align-items: center;
+}
+
+.companies-and-alumni h2 {
+	margin-bottom: 0;
 }
 
 @media screen and (max-width: 768px) {
