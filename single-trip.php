@@ -28,12 +28,6 @@ while ( have_posts() ) : the_post();
 	$application_link = get_field("application_link");
 	$fee_info = get_field("fee_info");
 
-	$presenting_partners = array();
-	$p_partners_ids = array();
-	foreach ($presenting_partners as $p) {
-		array_push($p_partners_ids, $p->ID);
-	}
-
 	$closing_event_title = get_field("closing_event_title");
 	$closing_event_description = get_field("closing_event_description");
 	$closing_event_photo = get_field("closing_event_photo");
@@ -123,6 +117,30 @@ while ( have_posts() ) : the_post();
 			<div class="intro">
 				<h1><?php echo $city . " Startup Trip"; ?></h1>
 				<h3><?php echo $print_date . " " . $times; ?></h3>
+				
+					<?php 
+
+					$presenting_partners = get_field("presenting_partners");
+					$partner_count = 0;
+					$partners_list = "";
+					$p_partners_ids = array();
+					if ($presenting_partners) {
+						foreach ($presenting_partners as $p) {
+							array_push($p_partners_ids, $p->ID);
+							if ($partner_count < 1) {
+								$partners_list = get_the_title($p->ID);
+							}
+							else if ($partner_count == 1) {
+								$partners_list = $partners_list . " and " . get_the_title($p->ID);
+							}
+							else {
+								$partners_list = get_the_title($p->ID) . ", " . $partners_list;
+							}
+							$partner_count++;
+						}
+						$partners_list = "<h3 class='presenting-partner'>presented by " . $partners_list . "</h3>";
+					}
+					echo $partners_list; ?>
 				<p><?php echo $next_date; ?></p>
 				<?php echo $notice; ?>
 				<?php if ($time == 1) { ?>

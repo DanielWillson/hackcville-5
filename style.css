@@ -3318,6 +3318,12 @@ TRIP PAGE (SHOULD BE SPLIT UP)
 	padding: 100px 0;
 }
 
+.single-trip-hero .presenting-partner {
+	font-weight: normal;
+	font-style: italic;
+	margin-top: 18px;
+}
+
 .single-trip-hero .button {
 	margin-right: 0;
 }
