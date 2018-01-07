@@ -51,10 +51,10 @@ else {
 
 $ti = false;
 $title = get_field('title', 'user_'.$user_id); 
-if ($ti) {
+if ($title) {
 	$ti = $title;
 }
-else {
+else if ($pioneer != -1) {
 	// legacy support for titles from old Pioneer site
 	$ti = types_render_usermeta_field( "title", array( 'user_id'=>$user_id ) );
 }
