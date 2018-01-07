@@ -190,8 +190,9 @@
 	<script type="text/javascript">
 		function getToKnowUs() {
 			
-		    var topOfDiv = $('#get-to-know-us').offset().top - 90;
-		    $('body').animate({scrollTop: topOfDiv}, 1000);
+		    var topOfDiv = $('#get-to-know-us').offset().top - 78;
+		    console.log(topOfDiv);
+		    $('html, body').animate({scrollTop: topOfDiv}, 1000);
 		    return false;
 		}
 
