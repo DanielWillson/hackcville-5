@@ -3346,6 +3346,12 @@ TRIP PAGE (SHOULD BE SPLIT UP)
 
 
 
+.trip-tracks.not-announced h3 {
+	text-align: center;
+	margin: 40px 0;
+}
+
+
 .trip-tracks .track-heading {
 	text-align: center;
 	padding-bottom: 10px;

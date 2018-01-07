@@ -60,22 +60,37 @@ while ( have_posts() ) : the_post();
 
 	$open_date = get_field("application_open_date", $ID);
 	$date = DateTime::createFromFormat('mdY', $open_date);
-	$open_date = $date->format('l, F d');
+	$open_date = $date->format('Y-m-d');
+	$nice_open_date = $date->format('l, F d');
 
 	$close_date = get_field("application_close_date", $ID);
 	$date = DateTime::createFromFormat('mdY', $close_date);
-	$close_date = $date->format('l, F d');
+	$close_date = $date->format('Y-m-d');
+	$nice_close_date = $date->format('l, F d');
 	$time = -1;
 
-	if(strtotime($open_date)<=strtotime("today")){
-	    //past or today
-	    $next_date = "Applications close " . $close_date . " at 11:59pm";
-	    $time = 1; 
-	} else {
-	    // future
-	    $next_date = "Applications Open " . $open_date; 
-	    $time = 0;
+	date_default_timezone_set('America/New_York');
+	$today = date('Y-m-d', time());
+
+	$od = strtotime($open_date);
+	$cd = strtotime($close_date);
+	$td = strtotime($today);
+
+	// Apps are open in the future
+	if($td<$od && $td<$cd) {
+	    $next_date = "Applications Open " . $nice_open_date; 
+	    $time = 0;		
 	}
+	// Apps should be closed
+	else if ($td>$od && $td>$cd) {
+		$next_date = "<br>Applications closed " . $nice_close_date . ".";
+		$time = 2;
+	}
+	// Apps are open
+	else {
+	    $next_date = "Applications close " . $nice_close_date . " at 11:59pm";
+	    $time = 1; 
+	} 
 
 	$start_date = get_field("trip_start_date", $ID);
 	$date = DateTime::createFromFormat('mdY', $start_date);
@@ -109,14 +124,19 @@ while ( have_posts() ) : the_post();
 				<h1><?php echo $city . " Startup Trip"; ?></h1>
 				<h3><?php echo $print_date . " " . $times; ?></h3>
 				<p><?php echo $next_date; ?></p>
+				<?php echo $notice; ?>
 				<?php if ($time == 1) { ?>
-				<a href="<?php echo $application_link; ?>" target="_blank" class="button">
-					Apply Now
-				</a>
+					<a href="<?php echo $application_link; ?>" target="_blank" class="button">
+						Apply Now
+					</a>
+				<?php } else if ($time == 0) { ?>
+					<a href="http://hackcville.us5.list-manage.com/subscribe/post?u=dae9a7242f836507908a2f2d6&id=97161904f1" target="_blank" class="button">
+						Remind Me to Apply
+					</a>
 				<?php } else { ?>
-				<a href="http://hackcville.us5.list-manage.com/subscribe/post?u=dae9a7242f836507908a2f2d6&id=97161904f1" target="_blank" class="button">
-					Remind Me to Apply
-				</a>
+					<a href="http://hackcville.us5.list-manage.com/subscribe/post?u=dae9a7242f836507908a2f2d6&id=97161904f1" target="_blank" class="button">
+						Notify Me About the Next Trip
+					</a>
 				<?php } ?>
 			</div>
 		</div>
@@ -144,13 +164,17 @@ while ( have_posts() ) : the_post();
 			<div class="apply-section">
 				<?php if ($time == 1) { ?>
 					<a href="<?php echo $application_link; ?>" target="_blank" class="button">
-						Apply Here By <?php echo $close_date . " at 11:59pm"; ?>
+						Apply Here By <?php echo $nice_close_date . " at 11:59pm"; ?>
 					</a>
-					<?php } else { ?>
+				<?php } else if ($time == 0) { ?>
 					<a href="http://hackcville.us5.list-manage.com/subscribe/post?u=dae9a7242f836507908a2f2d6&id=97161904f1" target="_blank" class="button">
 						Remind Me to Apply
 					</a>
-					<?php } ?>
+				<?php } else { ?>
+					<a href="http://hackcville.us5.list-manage.com/subscribe/post?u=dae9a7242f836507908a2f2d6&id=97161904f1" target="_blank" class="button">
+						Notify Me About the Next Trip
+					</a>
+				<?php } ?>
 			</div>
 		</div>
 	</div>
@@ -205,9 +229,15 @@ while ( have_posts() ) : the_post();
 		$template_url = get_template_directory() . '/template-parts/trip-tracks.php';
 		include ($template_url);
 	}
-	
-?>
-
+	else { ?>
+		<div class="trip-tracks not-announced">
+			<div class="blue-bg">
+				<div class="container">
+					<h3>Company visits will be announced here soon!</h3>
+				</div>
+			</div>
+		</div>
+	<?php } ?>
 
 <!-- FOR COMPANIES AND ALUMNI -->
 <?php
@@ -221,158 +251,7 @@ while ( have_posts() ) : the_post();
 	include ($template_url);
 ?>
 
-<!-- 
-Apply Now -->
-
-
-
-<?php 
-	// get_template_part( 'template-parts/content', get_post_format() );
-
-	// $active = get_field("active_program");
-	// $title = get_the_title();
-	// $program_topic = get_post_meta(get_the_ID(), 'program_topic', true);
-	// $app_open_date = get_field("application_open_date");
-	// $app_close_date = get_field("application_close_date");
-	// $app_status = get_field("application_status");
-	// $app_link = get_field("application_link");
-	// $heading1 = get_field("heading_1");
-	// $heading2 = get_field("heading_2");
-	// $heading3 = get_field("heading_3");
-	// $description1 = get_field("description_1");
-	// $description2 = get_field("description_2");
-	// $description3 = get_field("description_3");
-	// $image1 = get_field("image_1");
-	// $image2 = get_field("image_2");
-	// $image3 = get_field("image_3");
-	// $syllabus_link = get_field("syllabus_link");
-	// $skills = get_field("skills");
-	// $skills_list = explode("\n", $skills);
-	// 	foreach ($skills_list as $skill) {
-	// 		//echo $skill;
-	// 	}
-
-	// $skills_photo = get_field("skills_background_photo");
-	// $meeting_times = get_field("meeting_times");
-	// $meeting_list = array();
-	// $multiple_times = 0;
-	// if (strpos($meeting_times, "\n") !== false) {
-	//     $multiple_times = 1;
-	//     $meeting_list = explode("\n", $meeting_times);
-	// }
-	// else {
-	// 	array_push($meeting_list, $meeting_times);
-	// }
-
-	// $extra_fee_info = get_field("extra_fee_info");
-	// $extra_eligibility_info = get_field("extra_eligibility_info");
-	// /* get program partners */
-	// $partners_list = "";
-	// $open_date = date_create($app_open_date);
-	// $open_date_short = date_format($open_date,"m/d/Y"); 
-	// // $open_date_short = "January 2018";
-	// $partner_count = 0;
-	// $partners = array();
-	// $posts = get_field("program_partners");
-	// 	if( $posts ):
-	// 		foreach( $posts as $p ):
-	// 			array_push($partners, $p->ID);
-	// 			if ($partner_count < 1) {
-	// 				$partners_list = get_the_title($p->ID);
-	// 			}
-	// 			else if ($partner_count == 1) {
-	// 				$partners_list = $partners_list . " and " . get_the_title($p->ID);
-	// 			}
-	// 			else {
-	// 				$partners_list = get_the_title($p->ID) . ", " . $partners_list;
-	// 			}
-	// 			$partner_count++;
-	// 		endforeach;
-	// 	endif;
-
-	// $authors = get_users(); /* get the program team */
-
-	// /* get testimonial */
-	// $testimonial_count = 0;
-	// $testimonials = array();
-	// $used_t_ids = array();
-	// $prog_only_t = array();
-	// $i = 0;
-	// $student_work_check = false;
-	// $student_outcomes_check = false;
-	// $student_partner_check = false; 
-
-	// $the_query = new WP_Query(array('post_type' => 'testimonial', 'orderby' => 'rand'));
-	// if ( $the_query->have_posts() ) {
-	// 	while ( $the_query->have_posts() ) { $the_query->the_post();
-
-	// 		$name = get_the_title(); // name of testimonial giver
-	// 		$id = get_the_ID(); // ID of current testimonial
-
-	// 		$t_programs = get_field("related_program");
-	// 		if ($t_programs) {
-	// 			foreach($t_programs as $t_program) {
-	// 				$user_t_program = get_the_title($t_program);
-	// 				if (!strcmp($title, $user_t_program)) {
-	// 					if ($i<4) { $prog_only_t[$i] = $id; $i++; }
-						
-	// 					$has_student_work = get_field('student_work_image', $id);
-	// 					if ($has_student_work) { $student_work_check = true; }
-
-	// 					$has_outcome = get_field('narrative_outcome', $id);
-	// 					if ($has_outcome) { $student_outcomes_check = true; }
-
-	// 					$has_partner = get_field("partners_student_has_worked_with", $t);
-	// 					if ($has_partner) { $student_partner_check = true; }
-
-	// 					$t_content = get_field("testimonial");
-	// 					$t = "\"" . $t_content . "\"<br><span class=\"author\">- " . $name . ", " . $title . " Program Graduate</span>";
-	// 					$testimonials[$testimonial_count] = $t;
-	// 					array_push($used_t_ids, $id);
-
-	// 					$testimonial_count++; $i++;
-	// 				} else { /*unrelated testimonial */ }
-	// 			}
-	// 		}
-	// 	}
-	// 	wp_reset_postdata();
-	// }
-	// shuffle($prog_only_t);
-	// if ($testimonial_count < 3) {
-
-	// 	$the_query2 = new WP_Query(array('post_type' => 'testimonial', 'orderby' => 'rand'));
-	// 	if ( $the_query2->have_posts() ) {
-	// 		while ( $the_query2->have_posts() ) { $the_query2->the_post();
-	// 			$id = get_the_ID(); // ID of current testimonial
-	// 			if (!in_array($id, $used_t_ids)) {
-					
-	// 				$name = get_the_title(); // name of testimonial giver
-	// 				$t_categories = get_field("testimonial_category");
-					
-	// 				if ($t_categories) {
-	// 					foreach($t_categories as $t_category) {
-	// 						if (!strcmp($t_category, "General")) {
-	// 							$t_content = get_field("testimonial", $id);
-	// 							$t = "\"" . $t_content . "\"<br><span class=\"author\">- " . $name . ", HackCville Member</span>";
-	// 								$testimonials[$testimonial_count] = $t;
-	// 								$testimonial_count++;
-	// 							array_push($used_t_ids, $id);
-	// 						}
-	// 						else { /*unrelated testimonial */ }
-	// 					}
-	// 				}
-	// 			}
-				
-	// 		}
-	// 		wp_reset_postdata();
-	// 	}
-	// }
-	
-	?>
-
-
-	<?php
-
+<?php
 endwhile; // End of the loop.
 ?>
 

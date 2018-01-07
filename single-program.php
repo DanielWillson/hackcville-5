@@ -12,9 +12,6 @@ get_header(); ?>
 <?php
 while ( have_posts() ) : the_post();
 
-	
-	// get_template_part( 'template-parts/content', get_post_format() );
-
 	$active = get_field("active_program");
 	$title = get_the_title();
 	$program_topic = get_post_meta(get_the_ID(), 'program_topic', true);

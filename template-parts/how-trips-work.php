@@ -19,7 +19,7 @@
 				</div>
 				<div class="flex-1-of-2">
 					<h2>3. Company Visits</h2>
-					<p>On a typical trip, we'll visit 5-6 for about an hour each. We usually speak to fairly high-level employees - founders, CTOs, marketing directors, ect - about their experiences. HackCville and/or UVA alumni employees at these companies are frequent hosts of these visits.</p>
+					<p>On a typical trip, we'll visit 5-6 companies for about an hour each. We often speak to high-level employees - founders, CTOs, marketing directors, etc - about their experiences. HackCville and/or UVA alumni employees at these companies are frequent hosts of these visits.</p>
 				</div>
 				<div class="flex-1-of-2">
 					<img src="<?php echo get_template_directory_uri(); ?>/images/nyc4.jpg">

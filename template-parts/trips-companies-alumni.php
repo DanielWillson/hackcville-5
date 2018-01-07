@@ -4,10 +4,10 @@
 			<h1>How Companies and Alumni Can Get Involved</h1>
 			<p>We're always looking for exciting companies to introduce to our talented students.</p>
 			<p>
-				<a class="button" href="mailto:holland@hackcville.com">
+				<a class="button" href="mailto:trips@hackcville.com">
 					Host a Visit &rarr;
 				</a>
-				<a class="button" href="mailto:holland@hackcville.com">
+				<a class="button" href="mailto:trips@hackcville.com">
 					Sponsor a Trip &rarr;
 				</a>
 			</p>

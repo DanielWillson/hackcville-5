@@ -9,35 +9,53 @@
 
 get_header(); 
 
+//all trip ids
 $trip_ids = array();
+
+//all active future trips: [id] = start date
 $ti = array();
-$trip_tentative_ids = array();
+
+//all tentative (not active) future trips: [id] = start date
 $tti = array();
+
+//all active past trips: [id] = start date
+$pti = array();
+
 $next_trip_id = -1;
-$next_trip_date = 10000000000;
-
-
+date_default_timezone_set('America/New_York');
+$today = date('Y-m-d', time());
 
 if ( have_posts() ) {
 	while ( have_posts() ) : the_post(); 
 		$start_date = get_field("trip_start_date", $ID);
 		$date = DateTime::createFromFormat('mdY', $start_date);
-		$start_date = $date->format('l, F d Y');
-		if (strtotime($start_date)>=strtotime("today")) {
+		$start_date = $date->format('Y-m-d');
+		
+		$end_date = get_field("trip_end_date", $ID);
+		$date = DateTime::createFromFormat('mdY', $end_date);
+		$end_date = $date->format('Y-m-d');
 
+		$sd = strtotime($start_date);
+		$ed = strtotime($end_date);
+		$td = strtotime("today");
+
+		// if trip is in the future...
+		if ($td<$sd && $td<$ed) {
 			if (get_field("trip_status")) {
+				// if the trip is active, add it to the trip_ids array
 				array_push($trip_ids, get_the_ID());
-				$ti[get_the_ID()] = strtotime($start_date);
 
-				$trip_start_date = get_field("trip_start_date");
-				if ($trip_start_date < $next_trip_date) {
-					$next_trip_date = $trip_start_date;
-					$next_trip_id = get_the_ID();
-				}
+				// if the trip is active, then add a [id] = start date pair to the $ti array
+				$ti[get_the_ID()] = $sd;
 			}
 			else {
-				array_push($trip_tentative_ids, get_the_ID());
 				$tti[get_the_ID()] = strtotime($start_date);
+			}
+		}
+		// past trips
+		else {
+			if (get_field("trip_status")) {
+				$pti[get_the_ID()] = strtotime($start_date);
 			}
 		}
 		
@@ -49,10 +67,11 @@ if (has_post_thumbnail( $next_trip_id ) ):
 	$image = $image[0];
 endif; 
 
-
+// sort all arrays of trips by date
+arsort($pti);
 asort($tti);
 asort($ti);
-
+$next_trip_id = key($ti);
 
 ?>
 
@@ -64,30 +83,47 @@ asort($ti);
 			<div class="intro">
 				<h1>HackCville's Startup Trips</h1>
 				<p>HackCville hosts immersive trips to cities across the country to connect our talented students with high-growth and innovative companies. Students meet industry leaders and get connected with internship and job opportunities.</p>
-				<p>Over the past 5 years, we have taken hundreds of our top students to New York City, Boston, San Francisco, Richmond, Washington DC, and right here in Charlottesville. Read on for details on our trips and how you can go on the next one.</p>
+				<p>Over the past 6 years, we have taken hundreds of our top students to New York City, Boston, San Francisco, Richmond, Washington DC, and right here in Charlottesville. Read on for details on our trips and how you can go on the next one.</p>
 			</div>
 		</div>
 	</div>
 </header>
 <!-- OUR NEXT TRIP -->
 <?php 
-$open_date = get_field("application_open_date", $next_trip_id);
-$date = DateTime::createFromFormat('mdY', $open_date);
-$open_date = $date->format('l, F d');
 
-$close_date = get_field("application_close_date", $next_trip_id);
-$date = DateTime::createFromFormat('mdY', $close_date);
-$close_date = $date->format('l, F d');
+	if($next_trip_id != -1) {
+		$open_date = get_field("application_open_date", $next_trip_id);
+		$date = DateTime::createFromFormat('mdY', $open_date);
+		$open_date = $date->format('jS F, Y');
+		$nice_open_date = $date->format('l, F d');
 
-if(strtotime($open_date)<=strtotime("today")){
-    //past or today
-    $next_date = "Applications close " . $close_date . " at 11:59pm"; 
-} else {
-    // future
-    $next_date = "Applications Open " . $open_date; 
-}
+		$close_date = get_field("application_close_date", $next_trip_id);
+		$date = DateTime::createFromFormat('mdY', $close_date);
+		$close_date = $date->format('jS F, Y');
+		$nice_close_date = $date->format('l, F d');
+		$time = -1;
 
-// if ($next_trip_id >= 0) {
+		date_default_timezone_set('America/New_York');
+
+		$od = strtotime($open_date);
+		$cd = strtotime($close_date);
+		$td = strtotime("today");
+
+		// Apps are open in the future
+		if($td<$od && $td<$cd) {
+		    $next_date = "Applications Open " . $nice_open_date; 
+		    $time = 0;		
+		}
+		// Apps should be closed
+		else if ($td>$od && $td>$cd) {
+			$next_date = "<br>Applications closed " . $nice_close_date . ".";
+			$time = 2;
+		}
+		// Apps are open
+		else {
+		    $next_date = "Applications close " . $nice_close_date . " at 11:59pm";
+		    $time = 1; 
+		} 
 ?>
 <div class="next-trip">
 	<div class="hc-blue-bg">
@@ -111,7 +147,7 @@ if(strtotime($open_date)<=strtotime("today")){
 		</div>
 	</div>
 </div>
-<?php //} ?>
+<?php } ?>
 <div class="trip-testimonial">
 	<div class="blue-bg">
 		<div class="container">
@@ -177,7 +213,6 @@ if(strtotime($open_date)<=strtotime("today")){
 </div>
 <!-- FOR COMPANIES AND ALUMNI -->
 <?php
-	// Import Section
 	$template_url = get_template_directory() . '/template-parts/trips-companies-alumni.php';
 	include ($template_url);
 ?>
@@ -251,9 +286,6 @@ if(strtotime($open_date)<=strtotime("today")){
 </div>
 <?php } ?>
 
-
-
-
 <?php
 	// Import Newsletter Subscribe
 	$template_url = get_template_directory() . '/template-parts/newsletter-subscribe.php';
@@ -264,9 +296,6 @@ if(strtotime($open_date)<=strtotime("today")){
 $template_url = get_template_directory() . '/template-parts/single-testimonial.php';
 include ($template_url);
 ?>
-
-	
-
 
 <?php
 get_footer();
