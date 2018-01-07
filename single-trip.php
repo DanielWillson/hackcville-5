@@ -203,7 +203,7 @@ while ( have_posts() ) : the_post();
 			<div class="flex">
 				<div class='flex flex-1-of-2 trip-partners'>
 					<div class="flex-1-of-1">
-						<h1>Our Presenting Partners</h1>
+						<h1>Our Founding Partners</h1>
 					</div>
 					<?php 
 					$presenting = array();
@@ -263,6 +263,32 @@ while ( have_posts() ) : the_post();
 	$template_url = get_template_directory() . '/template-parts/trips-companies-alumni.php';
 	include ($template_url);
 ?>
+<?php if ($partner_count > 0) { ?>
+<div class="trip-presenting-partners">
+	<div class="white-bg">
+		<div class="container">
+			<div class="intro">
+		  		<h1>Meet the Trip's Presenting Sponsor<?php 
+		  			if ($partner_count > 1) { echo "s"; } ?>
+		  		</h1>
+		  	</div>
+		  	<div class="flex">
+		  		<?php 
+		  		foreach ($p_partners_ids as $partner) {
+		  			?>
+		  			<div class="flex-1-of-3">
+					 	<img src="<?php echo get_field('logo', $partner); ?>" class="sponsor-image">
+					</div>
+					<div class="flex-2-of-3">
+					 	<p class="sponsor-info"><?php echo get_field('description', $partner); ?></p>
+					 	<a class="button" href="<?php echo get_field('website', $partner); ?>" target="_blank">Learn More &rarr;</a>
+					</div>
+		  		<?php } ?>
+		  	</div>
+		</div>
+	</div>
+</div>
+<?php } ?>
 <?php
 	// Import How Trips Work
 	$template_url = get_template_directory() . '/template-parts/how-trips-work.php';
