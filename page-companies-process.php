@@ -20,11 +20,6 @@ include ($template_url);
 				<h1>The Launch Process</h1>
 				<p>Our proprietary vetting, training, and matching system takes the hassle and risk out of finding top talent for your company. Nearly 50 companies from across Charlottesville, DC, and Richmond worked with us last summer - here's why.</p>
 			</div>
-			<?php
-			// while ( have_posts() ) : the_post(); 
-			// 	get_template_part( 'template-parts/content', 'page' );
-			// endwhile; // End of the loop.
-			?>
 		</div>
 	</div>
 </div>
@@ -38,7 +33,7 @@ include ($template_url);
 				</div>
 				<div class="flex flex-1-of-4">
 					<div class="flex-1-of-1">
-						<h1>500+</h1>
+						<h1>600+</h1>
 						<p>applicants</p>
 					</div>
 					<div class="flex-1-of-1">
@@ -46,8 +41,6 @@ include ($template_url);
 						<p>acceptance rate</p>
 					</div>
 				</div>
-
-				
 				<figure class="flex-1-of-2 image-pullquote left">
 					<img src="<?php echo get_template_directory_uri(); ?>/images/skills2	.jpg">
 					<figcaption>
@@ -59,9 +52,13 @@ include ($template_url);
 					<p>Our proprietary training system gets students work-ready fast. Students are immersed in an intensive 9-hour/day bootcamp for the first 5 weeks of the summer. A core part of our curriculum includes training in the communication and professionalism needed to succeed in the workplace.</p>
 				</div>
 				<div class="flex-1-of-2">
-					<p>We teach students how to teach themselves new skills and have them practice with sample clients. Web designers learn design tools, JavaScript, and theme development. Developers learn the full stack with an emphasis on Node and React. </p>
-
-					<p>Digital strategists learn to run integrated marketing campaigns from ideation to execution. Data scientists learn R, Python, and data visualization techniques. Digital media students learn content and video production using modern equipment.</p>
+					<p>We teach students how to teach themselves new skills and have them practice with sample clients. <ul>
+						<li>Web designers learn design tools, JavaScript, and custom theme development.</li>
+						<li>Software engineers learn the full stack with an emphasis on Node and React.</li>
+						<li>Digital strategists learn to run integrated marketing campaigns from ideation to execution.</li>
+						<li>Data scientists learn R, Python, and data visualization techniques.</li>
+						<li>Digital media students learn design, content, and video production using modern equipment.</li>
+					</ul></p>
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>company-process" class="button">
 						Our Company Signup Process &rarr;
 					</a>
@@ -104,7 +101,7 @@ include ($template_url);
 			<div class="flex">
 				<div class="flex-1-of-2">
 					<h3>Here are just a few of the companies that kept their intern on this fall.</h3>
-					<p>Developing a strong base of talent and reducing brain drain is vital for the continued development of Charlottesville tech, startup, and small business ecosystem. Launch is designed to increase the number of talented engineers, web designers, marketers, data scientists in Charlottesville and to keep them here. Supporting Launch enables HackCville to continue working toward that mission.</p>
+					<p>Developing a strong base of talent and reducing brain drain is vital for the continued development of Virginia's tech, startup, and small business ecosystem. Launch is designed to increase the number of talented engineers, web designers, marketers, data scientists in Charlottesville and the region and to keep them here. Supporting Launch enables HackCville to continue working toward that mission.</p>
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>launch-past-students" class="button">
 						Meet Last Year's Students &rarr;
 					</a>

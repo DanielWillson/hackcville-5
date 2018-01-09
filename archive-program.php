@@ -66,8 +66,8 @@ if ( $the_query->have_posts() ) {
 				}
 				?>
 				<h2>Our Spring Programs</h2>
-				<p>Program applications <?php echo $date; ?>, and are accessible via the links below. You may apply to up to two programs, but will only be accepted into one. We have a unified program application that you can access via any of the program pages. We encourage you to read more about our process below.</p>
-				<p>If you're accepted, $50 dues are expected within the first week of the program. This can be reduced or waived for those with financial need.</p>
+				<p>Program applications <?php echo $date; ?>, and are accessible via the links below. You may apply to up to two programs, but will only be accepted into one. We have a unified program application that you can access via any of the program pages. We encourage you to read more about our process below, and to ensure you can make both weekly meeting times. Some programs have multiple sections.</p>
+				<p>If you're accepted, $50 dues are expected within the first week of the program, starting Feb 4 2018. This can be reduced or waived for those with financial need.</p>
 			</div>
 			<div class="flex">
 				<div class="flex-1-of-2">
@@ -75,13 +75,30 @@ if ( $the_query->have_posts() ) {
 						<div class="white-bg program-list">
 							<a class="button not-active"><h3>Learn a Skill</h3></a>
 							<div class="list">
-								<?php foreach ($skills_ids as $sp) { ?>
+								<?php foreach ($skills_ids as $sp) { 
+									$meeting_times = get_field("meeting_times", $sp);
+									$meeting_list = array();
+									$multiple_times = 0;
+									if (strpos($meeting_times, "\n") !== false) {
+									    $multiple_times = 1;
+									    $meeting_list = explode("\n", $meeting_times);
+									}
+									else {
+										array_push($meeting_list, $meeting_times);
+									}
+									?>
 								<div class="list-item">
 									<img src="<?php the_field("program_icon", $sp); ?>" class="icon">
-									<span class="title"><?php echo get_the_title($sp); ?>:</span>
+									<span class="title"><a href="<?php the_permalink($sp); ?>"><?php echo get_the_title($sp); ?>:</a></span>
 									<span class="topic"><?php the_field("program_topic", $sp); ?></span>
 									<br>
-									<a href="<?php the_permalink($sp); ?>">more info &#8594;</a>
+									<?php if ($multiple_times) {
+										foreach ($meeting_list as $mt) { ?>
+											<span class="time"><?php echo $mt; ?></span>
+									<?php } } else { ?>
+										<span class="time"><?php echo $meeting_times; ?></span>
+									<?php } ?>
+									
 								</div>
 								<?php }	?>
 							</div>
@@ -93,13 +110,31 @@ if ( $the_query->have_posts() ) {
 						<div class="white-bg program-list">
 							<a class="button not-active"><h3>Start Something</h3></a>
 							<div class="list">
-								<?php foreach ($eship_ids as $ep) { ?>
+								<?php foreach ($eship_ids as $ep) { 
+									$meeting_times = get_field("meeting_times", $ep);
+									$meeting_list = array();
+									$multiple_times = 0;
+									if (strpos($meeting_times, "\n") !== false) {
+									    $multiple_times = 1;
+									    $meeting_list = explode("\n", $meeting_times);
+									}
+									else {
+										array_push($meeting_list, $meeting_times);
+									}
+
+									?>
 								<div class="list-item">
 									<img src="<?php the_field("program_icon", $ep); ?>" class="icon">
-									<span class="title"><?php echo get_the_title($ep); ?>:</span>
+									<span class="title"><a href="<?php the_permalink($ep); ?>"><?php echo get_the_title($ep); ?>:</a></span>
 									<span class="topic"><?php the_field("program_topic", $ep); ?></span>
 									<br>
-									<a href="<?php the_permalink($ep); ?>">more info &#8594;</a>
+									<?php if ($multiple_times) {
+										foreach ($meeting_list as $mt) { ?>
+											<span class="time"><?php echo $mt; ?></span>
+									<?php } } else { ?>
+										<span class="time"><?php echo $meeting_times; ?></span>
+									<?php } ?>
+									
 								</div>
 								<?php }	?>
 							</div>
@@ -156,7 +191,7 @@ include ($template_url);
 					<div class="flex-1-of-2 list-info">
 						<h3><span class="important">The HackCville team will review your application<span></h3>
 						<p>After you submit your application, it will be reviewed by the HackCville team. We blind themselves to all names, emails, and demographic information to minimize any bias. Three staff members will review each application.</p>
-						<p>Our data science and analytics team reviews this process each semester to ensure an unbiased process. In Spring 2017, no statistically significant biases in our process were found with regards to ethnicity, gender, financial need, or age.</p>
+						<p>Our data science and analytics team reviews this process each semester to ensure an unbiased process. In 2017, no statistically significant biases in our process were found with regards to ethnicity, gender, financial need, or age.</p>
 					</div>
 					<div class="flex-1-of-2 list-heading">
 						<h3>3</h3>
@@ -171,7 +206,7 @@ include ($template_url);
 					</div>
 					<div class="flex-1-of-2 list-info">
 						<h3><span class="important">Final decisions<span></h3>
-						<p>If you are accepted, congratulations! HackCville will notify you by the end of the submission week. All accepted students will be expected to participate in our Program Kickoff, 11am-5pm, Sunday, February 4. $40 dues are also expected by the end of the first week - these can be waived for any student with financial need.</p>
+						<p>If you are accepted, congratulations! HackCville will notify you by the end of the submission week. All accepted students will be expected to participate in our Program Kickoff, 11am-5:30pm, Sunday, February 4. $50 dues are also expected by the end of the first week - these can be waived for any student with financial need.</p>
 						<p>If you're not accepted, don't worry! Many of current members applied multiple times before they were accepted. Programs are just one way to be involved - many also particiapte in our trips, public events, and summer program, Launch.</p>
 					</div>
 				</div>

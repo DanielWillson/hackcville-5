@@ -19,7 +19,7 @@ include ($template_url);
 			<div class="intro">
 				<h2>Partner with HackCville for vetted & trained top talent.</h2>
 				<p>The Launch Summer Internship Program isn't your typical internship program. Our interns get advanced training in critical skills: code, design, marketing, data, and more. Then we match these super-interns with your company to tackle big projects this summer.</p>
-				<p>We provide technical and marketing talent to 50+ of the top startup and tech firms across Charlottesville at very affordable prices. Students get a once in a lifetime opportunity to learn invaluable skills and build experience. Read on for how your company can get involved.</p> 
+				<p>We provide technical and marketing talent to 50+ of the top startup and tech firms across Virginia and DC at very affordable prices. Students get a once in a lifetime opportunity to learn invaluable skills and build experience. Read on for how your company can get involved.</p> 
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>launch-process" class="button">
 					Our Process &rarr;
 				</a>
@@ -27,11 +27,6 @@ include ($template_url);
 					Request more info &rarr;
 				</a>
 			</div>
-			<?php
-			// while ( have_posts() ) : the_post(); 
-			// 	get_template_part( 'template-parts/content', 'page' );
-			// endwhile; // End of the loop.
-			?>
 		</div>
 	</div>
 </div>
@@ -44,7 +39,7 @@ include ($template_url);
 					<img src="<?php echo get_template_directory_uri(); ?>/images/bg-oh.jpg">
 				</figure>
 				<div class="flex-3-of-5">
-					<h2>1) We find and vet 500+ top students so you don't have to.</h2>
+					<h2>1) We find and vet 600+ top students so you don't have to.</h2>
 					<p>Top engineering, computer science, business, media, and arts students apply to Launch in the fall and go through a vigorous multi-stage vetting process. Our acceptance rate is about 15%, and 50% of our accepted students are female.</p>
 				</div>
 				<figure class="flex-2-of-5">
@@ -52,7 +47,15 @@ include ($template_url);
 				</figure>
 				<div class="flex-3-of-5">
 					<h2>2) We train them to become super-interns in just 5 weeks.</h2>
-					<p>Our proprietary training system gets students work-ready fast. We teach modern tools and techniques to 5 different tracks: software dev, web design, digital media, digital strategy, and data science. We round out them out by teaching the communication skills and professionalism needed to succeed in the workplace.</p>
+					<p>Our proprietary training system gets students work-ready fast. We teach modern tools and techniques to 5 different tracks: 
+						<ul>
+							<li>software engineering</li>
+							<li>web design</li>
+							<li>data science</li>
+							<li>digital media (video/design/content)</li>
+							<li>digital strategy (social/SEO/strategy)</li>
+						</ul>
+					We round out them out by teaching the communication skills and professionalism needed to succeed in the workplace.</p>
 				</div>
 				<figure class="flex-2-of-5">
 					<img src="<?php echo get_template_directory_uri(); ?>/images/mike.jpg">
@@ -129,7 +132,7 @@ foreach ($track_IDs as $t) {
 					<br>
 					<br>
 					<h3>"As we seek to build our creative economy, HackCville will play a crucial role in training and keeping talent here in Charlottesville."</h3>
-					<p>- Charlottesville Mayor Mike Signer</p>
+					<p>- Former Charlottesville Mayor Mike Signer</p>
 				</div>
 			</div>
 		</div>

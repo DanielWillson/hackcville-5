@@ -2899,12 +2899,13 @@ PROGRAMS ARCHIVE LIST
 
 .programs-list .title {
 	font-weight: bold;
-	font-size: 26px;
+	font-size: 24px;
 }
 
 .programs-list .topic {
-	font-size: 26px;
+	font-size: 24px;
 	text-transform: lowercase;
+	font-weight: bold;
 }
 
 .programs-list .list-item img.icon {
@@ -2919,6 +2920,12 @@ PROGRAMS ARCHIVE LIST
 .programs-list .flex-1-of-2 .white-bg {
 		padding: 0;
 	}
+
+.programs-list .time {
+	font-size: 85%;
+	font-style: italic;
+	color: #989898;
+}
 
 @media screen and (max-width: 850px) {
 	.programs-list .flex-1-of-2 {

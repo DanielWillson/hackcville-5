@@ -158,7 +158,7 @@ while ( have_posts() ) : the_post();
 			<div class="filter"></div>
 			<div class="container">
 				<div class="description">
-					<h3>Explore <?php echo $program_topic; ?> in</h3>
+					<h3><?php if(strcmp(get_the_title(), "Alpha")) { echo "Explore "; } else { echo "Get "; } echo $program_topic; ?> in</h3>
 				</div>
 				<h1 class="program-name"><?php echo $title; ?></h1>
 				<p class="subheading">An immersive, 10-week program hosted by HackCville</p>
@@ -233,34 +233,43 @@ while ( have_posts() ) : the_post();
 	 		</div>
 	 	</div>
 	</div>
+	<?php
+	// BEGIN PROGRAM STAFF CHECK
+	$lr_check = 1;
+	$ids = array();
+	$staff_size = 0;
+
+	foreach ($authors as $author) {
+		
+		$user_id = $author->data->ID;
+		$author_name = $author->data->display_name;
+		$active = get_field('active', 'user_'.$user_id);
+		if ($active && !in_array( 'subscriber', (array) $author->roles ) ) {
+			$programs = get_field('program_teams', 'user_'.$user_id);
+			if ($programs) {
+				foreach($programs as $program) {
+					$user_program_title = get_the_title($program);
+					if (!strcmp($title, $user_program_title)) {
+						$staff_size++;
+						if (!strcmp(get_field('leadership_type', 'user_'.$user_id), "program_lead")) {
+							$ids[$user_id] = 1;
+						}
+						if (!strcmp(get_field('leadership_type', 'user_'.$user_id), "coordinator")) {
+							$ids[$user_id] = 2;
+						}
+					}
+				}
+			}
+		}
+	}
+	asort($ids);
+	if ($staff_size > 0) {
+	?>
 	<div class="program-staff">
 		<div class="white-bg">
 		   <div class="container section-border">
 				<h1 class="header-center">Program Staff</h1>
 				<?php
-				$lr_check = 1;
-				$ids = array();
-
-				foreach ($authors as $author) {
-					$user_id = $author->data->ID;
-					$author_name = $author->data->display_name;
-
-					$programs = get_field('program_teams', 'user_'.$user_id);
-					if ($programs) {
-						foreach($programs as $program) {
-							$user_program_title = get_the_title($program);
-							if (!strcmp($title, $user_program_title)) {
-								if (!strcmp(get_field('leadership_type', 'user_'.$user_id), "program_lead")) {
-									$ids[$user_id] = 1;
-								}
-								if (!strcmp(get_field('leadership_type', 'user_'.$user_id), "coordinator")) {
-									$ids[$user_id] = 2;
-								}
-							}
-						}
-					}
-				}
-				asort($ids);
 				foreach($ids as $key => $value) {			
 					$author_name = get_the_author_meta('first_name', $key) . " " . get_the_author_meta('last_name', $key);	
 					echo "<div class='flex'>";
@@ -268,6 +277,9 @@ while ( have_posts() ) : the_post();
 						<div class="flex">
 							<div class="flex-3-of-5 bottom">
 								<?php echo get_the_author_meta('description', $key); ?>
+								<a href="<?php echo get_author_posts_url($key) ?>" target="_blank" class="button">
+									More about <?php echo get_the_author_meta('first_name', $key); ?> &rarr;
+								</a>
 							</div>
 							<figure class="image-pullquote right flex-2-of-5 top"> 
 								<img src="<?php echo get_field("headshot", 'user_'.$key); ?>" />
@@ -292,31 +304,33 @@ while ( have_posts() ) : the_post();
 						</div>
 					<?php 
 					} $lr_check++; } ?>
-</div>
-</div>
+					</div>
+					</div>
 				</div>		
 			</div>
 		</div>
 	</div>
-	<?php if($partner_count > 0) { ?>
+	<?php } if($partner_count > 0) { ?>
 	<div class="program-partners">
-		<div class="white-bg container meet-sponsors">
-		  	<h1 class="header-center">Meet <?php echo $title; ?>'s Sponsor<?php 
-		  		if ($partner_count > 1) { echo "s"; }
-		  	?></h1>
-		  	<div class="flex">
-		  		<?php 
-		  		foreach ($partners as $partner) {
-		  			?>
-		  			<div class="flex-1-of-3">
-					 	<img src="<?php echo get_field('logo', $partner); ?>" class="sponsor-image">
-					</div>
-					<div class="flex-2-of-3">
-					 	<p class="sponsor-info"><?php echo get_field('description', $partner); ?></p>
-					 	<a class="button" href="<?php echo get_field('website', $partner); ?>" target="_blank">Learn More &rarr;</a>
-					</div>
-		  		<?php } ?>
-		  	</div>
+		<div class="white-bg meet-sponsors">
+			<div class="container">
+			  	<h1 class="header-center">Meet <?php echo $title; ?>'s Sponsor<?php 
+			  		if ($partner_count > 1) { echo "s"; }
+			  	?></h1>
+			  	<div class="flex">
+			  		<?php 
+			  		foreach ($partners as $partner) {
+			  			?>
+			  			<div class="flex-1-of-3">
+						 	<img src="<?php echo get_field('logo', $partner); ?>" class="sponsor-image">
+						</div>
+						<div class="flex-2-of-3">
+						 	<p class="sponsor-info"><?php echo get_field('description', $partner); ?></p>
+						 	<a class="button" href="<?php echo get_field('website', $partner); ?>" target="_blank">Learn More &rarr;</a>
+						</div>
+			  		<?php } ?>
+			  	</div>
+			</div>
 		</div>
 	</div>
 	<?php } ?>
@@ -343,7 +357,6 @@ while ( have_posts() ) : the_post();
 					<div class="list-info flex-1-of-2">
 						<?php 
 						if ($multiple_times) { ?>
-
 							<p><?php echo $title; ?> has multiple sections:
 								<ul>
 									<?php foreach ($meeting_list as $mt) { ?>
@@ -356,7 +369,7 @@ while ( have_posts() ) : the_post();
 							<p><?php echo $title; ?> meets <span class="important"><?php echo $meeting_times; ?>, February 4 through late April.</span></p>
 
 						<?php } ?>
-						<p><span class="important">All sections of all programs (including <?php echo $title; ?>) start with a 11am-5pm kickoff on Sunday, February 4.</span></p>
+						<p><span class="important">All sections of all programs (including <?php echo $title; ?>) start with a 11am-5:30pm kickoff on Sunday, February 4.</span></p>
 						<p>You must be able to attend each session. More than a few missed meeting times will result in being dropped from HackCville.</p>
 					</div>
 					<div class="list-heading flex-1-of-2">
