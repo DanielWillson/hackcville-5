@@ -192,7 +192,7 @@
 			
 		    var topOfDiv = $('#get-to-know-us').offset().top - 78;
 		    console.log(topOfDiv);
-		    $('html, body').animate({scrollTop: topOfDiv}, 1000);
+		    $('html, body').animate({scrollTop: topOfDiv}, 1500);
 		    return false;
 		}
 

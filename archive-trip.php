@@ -62,16 +62,18 @@ if ( have_posts() ) {
 	endwhile;	
 }
 
-if (has_post_thumbnail( $next_trip_id ) ): 
-	$image = wp_get_attachment_image_src( get_post_thumbnail_id( $next_trip_id ), 'single-post-thumbnail' );
-	$image = $image[0];
-endif; 
-
 // sort all arrays of trips by date
 arsort($pti);
 asort($tti);
 asort($ti);
 $next_trip_id = key($ti);
+
+
+
+if (has_post_thumbnail( $next_trip_id ) ): 
+	$image = wp_get_attachment_image_src( get_post_thumbnail_id( $next_trip_id ), 'single-post-thumbnail' );
+	$image = $image[0];
+endif; 
 
 ?>
 
@@ -97,20 +99,21 @@ $next_trip_id = key($ti);
 	if($next_trip_id != -1) {
 		$open_date = get_field("application_open_date", $next_trip_id);
 		$date = DateTime::createFromFormat('mdY', $open_date);
-		$open_date = $date->format('jS F, Y');
+		$open_date = $date->format('Y-m-d');
 		$nice_open_date = $date->format('l, F d');
 
 		$close_date = get_field("application_close_date", $next_trip_id);
 		$date = DateTime::createFromFormat('mdY', $close_date);
-		$close_date = $date->format('jS F, Y');
+		$close_date = $date->format('Y-m-d');
 		$nice_close_date = $date->format('l, F d');
 		$time = -1;
 
 		date_default_timezone_set('America/New_York');
+		$today = date('Y-m-d', time());
 
 		$od = strtotime($open_date);
 		$cd = strtotime($close_date);
-		$td = strtotime("today");
+		$td = strtotime($today);
 
 		// Apps are open in the future
 		if($td<$od && $td<$cd) {

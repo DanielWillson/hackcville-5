@@ -167,7 +167,7 @@ get_header(); ?>
 			<h3>We have two clubhouses on the UVA Corner that we call home. Our members get 24/7 access to these fun and functional spaces on Elliewood Avenue. Members also get exclusive events, job opportunities, and more.</h3>
 			<h3>Anyone, regardless of year or major, can apply to join HackCville. We're mostly UVA students, but also some alumni and Cville community members, too.</h3>
 			<a class="button" href="<?php echo esc_url( home_url( '/' ) ); ?>programs">
-				Part-Time Programs &rarr;
+				Spring Programs &rarr;
 			</a>
 			<a class="button" href="<?php echo esc_url( home_url( '/' ) ); ?>launch">
 				Summer Programs &rarr;
@@ -244,10 +244,10 @@ get_header(); ?>
 			</div>
 			<div class="cta">
 				<a class="button" href="<?php echo esc_url( home_url( '/' ) ); ?>/programs">
-					Our Part-Time Programs &rarr;
+					Spring Programs &rarr;
 				</a>
 				<a class="button" href="<?php echo esc_url( home_url( '/' ) ); ?>/launch">
-					Our Summer Programs &rarr;
+					Summer Programs &rarr;
 				</a>
 			</div>
 		</div>
