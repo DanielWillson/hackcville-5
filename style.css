@@ -4810,3 +4810,35 @@ ABOUT THE PIONEER
 		height: 175px;
 	}
 }
+
+/*
+-----------------------------------
+ABOUT HACKCVILLE
+-----------------------------------
+*/
+
+.hackcville-staff .person {
+	margin: 15px 0;
+}
+
+.hackcville-staff .headshot {
+	height: 160px;
+	width: 100%;
+	background-size: cover;
+	background-position: center center;
+}
+
+.hackcville-staff .info {
+	margin-top: 10px;
+}
+
+.hackcville-staff .name {
+	margin-bottom: 5px;
+}
+
+.hackcville-staff p {
+	margin-top: 3px;
+	margin-bottom: 0;
+	font-size: 85%;
+}
+

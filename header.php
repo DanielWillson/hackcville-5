@@ -189,8 +189,14 @@
 	<script src="<?php echo get_template_directory_uri()?>/js/share-this-page.js"></script>
 	<script type="text/javascript">
 		function getToKnowUs() {
-			
 		    var topOfDiv = $('#get-to-know-us').offset().top - 78;
+		    console.log(topOfDiv);
+		    $('html, body').animate({scrollTop: topOfDiv}, 1500);
+		    return false;
+		}
+
+		function meetTheTeam() {
+		    var topOfDiv = $('#staff-grid').offset().top - 78;
 		    console.log(topOfDiv);
 		    $('html, body').animate({scrollTop: topOfDiv}, 1500);
 		    return false;
