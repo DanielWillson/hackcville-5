@@ -204,6 +204,11 @@ foreach ($authors as $author) {
 		</div>
 	</div>
 </div>
+<?php
+// Import single random testimonial
+$template_url = get_template_directory() . '/template-parts/single-testimonial.php';
+include ($template_url);
+?>
 
 
 <?php

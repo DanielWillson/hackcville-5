@@ -4842,3 +4842,16 @@ ABOUT HACKCVILLE
 	font-size: 85%;
 }
 
+/*
+-----------------------------------
+PARTNERS
+-----------------------------------
+*/
+
+.partner-archive-hero .flex-3-of-5 p:first-child {
+	margin-top: 0;
+}
+
+.partner-grid a {
+	border-bottom: 0;
+}
