@@ -4828,6 +4828,11 @@ ABOUT HACKCVILLE
 	background-position: center center;
 }
 
+.hackcville-staff.directors .headshot {
+	height: 200px;
+}
+
+
 .hackcville-staff .info {
 	margin-top: 10px;
 }
@@ -4840,6 +4845,40 @@ ABOUT HACKCVILLE
 	margin-top: 3px;
 	margin-bottom: 0;
 	font-size: 85%;
+}
+
+
+@media screen and (max-width: 920px) {
+
+	.hackcville-staff .person {
+		flex-basis: 30%;
+	}
+
+	.hackcville-staff .headshot,
+	.hackcville-staff.directors .headshot {
+		height: 170px;
+	}
+
+}
+
+@media screen and (max-width: 700px) {
+
+	.hackcville-staff .person {
+		flex-basis: 45%;
+	}
+
+	.hackcville-staff .headshot {
+		height: 210px;
+	}
+
+}
+
+@media screen and (max-width: 600px) {
+
+	.hackcville-staff .headshot {
+		height: 160px;
+	}
+
 }
 
 /*

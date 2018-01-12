@@ -44,6 +44,7 @@ $staff = array();
 $pioneers = array();
 $founders = array();
 
+
 foreach ($authors as $author) {
 	$user_id = $author->data->ID;
 	$active = get_field('active', 'user_'.$user_id);
@@ -51,38 +52,39 @@ foreach ($authors as $author) {
 		if (!strcmp(get_field('leadership_type', 'user_'.$user_id), "board_member")) { 
 			array_push($board, $user_id);
 		}
-		else if (!strcmp(get_field('leadership_type', 'user_'.$user_id), "director")) { 
+		if (!strcmp(get_field('leadership_type', 'user_'.$user_id), "director")) { 
 			array_push($directors, $user_id);
 		}
-		else if (!strcmp(get_field('leadership_type', 'user_'.$user_id), "producer")) { 
+		if (!strcmp(get_field('leadership_type', 'user_'.$user_id), "producer")) { 
 			array_push($pioneers, $user_id);
 		}
-		else if (!strcmp(get_field('leadership_type', 'user_'.$user_id), "advisor")) { // do nothing 
-		}
-		else {
+		if (!strcmp(get_field('leadership_type', 'user_'.$user_id), "manager") || 
+			!strcmp(get_field('leadership_type', 'user_'.$user_id), "launch_instructor") || 
+			!strcmp(get_field('leadership_type', 'user_'.$user_id), "program_lead")) { 
 			array_push($staff, $user_id);
 		}
 
 
-		$full_name = $author->data->display_name;
+		
+	}
+	$full_name = $author->data->display_name;
 		if ((!strcmp($full_name, "Brendan Richardson")) ||
 			(!strcmp($full_name, "Spencer Ingram")) ||
 			(!strcmp($full_name, "Daniel Willson")) ||
 			(!strcmp($full_name, "Alyssa Dizon"))) { 
 			array_push($founders, $user_id);
 		}
-	}
 } 
 
-//$combined_staff = 
+//$combined_staff = array_merge($directors, $staff);
 
 ?>
 
-<div class="hackcville-staff" id="staff-grid">
+<div class="hackcville-staff directors" id="staff-grid">
 	<div class="white-bg">
 		<div class="container">
 			<div class="intro">
-				<h2>HackCville's Staff</h2>
+				<h2>HackCville's Directors</h2>
 			</div>
 			<div class="flex">
 				<?php 
@@ -108,16 +110,68 @@ foreach ($authors as $author) {
 					}
 
 				?>
+					<div class="flex-1-of-4 person">
+						<div class="headshot" style="background-image:  url('<?php echo $h; ?>');">
+						</div>
+						<div class="info">
+							<a href="<?php echo $permalink; ?>">
+								<h4 class="name"><?php echo $full_name; ?></h4>
+							</a>
+							<p class="title"><?php echo $title; ?></p>
+							<p class="link">
+								
+									<!-- More about <?php echo $first_name; ?> &rarr;
+								</a> -->
+							</p>
+						</div>
+					</div>
+				<?php } ?>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="hackcville-staff">
+	<div class="white-bg">
+		<div class="container">
+			<div class="intro">
+				<h2>HackCville's Staff</h2>
+			</div>
+			<div class="flex">
+				<?php 
+				foreach ($staff as $person) {
+				// foreach ($directors as $person) {
+					$full_name = get_the_author_meta('first_name', $person) . " " . get_the_author_meta('last_name', $person);
+					$first_name = get_the_author_meta('first_name', $person);
+					$permalink = get_author_posts_url($person);
+					$title = get_field("title", 'user_'.$person);
+
+					$h = false;
+					$headshot = get_field('headshot', 'user_'.$person);
+					if ($headshot) {
+						$h = $headshot;
+					}
+					else {
+						// legacy support for headshots from old Pioneer site
+						$h = types_render_usermeta_field( "headshot", array( 'user_id'=>$person, 'output'=>'raw' ) );
+						if ($h == "") {
+							// if there is no headshot, use a generic one
+							$h = get_template_directory_uri() . "/images/headshot.jpg";
+						}
+					}
+
+				?>
 					<div class="flex-1-of-5 person">
 						<div class="headshot" style="background-image:  url('<?php echo $h; ?>');">
 						</div>
 						<div class="info">
-							<h4 class="name"><?php echo $full_name; ?></h4>
+							<a href="<?php echo $permalink; ?>">
+								<h4 class="name"><?php echo $full_name; ?></h4>
+							</a>
 							<p class="title"><?php echo $title; ?></p>
 							<p class="link">
-								<a href="<?php echo $permalink; ?>">
-									More about <?php echo $first_name; ?> &rarr;
-								</a>
+								
+									<!-- More about <?php echo $first_name; ?> &rarr;
+								</a> -->
 							</p>
 						</div>
 					</div>
@@ -157,11 +211,11 @@ foreach ($authors as $author) {
 						<div class="info">
 							<h4 class="name"><?php echo $full_name; ?></h4>
 							<p class="title"><?php echo $title; ?></p>
-							<p class="link">
-								<a href="<?php echo $permalink; ?>">
-									More about <?php echo $first_name; ?> &rarr;
+							<!-- <p class="link">
+								<a href="<?php //echo $permalink; ?>">
+									More about <?php //echo $first_name; ?> &rarr;
 								</a>
-							</p>
+							</p> -->
 						</div>
 					</div>
 				<?php } ?>
@@ -190,13 +244,15 @@ foreach ($authors as $author) {
 						<div class="headshot" style="background-image:  url('<?php echo $h; ?>');">
 						</div>
 						<div class="info">
-							<h4 class="name"><?php echo $full_name; ?></h4>
+							<a href="<?php echo $permalink; ?>">
+								<h4 class="name"><?php echo $full_name; ?></h4>
+							</a>
 							<p class="title"><?php echo $title; ?></p>
-							<p class="link">
-								<a href="<?php echo $permalink; ?>">
-									More about <?php echo $first_name; ?> &rarr;
+							<!-- <p class="link">
+								
+									More about <?php// echo $first_name; ?> &rarr;
 								</a>
-							</p>
+							</p> -->
 						</div>
 					</div>
 				<?php } ?>
