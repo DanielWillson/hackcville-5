@@ -39,8 +39,8 @@ include ($template_url);
 					<img src="<?php echo get_template_directory_uri(); ?>/images/bg-oh.jpg">
 				</figure>
 				<div class="flex-3-of-5">
-					<h2>1) We find and vet 600+ top students so you don't have to.</h2>
-					<p>Top engineering, computer science, business, media, and arts students apply to Launch in the fall and go through a vigorous multi-stage vetting process. Our acceptance rate is about 15%, and 50% of our accepted students are female.</p>
+					<h2>1) We find and vet 800+ top students so you don't have to.</h2>
+					<p>Top engineering, computer science, business, media, and arts students apply to Launch in the fall and go through a vigorous multi-stage vetting process. Our acceptance rate is about 8%, and 50% of our accepted students are female.</p>
 				</div>
 				<figure class="flex-2-of-5">
 					<img src="<?php echo get_template_directory_uri(); ?>/images/keaton.jpg">

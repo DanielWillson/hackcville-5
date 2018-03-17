@@ -251,8 +251,9 @@ while ( have_posts() ) : the_post();
 					$user_program_title = get_the_title($program);
 					if (!strcmp($title, $user_program_title)) {
 						$staff_size++;
+						$ids[$user_id] = 1;
 						if (!strcmp(get_field('leadership_type', 'user_'.$user_id), "program_lead")) {
-							$ids[$user_id] = 1;
+							
 						}
 						if (!strcmp(get_field('leadership_type', 'user_'.$user_id), "coordinator")) {
 							$ids[$user_id] = 2;
@@ -300,6 +301,9 @@ while ( have_posts() ) : the_post();
 							</figure>
 							<div class="flex-3-of-5 bottom">
 								<?php echo get_the_author_meta('description', $key); ?>
+								<a href="<?php echo get_author_posts_url($key) ?>" target="_blank" class="button">
+									More about <?php echo get_the_author_meta('first_name', $key); ?> &rarr;
+								</a>
 							</div>
 						</div>
 					<?php 

@@ -33,11 +33,11 @@ include ($template_url);
 				</div>
 				<div class="flex flex-1-of-4">
 					<div class="flex-1-of-1">
-						<h1>600+</h1>
+						<h1>800+</h1>
 						<p>applicants</p>
 					</div>
 					<div class="flex-1-of-1">
-						<h1>15%</h1>
+						<h1>8%</h1>
 						<p>acceptance rate</p>
 					</div>
 				</div>

@@ -75,7 +75,7 @@ else {
 }
 if ($linkedin) {
 	if (strpos($li, 'http') !== true) {
-	    $li = "http://" . $li;
+	    //$li = "http://" . $li;
 	}
 }
 

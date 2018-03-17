@@ -265,6 +265,7 @@ if(function_exists("register_field_group"))
 				'type' => 'checkbox',
 				'choices' => array (
 					'Programming Partner' => 'Programming Partner',
+					'Trip Partner' => 'Trip Partner',
 					'Presenting Partner' => 'Presenting Partner',
 					'Community Partner' => 'Community Partner',
 					'Student Organization Partner' => 'Student Organization Partner',

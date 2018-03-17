@@ -1453,16 +1453,6 @@ a:hover {
 	transition: 0.15s;
 }
 
-/*.submit-after:after {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	content: '';
-	top: -6px;
-	left: -6px;
-	border: 2px solid #53b0ca;
-}*/
-
 input[type="submit"].submit,
 input[type="submit"]
  {
@@ -2249,7 +2239,8 @@ PROGRAM STAFF
 }
 
 .program-staff div.flex-3-of-5 {
-	padding-top: 1em;
+	/*padding-top: .5em;*/
+	padding-bottom: 2em;
 }
 
 @media screen and (max-width: 920px) {
@@ -2513,7 +2504,8 @@ SPLIT PHOTO/TEXT
 
 	.split-pic {
 		flex-basis: 100%;
-		height: 200px;
+		height: 250px;
+		order: 1;
 	}
 
 	.split-text {
@@ -2521,6 +2513,7 @@ SPLIT PHOTO/TEXT
 		margin: 0 auto;
 		padding-top: 0;
 		padding-bottom: 6px;
+		order: 2;
 	}
 
 	.split-text .split-overlay {
@@ -4893,4 +4886,14 @@ PARTNERS
 
 .partner-grid a {
 	border-bottom: 0;
+}
+
+.partner-grid .flex {
+	align-items: center;
+    text-align: center;
+}
+
+.partner-grid .flex-1-of-5 {
+	flex-basis: 17%;
+	margin: 15px 0;
 }

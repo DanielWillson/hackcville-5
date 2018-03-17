@@ -11,31 +11,38 @@ get_header();
 
 $founding = array();
 $programming = array();
+$trip = array();
 $community = array();
 $student = array();
 $friends = array();
 
-while ( have_posts() ) : the_post(); 
+$the_query = new WP_Query(array('post_type' => 'partner', 'posts_per_page'=> '-1'));
+while ( $the_query->have_posts() ) { 
+	$the_query->the_post();
 	$type = get_field("type");
 	$id = get_the_ID();
 	
 	if (in_array("Presenting Partner", $type)) {
 		array_push($founding, $id);
 	}
-	else if (in_array("Prorgramming Partner", $type)) {
+	if (in_array("Prorgramming Partner", $type)) {
 		array_push($programming, $id);
 	}
-	else if (in_array("Community Partner", $type)) {
+	if (in_array("Trip Partner", $type)) {
+		array_push($trip, $id);
+	}
+	if (in_array("Community Partner", $type)) {
 		array_push($community, $id);
 	}
-	else if (in_array("Student Organization Partner", $type)) {
+	if (in_array("Student Organization Partner", $type)) {
 		array_push($student, $id);
 	}
-	else if (in_array("Friend of HackCville", $type)) {
+	if (in_array("Friend of HackCville", $type)) {
 		array_push($friends, $id);
 	}
-	else { }
-endwhile; ?>
+	
+}
+?>
 
 
 <div class="partner-archive-hero">
@@ -91,7 +98,7 @@ endwhile; ?>
 	<div class="white-bg">
 		<div class="container">
 			<div class="intro">
-				<h1>Program, Event, and Trip Partners</h1>
+				<h1>Programming + Event Partners</h1>
 			</div>
 			<div class="flex">
 				<?php 
@@ -121,6 +128,31 @@ endwhile; ?>
 			<div class="flex">
 				<?php 
 				foreach ($community as $p) { 
+					// $name = get_the_title($p);
+					$logo = get_field("logo", $p);
+					$website = get_field("website", $p);					
+					// $description = get_field("description", $p); 
+					?>
+					<div class="flex-1-of-5">
+						<a class="website" target="_blank" href="<?php echo $website; ?>">
+							<img src="<?php echo $logo; ?>" class="logo"> 
+						</a>
+					</div>
+				<?php } ?>
+			</div>
+		</div>
+	</div>
+</div>
+<?php } if (!empty($trip)) { ?>
+<div class="partner-grid programming">
+	<div class="white-bg">
+		<div class="container">
+			<div class="intro">
+				<h1>Startup Trip Partners</h1>
+			</div>
+			<div class="flex">
+				<?php 
+				foreach ($trip as $p) { 
 					// $name = get_the_title($p);
 					$logo = get_field("logo", $p);
 					$website = get_field("website", $p);					
@@ -167,7 +199,7 @@ endwhile; ?>
 		</div>
 	</div>
 </div>
-<?php } if (!empty($friend)) { ?>
+<?php } if (!empty($friends)) { ?>
 <div class="partner-grid friend">
 	<div class="white-bg">
 		<div class="container">
