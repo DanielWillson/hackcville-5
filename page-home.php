@@ -21,7 +21,7 @@ get_header(); ?>
 		<div class="split-overlay">
 			<h2>"HackCville is a place like no other. I'm surrounded by a passionate, entrepreneurial community and I'm learning practical skills to help me bring my ideas to life."</h2>
 			<h5>- Rachel Malinowski, HackCville Member</h5>
-			<h3>HackCville trains students like you in high-demand skills, accelerates your ideas, and connects you to jobs, opportunities, and a community you’ll love.</h3>
+			<h3>HackCville accelerates your ideas, trains you in critical skills, and connects you to jobs, opportunities, and a community you’ll love.</h3>
 			<a class="button shorter-button" href="#" onclick="getToKnowUs()">
 				Get to Know Us &darr;
 			</a>

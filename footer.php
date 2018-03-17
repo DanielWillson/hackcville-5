@@ -32,15 +32,15 @@
 								Our producers develop skills in modern media production through publishing stories about creative, civic, and entrepreneurial innovators in the University of Virginia and greater Charlottesville community. <a href="https://hackcville.com/about-the-pioneer/">Learn more &rarr;</a>
 							</p>
 							<p>
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">HackCville</a> is a platform for experiential education and career development. We train students in high-demand skills, accelerate their ideas, and connect them to jobs, opportunities, and a tight-knit community.
+								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">HackCville</a> develops the skills, networks, and entrepreneurial ability of talented U.Va. students. We accelerate our students’ ideas, projects, and startups through our experiential programs and tight-knit community. <a href="<?php echo esc_url( home_url( '/' ) ); ?>about">More about us &rarr;</a></p>
 							</p>
 						<?php } else { ?>
 							<h2>About HackCville</h2>
 							<p>
-								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">HackCville</a> is a platform for experiential education and career development. We train students in high-demand skills, accelerate their ideas, and connect them to jobs, opportunities, and a tight-knit community.
+								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">HackCville</a> develops the skills, networks, and entrepreneurial ability of talented U.Va. students. We accelerate our students’ ideas, projects, and startups through our experiential programs and tight-knit community. 
 							</p>
 							<p>
-								In turn, we provide talent to Charlottesville’s growing tech and startup scene. Our home is our clubhouses near the <a href="http://virginia.edu" target="_blank">University of Virginia</a>, but our broader network of 1,200+ spans the globe. <!--<a href="<?php echo esc_url( home_url( '/' ) ); ?>about">More about us &rarr;</a>-->
+								In turn, we provide talent to 50+ companies in Charlottesville’s growing tech and startup scene and emopower top students to start companies of their own. Our home is our clubhouses near the <a href="http://virginia.edu" target="_blank">University of Virginia</a>, but our broader network of 1,200+ spans the globe. <a href="<?php echo esc_url( home_url( '/' ) ); ?>about">More about us &rarr;</a>
 							</p>
 						<?php } ?>
 						<div class="subscribe">
