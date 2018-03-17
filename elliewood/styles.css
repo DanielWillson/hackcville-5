@@ -1,0 +1,273 @@
+@import "fonts/fonts.css";
+
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 24px;
+}
+
+h1, h2, h3, h4, h5 {
+	font-family: Butler;
+	font-weight: bold;
+	margin: 0;
+}
+
+p, span {
+	font-family: Proxima Nova;
+}
+
+.top-header {
+	width: 100%;
+	height: 20px;
+	background-color: #1F435D;
+}
+
+.container {
+	margin: 40px auto;
+	max-width: 1000px;
+	width: 90%;
+}
+
+img {
+	width: 100%;
+	height: auto;
+}
+
+.bio p {
+	font-size: 20px;
+	line-height: 1.35em;
+}
+
+.bio, .headshot {
+	margin-bottom: 40px;
+}
+
+
+
+
+
+
+.button,
+.button:visited {
+	padding: 12px 40px 10px 40px;
+    margin: .5em 2em .5em 0;
+    text-decoration: none;
+    /* text-transform: uppercase; */
+    font-weight: bold;
+    display: inline-block;
+    font-size: 20px;
+    position: relative;
+    border: none;
+    border-radius: 0;
+    border-bottom-width: 0 !important;
+
+    background-color: #1F435D;
+    color: white;
+}
+
+.not-active {
+	cursor: default;
+}
+
+.short-button {
+	padding: 4px 40px 7px 40px;
+}
+
+.button:after {
+	width: 98%;
+    height: 95%;
+    position: absolute;
+    content: '';
+    top: -6px;
+    left: -6px;
+    border: 2px solid #53b0ca;
+    transition: 0.15s;
+}
+
+
+input[type="submit"].submit,
+input[type="submit"]
+ {
+	padding: 7px 24px;
+	margin: 6px 1em;
+	margin-left: 0;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: bold;
+	display: inline-block;
+	font-size: 20px;
+	position: relative;
+	border: none; /* not sure */
+	border-radius: 0;
+	background-color: white;
+	text-transform: uppercase;
+	border: 2px solid #53b0ca;
+	transition:0.5s;
+}
+
+input[type="submit"].submit:hover {
+	/*text-decoration: underline;*/
+	cursor: pointer;
+	color:white;
+	background-color: #53b0ca;
+	border: 2px solid white;
+	transition:0.5s;
+}
+
+.submit-holder {
+	display: inline-block;
+}
+
+
+.image-bg .button:after {
+	border: 2px solid #53b0ca;
+}
+
+.hc-blue-bg .button:after {
+	border: 2px solid #0a2128;
+}
+
+.button:hover {
+	
+	cursor: pointer;
+	border-bottom: 0;
+}
+
+.button.not-active:hover {
+	top: 0;
+	left: 0;
+	cursor: default;	
+}
+
+.button:hover:after {
+	top: 0px;
+	left: 0px;
+}
+
+.button.not-active:hover:after {
+	top: -6px;
+	left: -6px;
+	cursor: default;	
+}
+
+.button h1,
+.button h2,
+.button h3,
+.button h4,
+.button h5 {
+	margin-bottom: 0;
+}
+
+.white-bg .button {
+	background-color: #3486c7;
+	color: white;
+}
+
+.blue-bg .button,
+.hc-blue-bg .button,
+.image-bg .button {
+	background-color: white;
+	color: #0a2128;
+}
+
+
+/*FLEX*/
+
+/* BEGIN FLEXBOX */
+
+.flex {
+	display: -webkit-flex;
+    -webkit-justify-content: space-between; 
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+}
+
+.flex-1-of-1 {
+	flex-basis: 100%;
+}
+
+.flex-1-of-2 {
+	flex-basis: 45%;
+}
+
+.flex-1-of-3 {
+	flex-basis: 26.666%;
+}
+
+.flex-2-of-3 {
+	flex-basis: 63.333%;
+}
+
+.flex-1-of-4 {
+	flex-basis: 21.5%;
+}
+
+.flex-3-of-4 {
+	flex-basis: 68.5%;
+}
+
+.flex-1-of-5 {
+	flex-basis: 15%;
+}
+
+.flex-2-of-5 {
+	flex-basis: 36.25%;
+}
+
+.flex-3-of-5 {
+	flex-basis: 57.5%;
+}
+
+.flex-4-of-5 {
+	flex-basis: 78.75%;
+}
+
+
+@media screen and (max-width: 920px) {
+	
+	.flex-1-of-4,
+	.flex-1-of-5,
+	.flex-2-of-5,
+	.flex-3-of-5 {
+		flex-basis: 45%;
+	} 
+
+	.flex-3-of-4,
+	.flex-4-of-5 {
+		flex-basis: 100%;
+	}
+
+}
+
+@media screen and (max-width: 768px) {
+	
+	.flex-1-of-2,
+	.flex-1-of-3,
+	.flex-1-of-4,
+	.flex-1-of-5,
+	.flex-2-of-3,
+	.flex-2-of-5,
+	.flex-3-of-4,
+	.flex-3-of-5,
+	.flex-4-of-5 {
+		flex-basis: initial;
+	}
+
+}
+
+/* END FLEXBOX */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
