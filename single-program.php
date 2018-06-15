@@ -367,13 +367,13 @@ while ( have_posts() ) : the_post();
 										<li><?php echo $mt; ?></li>
 									<?php } ?>
 								</ul>
-							All sections start February 4 and run through late April. You can indicate on your application with section(s) you are available for. There is no difference in curriculum between sections.</p>
+							All sections start September 2 and run through late November. You can indicate on your application with section(s) you are available for. There is no difference in curriculum between sections.</p>
 						<?php } else { ?>
 
-							<p><?php echo $title; ?> meets <span class="important"><?php echo $meeting_times; ?>, February 4 through late April.</span></p>
+							<p><?php echo $title; ?> meets twice a week, once as an entire class on <span class="important"><?php echo $meeting_times; ?></span>, and a second time in a small group. (Those meeting times are flexible as they're set by the small group you'll join.) All programs meet September 2 through late November.</p>
 
 						<?php } ?>
-						<p><span class="important">All sections of all programs (including <?php echo $title; ?>) start with a 11am-5:30pm kickoff on Sunday, February 4.</span></p>
+						<p><span class="important">All sections of all programs (including <?php echo $title; ?>) start with a 11am-5:30pm kickoff on Sunday, September 2.</span></p>
 						<p>You must be able to attend each session. More than a few missed meeting times will result in being dropped from HackCville.</p>
 					</div>
 					<div class="list-heading flex-1-of-2">

@@ -65,9 +65,9 @@ if ( $the_query->have_posts() ) {
 				    // $date = "will open January 2018";
 				}
 				?>
-				<h2>Our Spring Programs</h2>
+				<h2>Our Fall Programs</h2>
 				<p>Program applications <?php echo $date; ?>, and are accessible via the links below. You may apply to up to two programs, but will only be accepted into one. We have a unified program application that you can access via any of the program pages. We encourage you to read more about our process below, and to ensure you can make both weekly meeting times. Some programs have multiple sections.</p>
-				<p>If you're accepted, $50 dues are expected within the first week of the program, starting Feb 4 2018. This can be reduced or waived for those with financial need.</p>
+				<p>If you're accepted, $50 dues are expected within the first week of the program, starting September 2 2018. This can be reduced or waived for those with financial need.</p>
 			</div>
 			<div class="flex">
 				<div class="flex-1-of-2">

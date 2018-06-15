@@ -4897,3 +4897,17 @@ PARTNERS
 	flex-basis: 17%;
 	margin: 15px 0;
 }
+
+/*
+-----------------------------------
+CENSUS
+-----------------------------------
+*/
+
+.project-heading {
+	background-color: #3486c7;
+	color: white;
+	padding: 5px 10px;
+	line-height: 1.2em;
+}
+
