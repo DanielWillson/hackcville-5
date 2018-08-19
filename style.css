@@ -569,6 +569,7 @@ header.site-header {
 header.site-header .container.flex {
 	flex-flow: nowrap;
 	align-items: center;
+	padding: 8px 18px;
 }
 
 header.site-header a,
@@ -576,13 +577,34 @@ header.site-header a,
 	border-bottom: none;
 	color: white;
 	text-decoration: none;
+	font-size: 20px;
 }
 
 header.site-header .logo {
-	width: 60px;
+	width: 35px;
 	height: auto;
-	margin-top: 9px;
 	transition: .1s;
+}
+
+.site-branding .logo a {
+	color: white;
+	border-bottom: none;
+	font-weight: bold;
+}
+
+.site-branding img {
+	height: 35px;
+	width: auto;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.site-branding .hackcville {
+	display: inline-block;
+	vertical-align: middle;
+	padding-left: 5px;
+	font-weight: bold;
+	font-size: 24px;
 }
 
 .main-navigation ul {
@@ -675,11 +697,11 @@ header.site-header .logo {
 
 
 .fixed-spacer {
-	height: 79px;
+	height: 53px;
 }
 
 .fixed-spacer-sub {
-	height: 53px;
+	height: 40px;
 }
 
 /*
@@ -708,7 +730,7 @@ SUB NAV - FRAMEWORK
 .sub-nav .blue-bg, 
 .sub-nav .white-bg, 
 .sub-nav .hc-blue-bg {
-	padding: 7px 0;
+	padding: 2px 0;
 }
 
 .sub-nav ul {
@@ -739,15 +761,6 @@ SUB NAV - FRAMEWORK
 }
 
 
-@media screen and (max-width: 1150px) {
-
-	.fixed-spacer {
-		height: 69px;
-	}
-
-}
-
-
 
 @media screen and (max-width: 1150px) {
 	.main-navigation li {
@@ -756,7 +769,7 @@ SUB NAV - FRAMEWORK
 	}
 
 	header.site-header .logo {
-		width: 50px;
+		/*width: 50px;*/
 	}
 }
 
@@ -2982,9 +2995,9 @@ SUB NAV -
 */
 
 .sub-nav-branding a {
-	font-size: 26px;
+	font-size: 24px;
 	border-bottom: none;
-	text-transform: uppercase;
+	/*text-transform: uppercase;*/
 	font-weight: bold;
 }
 
@@ -4910,4 +4923,111 @@ CENSUS
 	padding: 5px 10px;
 	line-height: 1.2em;
 }
+
+/*
+-----------------------------------
+HUSTLE OVERVIEW
+-----------------------------------
+*/
+
+.hustle-home.overview .container {
+	padding: 100px 18px;
+}
+
+.hustle-home.overview h1 {
+	text-align: left;
+	font-size: 5em;
+	margin-bottom: 10px;
+}
+
+.hustle-home.overview h1.v2 {
+	text-align: left;
+	font-size: 2em;
+	margin-bottom: 10px;
+}
+
+.hustle-home.overview h2 {
+	font-weight: normal;
+	font-size: 1.75em;
+	margin-bottom: 10px;
+}
+
+.em {
+	font-style: italic;
+}
+
+.hustle-home h3 {
+	text-align: left;
+    font-weight: normal;
+    line-height: 1.2em;
+}
+
+.hustle-intro .flex-1-of-3 img {
+	width: 100px;
+	height: auto;
+}
+
+.hustle-intro .intro h2 {
+	font-weight: bold;
+	text-align: left;
+}
+
+.why-hustle .image-bg .container {
+	padding: 60px 0;
+}
+
+.why-hustle .community {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.why-hustle .community p {
+	font-size: 22px;
+}
+
+.hustle-next-steps h2 {
+	margin-bottom: 10px;
+}
+
+.hustle-next-steps h3 {
+	font-weight: normal;
+	line-height: 1.3em;
+}
+
+.hustle-next-steps .flex-4-of-5, 
+.hustle-next-steps .flex-1-of-1 {
+	margin-bottom: 20px;
+}
+
+/*
+-----------------------------------
+HUSTLE LEARNINGS 
+-----------------------------------
+*/
+
+.hustle-learnings-heading .container {
+	padding: 75px 18px;
+}
+
+.hustle-learnings-heading h3 {
+	font-weight: normal;
+	line-height: 1.3em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
